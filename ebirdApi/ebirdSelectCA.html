@@ -56,6 +56,7 @@
           "esri/Map",
           "esri/geometry/Point",
           "esri/views/MapView",
+          "esri/widgets/BasemapToggle",
           "esri/widgets/Legend",
           "esri/symbols/SimpleMarkerSymbol",
           "esri/Graphic",
@@ -68,6 +69,7 @@
           Map,
           Point,
           MapView,
+          BasemapToggle,
           Legend,
           SimpleMarkerSymbol,
           Graphic,
@@ -87,8 +89,15 @@
                   zoom: 6
               });
 
+              var basemapToggle = new BasemapToggle({
+                  view: view,  // The view that provides access to the map's "streets" basemap
+                  nextBasemap: "hybrid"  // Allows for toggling to the "hybrid" basemap
+              });
+
               view.ui.add("elevationDiv", "top-left");
               view.ui.add("ebird", "bottom-left");
+              // Add widget to the top right corner of the view
+              view.ui.add(basemapToggle, "bottom-right");
 
               var urlAPI = "https://ebird.org/ws2.0/data/obs/US-CA/recent/notable?back=10&cat=species&detail=full";
               var ebirdAPI = {
