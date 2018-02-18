@@ -1,0 +1,368 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>Arizona Rarities</title>
+    <script src="Scripts/jquery-3.3.1.js"></script>
+    <style>
+        html,
+        body,
+        #viewDiv {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+    #elevationDiv {
+      font-family: monospace;
+      padding: 12px;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+    }
+
+    .right {
+      text-align: right;
+    }
+
+    select {
+      width: 180px;
+    }
+
+    select option {
+      width: 180px;
+    }
+  </style>
+
+    <link rel="stylesheet" href="https://js.arcgis.com/4.6/esri/css/main.css">
+    <script src="https://js.arcgis.com/4.6/"></script>
+
+  <script>
+      var lat;
+      var lng;
+      var data;
+      var ABCdata;
+      var species;
+      var review;
+      var selection;
+      var reviewSpecies;
+      var sketchSpecies;
+      var notableSpecies;
+      var daysback = 10;
+      var inDateSpan="N"
+
+      require([
+          "esri/Map",
+          "esri/geometry/Point",
+          "esri/views/MapView",
+          "esri/widgets/BasemapToggle",
+          "dojo/dom-construct",
+          "esri/widgets/Legend",
+          "esri/symbols/SimpleMarkerSymbol",
+          "esri/Graphic",
+          "esri/layers/GraphicsLayer",
+          "dojo/store/Memory",
+          "dijit/form/ComboBox",
+          "dojo/on",
+          "dojo/domReady!"
+      ], function (
+          Map,
+          Point,
+          MapView,
+          BasemapToggle,
+          domConstruct,
+          Legend,
+          SimpleMarkerSymbol,
+          Graphic,
+          GraphicsLayer,
+          Memory,
+          ComboBox,
+          on
+      ) {
+              var map = new Map({
+                  basemap: "streets"
+              });
+
+              var view = new MapView({
+                  center: [-112, 33],
+                  container: "viewDiv",
+                  map: map,
+                  zoom: 7
+              });
+
+              var basemapToggle = new BasemapToggle({
+                  view: view,  // The view that provides access to the map's "streets" basemap
+                  nextBasemap: "hybrid"  // Allows for toggling to the "hybrid" basemap
+              });
+
+              var logo = domConstruct.create("img", {
+                  src: "images/azfologo3.gif",
+                  id: "logo",
+                  title: "logo"
+              });
+
+
+              view.ui.add("elevationDiv", "top-left");
+
+              // place logo before text.
+              view.ui.add(logo, "bottom-left");
+              view.ui.add("ebird", "bottom-left");
+              // Add widget to the top right corner of the view
+              view.ui.add(basemapToggle, "bottom-right");
+
+
+              var urlAPI = "https://ebird.org/ws2.0/data/obs/US-AZ/recent/notable?back=10&cat=species&detail=full";
+              var ebirdAPI = {
+                  "crossDomain": true,
+                  //"url": "https://ebird.org/ws2.0/data/obs/US-AZ/recent",
+                  "url": urlAPI,
+                  "method": "GET",
+                  "async": false,
+                  "headers": {
+                      "X-eBirdApiToken": "npobnnr5u7fo"
+                  }
+              }
+
+              $.ajax(ebirdAPI).done(function (response) {
+                  console.log(response);
+                  data = response;
+
+              });
+
+              //xmlloc =  "http://azfo.org/ebird/AZListXMLFile.xml" // AZFO
+              xmlloc = "xmldata/AZListXMLFile.xml" //Local
+              var ABCdata = {
+                  "crossDomain": true,
+                  "url": xmlloc,
+                  "method": "GET",
+                  "async": false,
+              }
+
+              $.ajax(ABCdata).done(function (response) {
+                  console.log(response);
+                  ABCdata = response;
+
+                  //$(ABCdata).find('Species').each(function () {
+                  //    var species = $(this).attr('EnglishName');
+                  //})
+              });
+
+
+              loadSpecies();
+
+              /*************************
+              * Create a point graphic
+              *************************/
+              function loadSpecies() {
+
+                  view.graphics.removeAll();
+
+                  var setDate = new Date();
+                  //add a day to the date
+                  setDate.setDate(setDate.getDate() - daysback);
+
+                  for (i = 0; i < data.length; ++i) {
+                      review = "";
+                      var point = new Point(data[i].lng, data[i].lat);
+
+                      $(ABCdata).find('Species').each(function () {
+                          var species = $(this).attr('EnglishName');
+
+                          if (data[i].comName == species) {
+
+                              review = $(this).attr('Review');
+
+                              var d = data[i].obsDt;
+                              var found = new Date(d.substring(0,10));
+
+                              //found.setDate(found.getDate());
+
+                              inDateSpan = "N";
+                              if (found.getTime() >= setDate.getTime()) {
+                                  inDateSpan = "Y";
+                              }
+
+                              
+                              switch (review) {
+                                  case "Y":
+                                      reviewSpecies = "Y";
+                                      break;
+                                  case "N":
+                                      sketchSpecies = "Y";
+                                      break;
+                                  case "":
+                                      notableSpecies ="Y";
+                                      break;
+                                  default:
+                                      all = "Y";
+                              }
+                          }
+                          
+                      })
+
+
+                      // Create a symbol for drawing the point
+                      var markerSymbol = {
+                          type: "simple-marker", // autocasts as new SimpleMarkerSymbol()
+                          color: [0, 128, 0], //green
+                          outline: { // autocasts as new SimpleLineSymbol()
+                              color: [0, 100, 0],
+                              width: 2
+                          }
+                      };
+
+                      if (review == "Y") {
+                          // Create a symbol for drawing the point
+                          var markerSymbol = {
+                              type: "simple-marker", // autocasts as new SimpleMarkerSymbol()
+                              color: [255, 0, 0], //red
+                              outline: { // autocasts as new SimpleLineSymbol()
+                                  color: [128, 0, 0],
+                                  width: 2
+                              }
+                          };
+
+                          
+                      }
+                      if (review == "N") {
+                          // Create a symbol for drawing the point
+                          var markerSymbol = {
+                              type: "simple-marker", // autocasts as new SimpleMarkerSymbol()
+                              color: [0, 0, 255], //blue
+                              outline: { // autocasts as new SimpleLineSymbol()
+                                  color: [65, 105, 255],
+                                  width: 2
+                              }
+                          };
+
+                      }
+
+
+                      // Create an object for storing attributes related to the line
+                      var pointAtt = {
+                          Name: data[i].comName,
+                          Date: data[i].obsDt,
+                          Location: data[i].locName,
+                          Nunmber: data[i].howMany,
+                          Observer: data[i].firstName + ' ' + data[i].lastName
+                      };
+
+                      /*******************************************
+                       * Create a new graphic and add the geometry,
+                       * symbol, and attributes to it. You may also
+                       * add a simple PopupTemplate to the graphic.
+                       * This allows users to view the graphic's
+                       * attributes when it is clicked.
+                       ******************************************/
+
+                      var pointGraphic = new Graphic({
+                          geometry: point,
+                          symbol: markerSymbol,
+                          attributes: pointAtt,
+                          popupTemplate: {  // autocasts as new PopupTemplate()
+                              title: "{Name}",
+                              content: [{
+                                  type: "fields",
+                                  fieldInfos: [{
+                                      fieldName: "Name"
+                                  }, {
+                                      fieldName: "Date"
+                                  }, {
+                                      fieldName: "Location"
+                                  }, {
+                                      fieldName: "Number"
+                                  }, {
+                                      fieldName: "Observer"
+                                  }]
+                              }]
+                          }
+                      });
+
+                      show = "N";
+
+                      switch (selection) {
+                          case "Review Species":
+                              if(review =="Y"){show="Y"}
+                              break;
+                          case "Sketch Species":
+                              if (review == "N") {show = "Y"};
+                              break;
+                          case "Notable Species":
+                              if (review == "") { show = "Y" };
+                              break;
+                          default:
+                              show ="Y"
+                      }
+
+
+                      if (show == "Y" && inDateSpan == "Y") {
+                          // Add the line graphic to the view's GraphicsLayer
+                          view.graphics.add(pointGraphic);
+                         
+                      }
+                      
+                                           
+                      review = "";
+                      reviewSpecies = "N";
+                      sketchSpecies = "N";
+                      notableSpecies = "N";
+
+                  }
+              }
+       
+        //view.ui.add("elevationDiv", "top-right");
+
+        // Register events to the controls
+        var modeSelect = document.getElementById("modeSelect");
+        window.addEventListener("change", updateElevationMode);
+        
+        // Create events' callback functions
+        function updateElevationMode(event) {
+            selection = document.getElementById("modeSelect").value;
+            daysback = document.getElementById("days").value;
+
+                //view.graphics.removeAll()
+            loadSpecies();
+            
+        }
+                            
+      });
+
+  </script>
+</head>
+
+<body>
+    <div id="viewDiv"></div>
+    <div id ="ebird">
+        <a>eBird Notable Birds API AZ Rarites, Green=Notable, Blue=Sketch details, Red=Review Species </a>
+        <br />
+        <a>Click symbol on map to see details.</a>
+    </div>
+    <div id="elevationDiv">
+        <table>
+      <tr>
+        <td class="right">Species</td>
+        <td>
+          <select id="modeSelect">
+            <option value="All" selected>All</option>
+            <option value="Review Species">Review Species</option>
+            <option value="Sketch Species">Sketch Species</option>
+              <option value="Notable Species">Notable Species</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td class="right">days back</td>
+        <td>
+            <select id="days">
+            <option value="10" selected>10</option>
+            <option value="5">5</option>
+            <option value="3">3</option>
+              <option value="1">1</option>
+          </select></td>
+      </tr>
+      </table>
+  </div>
+</body>
+</html>

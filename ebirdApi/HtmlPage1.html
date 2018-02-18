@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>Find Task - 4.2</title>
+    <style>
+        td {
+            padding: 4px;
+        }
+
+        #loading {
+            visibility: hidden;
+        }
+    </style>
+
+    <script src="http://js.arcgis.com/4.2/"></script>
+
+    <script>
+    require([
+      "esri/request",
+      "esri/config",
+      "dojo/json",
+      "dojo/dom",
+      "dojo/on",
+      "dojo/domReady!"
+    ], function(esriRequest, esriConfig, JSON, dom, on) {
+
+      esriConfig.request.proxyUrl = "http://gislap183/js/proxy/proxy.ashx";
+
+      function doRequest(){
+        var url = "http://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Demographics/ESRI_Census_USA/MapServer/layers?f=json";
+        esriRequest(url, {
+          responseType: "json",
+          callbackParamName: "callback"
+        }).then(function(response){
+          showResults(response);
+        });
+      }
+
+      var resultsTable = dom.byId("tbl");
+
+      // Executes when the promise from find.execute() resolves
+      function showResults(response) {
+        var results = response.data;
+        // Clear the cells and rows of the table to make room for new results
+        resultsTable.innerHTML =  JSON.stringify(results);
+      }
+
+      // Executes each time the promise from find.execute() is rejected.
+      function rejectedPromise(err) {
+        console.error("Promise didn't resolve: ", err.message);
+      }
+
+      // Run doRequest() when button is clicked
+      on(dom.byId("execBtn"), "click", doRequest);
+    });
+    </script>
+
+</head>
+<body>
+    <input type="button" value="Execute" id="execBtn" />
+    <br>
+    <br>
+    <table id="tbl"></table>
+</body>
+</html>

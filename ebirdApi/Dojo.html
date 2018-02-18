@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html >
+<head>
+    <title></title>
+	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/dojo/1.6.1/dijit/themes/claro/claro.css">
+	<link rel="stylesheet" href="https://js.arcgis.com/4.6/esri/css/main.css">
+	<script>dojoConfig = { async: true, parseOnLoad: true }</script>
+	<script src='../../_static/js/dojo/dojo.js'></script>
+    <script src="https://js.arcgis.com/4.6/"></script>
+	
+	<script>
+        require(["dojo/parser", "dijit/form/ComboBox"]);
+	</script>
+</head>
+<body class="claro">
+    <select data-dojo-type="dijit/form/ComboBox" id="fruit" name="fruit">
+    <option>Apples</option>
+    <option selected>Oranges</option>
+    <option>Pears</option>
+</select>
+</body>
+</html>

@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Intro to MapView - Create a 2D map</title>
+    <script src="Scripts/jquery-3.3.1.min.js"></script>
+    <style>
+        html, body, #viewDiv {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+    <link rel="stylesheet" href="https://js.arcgis.com/4.6/esri/css/main.css">
+    <script src="https://js.arcgis.com/4.6/"></script>
+    <script>
+        var map;
+        var graphicsArray = [];
+        require([
+            "esri/Map",
+            "esri/geometry/Point",
+            "esri/geometry/Polyline",
+            "esri/geometry/Polygon",
+            "esri/layers/GraphicsLayer",
+            "esri/Graphic",
+            "esri/symbols/SimpleMarkerSymbol",
+            "esri/symbols/SimpleLineSymbol",
+            "esri/symbols/SimpleFillSymbol",
+            "esri/PopupTemplate",
+            "esri/Color",
+            "esri/views/MapView",
+            "dojo/domReady!"
+        ], function (Map,
+            Point,
+            Polyline,
+            Polygon,
+            GraphicsLayer,
+            Graphic,
+            SimpleMarkerSymbol,
+            SimpleLineSymbol,
+            SimpleFillSymbol,
+            PopupTemplate,
+            Color,
+            MapView) {
+            var map = new Map({
+                basemap: "streets"
+            });
+
+
+            //var settings = {
+            //    "async": true,
+            //    "crossDomain": true,
+            //    "url": "https://ebird.org/ws2.0/data/obs/US-AZ/recent",
+            //    "method": "GET",
+            //    "headers": {
+            //        "X-eBirdApiToken": "npobnnr5u7fo"
+            //    }
+
+            //}
+
+            //$.ajax(settings).done(function (response) {
+            //    console.log(response);
+
+            //});
+
+            var point = new Point(-106.61, 35.1107);
+            //var point = new Point(35.110, -106.61);
+            var graphicA = new Graphic(point);  // graphic with point geometry
+
+            // Add graphic when GraphicsLayer is constructed
+            var layer = new GraphicsLayer({
+                graphics: [graphicA]
+            });
+
+            
+
+            var polyline = {
+                type: "polyline",  // autocasts as new Polyline()
+                paths: [
+                    [-111.30, 52.68],
+                    [-98, 49.5],
+                    [-93.94, 29.89]
+                ]
+            };
+            var polylineSymbol = {
+                type: "simple-line",  // autocasts as SimpleLineSymbol()
+                color: [226, 119, 40],
+                width: 4
+            };
+
+            var polylineAtt = {
+                Name: "Keystone Pipeline",
+                Owner: "TransCanada"
+            };
+
+            var polylineGraphic = new Graphic({
+                geometry: polyline,
+                symbol: polylineSymbol,
+                attributes: polylineAtt
+            });
+
+            //map.graphics.add(polylineGraphic);
+
+            //graphicsArray.push(layer);
+            //for (i = 0; i < graphicsArray.length; ++i) {
+            //    //map.Graphics.add(graphicsArray[i]);
+            //    map.graphics.add(graphicsArray[i]);
+            //}
+              
+            
+        
+            var view = new MapView({
+                container: "viewDiv",  // Reference to the scene div created in step 5
+                map: map,  // Reference to the map object created before the scene
+                zoom: 6,  // Sets zoom level based on level of detail (LOD)
+                center: [-112, 38]  // Sets center point of view using longitude,latitude
+            });
+        });
+
+            
+    </script>
+</head>
+<body>
+    <div id="viewDiv"></div>
+</body>
+</html>

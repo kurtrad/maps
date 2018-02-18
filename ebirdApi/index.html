@@ -1,0 +1,214 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Arizona Rarities</title>
+    <script src="Scripts/jquery-3.3.1.js"></script>
+    <style>
+        html, body, #viewDiv {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+    <link rel="stylesheet" href="https://js.arcgis.com/4.6/esri/css/main.css">
+    <script src="https://js.arcgis.com/4.6/"></script>
+
+    <script>
+        var lat;
+        var lng;
+        var data;
+        var ABCdata
+        var species
+        var review
+        var show
+        require([
+            "esri/Map",
+            "esri/geometry/Point",
+            "esri/views/MapView",
+            "esri/widgets/Legend",
+            "esri/symbols/SimpleMarkerSymbol",
+            "esri/Graphic",
+            "esri/layers/GraphicsLayer",
+            "dojo/domReady!"
+        ], function (
+            Map,
+            Point,
+            MapView,
+            Legend,
+            SimpleMarkerSymbol,
+            Graphic,
+            GraphicsLayer
+        ) {
+                var map = new Map({
+                    basemap: "streets"
+                });
+
+                var view = new MapView({
+                    center: [-112, 33],
+                    container: "viewDiv",
+                    map: map,
+                    zoom: 7
+                });
+
+                
+                var urlAPI = "https://ebird.org/ws2.0/data/obs/US-AZ/recent/notable?back=10&cat=species&detail=full";
+                var ebirdAPI = {
+                    "crossDomain": true,
+                    "url": urlAPI,
+                    "method": "GET",
+                    "async": false,
+                    "headers": {
+                        "X-eBirdApiToken": "npobnnr5u7fo"
+                    }
+                }
+
+                $.ajax(ebirdAPI).done(function (response) {
+                    console.log(response);
+                    data = response;
+
+                });
+
+                var ABCdata = {
+                    "crossDomain": true,
+                    "url": "xmldata/AZListXMLFile.xml",
+                    "method": "GET",
+                    "async": false,
+                }
+
+                $.ajax(ABCdata).done(function (response) {
+                    console.log(response);
+                    ABCdata = response;
+
+                    //$(ABCdata).find('Species').each(function () {
+                    //    var species = $(this).attr('EnglishName');
+                    //})
+                });
+
+
+                /*************************
+                * Create a point graphic
+                *************************/
+
+                for (i = 0; i < data.length; ++i) {
+
+                    var point = new Point(data[i].lng, data[i].lat);
+
+                    $(ABCdata).find('Species').each(function () {
+                        var species = $(this).attr('EnglishName');
+
+                        if (data[i].comName == species) {
+
+                            review = $(this).attr('Review');
+
+                            //if (review != "") {
+                            //    show = "Y"
+                            //}
+                        }
+                    })
+
+                    // Create a symbol for drawing the point
+                    var markerSymbol = {
+                        type: "simple-marker", // autocasts as new SimpleMarkerSymbol()
+                        color: [0, 128, 0],
+                        outline: { // autocasts as new SimpleLineSymbol()
+                            color: [0, 100, 0],
+                            width: 2
+                        }
+                    };
+
+                    if (review == "Y") {
+                        // Create a symbol for drawing the point
+                        var markerSymbol = {
+                            type: "simple-marker", // autocasts as new SimpleMarkerSymbol()
+                            color: [255, 0, 0],
+                            outline: { // autocasts as new SimpleLineSymbol()
+                                color: [128, 0, 0],
+                                width: 2
+                            }
+                        };
+
+                        review = " "
+                    }
+                    if (review == "N") {
+                        // Create a symbol for drawing the point
+                        var markerSymbol = {
+                            type: "simple-marker", // autocasts as new SimpleMarkerSymbol()
+                            color: [0, 0, 255],
+                            outline: { // autocasts as new SimpleLineSymbol()
+                                color: [65, 105, 255],
+                                width: 2
+                            }
+                        };
+
+                        review = " "
+                    }
+
+
+                    // Create an object for storing attributes related to the line
+                    var pointAtt = {
+                        Name: data[i].comName,
+                        Date: data[i].obsDt,
+                        Location: data[i].locName,
+                        Nunmber: data[i].howMany,
+                        Observer: data[i].firstName + ' ' + data[i].lastName
+                    };
+
+                    /*******************************************
+                     * Create a new graphic and add the geometry,
+                     * symbol, and attributes to it. You may also
+                     * add a simple PopupTemplate to the graphic.
+                     * This allows users to view the graphic's
+                     * attributes when it is clicked.
+                     ******************************************/
+                    var pointGraphic = new Graphic({
+                        geometry: point,
+                        symbol: markerSymbol,
+                        attributes: pointAtt,
+                        popupTemplate: {  // autocasts as new PopupTemplate()
+                            title: "{Name}",
+                            content: [{
+                                type: "fields",
+                                fieldInfos: [{
+                                    fieldName: "Name"
+                                }, {
+                                    fieldName: "Date"
+                                }, {
+                                    fieldName: "Location"
+                                }, {
+                                    fieldName: "Nunmber"
+                                }, {
+                                    fieldName: "Observer"
+                                }]
+                            }]
+                        }
+                    });
+
+
+
+                    //// Add the line graphic to the view's GraphicsLayer
+                    //if (show == "Y") {
+                        view.graphics.add(pointGraphic);
+                    //    show = "";
+                    //}
+
+                }
+
+            });
+
+
+
+
+    </script>
+</head>
+<body>
+    <div>
+        <a>eBird Notable Birds API AZ Rarites back 10 days, Green=Notable, Blue=Sketch details, Red=Review Species </a>
+    </div>
+    <div id="viewDiv"></div>
+
+
+</body>
+</html>
