@@ -96,17 +96,17 @@
                   nextBasemap: "hybrid"  // Allows for toggling to the "hybrid" basemap
               });
 
-              var logo = domConstruct.create("img", {
-                  src: "images/azfologo3.gif",
-                  id: "logo",
-                  title: "logo"
-              });
+              //var logo = domConstruct.create("img", {
+              //    src: "images/azfologo3.gif",
+              //    id: "logo",
+              //    title: "logo"
+              //});
 
 
               view.ui.add("elevationDiv", "top-left");
 
               // place logo before text.
-              view.ui.add(logo, "bottom-left");
+              //view.ui.add(logo, "bottom-left");
               view.ui.add("ebird", "bottom-left");
               // Add widget to the top right corner of the view
               view.ui.add(basemapToggle, "bottom-right");
@@ -130,8 +130,9 @@
 
               });
 
+              xmlloc =  "http://birdingthecloud.com/ebirdApi/AZListXMLFile.xml" // AZFO
               //xmlloc =  "http://azfo.org/ebird/AZListXMLFile.xml" // AZFO
-              xmlloc = "xmldata/AZListXMLFile.xml" //Local
+              //xmlloc = "xmldata/AZListXMLFile.xml" //Local
               var ABCdata = {
                   "crossDomain": true,
                   "url": xmlloc,
@@ -245,7 +246,8 @@
                           Date: data[i].obsDt,
                           Location: data[i].locName,
                           Nunmber: data[i].howMany,
-                          Observer: data[i].firstName + ' ' + data[i].lastName
+                          Observer: data[i].firstName + ' ' + data[i].lastName,
+                          Checklist: "https://ebird.org/view/checklist/" + data[i].subId
                       };
 
                       /*******************************************
@@ -274,6 +276,8 @@
                                       fieldName: "Number"
                                   }, {
                                       fieldName: "Observer"
+                                  }, {
+                                      fieldName: "Checklist"
                                   }]
                               }]
                           }
@@ -338,6 +342,8 @@
         <a>eBird Notable Birds API AZ Rarites, Green=Notable, Blue=Sketch details, Red=Review Species </a>
         <br />
         <a>Click symbol on map to see details.</a>
+         <br />
+        <a><i>Copyright - Kurt Radamaker</i></a>
     </div>
     <div id="elevationDiv">
         <table>

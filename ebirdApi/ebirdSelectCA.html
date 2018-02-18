@@ -116,7 +116,9 @@
                   data = response;
 
               });
-              xmlloc =  "http://azfo.org/ebird/CAListXMLFile.xml" // AZFO
+
+              xmlloc =  "http://birdingthecloud.com/ebirdApi/CAListXMLFile.xml" // AZFO
+              //xmlloc =  "http://azfo.org/ebird/CAListXMLFile.xml" // AZFO
               //xmlloc = "xmldata/CAListXMLFile.xml" //Local
               var ABCdata = {
                   "crossDomain": true,
@@ -231,7 +233,8 @@
                           Date: data[i].obsDt,
                           Location: data[i].locName,
                           Nunmber: data[i].howMany,
-                          Observer: data[i].firstName + ' ' + data[i].lastName
+                          Observer: data[i].firstName + ' ' + data[i].lastName,
+                          Checklist: "https://ebird.org/view/checklist/" + data[i].subId
                       };
 
                       /*******************************************
@@ -260,6 +263,8 @@
                                       fieldName: "Number"
                                   }, {
                                       fieldName: "Observer"
+                                  }, {
+                                      fieldName: "Checklist"
                                   }]
                               }]
                           }
