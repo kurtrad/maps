@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Birds>
+	<Species EnglishName="Black-bellied Whistling-Duck" Sequence="100" Review="Y"/>
+	<Species EnglishName="Fulvous Whistling-Duck" Sequence="120" Review="Y"/>
+	<Species EnglishName="Emperor Goose" Sequence="150" Review="Y"/>
+	<Species EnglishName="Tundra Bean-Goose" Sequence="240" Review="Y"/>
+	<Species EnglishName="Whooper Swan" Sequence="260" Review="Y"/>
+	<Species EnglishName="Baikal Teal " Sequence="300" Review="Y"/>
+	<Species EnglishName="Garganey" Sequence="410" Review="Y"/>
+	<Species EnglishName="Falcated Duck" Sequence="540" Review="Y"/>
+	<Species EnglishName="American Black Duck " Sequence="570" Review="Y"/>
+	<Species EnglishName="Common Pochard" Sequence="580" Review="Y"/>
+	<Species EnglishName="Steller's Eider" Sequence="610" Review="Y"/>
+	<Species EnglishName="King Eider" Sequence="620" Review="Y"/>
+	<Species EnglishName="Common Eider " Sequence="680" Review="Y"/>
+	<Species EnglishName="Common Scoter" Sequence="700" Review="Y"/>
+	<Species EnglishName="Smew Mergellus" Sequence="710" Review="Y"/>
+	<Species EnglishName="Least Grebe" Sequence="720" Review="Y"/>
+	<Species EnglishName="Oriental Turtle-Dove" Sequence="730" Review="Y"/>
+	<Species EnglishName="Ruddy Ground-Dove" Sequence="760" Review="Y"/>
+	<Species EnglishName="Common Cuckoo" Sequence="1510" Review="Y"/>
+	<Species EnglishName="Black-billed Cuckoo" Sequence="1530" Review="Y"/>
+	<Species EnglishName="Groove-billed Ani" Sequence="1550" Review="Y"/>
+	<Species EnglishName="Chuck-will's-widow" Sequence="1580" Review="Y"/>
+	<Species EnglishName="Buff-collared Nightjar" Sequence="1610" Review="Y"/>
+	<Species EnglishName="Eastern Whip-poor-will" Sequence="1620" Review="Y"/>
+	<Species EnglishName="White-collared Swift" Sequence="1730" Review="Y"/>
+	<Species EnglishName="Common Swift" Sequence="1731" Review="Y"/>
+	<Species EnglishName="Mexican Violetear" Sequence="1732" Review="Y"/>
+	<Species EnglishName="Rivoli's Hummingbird" Sequence="2040" Review="Y"/>
+	<Species EnglishName="Blue-throated Hummingbird" Sequence="2041" Review="Y"/>
+	<Species EnglishName="Ruby-throated Hummingbird" Sequence="2180" Review="Y"/>
+	<Species EnglishName="Broad-billed Hummingbird" Sequence="2220" Review="Y"/>
+	<Species EnglishName="Violet-crowned Hummingbird" Sequence="2260" Review="Y"/>
+	<Species EnglishName="Xantus's Hummingbird" Sequence="2261" Review="Y"/>
+	<Species EnglishName="Purple Gallinule" Sequence="2290" Review="Y"/>
+	<Species EnglishName="Common Crane" Sequence="2300" Review="Y"/>
+	<Species EnglishName="Lesser Sand-Plover" Sequence="2310" Review="Y"/>
+	<Species EnglishName="Greater Sand-Plover" Sequence="2530" Review="Y"/>
+	<Species EnglishName="Wilson's Plover" Sequence="2350" Review="Y"/>
+	<Species EnglishName="Common Ringed Plover " Sequence="2370" Review="Y"/>
+	<Species EnglishName="Piping Plover" Sequence="2510" Review="Y"/>
+	<Species EnglishName="Eurasian Dotterel" Sequence="2730" Review="Y"/>
+	<Species EnglishName="Upland Sandpiper" Sequence="2740" Review="Y"/>
+	<Species EnglishName="Bristle-thighed" Sequence="2750" Review="Y"/>
+	<Species EnglishName="Little Curlew" Sequence="2830" Review="Y"/>
+	<Species EnglishName="Bar-tailed Godwit" Sequence="2870" Review="Y"/>
+	<Species EnglishName="Hudsonian Godwit" Sequence="2890" Review="Y"/>
+	<Species EnglishName="Curlew Sandpiper" Sequence="2940" Review="Y"/>
+	<Species EnglishName="Long-toed Stint" Sequence="3140" Review="Y"/>
+	<Species EnglishName="Red-necked Stint" Sequence="3480" Review="Y"/>
+	<Species EnglishName="Purple Sandpiper" Sequence="3500" Review="Y"/>
+	<Species EnglishName="Little Stint" Sequence="3520" Review="Y"/>
+	<Species EnglishName="White-rumped Sandpiper" Sequence="3540" Review="Y"/>
+	<Species EnglishName="Jack Snipe" Sequence="3570" Review="Y"/>
+	<Species EnglishName="American Woodcock" Sequence="3590" Review="Y"/>
+	<Species EnglishName="Common Snipe" Sequence="3820" Review="Y"/>
+	<Species EnglishName="Terek Sandpiper" Sequence="4120" Review="Y"/>
+	<Species EnglishName="Gray-tailed Tattler" Sequence="3811" Review="Y"/>
+	<Species EnglishName="Spotted Redshank" Sequence="4400" Review="Y"/>
+	<Species EnglishName="Common Greenshank" Sequence="4410" Review="Y"/>
+	<Species EnglishName="Wood Sandpiper" Sequence="4411" Review="Y"/>
+	<Species EnglishName="Marsh Sandpiper" Sequence="4630" Review="Y"/>
+	<Species EnglishName="Thick-billed Murre" Sequence="4730" Review="Y"/>
+	<Species EnglishName="Long-billed Murrelet" Sequence="4820" Review="Y"/>
+	<Species EnglishName="Kittlitz's Murrelet" Sequence="4850" Review="Y"/>
+	<Species EnglishName="Least Auklet" Sequence="4920" Review="Y"/>
+	<Species EnglishName="Crested Auklet" Sequence="4950" Review="Y"/>
+	<Species EnglishName="Swallow-tailed Gull" Sequence="4960" Review="Y"/>
+	<Species EnglishName="Red-legged Kittiwake" Sequence="4990" Review="Y"/>
+	<Species EnglishName="Ivory Gull" Sequence="5010" Review="Y"/>
+	<Species EnglishName="Black-headed Gull" Sequence="5080" Review="Y"/>
+	<Species EnglishName="Ross's Gull" Sequence="5110" Review="Y"/>
+	<Species EnglishName="Belcher's Gull" Sequence="5180" Review="Y"/>
+	<Species EnglishName="Black-tailed Gull" Sequence="5200" Review="Y"/>
+	<Species EnglishName="Slaty-backed Gull" Sequence="5210" Review="Y"/>
+	<Species EnglishName="Great Black-backed Gull" Sequence="5320" Review="Y"/>
+	<Species EnglishName="Kelp Gull" Sequence="5340" Review="Y"/>
+	<Species EnglishName="Sooty Tern" Sequence="5360" Review="Y"/>
+	<Species EnglishName="Bridled Tern" Sequence="5370" Review="Y"/>
+	<Species EnglishName="White-winged Tern" Sequence="5380" Review="Y"/>
+	<Species EnglishName="Sandwich Tern" Sequence="5430" Review="Y"/>
+	<Species EnglishName="White-tailed Tropicbird" Sequence="5480" Review="Y"/>
+	<Species EnglishName="Red-tailed Tropicbird" Sequence="5500" Review="Y"/>
+	<Species EnglishName="Arctic Loon" Sequence="5520" Review="Y"/>
+	<Species EnglishName="Yellow-billed Loon" Sequence="5530" Review="Y"/>
+	<Species EnglishName="White-capped Albatross" Sequence="5540" Review="Y"/>
+	<Species EnglishName="Salvin's Albatross " Sequence="5550" Review="Y"/>
+	<Species EnglishName="Chatham Albatross" Sequence="5590" Review="Y"/>
+	<Species EnglishName="Light-mantled Albatross" Sequence="5600" Review="Y"/>
+	<Species EnglishName="Wandering Albatross" Sequence="5780" Review="Y"/>
+	<Species EnglishName="Short-tailed Albatross" Sequence="5810" Review="Y"/>
+	<Species EnglishName="Great-winged Petrel" Sequence="5890" Review="Y"/>
+	<Species EnglishName="Kermadec Petrel" Sequence="5910" Review="Y"/>
+	<Species EnglishName="Stejneger's Petrel" Sequence="5940" Review="Y"/>
+	<Species EnglishName="Bulwer's Petrel" Sequence="5960" Review="Y"/>
+	<Species EnglishName="Jouanin's Petrel" Sequence="6000" Review="Y"/>
+	<Species EnglishName="White-chinned Petrel" Sequence="6010" Review="Y"/>
+	<Species EnglishName="Parkinson's Petrel" Sequence="6020" Review="Y"/>
+	<Species EnglishName="Streaked Shearwater" Sequence="6570" Review="Y"/>
+	<Species EnglishName="Cory's Shearwater" Sequence="7070" Review="Y"/>
+	<Species EnglishName="Wedge-tailed Shearwater" Sequence="7510" Review="Y"/>
+	<Species EnglishName="Great Shearwater" Sequence="7680" Review="Y"/>
+	<Species EnglishName="Newell's Shearwater" Sequence="7970" Review="Y"/>
+	<Species EnglishName="Ringed Storm-Petrel" Sequence="8000" Review="Y"/>
+	<Species EnglishName="Wedge-rumped Storm-Petrel" Sequence="8224" Review="Y"/>
+	<Species EnglishName="Tristram's Storm-Petrel" Sequence="8510" Review="Y"/>
+	<Species EnglishName="Great Frigatebird" Sequence="8590" Review="Y"/>
+	<Species EnglishName="Lesser Frigatebird" Sequence="9350" Review="Y"/>
+	<Species EnglishName="Masked Booby" Sequence="9460" Review="Y"/>
+	<Species EnglishName="Nazca Booby" Sequence="9520" Review="Y"/>
+	<Species EnglishName="Red-footed Booby" Sequence="9770" Review="Y"/>
+	<Species EnglishName="Northern Gannet" Sequence="9840" Review="Y"/>
+	<Species EnglishName="Anhinga Anhinga" Sequence="9860" Review="Y"/>
+	<Species EnglishName="Tricolored Heron" Sequence="9930" Review="Y"/>
+	<Species EnglishName="White Ibis" Sequence="9970" Review="Y"/>
+	<Species EnglishName="Glossy Ibis" Sequence="10190" Review="Y"/>
+	<Species EnglishName="Roseate Spoonbill" Sequence="10860" Review="Y"/>
+	<Species EnglishName="Black Vulture" Sequence="10861" Review="Y"/>
+	<Species EnglishName="Swallow-tailed Kite" Sequence="11020" Review="Y"/>
+	<Species EnglishName="Mississippi Kite" Sequence="11040" Review="Y"/>
+	<Species EnglishName="Common Black Hawk" Sequence="12000" Review="Y"/>
+	<Species EnglishName="Gray Hawk" Sequence="12350" Review="Y"/>
+	<Species EnglishName="Snowy Owl" Sequence="12930" Review="Y"/>
+	<Species EnglishName="Elf Owl" Sequence="12990" Review="Y"/>
+	<Species EnglishName="Eurasian Wryneck" Sequence="13000" Review="Y"/>
+	<Species EnglishName="Red-headed Woodpecker" Sequence="13040" Review="Y"/>
+	<Species EnglishName="Crested Caracara" Sequence="13150" Review="Y"/>
+	<Species EnglishName="Eurasian Kestrel" Sequence="13300" Review="Y"/>
+	<Species EnglishName="Gyrfalcon" Sequence="13310" Review="Y"/>
+	<Species EnglishName="Greater Pewee" Sequence="13410" Review="Y"/>
+	<Species EnglishName="Eastern Wood-Pewee" Sequence="13540" Review="Y"/>
+	<Species EnglishName="Yellow-bellied Flycatcher" Sequence="13580" Review="Y"/>
+	<Species EnglishName="Alder Flycatcher" Sequence="13620" Review="Y"/>
+	<Species EnglishName="Buff-breasted Flycatcher" Sequence="13680" Review="Y"/>
+	<Species EnglishName="Nutting's Flycatcher" Sequence="14140" Review="Y"/>
+	<Species EnglishName="Great Crested Flycatcher" Sequence="14170" Review="Y"/>
+	<Species EnglishName="Sulphur-bellied Flycatcher" Sequence="14270" Review="Y"/>
+	<Species EnglishName="Couch's Kingbird" Sequence="14310" Review="Y"/>
+	<Species EnglishName="Thick-billed Kingbird" Sequence="14340" Review="Y"/>
+	<Species EnglishName="Fork-tailed Flycatcher" Sequence="14400" Review="Y"/>
+	<Species EnglishName="Brown Shrike" Sequence="14410" Review="Y"/>
+	<Species EnglishName="White-eyed Vireo" Sequence="14420" Review="Y"/>
+	<Species EnglishName="Blue-headed Vireo" Sequence="14560" Review="Y"/>
+	<Species EnglishName="Blue Jay" Sequence="14561" Review="Y"/>
+	<Species EnglishName="Eurasian Skylark" Sequence="15050" Review="Y"/>
+	<Species EnglishName="Cave Swallow" Sequence="15200" Review="Y"/>
+	<Species EnglishName="Winter Wren" Sequence="15250" Review="Y"/>
+	<Species EnglishName="Sedge Wren" Sequence="15700" Review="Y"/>
+	<Species EnglishName="Dusky Warbler" Sequence="15770" Review="Y"/>
+	<Species EnglishName="Arctic/Kamchatka Leaf Warbler" Sequence="15879" Review="Y"/>
+	<Species EnglishName="Lanceolated Warbler" Sequence="15880" Review="Y"/>
+	<Species EnglishName="Bluethroat" Sequence="15890" Review="Y"/>
+	<Species EnglishName="Red-flanked Bluetail" Sequence="16250" Review="Y"/>
+	<Species EnglishName="Taiga Flycatcher" Sequence="16430" Review="Y"/>
+	<Species EnglishName="Stonechat" Sequence="16670" Review="Y"/>
+	<Species EnglishName="Northern Wheatear" Sequence="16680" Review="Y"/>
+	<Species EnglishName="Veery" Sequence="16720" Review="Y"/>
+	<Species EnglishName="Gray-cheeked Thrush" Sequence="16870" Review="Y"/>
+	<Species EnglishName="Wood Thrush" Sequence="16950" Review="Y"/>
+	<Species EnglishName="Eyebrowed Thrush" Sequence="16960" Review="Y"/>
+	<Species EnglishName="Rufous-backed Robin" Sequence="17050" Review="Y"/>
+	<Species EnglishName="Curve-billed Thrasher" Sequence="17120" Review="Y"/>
+	<Species EnglishName="Eastern Yellow Wagtail" Sequence="17230" Review="Y"/>
+	<Species EnglishName="Gray Wagtail" Sequence="17390" Review="Y"/>
+	<Species EnglishName="White Wagtail" Sequence="17430" Review="Y"/>
+	<Species EnglishName="Olive-backed Pipit" Sequence="17480" Review="Y"/>
+	<Species EnglishName="Brambling" Sequence="17500" Review="Y"/>
+	<Species EnglishName="Common Rosefinch" Sequence="17510" Review="Y"/>
+	<Species EnglishName="Black Rosy-Finch" Sequence="17530" Review="Y"/>
+	<Species EnglishName="Common Redpoll" Sequence="17540" Review="Y"/>
+	<Species EnglishName="White-winged Crossbill" Sequence="17600" Review="Y"/>
+	<Species EnglishName="Smith's Longspur" Sequence="17610" Review="Y"/>
+	<Species EnglishName="Snow Bunting" Sequence="17620" Review="Y"/>
+	<Species EnglishName="Little Bunting" Sequence="17630" Review="Y"/>
+	<Species EnglishName="Rustic Bunting" Sequence="17640" Review="Y"/>
+	<Species EnglishName="Cassin's Sparrow" Sequence="17660" Review="Y"/>
+	<Species EnglishName="Field Sparrow" Sequence="17670" Review="Y"/>
+	<Species EnglishName="Baird's Sparrow" Sequence="17680" Review="Y"/>
+	<Species EnglishName="LeConte's Sparrow" Sequence="17690" Review="Y"/>
+	<Species EnglishName="Streak-backed Oriole" Sequence="17700" Review="Y"/>
+	<Species EnglishName="Rusty Blackbird" Sequence="17710" Review="Y"/>
+	<Species EnglishName="Common Grackle" Sequence="17720" Review="Y"/>
+	<Species EnglishName="Worm-eating Warbler" Sequence="17730" Review="Y"/>
+	<Species EnglishName="Louisiana Waterthrush" Sequence="17740" Review="Y"/>
+	<Species EnglishName="Golden-winged Warbler" Sequence="17750" Review="Y"/>
+	<Species EnglishName="Blue-winged Warbler" Sequence="17760" Review="Y"/>
+	<Species EnglishName="Connecticut Warbler" Sequence="17770" Review="Y"/>
+	<Species EnglishName="Mourning Warbler" Sequence="17780" Review="Y"/>
+	<Species EnglishName="Cape May Warbler" Sequence="17790" Review="Y"/>
+	<Species EnglishName="Cerulean Warbler" Sequence="17800" Review="Y"/>
+	<Species EnglishName="Grace's Warbler" Sequence="17810" Review="Y"/>
+	<Species EnglishName="Golden-cheeked Warbler" Sequence="17820" Review="Y"/>
+	<Species EnglishName="Red-faced Warbler" Sequence="17830" Review="Y"/>
+	<Species EnglishName="Pyrrhuloxia" Sequence="17840" Review="Y"/>
+	<Species EnglishName="Varied Bunting" Sequence="17850" Review="Y"/>
+</Birds>
