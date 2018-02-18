@@ -116,10 +116,11 @@
                   data = response;
 
               });
-
+              xmlloc =  "http://azfo.org/ebird/CAListXMLFile.xml" // AZFO
+              //xmlloc = "xmldata/CAListXMLFile.xml" //Local
               var ABCdata = {
                   "crossDomain": true,
-                  "url": "xmldata/CAListXMLFile.xml",
+                  "url": xmlloc,
                   "method": "GET",
                   "async": false,
               }
