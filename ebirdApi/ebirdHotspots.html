@@ -101,7 +101,7 @@
               view.ui.add(basemapToggle, "bottom-right");
 
 
-              var urlAPI = "https://ebird.org/ws2.0/data/obs/US-AZ/recent/notable?back=10&cat=species&detail=full";
+              var urlAPI = "https://ebird.org/ws2.0/ref/hotspot/US-AZ?fmt=json";
               var ebirdAPI = {
                   "crossDomain": true,
                   //"url": "https://ebird.org/ws2.0/data/obs/US-AZ/recent",
@@ -119,14 +119,14 @@
 
               });
 
-              xmlloc =  "http://azfo.org/ebird/AZListXMLFile.xml" // AZFO
+              ////xmlloc =  "http://azfo.org/ebird/AZListXMLFile.xml" // AZFO
               //xmlloc = "xmldata/AZListXMLFile.xml" //Local
-              var ABCdata = {
-                  "crossDomain": true,
-                  "url": xmlloc,
-                  "method": "GET",
-                  "async": false,
-              }
+              //var ABCdata = {
+              //    "crossDomain": true,
+              //    "url": xmlloc,
+              //    "method": "GET",
+              //    "async": false,
+              //}
 
               $.ajax(ABCdata).done(function (response) {
                   console.log(response);
@@ -155,40 +155,40 @@
                       review = "";
                       var point = new Point(data[i].lng, data[i].lat);
 
-                      $(ABCdata).find('Species').each(function () {
-                          var species = $(this).attr('EnglishName');
+                      //$(ABCdata).find('Species').each(function () {
+                      //    var species = $(this).attr('EnglishName');
 
-                          if (data[i].comName == species) {
+                      //    if (data[i].comName == species) {
 
-                              review = $(this).attr('Review');
+                      //        review = $(this).attr('Review');
 
-                              var d = data[i].obsDt;
-                              var found = new Date(d.substring(0,10));
+                      //        var d = data[i].obsDt;
+                      //        var found = new Date(d.substring(0,10));
 
-                              //found.setDate(found.getDate());
+                      //        //found.setDate(found.getDate());
 
-                              inDateSpan = "N";
-                              if (found.getTime() >= setDate.getTime()) {
-                                  inDateSpan = "Y";
-                              }
+                      //        inDateSpan = "N";
+                      //        if (found.getTime() >= setDate.getTime()) {
+                      //            inDateSpan = "Y";
+                      //        }
 
                               
-                              switch (review) {
-                                  case "Y":
-                                      reviewSpecies = "Y";
-                                      break;
-                                  case "N":
-                                      sketchSpecies = "Y";
-                                      break;
-                                  case "":
-                                      notableSpecies ="Y";
-                                      break;
-                                  default:
-                                      all = "Y";
-                              }
-                          }
+                      //        switch (review) {
+                      //            case "Y":
+                      //                reviewSpecies = "Y";
+                      //                break;
+                      //            case "N":
+                      //                sketchSpecies = "Y";
+                      //                break;
+                      //            case "":
+                      //                notableSpecies ="Y";
+                      //                break;
+                      //            default:
+                      //                all = "Y";
+                      //        }
+                      //    }
                           
-                      })
+                      //})
 
 
                       // Create a symbol for drawing the point
@@ -268,34 +268,34 @@
                           }
                       });
 
-                      show = "N";
+                      //show = "N";
 
-                      switch (selection) {
-                          case "Review Species":
-                              if(review =="Y"){show="Y"}
-                              break;
-                          case "Sketch Species":
-                              if (review == "N") {show = "Y"};
-                              break;
-                          case "Notable Species":
-                              if (review == "") { show = "Y" };
-                              break;
-                          default:
-                              show ="Y"
-                      }
+                      //switch (selection) {
+                      //    case "Review Species":
+                      //        if(review =="Y"){show="Y"}
+                      //        break;
+                      //    case "Sketch Species":
+                      //        if (review == "N") {show = "Y"};
+                      //        break;
+                      //    case "Notable Species":
+                      //        if (review == "") { show = "Y" };
+                      //        break;
+                      //    default:
+                      //        show ="Y"
+                      //}
 
 
-                      if (show == "Y" && inDateSpan == "Y") {
+                      //if (show == "Y" && inDateSpan == "Y") {
                           // Add the line graphic to the view's GraphicsLayer
                           view.graphics.add(pointGraphic);
                          
-                      }
+                      //}
                       
                                            
-                      review = "";
-                      reviewSpecies = "N";
-                      sketchSpecies = "N";
-                      notableSpecies = "N";
+                      //review = "";
+                      //reviewSpecies = "N";
+                      //sketchSpecies = "N";
+                      //notableSpecies = "N";
 
                   }
               }
