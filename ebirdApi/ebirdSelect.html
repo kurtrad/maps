@@ -202,11 +202,16 @@
                           
                       })
 
-
+                      if (data[i].obsValid == true) {
+                          color = [0, 128, 0];
+                      }
+                      else {
+                          color = [141, 182, 0];
+                      }
                       // Create a symbol for drawing the point
                       var markerSymbol = {
                           type: "simple-marker", // autocasts as new SimpleMarkerSymbol()
-                          color: [0, 128, 0], //green
+                          color: color, //green
                           outline: { // autocasts as new SimpleLineSymbol()
                               color: [0, 100, 0],
                               width: 2
@@ -214,10 +219,17 @@
                       };
 
                       if (review == "Y") {
+                          if (data[i].obsValid == true){
+                              color = [241, 0, 0];
+                          }
+                          else {
+                              color = [255, 156, 187];
+                          }
+
                           // Create a symbol for drawing the point
                           var markerSymbol = {
                               type: "simple-marker", // autocasts as new SimpleMarkerSymbol()
-                              color: [255, 0, 0], //red
+                              color: color, //red
                               outline: { // autocasts as new SimpleLineSymbol()
                                   color: [128, 0, 0],
                                   width: 2
@@ -227,12 +239,18 @@
                           
                       }
                       if (review == "N") {
+                          if (data[i].obsValid == true) {
+                              color = [0, 0, 255];
+                          }
+                          else {
+                              color = [49, 140, 168];
+                          }
                           // Create a symbol for drawing the point
                           var markerSymbol = {
                               type: "simple-marker", // autocasts as new SimpleMarkerSymbol()
-                              color: [0, 0, 255], //blue
+                              color: color, //blue
                               outline: { // autocasts as new SimpleLineSymbol()
-                                  color: [65, 105, 255],
+                                  color: [0, 0, 102],
                                   width: 2
                               }
                           };
@@ -247,6 +265,7 @@
                           Location: data[i].locName,
                           Nunmber: data[i].howMany,
                           Observer: data[i].firstName + ' ' + data[i].lastName,
+                          Confirmed: data[i].obsValid,
                           Checklist: "https://ebird.org/view/checklist/" + data[i].subId
                       };
 
@@ -276,6 +295,8 @@
                                       fieldName: "Number"
                                   }, {
                                       fieldName: "Observer"
+                                  }, {
+                                      fieldName: "Confirmed"
                                   }, {
                                       fieldName: "Checklist"
                                   }]
@@ -340,6 +361,8 @@
     <div id="viewDiv"></div>
     <div id ="ebird">
         <a>eBird Notable Birds API AZ Rarites, Green=Notable, Blue=Sketch details, Red=Review Species </a>
+        <br />
+        <a>Lighter dots = unconfirmed sighting</a>
         <br />
         <a>Click symbol on map to see details.</a>
          <br />
