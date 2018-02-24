@@ -100,24 +100,25 @@
               // Add widget to the top right corner of the view
               view.ui.add(basemapToggle, "bottom-right");
 
+              loadSpecies();
 
-              var urlAPI = "https://ebird.org/ws2.0/ref/hotspot/US-AZ?fmt=json";
-              var ebirdAPI = {
-                  "crossDomain": true,
-                  //"url": "https://ebird.org/ws2.0/data/obs/US-AZ/recent",
-                  "url": urlAPI,
-                  "method": "GET",
-                  "async": false,
-                  "headers": {
-                      "X-eBirdApiToken": "npobnnr5u7fo"
-                  }
-              }
+              //var urlAPI = "https://ebird.org/ws2.0/ref/hotspot/US-AZ?fmt=json&back=1";
+              //var ebirdAPI = {
+              //    "crossDomain": true,
+              //    //"url": "https://ebird.org/ws2.0/data/obs/US-AZ/recent",
+              //    "url": urlAPI,
+              //    "method": "GET",
+              //    "async": false,
+              //    "headers": {
+              //        "X-eBirdApiToken": "npobnnr5u7fo"
+              //    }
+              //}
 
-              $.ajax(ebirdAPI).done(function (response) {
-                  console.log(response);
-                  data = response;
+              //$.ajax(ebirdAPI).done(function (response) {
+              //    console.log(response);
+              //    data = response;
 
-              });
+              //});
 
               ////xmlloc =  "http://azfo.org/ebird/AZListXMLFile.xml" // AZFO
               //xmlloc = "xmldata/AZListXMLFile.xml" //Local
@@ -149,7 +150,27 @@
 
                   var setDate = new Date();
                   //add a day to the date
-                  setDate.setDate(setDate.getDate() - daysback);
+                  //setDate.setDate(setDate.getDate() - daysback);
+
+
+                  var urlAPI = "https://ebird.org/ws2.0/ref/hotspot/US-AZ?fmt=json&back=" + daysback ;
+                  //var urlAPI = "https://ebird.org/ws2.0/ref/hotspot/US-AZ?fmt=json&back=1";
+                  var ebirdAPI = {
+                      "crossDomain": true,
+                      //"url": "https://ebird.org/ws2.0/data/obs/US-AZ/recent",
+                      "url": urlAPI,
+                      "method": "GET",
+                      "async": false,
+                      "headers": {
+                          "X-eBirdApiToken": "npobnnr5u7fo"
+                      }
+                  }
+
+                  $.ajax(ebirdAPI).done(function (response) {
+                      console.log(response);
+                      data = response;
+
+                  });
 
                   for (i = 0; i < data.length; ++i) {
                       review = "";
@@ -230,11 +251,8 @@
 
                       // Create an object for storing attributes related to the line
                       var pointAtt = {
-                          Name: data[i].comName,
-                          Date: data[i].obsDt,
-                          Location: data[i].locName,
-                          Nunmber: data[i].howMany,
-                          Observer: data[i].firstName + ' ' + data[i].lastName
+                          Name: data[i].locName,
+                          Checklist: "https://ebird.org/hotspot/"+ data[i].locId
                       };
 
                       /*******************************************
@@ -255,14 +273,8 @@
                                   type: "fields",
                                   fieldInfos: [{
                                       fieldName: "Name"
-                                  }, {
-                                      fieldName: "Date"
-                                  }, {
-                                      fieldName: "Location"
-                                  }, {
-                                      fieldName: "Number"
-                                  }, {
-                                      fieldName: "Observer"
+                                  },  {
+                                      fieldName: "Checklist"
                                   }]
                               }]
                           }
@@ -308,7 +320,7 @@
         
         // Create events' callback functions
         function updateElevationMode(event) {
-            selection = document.getElementById("modeSelect").value;
+            //selection = document.getElementById("modeSelect").value;
             daysback = document.getElementById("days").value;
 
                 //view.graphics.removeAll()
@@ -331,25 +343,31 @@
     <div id="elevationDiv">
         <table>
       <tr>
-        <td class="right">Species</td>
-        <td>
+        <!--<td class="right">Species</td>-->
+        <!--<td>
           <select id="modeSelect">
             <option value="All" selected>All</option>
             <option value="Review Species">Review Species</option>
             <option value="Sketch Species">Sketch Species</option>
               <option value="Notable Species">Notable Species</option>
           </select>
-        </td>
+        </td>-->
       </tr>
       <tr>
         <td class="right">days back</td>
-        <td>
-            <select id="days">
-            <option value="10" selected>10</option>
-            <option value="5">5</option>
-            <option value="3">3</option>
-              <option value="1">1</option>
-          </select></td>
+          <td>
+              <select id="days">
+                  <option value="10" selected>10</option>
+                  <option value="30">30</option>
+                  <option value="20">20</option>
+                  <option value="15">15</option>
+                  <option value="7">7</option>
+                  <option value="5">5</option>
+                  <option value="4">4</option>
+                  <option value="3">3</option>
+                  <option value="2">2</option>
+                  <option value="1">1</option>
+              </select></td>
       </tr>
       </table>
   </div>
