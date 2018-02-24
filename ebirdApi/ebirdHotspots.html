@@ -50,7 +50,9 @@
       var sketchSpecies;
       var notableSpecies;
       var daysback = 10;
-      var inDateSpan="N"
+      var selection = "US-AZ";
+      var inDateSpan = "N";
+      var mapCenter = [-112, 33]
 
       require([
           "esri/Map",
@@ -83,7 +85,7 @@
               });
 
               var view = new MapView({
-                  center: [-112, 33],
+                  center: mapCenter,
                   container: "viewDiv",
                   map: map,
                   zoom: 7
@@ -147,13 +149,13 @@
               function loadSpecies() {
 
                   view.graphics.removeAll();
+                  view.center = mapCenter;
 
                   var setDate = new Date();
                   //add a day to the date
                   //setDate.setDate(setDate.getDate() - daysback);
-
-
-                  var urlAPI = "https://ebird.org/ws2.0/ref/hotspot/US-AZ?fmt=json&back=" + daysback ;
+                  var urlAPI = "https://ebird.org/ws2.0/ref/hotspot/" + selection + "?fmt=json&back=" + daysback;
+                  //var urlAPI = "https://ebird.org/ws2.0/ref/hotspot/US-AZ?fmt=json&back=" + daysback ;
                   //var urlAPI = "https://ebird.org/ws2.0/ref/hotspot/US-AZ?fmt=json&back=1";
                   var ebirdAPI = {
                       "crossDomain": true,
@@ -320,8 +322,22 @@
         
         // Create events' callback functions
         function updateElevationMode(event) {
-            //selection = document.getElementById("modeSelect").value;
+            selection = document.getElementById("modeSelect").value;
             daysback = document.getElementById("days").value;
+
+            switch (selection) {
+                case "US-AZ":
+                    mapCenter = [-112, 33];
+                    break;
+                case "US-CA":
+                    mapCenter = [-119, 37];
+                    break;
+                case "US-NM":
+                    mapCenter = [-106, 34];
+                    break;
+                default:
+                    mapCenter = [-112, 33];
+            }
 
                 //view.graphics.removeAll()
             loadSpecies();
@@ -345,15 +361,14 @@
     <div id="elevationDiv">
         <table>
       <tr>
-        <!--<td class="right">Species</td>-->
-        <!--<td>
+        <td class="right">State</td>
+        <td>
           <select id="modeSelect">
-            <option value="All" selected>All</option>
-            <option value="Review Species">Review Species</option>
-            <option value="Sketch Species">Sketch Species</option>
-              <option value="Notable Species">Notable Species</option>
+            <option value="US-AZ" selected>AZ</option>
+            <option value="US-CA">CA</option>
+              <option value="US-NM">NM</option>
           </select>
-        </td>-->
+        </td>
       </tr>
       <tr>
         <td class="right">Days back</td>
