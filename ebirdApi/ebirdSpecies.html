@@ -52,7 +52,7 @@
       var daysback = 10;
       var selection = "US-AZ";
       var inDateSpan = "N";
-      var mapCenter = [-112, 33]
+      var mapCenter = [-98, 39]
 
       require([
           "esri/Map",
@@ -150,11 +150,13 @@
 
                   view.graphics.removeAll();
                   view.center = mapCenter;
+                  view.zoom = 5;
 
                   var setDate = new Date();
                   //add a day to the date
                   //setDate.setDate(setDate.getDate() - daysback);
-                  var urlAPI = "https://ebird.org/ws2.0/ref/hotspot/" + selection + "?fmt=json&back=" + daysback;
+                  var urlAPI = "https://ebird.org/ws2.0/data/obs/US/recent/heegul";
+                  //var urlAPI = "https://ebird.org/ws2.0/ref/hotspot/" + selection + "?fmt=json&back=" + daysback;
                   //var urlAPI = "https://ebird.org/ws2.0/ref/hotspot/US-AZ?fmt=json&back=" + daysback ;
                   //var urlAPI = "https://ebird.org/ws2.0/ref/hotspot/US-AZ?fmt=json&back=1";
                   var ebirdAPI = {
