@@ -50,9 +50,10 @@
       var sketchSpecies;
       var notableSpecies;
       var daysback = 10;
-      var selection = "US-AZ";
+      var selection = "heegul";
       var inDateSpan = "N";
       var mapCenter = [-98, 39]
+      var country = "US";
 
       require([
           "esri/Map",
@@ -149,13 +150,13 @@
               function loadSpecies() {
 
                   view.graphics.removeAll();
-                  view.center = mapCenter;
+                  view.center = [-98, 39];
                   view.zoom = 5;
 
                   var setDate = new Date();
                   //add a day to the date
                   //setDate.setDate(setDate.getDate() - daysback);
-                  var urlAPI = "https://ebird.org/ws2.0/data/obs/US/recent/heegul";
+                  var urlAPI = "https://ebird.org/ws2.0/data/obs/" + country + "/recent/" + selection;
                   //var urlAPI = "https://ebird.org/ws2.0/ref/hotspot/" + selection + "?fmt=json&back=" + daysback;
                   //var urlAPI = "https://ebird.org/ws2.0/ref/hotspot/US-AZ?fmt=json&back=" + daysback ;
                   //var urlAPI = "https://ebird.org/ws2.0/ref/hotspot/US-AZ?fmt=json&back=1";
@@ -254,10 +255,20 @@
 
 
                       // Create an object for storing attributes related to the line
+                      // Create an object for storing attributes related to the line
                       var pointAtt = {
-                          Name: data[i].locName,
-                          Checklist: "https://ebird.org/hotspot/"+ data[i].locId
+                          Name: data[i].comName,
+                          Date: data[i].obsDt,
+                          Location: data[i].locName,
+                          Nunmber: data[i].howMany,
+                          //Observer: data[i].firstName + ' ' + data[i].lastName,
+                          Confirmed: data[i].obsValid,
+                          Checklist: "https://ebird.org/hotspot/" + data[i].locId
                       };
+
+                      var center = [data[i].lng,data[i].lat] ;
+
+                      view.center = center;
 
                       /*******************************************
                        * Create a new graphic and add the geometry,
@@ -277,7 +288,17 @@
                                   type: "fields",
                                   fieldInfos: [{
                                       fieldName: "Name"
-                                  },  {
+                                  }, {
+                                      fieldName: "Date"
+                                  }, {
+                                      fieldName: "Location"
+                                  }, {
+                                      fieldName: "Number"
+                                  //}, {
+                                  //    fieldName: "Observer"
+                                  }, {
+                                      fieldName: "Confirmed"
+                                  }, {
                                       fieldName: "Checklist"
                                   }]
                               }]
@@ -314,18 +335,28 @@
                       //notableSpecies = "N";
 
                   }
+
               }
        
         //view.ui.add("elevationDiv", "top-right");
 
         // Register events to the controls
-        var modeSelect = document.getElementById("modeSelect");
+        // var modeSelect = document.getElementById("modeSelect");
+              window.onload = function () {
+                  var button = document.getElementById("button");
+                  button.addEventListener("click", updateElevationMode)
+              }
+             
+                
+              //var button = document.getElementById("button")
+              //button.onclick = updateElevationMode();
         window.addEventListener("change", updateElevationMode);
         
         // Create events' callback functions
         function updateElevationMode(event) {
             selection = document.getElementById("modeSelect").value;
             daysback = document.getElementById("days").value;
+            country = document.getElementById("countrySelect").value;
 
             switch (selection) {
                 case "US-AZ":
@@ -362,16 +393,24 @@
     </div>
     <div id="elevationDiv">
         <table>
-      <tr>
-        <td class="right">State</td>
-        <td>
-          <select id="modeSelect">
-            <option value="US-AZ" selected>AZ</option>
-            <option value="US-CA">CA</option>
-              <option value="US-NM">NM</option>
-          </select>
-        </td>
-      </tr>
+            <tr>
+                <td class="right">Country</td>
+
+                <td>
+                    <select id="countrySelect">
+                    <option value="US" selected>U.S.</option>
+                    <option value="MX">Mexico</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="right">Species</td>
+                <td>
+                    <input id="modeSelect"/>
+                    <input id="button" type="button" value="Click" />
+                    
+                </td>
+            </tr>
       <tr>
         <td class="right">Days back</td>
           <td>
