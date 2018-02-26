@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+﻿<!DOCTYPE HTML5>
 <html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Arizona Rarities</title>
-    <script src="Scripts/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="Scripts/jquery-3.3.1.js"></script>
     <style>
         html, body, #viewDiv {
             padding: 0;
@@ -33,12 +33,9 @@
     </style>
     <link rel="stylesheet" href="https://js.arcgis.com/4.6/esri/css/main.css">
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/dojo/1.6.1/dijit/themes/claro/claro.css">
-    <script>dojoConfig = { async: true, parseOnLoad: true }</script>
-    <script src="https://js.arcgis.com/4.6/"></script>
-    <script>
-        require(["dojo/parser", "dijit/form/ComboBox"]);
-    </script>
-    <script>
+    <script type="text/javascript">dojoConfig = { async: true, parseOnLoad: true }</script>
+    <script type="text/javascript" src="https://js.arcgis.com/4.6/"></script>
+    <script type="text/javascript">
         var lat;
         var lng;
         var data;
@@ -144,14 +141,19 @@
                     store: lobStore,
                 }, "divLobSelect").startup();
 
-                var LobSelect = dom.getElementById("divLobSelect");
-                LobSelect.addEventListener("change", onchangeSelect);
+            
+                window.onload = function () {
+                    var LobSelect = document.getElementById("divLobSelect");
+                    LobSelect.addEventListener("change", onchangeSelect);
+
+                }
+               
 
                 //view.ui.add("divLobSelect", "top-right");
 
                 function onchangeSelect() {
                     console.log("inside change callback");
-                    selection = dom.getElementById("divLobSelect").value;
+                    selection = document.getElementById("divLobSelect").value;
                 }
 
                 loadSpecies();
@@ -303,12 +305,12 @@
   <div id="viewDiv"></div>
   <div id="elevationDiv">
     <table>
-      <tr>
-        <td class="right">mode</td>
-        <td>
-          <select id="divLobSelect"></select>
-        </td>
-      </tr>
+        <tr>
+            <td class="right">Select</td>
+            <td>
+                <select  id="divLobSelect"  dojotype="dijit.form.ComboBox" "ComboBox" name="divLobSelect"/>
+            </td>
+        </tr>
       </table>
   </div>
 </body>
