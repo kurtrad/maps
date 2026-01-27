@@ -105,40 +105,13 @@
 
               loadSpecies();
 
-              //var urlAPI = "https://ebird.org/ws2.0/ref/hotspot/US-AZ?fmt=json&back=1";
-              //var ebirdAPI = {
-              //    "crossDomain": true,
-              //    //"url": "https://ebird.org/ws2.0/data/obs/US-AZ/recent",
-              //    "url": urlAPI,
-              //    "method": "GET",
-              //    "async": false,
-              //    "headers": {
-              //        "X-eBirdApiToken": "npobnnr5u7fo"
-              //    }
-              //}
-
-              //$.ajax(ebirdAPI).done(function (response) {
-              //    console.log(response);
-              //    data = response;
-
-              //});
-
-              ////xmlloc =  "http://azfo.org/ebird/AZListXMLFile.xml" // AZFO
-              //xmlloc = "xmldata/AZListXMLFile.xml" //Local
-              //var ABCdata = {
-              //    "crossDomain": true,
-              //    "url": xmlloc,
-              //    "method": "GET",
-              //    "async": false,
-              //}
+              
 
               $.ajax(ABCdata).done(function (response) {
                   console.log(response);
                   ABCdata = response;
 
-                  //$(ABCdata).find('Species').each(function () {
-                  //    var species = $(this).attr('EnglishName');
-                  //})
+                  
               });
 
 

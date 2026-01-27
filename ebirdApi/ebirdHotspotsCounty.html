@@ -1,0 +1,540 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>Arizona Rarities</title>
+    <script src="Scripts/jquery-3.3.1.js"></script>
+    <style>
+        html,
+        body,
+        #viewDiv {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        #elevationDiv {
+            font-family: monospace;
+            padding: 12px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+        }
+
+        .right {
+            text-align: right;
+        }
+
+        select {
+            width: 185px;
+        }
+
+            select option {
+                width: 180px;
+            }
+    </style>
+
+    <link rel="stylesheet" href="https://js.arcgis.com/4.6/esri/css/main.css">
+    <script src="https://js.arcgis.com/4.6/"></script>
+
+    <script>
+        var lat;
+        var lng;
+        var data;
+        var ABCdata;
+        var species;
+        var review;
+        var selection;
+        var reviewSpecies;
+        var sketchSpecies;
+        var notableSpecies;
+        var daysback = 10;
+        var selection = "US-AZ";
+        var inDateSpan = "N";
+        var mapCenter = [-112, 33]
+
+        require([
+            "esri/Map",
+            "esri/geometry/Point",
+            "esri/views/MapView",
+            "esri/widgets/BasemapToggle",
+            "esri/widgets/Legend",
+            "esri/symbols/SimpleMarkerSymbol",
+            "esri/Graphic",
+            "esri/layers/GraphicsLayer",
+            "dojo/store/Memory",
+            "dijit/form/ComboBox",
+            "dojo/on",
+            "dojo/domReady!"
+        ], function (
+            Map,
+            Point,
+            MapView,
+            BasemapToggle,
+            Legend,
+            SimpleMarkerSymbol,
+            Graphic,
+            GraphicsLayer,
+            Memory,
+            ComboBox,
+            on
+        ) {
+                var map = new Map({
+                    basemap: "streets"
+                });
+
+                var view = new MapView({
+                    center: mapCenter,
+                    container: "viewDiv",
+                    map: map,
+                    zoom: 7
+                });
+
+                var basemapToggle = new BasemapToggle({
+                    view: view,  // The view that provides access to the map's "streets" basemap
+                    nextBasemap: "hybrid"  // Allows for toggling to the "hybrid" basemap
+                });
+
+
+                view.ui.add("elevationDiv", "top-left");
+                view.ui.add("ebird", "bottom-left");
+                // Add widget to the top right corner of the view
+                view.ui.add(basemapToggle, "bottom-right");
+
+                loadSpecies();
+
+                //var urlAPI = "https://ebird.org/ws2.0/ref/hotspot/US-AZ?fmt=json&back=1";
+                //var ebirdAPI = {
+                //    "crossDomain": true,
+                //    //"url": "https://ebird.org/ws2.0/data/obs/US-AZ/recent",
+                //    "url": urlAPI,
+                //    "method": "GET",
+                //    "async": false,
+                //    "headers": {
+                //        "X-eBirdApiToken": "npobnnr5u7fo"
+                //    }
+                //}
+
+                //$.ajax(ebirdAPI).done(function (response) {
+                //    console.log(response);
+                //    data = response;
+
+                //});
+
+                ////xmlloc =  "http://azfo.org/ebird/AZListXMLFile.xml" // AZFO
+                //xmlloc = "xmldata/AZListXMLFile.xml" //Local
+                //var ABCdata = {
+                //    "crossDomain": true,
+                //    "url": xmlloc,
+                //    "method": "GET",
+                //    "async": false,
+                //}
+
+                $.ajax(ABCdata).done(function (response) {
+                    console.log(response);
+                    ABCdata = response;
+
+                    //$(ABCdata).find('Species').each(function () {
+                    //    var species = $(this).attr('EnglishName');
+                    //})
+                });
+
+
+                loadSpecies();
+
+                /*************************
+                * Create a point graphic
+                *************************/
+                function loadSpecies() {
+
+                    view.graphics.removeAll();
+                    view.center = mapCenter;
+
+                    var setDate = new Date();
+                    //add a day to the date
+                    //setDate.setDate(setDate.getDate() - daysback);
+                    var urlAPI = "https://ebird.org/ws2.0/ref/hotspot/" + selection + "?fmt=json&back=" + daysback;
+                    //var urlAPI = "https://ebird.org/ws2.0/ref/hotspot/US-AZ?fmt=json&back=" + daysback ;
+                    //var urlAPI = "https://ebird.org/ws2.0/ref/hotspot/US-AZ?fmt=json&back=1";
+                    var ebirdAPI = {
+                        "crossDomain": true,
+                        //"url": "https://ebird.org/ws2.0/data/obs/US-AZ/recent",
+                        "url": urlAPI,
+                        "method": "GET",
+                        "async": false,
+                        "headers": {
+                            "X-eBirdApiToken": "npobnnr5u7fo"
+                        }
+                    }
+
+                    $.ajax(ebirdAPI).done(function (response) {
+                        console.log(response);
+                        data = response;
+
+                    });
+
+                    window.onload = function (e) {
+
+                        var urlAPI = "https://ebird.org/ws2.0/ref/region/list/subnational2/MX-BCN.json?key=npobnnr5u7fo";
+
+                        var selectBOX = {
+                            "crossDomain": true,
+                            //"url": "https://ebird.org/ws2.0/data/obs/US-AZ/recent",
+                            "url": urlAPI,
+                            "method": "GET",
+                            "async": false,
+                            "headers": {
+                                "X-eBirdApiToken": "npobnnr5u7fo"
+                            }
+                        }
+
+                        $.ajax(selectBOX).done(function (response) {
+                            console.log(response);
+                            data = response;
+
+                        });
+
+                        loadCombo();
+
+                        function loadCombo() {
+                            var sel = document.getElementById('modeSelect') // find the drop down
+                            for (var i in data) { // loop through all elements
+                                var opt = document.createElement("option"); // Create the new element
+                                opt.value = data[i].code; // set the value
+                                opt.text = data[i].name; // set the text
+
+                                sel.appendChild(opt); // add it to the select
+                            }
+                        }
+                    }
+
+                    for (i = 0; i < data.length; ++i) {
+                        review = "";
+
+                        if (data[i].numSpeciesAllTime >= 100) {
+                            var point = new Point(data[i].lng, data[i].lat);
+
+                            //$(ABCdata).find('Species').each(function () {
+                            //    var species = $(this).attr('EnglishName');
+
+                            //    if (data[i].comName == species) {
+
+                            //        review = $(this).attr('Review');
+
+                            //        var d = data[i].obsDt;
+                            //        var found = new Date(d.substring(0,10));
+
+                            //        //found.setDate(found.getDate());
+
+                            //        inDateSpan = "N";
+                            //        if (found.getTime() >= setDate.getTime()) {
+                            //            inDateSpan = "Y";
+                            //        }
+
+
+                            //        switch (review) {
+                            //            case "Y":
+                            //                reviewSpecies = "Y";
+                            //                break;
+                            //            case "N":
+                            //                sketchSpecies = "Y";
+                            //                break;
+                            //            case "":
+                            //                notableSpecies ="Y";
+                            //                break;
+                            //            default:
+                            //                all = "Y";
+                            //        }
+                            //    }
+
+                            //})
+
+
+
+                            // Create a symbol for drawing the point
+                            var markerSymbol = {
+                                type: "simple-marker", // autocasts as new SimpleMarkerSymbol()
+                                color: [0, 128, 0], //green
+                                outline: { // autocasts as new SimpleLineSymbol()
+                                    color: [0, 100, 0],
+                                    width: 2
+                                }
+                            };
+
+                            if (review == "Y") {
+                                // Create a symbol for drawing the point
+                                var markerSymbol = {
+                                    type: "simple-marker", // autocasts as new SimpleMarkerSymbol()
+                                    color: [255, 0, 0], //red
+                                    outline: { // autocasts as new SimpleLineSymbol()
+                                        color: [128, 0, 0],
+                                        width: 2
+                                    }
+                                };
+
+
+                            }
+                            if (review == "N") {
+                                // Create a symbol for drawing the point
+                                var markerSymbol = {
+                                    type: "simple-marker", // autocasts as new SimpleMarkerSymbol()
+                                    color: [0, 0, 255], //blue
+                                    outline: { // autocasts as new SimpleLineSymbol()
+                                        color: [65, 105, 255],
+                                        width: 2
+                                    }
+                                };
+
+                            }
+
+
+                            // Create an object for storing attributes related to the line
+                            var pointAtt = {
+                                Name: data[i].locName,
+                                Checklist: "https://ebird.org/hotspot/" + data[i].locId
+                            };
+
+                            /*******************************************
+                             * Create a new graphic and add the geometry,
+                             * symbol, and attributes to it. You may also
+                             * add a simple PopupTemplate to the graphic.
+                             * This allows users to view the graphic's
+                             * attributes when it is clicked.
+                             ******************************************/
+
+                            var pointGraphic = new Graphic({
+                                geometry: point,
+                                symbol: markerSymbol,
+                                attributes: pointAtt,
+                                popupTemplate: {  // autocasts as new PopupTemplate()
+                                    title: "{Name}",
+                                    content: [{
+                                        type: "fields",
+                                        fieldInfos: [{
+                                            fieldName: "Name"
+                                        }, {
+                                            fieldName: "Checklist"
+                                        }]
+                                    }]
+                                }
+                            });
+
+                            //show = "N";
+
+                            //switch (selection) {
+                            //    case "Review Species":
+                            //        if(review =="Y"){show="Y"}
+                            //        break;
+                            //    case "Sketch Species":
+                            //        if (review == "N") {show = "Y"};
+                            //        break;
+                            //    case "Notable Species":
+                            //        if (review == "") { show = "Y" };
+                            //        break;
+                            //    default:
+                            //        show ="Y"
+                            //}
+
+
+                            //if (show == "Y" && inDateSpan == "Y") {
+                            // Add the line graphic to the view's GraphicsLayer
+                            view.graphics.add(pointGraphic);
+
+                            //}
+
+
+                            //review = "";
+                            //reviewSpecies = "N";
+                            //sketchSpecies = "N";
+                            //notableSpecies = "N";
+
+                        }
+                    }
+                }
+
+                //view.ui.add("elevationDiv", "top-right");
+
+
+
+                // Register events to the controls
+                var modeSelect = document.getElementById("modeSelect");
+                window.addEventListener("change", updateElevationMode);
+
+                // Create events' callback functions
+                function updateElevationMode(event) {
+                    selection = document.getElementById("modeSelect").value;
+                    daysback = document.getElementById("days").value;
+
+                    switch (selection) {
+                        case "US-AZ":
+                            mapCenter = [-112, 33];
+                            break;
+                        case "US-CA":
+                            mapCenter = [-119, 37];
+                            break;
+                        case "US-NM":
+                            mapCenter = [-106, 34];
+                            break;
+                        default:
+                            mapCenter = [-112, 33];
+                    }
+
+                    //view.graphics.removeAll()
+                    loadSpecies();
+
+                }
+                let firstPoint = null;
+                let secondPoint = null;
+
+                view.on("click", function (event) {
+                    view.hitTest(event).then(function () {
+                        const point = event.mapPoint;
+
+                        if (!firstPoint) {
+                            firstPoint = point;
+                            addPointGraphic(point, "red");
+                        } else if (!secondPoint) {
+                            secondPoint = point;
+                            addPointGraphic(point, "blue");
+
+                            onTwoPointsSelected(firstPoint, secondPoint);
+
+                            // Reset for next selection
+                            firstPoint = null;
+                            secondPoint = null;
+                        }
+                    });
+                });
+
+                function addPointGraphic(point, color) {
+                    const graphic = new Graphic({
+                        geometry: point,
+                        symbol: {
+                            type: "simple-marker",
+                            color: color,
+                            size: 10,
+                            outline: {
+                                color: "white",
+                                width: 1
+                            }
+                        }
+                    });
+                    view.graphics.add(graphic);
+                }
+
+                function onTwoPointsSelected(a, b) {
+                    console.log("Two points selected:", a, b);
+
+                    var key = "npobnnr5u7fo";
+
+                    var h1 = "https://api.ebird.org/v2/ref/hotspot/geo?dist=3&lat=" + a.latitude + "&lng=" + a.longitude + "&key=" + key;
+                    var h2 = "https://api.ebird.org/v2/ref/hotspot/geo?dist=3&lat=" + b.latitude + "&lng=" + b.longitude + "&key=" + key;
+
+                    //get the nearest hotspot source and target
+                    var hotspotSource = getData(h1);
+                    var hotspotTarget = getData(h2);
+
+                    // extract the code from hotspot
+                    var hotspotSourceCode1 = hotspotSource.split(',')[0].trim(); 
+                    var hotspotTargetCode2 = hotspotTarget.split(',')[0].trim(); 
+
+                    // Birdlist api
+                    var speciesListSourceUrl = "https://api.ebird.org/v2/product/spplist/" + hotspotSourceCode1 + "?key=npobnnr5u7fo";
+                    //bird list
+                    var hotspotSourceList = getData(speciesListSourceUrl);
+
+                    var speciesLisTargetUrl = "https://api.ebird.org/v2/product/spplist/" + hotspotTargetCode2 + "?key=npobnnr5u7fo";
+                    //bird list
+                    var hotspotTargetList = getData(speciesLisTargetUrl);
+
+                    //To find elements in listA that are not in listB:
+                    let diff = hotspotSourceList.filter(list => !hotspotTargetList.includes(list)); 
+
+                   // Join elements using the newline character
+                    var formattedList = diff.join("\n");
+
+                    //TODO
+                    // get the diff list and match to bird name
+
+                    alert(
+                        "Two points selected:\n" +
+                        "Hotspot A: " + hotspotSourceCode1 + "\n" +
+                        "Hotspot A: " + hotspotTargetCode2 + "\n" +
+                        "Species Diff: " + formattedList
+                    );
+
+                    // Optional: clear graphics after each pair
+                    // setTimeout(() => view.graphics.removeAll(), 500);
+                    // loadSpecies;
+                }
+
+                function getData(url) {
+
+                    var hotspotAPI = {
+                        "crossDomain": true,
+                        "url": url,
+                        "method": "GET",
+                        "async": false,
+                        "headers": {
+                            "X-eBirdApiToken": "npobnnr5u7fo"
+                        }
+                    }
+
+                    $.ajax(hotspotAPI).done(function (response) {
+                        console.log(response);
+                        data = response;
+                    });
+
+                    return data;
+
+                    // Optional: clear graphics after each pair
+                    // setTimeout(() => view.graphics.removeAll(), 500);
+                    // loadSpecies;
+                }
+            });
+
+
+    </script>
+</head>
+
+<body>
+    <div id="viewDiv"></div>
+    <div id="ebird">
+        <a>eBird Hotspots API AZ with recent sightings.</a>
+        <br />
+        <a>Days back dropdown is for days to go back where there are sightings for Hotspot.</a>
+        <br />
+        <a>Click symbol on map to see details.</a>
+        <br />
+        <a><i>Copyright - Kurt Radamaker</i></a>
+    </div>
+    <div id="elevationDiv">
+        <table>
+            <tr>
+                <td class="right">State</td>
+                <td>
+                    <select id="modeSelect">
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="right">Days back</td>
+                <td>
+                    <select id="days">
+                        <option value="10" selected>10</option>
+                        <option value="30">30</option>
+                        <option value="20">20</option>
+                        <option value="15">15</option>
+                        <option value="7">7</option>
+                        <option value="5">5</option>
+                        <option value="4">4</option>
+                        <option value="3">3</option>
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                    </select></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

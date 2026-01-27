@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html >
+<head>
+
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/dojo/1.6.1/dijit/themes/claro/claro.css">
+    <script src="Scripts/jquery-3.3.1.js"></script>
+    <script src="https://js.arcgis.com/3.9/"></script>
+    <script src="../Scripts/dojo.js"></script>
+    <script>dojoConfig = { parseOnLoad: true }</script>
+
+
+    <script>
+        require([
+            "dojo/store/Memory", "dijit/form/ComboBox", "dojo/domReady!"
+        ], function (Memory, ComboBox) {
+
+            var urlAPI = "https://ebird.org/ws2.0/ref/region/list/subnational2/US-AZ.json?key=npobnnr5u7fo";
+
+            //setDate.setDate(setDate.getDate() - daysback);
+            var ebirdAPI = {
+                "crossDomain": true,
+                //"url": "https://ebird.org/ws2.0/data/obs/US-AZ/recent",
+                "url": urlAPI,
+                "method": "GET",
+                "async": false,
+                "headers": {
+                    "X-eBirdApiToken": "npobnnr5u7fo"
+                }
+            }
+
+            $.ajax(ebirdAPI).done(function (response) {
+                console.log(response);
+                data = response;
+                
+            });
+
+            loadCombo();
+
+            function loadCombo() {
+                var sel = document.getElementById('stateSelect') // find the drop down
+                for (var i in data) { // loop through all elements
+                    var opt = document.createElement("option"); // Create the new element
+                    opt.value = data[i].code; // set the value
+                    opt.text = data[i].name; // set the text
+
+                    sel.appendChild(opt); // add it to the select
+                }
+            }
+
+            });
+
+            
+
+        //    var stateStore = new Memory({
+        //        data: [data]                
+        //    });
+
+            
+
+        //    var comboBox = new ComboBox({
+        //        id: "stateSelect",
+        //        name: "US-AZ-001",
+        //        value: "Apache",
+        //        store: stateStore,
+        //        searchAttr: "name"
+        //    }, "stateSelect").startup();
+        //});
+            
+	</script>
+</head>
+<body class="claro">
+    <select id="stateSelect">
+</select>
+
+</body>
+</html>

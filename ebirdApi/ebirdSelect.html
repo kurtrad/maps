@@ -107,9 +107,9 @@
 
               // place logo before text.
               //view.ui.add(logo, "bottom-left");
-              view.ui.add("ebird", "bottom-left");
+              view.ui.add("ebird", "bottom-right");
               // Add widget to the top right corner of the view
-              view.ui.add(basemapToggle, "bottom-right");
+              view.ui.add(basemapToggle, "top-right");
 
 
               var urlAPI = "https://ebird.org/ws2.0/data/obs/US-AZ/recent/notable?back=10&cat=species&detail=full";
@@ -130,9 +130,9 @@
 
               });
 
-              xmlloc =  "http://birdingthecloud.com/ebirdApi/AZListXMLFile.xml" // AZFO
+              //xmlloc =  "http://birdingthecloud.com/ebirdApi/AZListXMLFile.xml" // AZFO
               //xmlloc =  "http://azfo.org/ebird/AZListXMLFile.xml" // AZFO
-              //xmlloc = "xmldata/AZListXMLFile.xml" //Local
+              xmlloc = "xmldata/AZListXMLFile.xml" //Local
               var ABCdata = {
                   "crossDomain": true,
                   "url": xmlloc,

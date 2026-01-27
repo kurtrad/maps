@@ -103,45 +103,8 @@
               // Add widget to the top right corner of the view
               view.ui.add(basemapToggle, "bottom-right");
 
-              loadSpecies();
 
-              //var urlAPI = "https://ebird.org/ws2.0/ref/hotspot/US-AZ?fmt=json&back=1";
-              //var ebirdAPI = {
-              //    "crossDomain": true,
-              //    //"url": "https://ebird.org/ws2.0/data/obs/US-AZ/recent",
-              //    "url": urlAPI,
-              //    "method": "GET",
-              //    "async": false,
-              //    "headers": {
-              //        "X-eBirdApiToken": "npobnnr5u7fo"
-              //    }
-              //}
-
-              //$.ajax(ebirdAPI).done(function (response) {
-              //    console.log(response);
-              //    data = response;
-
-              //});
-
-              ////xmlloc =  "http://azfo.org/ebird/AZListXMLFile.xml" // AZFO
-              //xmlloc = "xmldata/AZListXMLFile.xml" //Local
-              //var ABCdata = {
-              //    "crossDomain": true,
-              //    "url": xmlloc,
-              //    "method": "GET",
-              //    "async": false,
-              //}
-
-              $.ajax(ABCdata).done(function (response) {
-                  console.log(response);
-                  ABCdata = response;
-
-                  //$(ABCdata).find('Species').each(function () {
-                  //    var species = $(this).attr('EnglishName');
-                  //})
-              });
-
-
+              
               loadSpecies();
 
               /*************************
@@ -155,8 +118,8 @@
 
                   var setDate = new Date();
                   //add a day to the date
-                  //setDate.setDate(setDate.getDate() - daysback);
                   var urlAPI = "https://ebird.org/ws2.0/data/obs/MX/recent/notable?back="+daysback+"&cat=species&detail=full";
+                  //setDate.setDate(setDate.getDate() - daysback);
                   //var urlAPI = "https://ebird.org/ws2.0/data/obs/" + country + "/recent/" + selection;
                   //var urlAPI = "https://ebird.org/ws2.0/ref/hotspot/" + selection + "?fmt=json&back=" + daysback;
                   //var urlAPI = "https://ebird.org/ws2.0/ref/hotspot/US-AZ?fmt=json&back=" + daysback ;

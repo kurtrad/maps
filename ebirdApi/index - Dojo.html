@@ -1,317 +1,45 @@
-﻿<!DOCTYPE HTML5>
-<html>
+﻿<!DOCTYPE html>
+<html >
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>Arizona Rarities</title>
-    <script type="text/javascript" src="Scripts/jquery-3.3.1.js"></script>
-    <style>
-        html, body, #viewDiv {
-            padding: 0;
-            margin: 0;
-            height: 100%;
-            width: 100%;
-        }
-        /*Select LOB*/
-        .divLobSelect {
-            display: block;
-            z-index: 1002;
-            position: absolute;
-            right: 115px;
-            top: 115px;
-            border-width: 2px;
-            width: 230px;
-            font-family: Open Sans,sans-serif;
-        }
 
-        #elevationDiv {
-            font-family: monospace;
-            padding: 12px;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-        }
-    </style>
-    <link rel="stylesheet" href="https://js.arcgis.com/4.6/esri/css/main.css">
-    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/dojo/1.6.1/dijit/themes/claro/claro.css">
-    <script type="text/javascript">dojoConfig = { async: true, parseOnLoad: true }</script>
-    <script type="text/javascript" src="https://js.arcgis.com/4.6/"></script>
-    <script type="text/javascript">
-        var lat;
-        var lng;
-        var data;
-        var ABCdata;
-        var species;
-        var review;
-        var selection;
-        var reviewSpecies;
-        var sketchSpecies;
-        var notableSpecies;
-        
+	<link rel="stylesheet" href="../../_static/js/dojo/../dijit/themes/claro/claro.css">
+	
+	<script>dojoConfig = { parseOnLoad: true }</script>
+	<script src='../../_static/js/dojo/dojo.js'></script>
+	
+	<script>
         require([
-            "esri/Map",
-            "esri/geometry/Point",
-            "esri/views/MapView",
-            "esri/widgets/Legend",
-            "esri/symbols/SimpleMarkerSymbol",
-            "esri/Graphic",
-            "esri/layers/GraphicsLayer",
-            "dojo/store/Memory",
-            "dijit/form/ComboBox",
-            "dojo/dom",
-            "dojo/on",
-            "dojo/domReady!"
-        ], function (
-            Map,
-            Point,
-            MapView,
-            Legend,
-            SimpleMarkerSymbol,
-            Graphic,
-            GraphicsLayer,
-            Memory,
-            ComboBox,
-            dom,
-            on
-        ) {
-                var map = new Map({
-                    basemap: "streets"
-                });
-
-                var view = new MapView({
-                    center: [-112, 33],
-                    container: "viewDiv",
-                    map: map,
-                    zoom: 7
-                });
-
-                //view.ui.add("elevationDiv", "top-right");
-            
-                var urlAPI = "https://ebird.org/ws2.0/data/obs/US-AZ/recent/notable?back=10&cat=species&detail=full";
-                var ebirdAPI = {
-                    "crossDomain": true,
-                    //"url": "https://ebird.org/ws2.0/data/obs/US-AZ/recent",
-                    "url": urlAPI,
-                    "method": "GET",
-                    "async": false,
-                    "headers": {
-                        "X-eBirdApiToken": "npobnnr5u7fo"
-                    }
-                }
-
-                $.ajax(ebirdAPI).done(function (response) {
-                    console.log(response);
-                    data = response;
-
-                });
-
-                var ABCdata = {
-                    "crossDomain": true,
-                    "url": "xmldata/AZListXMLFile.xml",
-                    "method": "GET",
-                    "async": false,
-                }
-
-                $.ajax(ABCdata).done(function (response) {
-                    console.log(response);
-                    ABCdata = response;
-
-                    //$(ABCdata).find('Species').each(function () {
-                    //    var species = $(this).attr('EnglishName');
-                    //})
-                });
-
-                //view.ui.add("divLobSelect", "top-right");
-                // Create a variable referencing the checkbox node
-                //var LobSelect = dom.byId("divLobSelect");
-                
-                //Add DropDown for LOB Selection
-                var lobStore = new Memory({
-                    data: [
-                        { name: "All", id: "All" },
-                        { name: "Notable", id: "Notable" },
-                        { name: "Sketch", id: "Sketch" },
-                        { name: "Review", id: "Review" },
-                    ]
-                });
-
-                var comboBox = new ComboBox({
-                    id: "divLobSelect",
-                    name: "All",
-                    value: "All",
-                    store: lobStore,
-                }, "divLobSelect").startup();
-
-            
-                window.onload = function () {
-                    var LobSelect = document.getElementById("divLobSelect");
-                    LobSelect.addEventListener("change", onchangeSelect);
-
-                }
-               
-
-                //view.ui.add("divLobSelect", "top-right");
-
-                function onchangeSelect() {
-                    console.log("inside change callback");
-                    selection = document.getElementById("divLobSelect").value;
-                }
-
-                loadSpecies();
-
-                /*************************
-                * Create a point graphic
-                *************************/
-                function loadSpecies() {
-                    for (i = 0; i < data.length; ++i) {
-                        review = "";
-                        var point = new Point(data[i].lng, data[i].lat);
-
-                        $(ABCdata).find('Species').each(function () {
-                            var species = $(this).attr('EnglishName');
-
-                            if (data[i].comName == species) {
-
-                                review = $(this).attr('Review');
-                            }
-
-                            switch (review) {
-                                case "Y":
-                                    reviewSpecies = "Y"
-                                    break;
-                                case "N":
-                                    sketchSpecies = "Y"
-                                    break;
-                                default:
-                                    notableSpecies = "Y"
-                            }
-                        })
-
-
-                        // Create a symbol for drawing the point
-                        var markerSymbol = {
-                            type: "simple-marker", // autocasts as new SimpleMarkerSymbol()
-                            color: [0, 128, 0], //green
-                            outline: { // autocasts as new SimpleLineSymbol()
-                                color: [0, 100, 0],
-                                width: 2
-                            }
-                        };
-
-                        if (review == "Y") {
-                            // Create a symbol for drawing the point
-                            var markerSymbol = {
-                                type: "simple-marker", // autocasts as new SimpleMarkerSymbol()
-                                color: [255, 0, 0], //red
-                                outline: { // autocasts as new SimpleLineSymbol()
-                                    color: [128, 0, 0],
-                                    width: 2
-                                }
-                            };
-
-                            review = " "
-                        }
-                        if (review == "N") {
-                            // Create a symbol for drawing the point
-                            var markerSymbol = {
-                                type: "simple-marker", // autocasts as new SimpleMarkerSymbol()
-                                color: [0, 0, 255], //blue
-                                outline: { // autocasts as new SimpleLineSymbol()
-                                    color: [65, 105, 255],
-                                    width: 2
-                                }
-                            };
-
-                            review = " "
-                        }
-
-
-                        // Create an object for storing attributes related to the line
-                        var pointAtt = {
-                            Name: data[i].comName,
-                            Date: data[i].obsDt,
-                            Location: data[i].locName,
-                            Nunmber: data[i].howMany,
-                            Observer: data[i].firstName + ' ' + data[i].lastName
-                        };
-
-                        /*******************************************
-                         * Create a new graphic and add the geometry,
-                         * symbol, and attributes to it. You may also
-                         * add a simple PopupTemplate to the graphic.
-                         * This allows users to view the graphic's
-                         * attributes when it is clicked.
-                         ******************************************/
-
-                        var pointGraphic = new Graphic({
-                            geometry: point,
-                            symbol: markerSymbol,
-                            attributes: pointAtt,
-                            popupTemplate: {  // autocasts as new PopupTemplate()
-                                title: "{Name}",
-                                content: [{
-                                    type: "fields",
-                                    fieldInfos: [{
-                                        fieldName: "Name"
-                                    }, {
-                                        fieldName: "Date"
-                                    }, {
-                                        fieldName: "Location"
-                                    }, {
-                                        fieldName: "Number"
-                                    }, {
-                                        fieldName: "Observer"
-                                    }]
-                                }]
-                            }
-                        });
-
-                        switch (selection) {
-                            case "Review Species":
-                                if (reviewSpecies == "Y") {
-                                    show = "Y"
-                                }
-                                break;
-                            case "Sketch Species":
-                                if (sketchSpecies == "Y") {
-                                    show = "Y"
-                                }
-                                break;
-                            case "Notable Species":
-                                if (notableSpecies == "Y") {
-                                    show = "Y"
-                                }
-                                break;
-                            default:
-                                show = "Y"
-                        }
-
-                        if (show == "Y") {
-                            // Add the line graphic to the view's GraphicsLayer
-                            view.graphics.add(pointGraphic);
-                        }
-
-                    }
-                }
-
-
+            "dojo/store/Memory", "dijit/form/ComboBox", "dojo/domReady!"
+        ], function (Memory, ComboBox) {
+            var stateStore = new Memory({
+                data: [
+                    { name: "Alabama", id: "AL" },
+                    { name: "Alaska", id: "AK" },
+                    { name: "American Samoa", id: "AS" },
+                    { name: "Arizona", id: "AZ" },
+                    { name: "Arkansas", id: "AR" },
+                    { name: "Armed Forces Europe", id: "AE" },
+                    { name: "Armed Forces Pacific", id: "AP" },
+                    { name: "Armed Forces the Americas", id: "AA" },
+                    { name: "California", id: "CA" },
+                    { name: "Colorado", id: "CO" },
+                    { name: "Connecticut", id: "CT" },
+                    { name: "Delaware", id: "DE" }
+                ]
             });
 
-
-    </script>
-
+            var comboBox = new ComboBox({
+                id: "stateSelect",
+                name: "state",
+                value: "California",
+                store: stateStore,
+                searchAttr: "name"
+            }, "stateSelect").startup();
+        });
+	</script>
 </head>
-
-<body>
-  <div id="viewDiv"></div>
-  <div id="elevationDiv">
-    <table>
-        <tr>
-            <td class="right">Select</td>
-            <td>
-                <select  id="divLobSelect"  dojotype="dijit.form.ComboBox" "ComboBox" name="divLobSelect"/>
-            </td>
-        </tr>
-      </table>
-  </div>
+<body class="claro">
+    <input id="stateSelect">
+<p><button onClick="alert(dijit.byId('stateSelect').get('value'))">Get value</button></p>
 </body>
 </html>
