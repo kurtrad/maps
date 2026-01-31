@@ -170,12 +170,12 @@
                 mapCenter = [data[0].lng, data[0].lat];
                 view.center = mapCenter;
 
-                function getHotspotGraphics(params) {
+                function getHotspotGraphics(Hotspots) {
                     points = [];
                     poinGraphicsReturn = [];
-                    for (i = 0; i < data.length; ++i) {
-                        if (data[i].numSpeciesAllTime >= 200) {
-                            var point = new Point(data[i].lng, data[i].lat);
+                    for (i = 0; i < Hotspots.length; ++i) {
+                        if (Hotspots[i].numSpeciesAllTime >= 200) {
+                            var point = new Point(Hotspots[i].lng, Hotspots[i].lat);
                             points.push(point.latitude, point.longitude);
 
                             // Create a symbol for drawing the point
