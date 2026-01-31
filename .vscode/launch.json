@@ -7,8 +7,8 @@
         {
             "type": "chrome",
             "request": "launch",
-            "name": "Open ebirdHotspotsCounty.html",
-            "file": "c:\\Users\\Kurt\\source\\repos\\ebirdapi\\ebirdApi\\ebirdHotspotsCounty.html"
+            "name": "Open ebirdHotspotCompare.html",
+            "file": "c:\\Users\\Kurt\\source\\repos\\ebirdapi\\ebirdApi\\ebirdHotspotCompare.html"
         }
     ]
 }

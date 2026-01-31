@@ -35,8 +35,10 @@
             }
     </style>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="https://js.arcgis.com/4.6/esri/css/main.css">
     <script src="https://js.arcgis.com/4.6/"></script>
+    
 
     <script>
         var lat;
@@ -448,21 +450,35 @@
                     //bird list
                     var hotspotTargetList = getData(speciesLisTargetUrl);
 
-                    //To find elements in listA that are not in listB:
-                    let diff = hotspotSourceList.filter(list => !hotspotTargetList.includes(list)); 
+                    //To find elements in listA source that are not in listB target:
+                    let diff = hotspotSourceList.filter(item => !hotspotTargetList.includes(item)); 
+
+                    // var formattedList = diff.reduce((acc, val, i) => {
+                    //     const isNewRow = i % 4 === 0 && i !== 0;
+                    //     return acc + (isNewRow ? "\n" : (i === 0 ? "" : ", ")) + val;
+                    // }, "");
 
                    // Join elements using the newline character
-                    var formattedList = diff.join("\n");
+                   // var formattedList = diff.join("\n");
 
                     //TODO
                     // get the diff list and match to bird name
 
-                    alert(
-                        "Two points selected:\n" +
-                        "Hotspot A: " + hotspotSourceCode1 + "\n" +
-                        "Hotspot A: " + hotspotTargetCode2 + "\n" +
-                        "Species Diff: " + formattedList
-                    );
+                    // alert(
+                    //     "Two points selected:\n" +
+                    //     "Hotspot A: " + hotspotSourceCode1 + "\n" +
+                    //     "Hotspot A: " + hotspotTargetCode2 + "\n" +
+                    //     "Species Diff: " + formattedList
+                    // );
+
+                    formattedHtml = "<b>Species in Hotspot A not in Hotspot B:</b></br></br><b>" + diff + "</b>";
+
+                    Swal.fire({
+                        title: 'Species Compare!',
+                        html: formattedHtml,
+                        draggable: true,
+                    });
+
 
                     // Optional: clear graphics after each pair
                     // setTimeout(() => view.graphics.removeAll(), 500);

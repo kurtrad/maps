@@ -1,0 +1,498 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>Arizona Rarities</title>
+    <script src="Scripts/jquery-3.3.1.js"></script>
+    <style>
+        html,
+        body,
+        #viewDiv {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        #elevationDiv {
+            font-family: monospace;
+            padding: 12px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+        }
+
+        .right {
+            text-align: right;
+        }
+
+        select {
+            width: 185px;
+        }
+
+        select option {
+            width: 180px;
+        }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://js.arcgis.com/4.24/esri/css/main.css">
+    <script src="https://js.arcgis.com/4.24/"></script>
+
+
+    <script>
+        var lat;
+        var lng;
+        var data;
+        var ABCdata;
+        var species;
+        var review;
+        var selection;
+        var reviewSpecies;
+        var sketchSpecies;
+        var notableSpecies;
+        var daysback = 30;
+        var selection = "US-CA";
+        var inDateSpan = "N";
+        var mapCenter = [-112, 33]
+        var birdsArray = [];
+
+        require([
+            "esri/Map",
+            "esri/geometry/Point",
+            "esri/views/MapView",
+            "esri/widgets/BasemapToggle",
+            "esri/widgets/Legend",
+            "esri/symbols/SimpleMarkerSymbol",
+            "esri/Graphic",
+            "esri/layers/GraphicsLayer",
+            "dojo/store/Memory",
+            "dijit/form/ComboBox",
+            "dojo/on",
+            "dojo/domReady!"
+        ], function (
+            Map,
+            Point,
+            MapView,
+            BasemapToggle,
+            Legend,
+            SimpleMarkerSymbol,
+            Graphic,
+            GraphicsLayer,
+            Memory,
+            ComboBox,
+            on
+        ) {
+            var map = new Map({
+                basemap: "streets"
+            });
+
+            var view = new MapView({
+                center: mapCenter,
+                container: "viewDiv",
+                map: map,
+                zoom: 7
+            });
+
+            var basemapToggle = new BasemapToggle({
+                view: view,  // The view that provides access to the map's "streets" basemap
+                nextBasemap: "hybrid"  // Allows for toggling to the "hybrid" basemap
+            });
+
+            view.ui.add("elevationDiv", "top-left");
+            view.ui.add("ebird", "bottom-left");
+            // Add widget to the top right corner of the view
+            view.ui.add(basemapToggle, "bottom-right");
+
+            // const tempLayer = new GraphicsLayer();
+            // map.add(tempLayer);
+
+            //load bird species list
+            birdsArray = getData("https://ebird.org/ws2.0/ref/taxonomy/ebird?fmt=json&key=npobnnr5u7fo");
+
+            loadSpecies();
+
+            /*************************
+            * Create a point graphic
+            *************************/
+            function loadSpecies() {
+
+                view.graphics.removeAll();
+                //view.center = mapCenter;
+
+                var setDate = new Date();
+                //add a day to the date
+                //setDate.setDate(setDate.getDate() - daysback);
+                var urlAPI = "https://ebird.org/ws2.0/ref/hotspot/" + selection + "?fmt=json&back=" + daysback;
+                //var urlAPI = "https://ebird.org/ws2.0/ref/hotspot/US-AZ?fmt=json&back=" + daysback ;
+                //var urlAPI = "https://ebird.org/ws2.0/ref/hotspot/US-AZ?fmt=json&back=1";
+
+                data = getData(urlAPI);
+
+                window.onload = function (e) {
+                    // Load the Selection DropDown
+                    // var urlAPI = "https://ebird.org/ws2.0/ref/region/list/subnational2/US-CA.json?key=npobnnr5u7fo";
+                    var urlForDropDown = "https://ebird.org/ws2.0/ref/region/list/subnational1/US.json?key=npobnnr5u7fo";
+
+                    hotspots = getData(urlForDropDown);
+                    getCounties(selection);
+
+                    loadCombo(hotspots);
+
+                    function loadCombo(hotspotData) {
+                        var sel = document.getElementById('modeSelect') // find the drop down
+                        for (var i in hotspotData) { // loop through all elements
+                            var opt = document.createElement("option"); // Create the new element
+                            opt.value = hotspotData[i].code; // set the value
+                            opt.text = hotspotData[i].name; // set the text
+
+                            sel.appendChild(opt); // add it to the select
+                        }
+
+                        opt.text = "All Mexico";
+                        opt.value = "MX";
+                        // sel.firstChild targets the top of the list
+                        sel.insertBefore(opt, sel.firstChild);
+
+
+                        // Set default to California
+                        sel.value = "US-CA";
+                    }
+                }
+                points = [];
+
+                // center on the hotspots
+                // TODO: improve centering logic
+                mapCenter = [data[0].lng, data[0].lat];
+                view.center = mapCenter;
+
+                for (i = 0; i < data.length; ++i) {
+                    review = "";
+
+                    if (data[i].numSpeciesAllTime >= 200) {
+                        var point = new Point(data[i].lng, data[i].lat);
+                        points.push(point.latitude, point.longitude);
+
+                        // Create a symbol for drawing the point
+                        var markerSymbol = {
+                            type: "simple-marker", // autocasts as new SimpleMarkerSymbol()
+                            color: [0, 128, 0], //green
+                            outline: { // autocasts as new SimpleLineSymbol()
+                                color: [0, 100, 0],
+                                width: 2
+                            }
+                        };
+
+                        // Create an object for storing attributes related to the line
+                        var pointAtt = {
+                            Name: data[i].locName,
+                            Checklist: "https://ebird.org/hotspot/" + data[i].locId
+                        };
+
+                        /*******************************************
+                         * Create a new graphic and add the geometry,
+                         * symbol, and attributes to it. You may also
+                         * add a simple PopupTemplate to the graphic.
+                         * This allows users to view the graphic's
+                         * attributes when it is clicked.
+                         ******************************************/
+
+                        var pointGraphic = new Graphic({
+                            geometry: point,
+                            symbol: markerSymbol,
+                            attributes: pointAtt,
+                            popupTemplate: {  // autocasts as new PopupTemplate()
+                                title: "{Name}",
+                                content: [{
+                                    type: "fields",
+                                    fieldInfos: [{
+                                        fieldName: "Name"
+                                    }, {
+                                        fieldName: "Checklist"
+                                    }]
+                                }]
+                            }
+                        });
+
+
+                        //if (show == "Y" && inDateSpan == "Y") {
+                        // Add the line graphic to the view's GraphicsLayer
+                        view.graphics.addMany([pointGraphic]);
+                        //);
+
+                    }
+                }
+
+            }
+
+            //view.ui.add("elevationDiv", "top-right");
+
+            // Register events to the controls
+            var modeSelect = document.getElementById("modeSelect");
+            window.addEventListener("change", updateElevationMode);
+
+            // Create events' callback functions
+            function updateElevationMode(event) {
+                selection = document.getElementById("modeSelect").value;
+                daysback = document.getElementById("days").value;
+
+                //view.graphics.removeAll()
+
+                //mapCenter = [points[1], points[0]];
+
+                loadSpecies();
+            }
+
+            let firstPoint = null;
+            let secondPoint = null;
+
+            view.on("click", function (event) {
+                view.hitTest(event).then(function () {
+                    const point = event.mapPoint;
+
+                    if (!firstPoint) {
+                        firstPoint = point;
+                        addPointGraphic(point, "red");
+                    } else if (!secondPoint) {
+                        secondPoint = point;
+                        addPointGraphic(point, "blue");
+
+                        onTwoPointsSelected(firstPoint, secondPoint);
+
+                        // Reset for next selection
+                        firstPoint = null;
+                        secondPoint = null;
+                    }
+                });
+            });
+
+            function addPointGraphic(point, color) {
+                const graphic = new Graphic({
+                    geometry: point,
+                    symbol: {
+                        type: "simple-marker",
+                        color: color,
+                        size: 10,
+                        outline: {
+                            color: "white",
+                            width: 1
+                        }
+                    }
+                });
+
+                view.graphics.add(graphic);
+            }
+
+            function onTwoPointsSelected(a, b) {
+                console.log("Two points selected:", a, b);
+
+                kms = getDistance(a.latitude, a.longitude, b.latitude, b.longitude);
+                console.log("Distance (km):", kms);
+
+                var key = "npobnnr5u7fo";
+
+                var h1 = "https://api.ebird.org/v2/ref/hotspot/geo?fmt=json&dist=5&lat=" + a.latitude.toFixed(8) + "&lng=" + a.longitude.toFixed(6) + "&key=" + key;
+                var h2 = "https://api.ebird.org/v2/ref/hotspot/geo?fmt=json&dist=5&lat=" + b.latitude.toFixed(8) + "&lng=" + b.longitude.toFixed(6) + "&key=" + key;
+
+                //get the nearest hotspot source and target
+                var hotspotSource = getData(h1);
+                var hotspotTarget = getData(h2);
+
+                // measure the distance of each hotspot from the point
+                // find the closest one
+                let shortestSourceDist = Infinity;
+                let closestSourceHotspot = null;
+
+                hotspotSource.forEach(h => {
+                    const dist = getDistance(a.latitude, a.longitude, h.lat, h.lng);
+
+                    if (dist < shortestSourceDist) {
+                        shortestSourceDist = dist;
+                        closestSourceHotspot = h;
+                    }
+                    console.log(h.locId, h.lat, h.lng, dist);
+                });
+
+                console.log("Closest hotspot:", closestSourceHotspot.locId, shortestSourceDist);
+
+                let shortestTargetDist = Infinity;
+                let closestTargetHotspot = null;
+
+                hotspotTarget.forEach(h => {
+                    const dist = getDistance(b.latitude, b.longitude, h.lat, h.lng);
+
+                    if (dist < shortestTargetDist) {
+                        shortestTargetDist = dist;
+                        closestTargetHotspot = h;
+                    }
+
+                    console.log(h.locId, h.lat, h.lng, dist);
+                });
+
+                console.log("Closest hotspot:", closestTargetHotspot.locId, shortestTargetDist);
+
+                // extract the code from hotspot
+                var hotspotSourceCode1 = closestSourceHotspot.locId;
+                var hotspotTargetCode2 = closestTargetHotspot.locId;
+
+                // Birdlist api
+                var speciesListSourceUrl = "https://api.ebird.org/v2/product/spplist/" + hotspotSourceCode1 + "?key=npobnnr5u7fo";
+                //source bird list
+                var hotspotSourceList = getData(speciesListSourceUrl);
+
+                var speciesLisTargetUrl = "https://api.ebird.org/v2/product/spplist/" + hotspotTargetCode2 + "?key=npobnnr5u7fo";
+                //target bird list
+                var hotspotTargetList = getData(speciesLisTargetUrl);
+
+                //To find elements in listA source that are not in listB target:
+                let diff = hotspotSourceList.filter(item => !hotspotTargetList.includes(item));
+
+                let formattedList = diff.map(code => getComName(code)).join(", ");
+
+                formattedHtml = "<b>Species in " + closestSourceHotspot.locName + " NOT in " + closestTargetHotspot.locName + ":</b></br></br><b>" + formattedList + "</b>";
+
+                Swal.fire({
+                    title: 'Species Compare!',
+                    html: formattedHtml,
+                    draggable: true,
+                });
+
+                // Optional: clear graphics after each pair
+                // setTimeout(() => view.graphics.removeAll(), 500);
+                // loadSpecies();
+            }
+
+            function getData(url) {
+
+                var apiData = {
+                    "crossDomain": true,
+                    "url": url,
+                    "method": "GET",
+                    "async": false,
+                    "headers": {
+                        "X-eBirdApiToken": "npobnnr5u7fo"
+                    }
+                }
+
+                $.ajax(apiData).done(function (response) {
+                    console.log(response);
+                    data = response;
+                });
+
+                return data;
+
+                // Optional: clear graphics after each pair
+                setTimeout(() => view.graphics.removeAll(), 500);
+                loadSpecies();
+            }
+
+            // calculate distance between two lat/lon points in km
+            function getDistance(lat1, lon1, lat2, lon2) {
+                const R = 6371; // Radius of the earth in km
+                const dLat = deg2rad(lat2 - lat1);
+                const dLon = deg2rad(lon2 - lon1);
+                const a =
+                    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                    Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
+                    Math.sin(dLon / 2) * Math.sin(dLon / 2);
+                const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+                return R * c; // Distance in km
+            }
+
+            function deg2rad(deg) {
+                return deg * (Math.PI / 180);
+            }
+
+            /**
+             * Searches the global birds array for a common name
+             * @param {string} code - The speciesCode to look for
+             */
+            function getComName(code) {
+                const bird = birdsArray.find(b => b.speciesCode === code);
+                return bird ? bird.comName : "Species not found";
+            }
+            var key = "npobnnr5u7fo";
+            const STATE_CODE = 'US-CA'; // Format: [ISO Country]-[State] (e.g., US-NY for New York)
+
+            async function getCounties(stateCode) {
+
+                var url = 'https://api.ebird.org/v2/ref/region/list/subnational2/' + stateCode;
+
+                const response = await fetch(url, {
+                    headers: {
+                        'X-eBirdApiToken': key
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Error: ${response.statusText}`);
+                }
+
+                const counties = await response.json();
+                return counties; // Array of { code: "US-NY-001", name: "Albany" }
+            }
+
+            getCounties(STATE_CODE)
+                .then(data => console.log(data))
+                .catch(err => console.error(err));
+
+        });
+
+        // Example: Get bounds for a specific county (e.g., US-NY-001)
+        async function getCountyBounds(countyCode) {
+            const url = `https://api.ebird.org{countyCode}`;
+            const response = await fetch(url, {
+                headers: { 'X-eBirdApiToken': 'YOUR_API_KEY' }
+            });
+            const data = await response.json();
+
+            // Returns: { minX: -74.1, maxX: -73.7, minY: 42.4, maxY: 42.8 }
+            return data.bounds;
+        }
+
+    </script>
+</head>
+
+<body>
+    <div id="viewDiv"></div>
+    <div id="ebird">
+        <a>eBird Hotspots API AZ with recent sightings.</a>
+        <br />
+        <a>Days back dropdown is for days to go back where there are sightings for Hotspot.</a>
+        <br />
+        <a>Click symbol on map to see details.</a>
+        <br />
+        <a><i>Copyright - Kurt Radamaker</i></a>
+    </div>
+    <div id="elevationDiv">
+        <table>
+            <tr>
+                <td class="right">State</td>
+                <td>
+                    <select id="modeSelect">
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="right">Days back</td>
+                <td>
+                    <select id="days">
+                        <option value="10" selected>10</option>
+                        <option value="30">30</option>
+                        <option value="20">20</option>
+                        <option value="15">15</option>
+                        <option value="7">7</option>
+                        <option value="5">5</option>
+                        <option value="4">4</option>
+                        <option value="3">3</option>
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
