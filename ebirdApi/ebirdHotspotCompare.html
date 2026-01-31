@@ -160,70 +160,76 @@
                         sel.value = "US-CA";
                     }
                 }
-                points = [];
+
+                pointGraphicsReturn = getHotspotGraphics(data);
+
+                view.graphics.addMany(pointGraphicsReturn);
 
                 // center on the hotspots
                 // TODO: improve centering logic
                 mapCenter = [data[0].lng, data[0].lat];
                 view.center = mapCenter;
 
-                for (i = 0; i < data.length; ++i) {
-                    review = "";
+                function getHotspotGraphics(params) {
+                    points = [];
+                    poinGraphicsReturn = [];
+                    for (i = 0; i < data.length; ++i) {
+                        if (data[i].numSpeciesAllTime >= 200) {
+                            var point = new Point(data[i].lng, data[i].lat);
+                            points.push(point.latitude, point.longitude);
 
-                    if (data[i].numSpeciesAllTime >= 200) {
-                        var point = new Point(data[i].lng, data[i].lat);
-                        points.push(point.latitude, point.longitude);
+                            // Create a symbol for drawing the point
+                            var markerSymbol = {
+                                type: "simple-marker", // autocasts as new SimpleMarkerSymbol()
+                                color: [0, 128, 0], //green
+                                outline: { // autocasts as new SimpleLineSymbol()
+                                    color: [0, 100, 0],
+                                    width: 2
+                                }
+                            };
 
-                        // Create a symbol for drawing the point
-                        var markerSymbol = {
-                            type: "simple-marker", // autocasts as new SimpleMarkerSymbol()
-                            color: [0, 128, 0], //green
-                            outline: { // autocasts as new SimpleLineSymbol()
-                                color: [0, 100, 0],
-                                width: 2
-                            }
-                        };
+                            // Create an object for storing attributes related to the line
+                            var pointAtt = {
+                                Name: data[i].locName,
+                                Checklist: "https://ebird.org/hotspot/" + data[i].locId
+                            };
 
-                        // Create an object for storing attributes related to the line
-                        var pointAtt = {
-                            Name: data[i].locName,
-                            Checklist: "https://ebird.org/hotspot/" + data[i].locId
-                        };
+                            /*******************************************
+                             * Create a new graphic and add the geometry,
+                             * symbol, and attributes to it. You may also
+                             * add a simple PopupTemplate to the graphic.
+                             * This allows users to view the graphic's
+                             * attributes when it is clicked.
+                             ******************************************/
 
-                        /*******************************************
-                         * Create a new graphic and add the geometry,
-                         * symbol, and attributes to it. You may also
-                         * add a simple PopupTemplate to the graphic.
-                         * This allows users to view the graphic's
-                         * attributes when it is clicked.
-                         ******************************************/
-
-                        var pointGraphic = new Graphic({
-                            geometry: point,
-                            symbol: markerSymbol,
-                            attributes: pointAtt,
-                            popupTemplate: {  // autocasts as new PopupTemplate()
-                                title: "{Name}",
-                                content: [{
-                                    type: "fields",
-                                    fieldInfos: [{
-                                        fieldName: "Name"
-                                    }, {
-                                        fieldName: "Checklist"
+                            var pointGraphic = new Graphic({
+                                geometry: point,
+                                symbol: markerSymbol,
+                                attributes: pointAtt,
+                                popupTemplate: {  // autocasts as new PopupTemplate()
+                                    title: "{Name}",
+                                    content: [{
+                                        type: "fields",
+                                        fieldInfos: [{
+                                            fieldName: "Name"
+                                        }, {
+                                            fieldName: "Checklist"
+                                        }]
                                     }]
-                                }]
-                            }
-                        });
+                                }
+                            });
 
+                            poinGraphicsReturn.push(pointGraphic);
+                            //if (show == "Y" && inDateSpan == "Y") {
+                            // Add the line graphic to the view's GraphicsLayer
+                            // view.graphics.addMany([pointGraphic]);
+                            //);
 
-                        //if (show == "Y" && inDateSpan == "Y") {
-                        // Add the line graphic to the view's GraphicsLayer
-                        view.graphics.addMany([pointGraphic]);
-                        //);
+                        }
 
                     }
+                    return poinGraphicsReturn
                 }
-
             }
 
             //view.ui.add("elevationDiv", "top-right");
