@@ -345,22 +345,24 @@
             let secondPoint = null;
 
             view.on("click", function (event) {
-                console.log("Click event fired on map");
-                const point = event.mapPoint;
-
-                if (!firstPoint) {
-                    firstPoint = point;
-                    addPointGraphic(point, "red");
-                } else if (!secondPoint) {
-                    secondPoint = point;
-                    addPointGraphic(point, "blue");
-
-                    onTwoPointsSelected(firstPoint, secondPoint);
-
-                    // Reset for next selection
-                    firstPoint = null;
-                    secondPoint = null;
-                }
+                view.hitTest(event).then(function (response) {
+                    if (response.results.length > 0) {
+                        const color = response.results[0].graphic.symbol.color;
+                        console.log("Clicked point color:", color);
+                    
+                        const point = event.mapPoint;
+                        if (!firstPoint) {
+                            firstPoint = point;
+                            addPointGraphic(point, "red");
+                        } else if (!secondPoint) {
+                            secondPoint = point;
+                            addPointGraphic(point, "blue");
+                            onTwoPointsSelected(firstPoint, secondPoint);
+                            firstPoint = null;
+                            secondPoint = null;
+                        }
+                    }
+                });
             });
 
             function addPointGraphic(point, color) {
