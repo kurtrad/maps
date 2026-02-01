@@ -128,6 +128,8 @@
                 //var urlAPI = "https://ebird.org/ws2.0/ref/hotspot/US-AZ?fmt=json&back=" + daysback ;
                 //var urlAPI = "https://ebird.org/ws2.0/ref/hotspot/US-AZ?fmt=json&back=1";
 
+                // load the default county bounds
+                allBounds = getAllCountyBounds(selection);
                 data = getData(urlAPI);
 
                 window.onload = function (e) {
@@ -160,11 +162,10 @@
                         sel.value = "US-CA";
                     }
                 }
-
+                
                 pointGraphicsHotSpotReturn = getHotspotGraphics(data)
                 //pointGraphicsReturn = [];
-
-                 allBounds = getAllCountyBounds(selection);
+                
                 pointGraphicsCountyReturn = getCountyGraphics(allBounds);
                
                 //pointGraphicsCountyReturn = [];
@@ -250,9 +251,9 @@
                         // Create a symbol for drawing the point
                         var markerSymbol = {
                             type: "simple-marker", // autocasts as new SimpleMarkerSymbol()
-                            color: [128, 0, 0], //red
+                            color: [0, 0, 0], //black
                             outline: { // autocasts as new SimpleLineSymbol()
-                                color: [128, 0, 0],
+                                color: [0, 0, 0],
                                 width: 2
                             }
                         };
@@ -310,10 +311,6 @@
                 selection = document.getElementById("modeSelect").value;
                 daysback = document.getElementById("days").value;
 
-                //view.graphics.removeAll()
-
-                //mapCenter = [points[1], points[0]];
-
                 loadSpecies();
             }
 
@@ -341,35 +338,29 @@
                         console.error(`Failed to fetch bounds for ${county.name}:`, error);
                     }
                 }
-
                 return allBounds;
             }
-
-            // Usage
-
-
 
             let firstPoint = null;
             let secondPoint = null;
 
             view.on("click", function (event) {
-                view.hitTest(event).then(function () {
-                    const point = event.mapPoint;
+                console.log("Click event fired on map");
+                const point = event.mapPoint;
 
-                    if (!firstPoint) {
-                        firstPoint = point;
-                        addPointGraphic(point, "red");
-                    } else if (!secondPoint) {
-                        secondPoint = point;
-                        addPointGraphic(point, "blue");
+                if (!firstPoint) {
+                    firstPoint = point;
+                    addPointGraphic(point, "red");
+                } else if (!secondPoint) {
+                    secondPoint = point;
+                    addPointGraphic(point, "blue");
 
-                        onTwoPointsSelected(firstPoint, secondPoint);
+                    onTwoPointsSelected(firstPoint, secondPoint);
 
-                        // Reset for next selection
-                        firstPoint = null;
-                        secondPoint = null;
-                    }
-                });
+                    // Reset for next selection
+                    firstPoint = null;
+                    secondPoint = null;
+                }
             });
 
             function addPointGraphic(point, color) {
