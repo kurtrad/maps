@@ -98,8 +98,8 @@
 
              window.onload = function (e) {
                     // Load the Selection DropDown
-                    // var urlAPI = "https://ebird.org/ws2.0/ref/region/list/subnational2/US-CA.json?key=npobnnr5u7fo";
-                    var urlForDropDown = "https://ebird.org/ws2.0/ref/region/list/subnational1/US.json?key=npobnnr5u7fo";
+                    // var urlAPI = "https://ebird.org/ws2.0/ref/region/list/subnational2/US-CA.json";
+                    var urlForDropDown = "https://ebird.org/ws2.0/ref/region/list/subnational1/US.json";
 
                     hotspots = getData(urlForDropDown);
 
@@ -127,7 +127,7 @@
                 }
             
             //load bird species list
-            birdsArray = getData("https://ebird.org/ws2.0/ref/taxonomy/ebird?fmt=json&key=npobnnr5u7fo");
+            birdsArray = getData("https://ebird.org/ws2.0/ref/taxonomy/ebird?fmt=json");
 
             loadSpecies();
 
@@ -367,10 +367,8 @@
                 kms = getDistance(a.latitude, a.longitude, b.latitude, b.longitude);
                 console.log("Distance (km):", kms);
 
-                var key = "npobnnr5u7fo";
-
-                var h1 = "https://api.ebird.org/v2/ref/hotspot/geo?fmt=json&dist=5&lat=" + a.latitude.toFixed(8) + "&lng=" + a.longitude.toFixed(6) + "&key=" + key;
-                var h2 = "https://api.ebird.org/v2/ref/hotspot/geo?fmt=json&dist=5&lat=" + b.latitude.toFixed(8) + "&lng=" + b.longitude.toFixed(6) + "&key=" + key;
+                var h1 = "https://api.ebird.org/v2/ref/hotspot/geo?fmt=json&dist=5&lat=" + a.latitude.toFixed(8) + "&lng=" + a.longitude.toFixed(6);
+                var h2 = "https://api.ebird.org/v2/ref/hotspot/geo?fmt=json&dist=5&lat=" + b.latitude.toFixed(8) + "&lng=" + b.longitude.toFixed(6);
 
                 //get the nearest hotspot source and target
                 var hotspotSource = getData(h1);
@@ -414,11 +412,11 @@
                 var hotspotTargetCode2 = closestTargetHotspot.locId;
 
                 // Birdlist api
-                var speciesListSourceUrl = "https://api.ebird.org/v2/product/spplist/" + hotspotSourceCode1 + "?key=npobnnr5u7fo";
+                var speciesListSourceUrl = "https://api.ebird.org/v2/product/spplist/" + hotspotSourceCode1;
                 //source bird list
                 var hotspotSourceList = getData(speciesListSourceUrl);
 
-                var speciesLisTargetUrl = "https://api.ebird.org/v2/product/spplist/" + hotspotTargetCode2 + "?key=npobnnr5u7fo";
+                var speciesLisTargetUrl = "https://api.ebird.org/v2/product/spplist/" + hotspotTargetCode2;
                 //target bird list
                 var hotspotTargetList = getData(speciesLisTargetUrl);
 
@@ -512,7 +510,6 @@
             // const STATE_CODE = 'US-CA'; // Format: [ISO Country]-[State] (e.g., US-NY for New York)
 
             function getCounties(selection) {
-                //var key = "npobnnr5u7fo";
                 var countyUrl = 'https://api.ebird.org/v2/ref/region/list/subnational2/' + selection;
 
                 var counties = getData(countyUrl);
