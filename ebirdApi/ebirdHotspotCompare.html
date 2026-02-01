@@ -42,19 +42,10 @@
 
 
     <script>
-        var lat;
-        var lng;
-        var data;
-        var ABCdata;
-        var species;
-        var review;
+        
         var selection;
-        var reviewSpecies;
-        var sketchSpecies;
-        var notableSpecies;
         var daysback = 30;
         var selection = "US-CA";
-        var inDateSpan = "N";
         var mapCenter = [-112, 33]
         var birdsArray = [];
 
@@ -105,8 +96,35 @@
             // Add widget to the top right corner of the view
             view.ui.add(basemapToggle, "bottom-right");
 
-            // const tempLayer = new GraphicsLayer();
-            // map.add(tempLayer);
+             window.onload = function (e) {
+                    // Load the Selection DropDown
+                    // var urlAPI = "https://ebird.org/ws2.0/ref/region/list/subnational2/US-CA.json?key=npobnnr5u7fo";
+                    var urlForDropDown = "https://ebird.org/ws2.0/ref/region/list/subnational1/US.json?key=npobnnr5u7fo";
+
+                    hotspots = getData(urlForDropDown);
+
+                    loadCombo(hotspots);
+
+                    function loadCombo(hotspotData) {
+                        var sel = document.getElementById('modeSelect') // find the drop down
+                        for (var i in hotspotData) { // loop through all elements
+                            var opt = document.createElement("option"); // Create the new element
+                            opt.value = hotspotData[i].code; // set the value
+                            opt.text = hotspotData[i].name; // set the text
+
+                            sel.appendChild(opt); // add it to the select
+                        }
+
+                        opt.text = "All Mexico";
+                        opt.value = "MX";
+                        // sel.firstChild targets the top of the list
+                        sel.insertBefore(opt, sel.firstChild);
+
+
+                        // Set default to California
+                        sel.value = "US-CA";
+                    }
+                }
 
             //load bird species list
             birdsArray = getData("https://ebird.org/ws2.0/ref/taxonomy/ebird?fmt=json&key=npobnnr5u7fo");
@@ -131,37 +149,6 @@
                 // load the default county bounds
                 allBounds = getAllCountyBounds(selection);
                 data = getData(urlAPI);
-
-                window.onload = function (e) {
-                    // Load the Selection DropDown
-                    // var urlAPI = "https://ebird.org/ws2.0/ref/region/list/subnational2/US-CA.json?key=npobnnr5u7fo";
-                    var urlForDropDown = "https://ebird.org/ws2.0/ref/region/list/subnational1/US.json?key=npobnnr5u7fo";
-
-                    hotspots = getData(urlForDropDown);
-                    //getCounties(selection);
-
-                    loadCombo(hotspots);
-
-                    function loadCombo(hotspotData) {
-                        var sel = document.getElementById('modeSelect') // find the drop down
-                        for (var i in hotspotData) { // loop through all elements
-                            var opt = document.createElement("option"); // Create the new element
-                            opt.value = hotspotData[i].code; // set the value
-                            opt.text = hotspotData[i].name; // set the text
-
-                            sel.appendChild(opt); // add it to the select
-                        }
-
-                        opt.text = "All Mexico";
-                        opt.value = "MX";
-                        // sel.firstChild targets the top of the list
-                        sel.insertBefore(opt, sel.firstChild);
-
-
-                        // Set default to California
-                        sel.value = "US-CA";
-                    }
-                }
                 
                 pointGraphicsHotSpotReturn = getHotspotGraphics(data)
                 //pointGraphicsReturn = [];
@@ -231,11 +218,6 @@
                             });
 
                             pointGraphicsHotSpotReturn.push(pointGraphic);
-                            //if (show == "Y" && inDateSpan == "Y") {
-                            // Add the line graphic to the view's GraphicsLayer
-                            // view.graphics.addMany([pointGraphic]);
-                            //);
-
                         }
 
                     }
@@ -290,16 +272,13 @@
                         });
 
                         pointGraphicsCountyReturn.push(pointGraphic);
-                        //if (show == "Y" && inDateSpan == "Y") {
-                        // Add the line graphic to the view's GraphicsLayer
-                        // view.graphics.addMany([pointGraphic]);
-                        //);
 
                     }
                     return pointGraphicsCountyReturn
                 }
 
             }
+
             //view.ui.add("elevationDiv", "top-right");
 
             // Register events to the controls
@@ -514,27 +493,27 @@
             // const STATE_CODE = 'US-CA'; // Format: [ISO Country]-[State] (e.g., US-NY for New York)
 
             function getCounties(selection) {
-                var key = "npobnnr5u7fo";
+                //var key = "npobnnr5u7fo";
                 var countyUrl = 'https://api.ebird.org/v2/ref/region/list/subnational2/' + selection;
 
-                var counties = getData(countyUrl + '?fmt=json&key=' + key);
+                var counties = getData(countyUrl);
                 return counties; // Array of { code: "US-NY-001", name: "Albany" }
             }
 
-            getCounties(STATE_CODE)
-                .then(data => console.log(data))
-                .catch(err => console.error(err));
+            // getCounties(STATE_CODE)
+            //     .then(data => console.log(data))
+            //     .catch(err => console.error(err));
 
         });
 
-        // Example: Get bounds for a specific county (e.g., US-NY-001)
-        function getCountyBounds(countyCode) {
-            var countyUrl = 'https://api.ebird.org/v2/ref/region/info/' + countyCode;
-            var bounds = getData(countyUrl)
+        // // Example: Get bounds for a specific county (e.g., US-NY-001)
+        // function getCountyBounds(countyCode) {
+        //     var countyUrl = 'https://api.ebird.org/v2/ref/region/info/' + countyCode;
+        //     var bounds = getData(countyUrl)
 
-            // Returns: { minX: -74.1, maxX: -73.7, minY: 42.4, maxY: 42.8 }
-            return bounds;
-        }
+        //     // Returns: { minX: -74.1, maxX: -73.7, minY: 42.4, maxY: 42.8 }
+        //     return bounds;
+        // }
 
     </script>
 </head>
