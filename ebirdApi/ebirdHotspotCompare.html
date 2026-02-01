@@ -125,14 +125,9 @@
                         sel.value = "US-CA";
                     }
                 }
-
-                // Call the function
-            birdsarray = fetchData("https://ebird.org/ws2.0/ref/hotspot/US-CA?fmt=json&back=30").then(response => {
-                data = response;
-            });
-
+            
             //load bird species list
-            //birdsArray = getData("https://ebird.org/ws2.0/ref/taxonomy/ebird?fmt=json&key=npobnnr5u7fo");
+            birdsArray = getData("https://ebird.org/ws2.0/ref/taxonomy/ebird?fmt=json&key=npobnnr5u7fo");
 
             loadSpecies();
 
