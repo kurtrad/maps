@@ -357,7 +357,7 @@
                         } else if (!secondPoint) {
                             secondPoint = point;
                             addPointGraphic(point, "blue");
-                            onTwoPointsSelected(firstPoint, secondPoint);
+                            onTwoPointsSelected(firstPoint, secondPoint, color);
                             firstPoint = null;
                             secondPoint = null;
                         }
@@ -382,8 +382,8 @@
                 view.graphics.add(graphic);
             }
 
-            function onTwoPointsSelected(a, b) {
-                console.log("Two points selected:", a, b);
+            function onTwoPointsSelected(a, b, color) {
+                console.log("Two points selected:", a, b, color);
 
                 kms = getDistance(a.latitude, a.longitude, b.latitude, b.longitude);
                 console.log("Distance (km):", kms);
