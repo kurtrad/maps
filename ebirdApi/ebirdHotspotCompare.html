@@ -48,6 +48,8 @@
         var selection = "US-CA";
         var mapCenter = [-112, 33]
         var birdsArray = [];
+        var colorPoint1 =''
+        var colorPoint2 =''
 
         require([
             "esri/Map",
@@ -189,6 +191,7 @@
                             // Create an object for storing attributes related to the line
                             var pointAtt = {
                                 Name: data[i].locName,
+                                locId: data[i].locId,
                                 Checklist: "https://ebird.org/hotspot/" + data[i].locId
                             };
 
@@ -210,6 +213,8 @@
                                         type: "fields",
                                         fieldInfos: [{
                                             fieldName: "Name"
+                                        }, {
+                                            fieldName: "locId"
                                         }, {
                                             fieldName: "Checklist"
                                         }]
@@ -240,9 +245,11 @@
                             }
                         };
 
+
                         // Create an object for storing attributes related to the line
                         var pointAtt = {
                             Name: Hotspots[i].name,
+                            locId: Hotspots[i].code,
                             Checklist: "https://ebird.org/hotspot/" + Hotspots[i].code
                         };
 
@@ -264,6 +271,8 @@
                                     type: "fields",
                                     fieldInfos: [{
                                         fieldName: "Name"
+                                    }, {
+                                        fieldName: "locId"
                                     }, {
                                         fieldName: "Checklist"
                                     }]
@@ -322,23 +331,43 @@
 
             let firstPoint = null;
             let secondPoint = null;
+            let locIdPoint1 = null;
+            let locIdPoint2 = null;
+            let namePoint1 = null;
+            let namePoint2 = null;
+
+            function arrayToRgbObj(arr) {
+                return { r: arr[0], g: arr[1], b: arr[2] };
+            }
 
             view.on("click", function (event) {
                 view.hitTest(event).then(function (response) {
                     if (response.results.length > 0) {
                         const color = response.results[0].graphic.symbol.color;
-                        console.log("Clicked point color:", color);
+                        const locId = response.results[0].graphic.attributes.locId;
+                        const name = response.results[0].graphic.attributes.Name;
+                        console.log("Clicked point color:", color, "locId:", locId, "name:", name);
                     
                         const point = event.mapPoint;
                         if (!firstPoint) {
                             firstPoint = point;
+                            colorPoint1 = color;
+                            locIdPoint1 = locId;
+                            namePoint1 = name;
                             addPointGraphic(point, "red");
                         } else if (!secondPoint) {
                             secondPoint = point;
+                            colorPoint2 = color;
+                            locIdPoint2 = locId;
+                            namePoint2 = name;
                             addPointGraphic(point, "blue");
-                            onTwoPointsSelected(firstPoint, secondPoint, color);
+                            onTwoPointsSelected(firstPoint, secondPoint, colorPoint1, colorPoint2, locIdPoint1, locIdPoint2, namePoint1, namePoint2);
                             firstPoint = null;
                             secondPoint = null;
+                            locIdPoint1 = null;
+                            locIdPoint2 = null;
+                            namePoint1 = null;
+                            namePoint2 = null;
                         }
                     }
                 });
@@ -361,14 +390,30 @@
                 view.graphics.add(graphic);
             }
 
-            function onTwoPointsSelected(a, b, color) {
-                console.log("Two points selected:", a, b, color);
+            function onTwoPointsSelected(a, b, color1, color2, locId1, locId2, name1, name2) {
+                console.log("Two points selected:", a, b, color1, color2, locId1, locId2, name1, name2);
+
+                const rgbColorBlack = arrayToRgbObj([0, 0, 0]); // RGB for black
+                
+                const rgbColor1 = color1 || [255, 0, 0]; // Default to red if no color provided
+                const rgbColor2 = color2 || [0, 0, 255]; // Default to blue if no color provided
 
                 kms = getDistance(a.latitude, a.longitude, b.latitude, b.longitude);
                 console.log("Distance (km):", kms);
 
-                var h1 = "https://api.ebird.org/v2/ref/hotspot/geo?fmt=json&dist=5&lat=" + a.latitude.toFixed(8) + "&lng=" + a.longitude.toFixed(6);
-                var h2 = "https://api.ebird.org/v2/ref/hotspot/geo?fmt=json&dist=5&lat=" + b.latitude.toFixed(8) + "&lng=" + b.longitude.toFixed(6);
+                if (rgbColor1.r === rgbColorBlack.r && rgbColor1.g === rgbColorBlack.g && rgbColor1.b === rgbColorBlack.b)
+                 { color1isBlack = true; }
+                else 
+                { color1isBlack = false; }
+
+                if (rgbColor2.r === rgbColorBlack.r && rgbColor2.g === rgbColorBlack.g && rgbColor2.b === rgbColorBlack.b)
+                 { color2isBlack = true; }
+                else 
+                { color2isBlack = false; }
+
+                
+                var h1 = "https://api.ebird.org/v2/ref/hotspot/geo?fmt=json&dist=20&lat=" + a.latitude.toFixed(8) + "&lng=" + a.longitude.toFixed(6);
+                var h2 = "https://api.ebird.org/v2/ref/hotspot/geo?fmt=json&dist=20&lat=" + b.latitude.toFixed(8) + "&lng=" + b.longitude.toFixed(6);
 
                 //get the nearest hotspot source and target
                 var hotspotSource = getData(h1);
@@ -412,11 +457,20 @@
                 var hotspotTargetCode2 = closestTargetHotspot.locId;
 
                 // Birdlist api
+                if (color1isBlack) {                    
+                var speciesListSourceUrl = "https://api.ebird.org/v2/product/spplist/" + locId1;
+                } else {
                 var speciesListSourceUrl = "https://api.ebird.org/v2/product/spplist/" + hotspotSourceCode1;
+                }
                 //source bird list
                 var hotspotSourceList = getData(speciesListSourceUrl);
 
+                if (color2isBlack) {        
+                var speciesLisTargetUrl = "https://api.ebird.org/v2/product/spplist/" + locId2;
+                 } else {
                 var speciesLisTargetUrl = "https://api.ebird.org/v2/product/spplist/" + hotspotTargetCode2;
+                 }  
+
                 //target bird list
                 var hotspotTargetList = getData(speciesLisTargetUrl);
 
@@ -425,17 +479,13 @@
 
                 let formattedList = diff.map(code => getComName(code)).join(", ");
 
-                formattedHtml = "<b>Species in " + closestSourceHotspot.locName + " NOT in " + closestTargetHotspot.locName + ":</b></br></br><b>" + formattedList + "</b>";
+                formattedHtml = "<div style='text-align: left;'><b>Species in " + name1 + " NOT in " + name2 + ":</b></br></br><b>" + formattedList + "</b></div>";
 
                 Swal.fire({
                     title: 'Species Compare!',
                     html: formattedHtml,
                     draggable: true,
                 });
-
-                // Optional: clear graphics after each pair
-                // setTimeout(() => view.graphics.removeAll(), 500);
-                // loadSpecies();
             }
 
             function getData(url) {
