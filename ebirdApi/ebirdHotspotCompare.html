@@ -390,8 +390,30 @@
                 view.graphics.add(graphic);
             }
 
-            function onTwoPointsSelected(a, b, color1, color2, locId1, locId2, name1, name2) {
+            async function onTwoPointsSelected(a, b, color1, color2, locId1, locId2, name1, name2) {
                 console.log("Two points selected:", a, b, color1, color2, locId1, locId2, name1, name2);
+
+                // Show loading indicator
+                Swal.fire({
+                    title: 'Loading...',
+                    text: 'Fetching data from eBird API',
+                    allowOutsideClick: false,
+                    showConfirmButton: false,
+                    willOpen: () => {
+                        Swal.showLoading();
+                    }
+                });
+
+                // Show loading indicator
+                Swal.fire({
+                    title: 'Loading...',
+                    text: 'Fetching data from eBird API',
+                    allowOutsideClick: false,
+                    showConfirmButton: false,
+                    willOpen: () => {
+                        Swal.showLoading();
+                    }
+                });
 
                 const rgbColorBlack = arrayToRgbObj([0, 0, 0]); // RGB for black
                 
@@ -416,8 +438,8 @@
                 var h2 = "https://api.ebird.org/v2/ref/hotspot/geo?fmt=json&dist=20&lat=" + b.latitude.toFixed(8) + "&lng=" + b.longitude.toFixed(6);
 
                 //get the nearest hotspot source and target
-                var hotspotSource = getData(h1);
-                var hotspotTarget = getData(h2);
+                var hotspotSource = await fetchData(h1);
+                var hotspotTarget = await fetchData(h2);
 
                 // measure the distance of each hotspot from the point
                 // find the closest one
@@ -479,6 +501,9 @@
 
                 let formattedList = diff.map(code => getComName(code)).join(", ");
 
+                // Close loading indicator
+                Swal.close();
+
                 formattedHtml = "<div style='text-align: left;'><b>Species in " + name1 + " NOT in " + name2 + ":</b></br></br><b>" + formattedList + "</b></div>";
 
                 Swal.fire({
@@ -486,6 +511,10 @@
                     html: formattedHtml,
                     draggable: true,
                 });
+
+                // Clear the selection graphics and reload the map points
+                view.graphics.removeAll();
+                loadSpecies();
             }
 
             function getData(url) {
