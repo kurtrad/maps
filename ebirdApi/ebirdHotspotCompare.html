@@ -126,8 +126,13 @@
                     }
                 }
 
+                // Call the function
+            birdsarray = fetchData("https://ebird.org/ws2.0/ref/hotspot/US-CA?fmt=json&back=30").then(response => {
+                data = response;
+            });
+
             //load bird species list
-            birdsArray = getData("https://ebird.org/ws2.0/ref/taxonomy/ebird?fmt=json&key=npobnnr5u7fo");
+            //birdsArray = getData("https://ebird.org/ws2.0/ref/taxonomy/ebird?fmt=json&key=npobnnr5u7fo");
 
             loadSpecies();
 
@@ -149,7 +154,7 @@
                 // load the default county bounds
                 allBounds = getAllCountyBounds(selection);
                 data = getData(urlAPI);
-                
+
                 pointGraphicsHotSpotReturn = getHotspotGraphics(data)
                 //pointGraphicsReturn = [];
                 
@@ -458,11 +463,30 @@
                 });
 
                 return data;
-
-                // Optional: clear graphics after each pair
-                setTimeout(() => view.graphics.removeAll(), 500);
-                loadSpecies();
+                
             }
+
+            async function fetchData(url) {
+                const apiData = {
+                    "url": url,
+                    "method": "GET",
+                    "headers": {
+                        "X-eBirdApiToken": "npobnnr5u7fo"
+                    }
+                    // "async": false removed; it's true by default
+                };
+
+                try {
+                    const response = await $.ajax(apiData);
+                    console.log(response);
+                    return response; // Use the data here or return it
+                } catch (error) {
+                    console.error("Request failed:", error);
+                }
+            }
+
+           
+
 
             // calculate distance between two lat/lon points in km
             function getDistance(lat1, lon1, lat2, lon2) {
@@ -500,20 +524,7 @@
                 return counties; // Array of { code: "US-NY-001", name: "Albany" }
             }
 
-            // getCounties(STATE_CODE)
-            //     .then(data => console.log(data))
-            //     .catch(err => console.error(err));
-
         });
-
-        // // Example: Get bounds for a specific county (e.g., US-NY-001)
-        // function getCountyBounds(countyCode) {
-        //     var countyUrl = 'https://api.ebird.org/v2/ref/region/info/' + countyCode;
-        //     var bounds = getData(countyUrl)
-
-        //     // Returns: { minX: -74.1, maxX: -73.7, minY: 42.4, maxY: 42.8 }
-        //     return bounds;
-        // }
 
     </script>
 </head>
