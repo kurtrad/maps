@@ -171,7 +171,7 @@
 
                 // Close any open popups
                 view.popup.close();
-                
+
                 view.graphics.removeAll();
                 //view.center = mapCenter;
 
@@ -225,7 +225,7 @@
                             }
                         };
                         let labelGraphic = new Graphic({
-                            geometry: new Point({x: counties[i].lng, y: counties[i].lat}),
+                            geometry: new Point({ x: counties[i].lng, y: counties[i].lat }),
                             symbol: textSymbol
                         });
                         labelGraphics.push(labelGraphic);
@@ -531,6 +531,7 @@
 
                 // Birdlist api
                 if (color1isBlack) {
+                    name1 = name1 + " County";
                     var speciesListSourceUrl = "https://api.ebird.org/v2/product/spplist/" + locId1;
                 } else {
                     var speciesListSourceUrl = "https://api.ebird.org/v2/product/spplist/" + hotspotSourceCode1;
@@ -539,6 +540,7 @@
                 var hotspotSourceList = getData(speciesListSourceUrl);
 
                 if (color2isBlack) {
+                    name2 = name2 + " County";
                     var speciesLisTargetUrl = "https://api.ebird.org/v2/product/spplist/" + locId2;
                 } else {
                     var speciesLisTargetUrl = "https://api.ebird.org/v2/product/spplist/" + hotspotTargetCode2;
@@ -652,6 +654,8 @@
         <a>eBird Hotspot and county species compare</a>
         <br />
         <a>Click any two points on the map to compare species in each point.</a>
+        <br />
+        <a>First point is the source data, second point is the target</a>
         <br />
         <a>Black points are counties green points are hotspot.</a>
         <br />
