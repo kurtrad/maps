@@ -114,8 +114,29 @@
                 hotspots = getData(urlForDropDown);
 
                 loadCombo(hotspots);
+                //load bird species list
+                birdsArray = await fetchData("https://ebird.org/ws2.0/ref/taxonomy/ebird?fmt=json");
 
-                function loadCombo(hotspotData) {
+                // Show loading on windows load 
+                Swal.fire({
+                    title: 'Loading...',
+                    text: 'Loading eBird API data points',
+                    allowOutsideClick: false,
+                    showConfirmButton: false,
+                    showCancelButton: true,
+                    cancelButtonText: 'Cancel',
+                    willOpen: () => {
+                        Swal.showLoading();
+                    }
+                });
+
+                await loadSpecies();
+
+                // Close loading
+                Swal.close();
+            }
+
+            function loadCombo(hotspotData) {
                     var sel = document.getElementById('modeSelect') // find the drop down
                     for (var i in hotspotData) { // loop through all elements
                         var opt = document.createElement("option"); // Create the new element
@@ -141,28 +162,6 @@
                     sel.value = "US-CA"; // Ensure the value exactly matches the option's value
 
                 }
-
-                //load bird species list
-                birdsArray = await fetchData("https://ebird.org/ws2.0/ref/taxonomy/ebird?fmt=json");
-
-                // Show loading
-                Swal.fire({
-                    title: 'Loading...',
-                    text: 'Loading eBird API data points',
-                    allowOutsideClick: false,
-                    showConfirmButton: false,
-                    showCancelButton: true,
-                    cancelButtonText: 'Cancel',
-                    willOpen: () => {
-                        Swal.showLoading();
-                    }
-                });
-
-                await loadSpecies();
-
-                // Close loading
-                Swal.close();
-            }
 
             /*************************
             * Create a point graphic
@@ -362,7 +361,22 @@
                 selection = document.getElementById("modeSelect").value;
                 daysback = document.getElementById("days").value;
 
-                loadSpecies();
+                // Show loading when changing location
+                Swal.fire({
+                    title: 'Loading...',
+                    text: 'Changing location, reloading eBird API data points',
+                    allowOutsideClick: false,
+                    showConfirmButton: false,
+                    showCancelButton: true,
+                    cancelButtonText: 'Cancel',
+                    willOpen: () => {
+                        Swal.showLoading();
+                    }
+                });
+                
+                await loadSpecies();
+                // Close loading indicator
+                Swal.close();
             }
 
             async function getAllCountyBounds(selection) {
@@ -456,10 +470,10 @@
             async function onTwoPointsSelected(a, b, color1, color2, locId1, locId2, name1, name2) {
                 console.log("Two points selected:", a, b, color1, color2, locId1, locId2, name1, name2);
 
-                // Show loading indicator
+                // Show loading indicator for species comparison
                 Swal.fire({
                     title: 'Loading...',
-                    text: 'Fetching data from eBird API',
+                    text: 'Fetching species data from eBird API',
                     allowOutsideClick: false,
                     showConfirmButton: false,
                     showCancelButton: true,
@@ -567,7 +581,9 @@
 
                 // Clear the selection graphics and reload the map points
                 view.graphics.removeAll();
-                loadSpecies();
+
+                await loadSpecies();
+
             }
 
             function getData(url) {
