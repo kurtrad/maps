@@ -117,19 +117,21 @@
                             sel.appendChild(opt); // add it to the select
                         }
 
-                        opt.text = "Baja Mexico";
-                        opt.value = "MX-BCN";
-                        // sel.firstChild targets the top of the list
-                        sel.insertBefore(opt, sel.firstChild);
+                        // Add Baja Mexico Sur
+                        let opt1 = document.createElement("option");
+                        opt1.text = "Baja Mexico Sur";
+                        opt1.value = "MX-BCS";
+                        sel.insertBefore(opt1, sel.firstChild);
 
-                        opt.text = "Baja Mexico Sur";
-                        opt.value = "MX-BCS";
-                        // sel.firstChild targets the top of the list
-                        sel.insertBefore(opt, sel.firstChild);
+                        // Add Baja Mexico
+                        let opt2 = document.createElement("option");
+                        opt2.text = "Baja Mexico";
+                        opt2.value = "MX-BCN";
+                        sel.insertBefore(opt2, sel.firstChild);
 
+// Set default to California
+sel.value = "US-CA"; // Ensure the value exactly matches the option's value
 
-                        // Set default to California
-                        sel.value = "US-CA";
                     }
 
                     //load bird species list
@@ -138,7 +140,7 @@
                     // Show loading
                     Swal.fire({
                         title: 'Loading...',
-                        text: 'Loading eBird API data',
+                        text: 'Loading eBird API data points',
                         allowOutsideClick: false,
                         showConfirmButton: false,
                         showCancelButton: true,
