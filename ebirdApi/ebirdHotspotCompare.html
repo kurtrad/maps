@@ -88,6 +88,14 @@
                 zoom: 7
             });
 
+            // Configure popup to be docked by default
+            view.popup.dockEnabled = true;
+            view.popup.dockOptions = {
+                buttonEnabled: false,
+                breakpoint: false,
+                position: "top-right"
+            };
+
             var basemapToggle = new BasemapToggle({
                 view: view,  // The view that provides access to the map's "streets" basemap
                 nextBasemap: "hybrid"  // Allows for toggling to the "hybrid" basemap
@@ -161,6 +169,9 @@
             *************************/
             async function loadSpecies() {
 
+                // Close any open popups
+                view.popup.close();
+                
                 view.graphics.removeAll();
                 //view.center = mapCenter;
 
@@ -204,7 +215,7 @@
                             color: [0, 0, 0],
                             haloColor: [255, 255, 255],
                             haloSize: 2.5,
-                            text: counties[i].name,
+                            text: counties[i].name + " County",
                             xoffset: 0,
                             yoffset: -20,
                             font: {
