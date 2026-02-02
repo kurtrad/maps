@@ -577,12 +577,27 @@
                     title: 'Species Compare!',
                     html: formattedHtml,
                     draggable: true,
+                }).then(() => {
+                    // Show loading alert after user closes the compare dialog
+                    Swal.fire({
+                        title: 'Loading...',
+                        text: 'Reloading map data',
+                        allowOutsideClick: false,
+                        showConfirmButton: false,
+                        showCancelButton: true,
+                        cancelButtonText: 'Cancel',
+                        willOpen: () => {
+                            Swal.showLoading();
+                        }
+                    });
                 });
-
                 // Clear the selection graphics and reload the map points
                 view.graphics.removeAll();
 
                 await loadSpecies();
+
+                // Close loading indicator
+                Swal.close();
 
             }
 
