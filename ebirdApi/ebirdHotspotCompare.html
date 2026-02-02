@@ -364,7 +364,7 @@
                 // Show loading when changing location
                 Swal.fire({
                     title: 'Loading...',
-                    text: 'Changing location, reloading eBird API data points',
+                    text: 'Changing location, loading new eBird API data points',
                     allowOutsideClick: false,
                     showConfirmButton: false,
                     showCancelButton: true,
@@ -573,26 +573,29 @@
 
                 formattedHtml = "<div style='text-align: left;'><b>Species in " + name1 + " NOT in " + name2 + ":</b></br></br><b>" + formattedList + "</b></div>";
 
-                Swal.fire({
+                // Show species compare result and wait for user to close
+                const compareResult = await Swal.fire({
                     title: 'Species Compare!',
                     html: formattedHtml,
                     draggable: true,
-                }).then(() => {
-                    // Show loading alert after user closes the compare dialog
-                    Swal.fire({
-                        title: 'Loading...',
-                        text: 'Reloading map data',
-                        allowOutsideClick: false,
-                        showConfirmButton: false,
-                        showCancelButton: true,
-                        cancelButtonText: 'Cancel',
-                        willOpen: () => {
-                            Swal.showLoading();
-                        }
-                    });
+                    didClose: true
                 });
+
                 // Clear the selection graphics and reload the map points
                 view.graphics.removeAll();
+
+                // Show loading alert while reloading
+                Swal.fire({
+                    title: 'Loading...',
+                    text: 'Reloading map data',
+                    allowOutsideClick: false,
+                    showConfirmButton: false,
+                    showCancelButton: true,
+                    cancelButtonText: 'Cancel',
+                    willOpen: () => {
+                        Swal.showLoading();
+                    }
+                });
 
                 await loadSpecies();
 
