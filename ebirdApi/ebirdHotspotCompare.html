@@ -98,7 +98,7 @@
             // Add widget to the top right corner of the view
             view.ui.add(basemapToggle, "bottom-right");
 
-             window.onload = function (e) {
+             window.onload = async function (e) {
                     // Load the Selection DropDown
                     // var urlAPI = "https://ebird.org/ws2.0/ref/region/list/subnational2/US-CA.json";
                     var urlForDropDown = "https://ebird.org/ws2.0/ref/region/list/subnational1/US.json";
@@ -117,8 +117,13 @@
                             sel.appendChild(opt); // add it to the select
                         }
 
-                        opt.text = "All Mexico";
-                        opt.value = "MX";
+                        opt.text = "Baja Mexico";
+                        opt.value = "MX-BCN";
+                        // sel.firstChild targets the top of the list
+                        sel.insertBefore(opt, sel.firstChild);
+
+                        opt.text = "Baja Mexico Sur";
+                        opt.value = "MX-BCS";
                         // sel.firstChild targets the top of the list
                         sel.insertBefore(opt, sel.firstChild);
 
@@ -126,17 +131,33 @@
                         // Set default to California
                         sel.value = "US-CA";
                     }
-                }
-            
-            //load bird species list
-            birdsArray = getData("https://ebird.org/ws2.0/ref/taxonomy/ebird?fmt=json");
 
-            loadSpecies();
+                    //load bird species list
+                    birdsArray = await fetchData("https://ebird.org/ws2.0/ref/taxonomy/ebird?fmt=json");
+
+                    // Show loading
+                    Swal.fire({
+                        title: 'Loading...',
+                        text: 'Loading eBird API data',
+                        allowOutsideClick: false,
+                        showConfirmButton: false,
+                        showCancelButton: true,
+                        cancelButtonText: 'Cancel',
+                        willOpen: () => {
+                            Swal.showLoading();
+                        }
+                    });
+
+                    await loadSpecies();
+
+                    // Close loading
+                    Swal.close();
+                }
 
             /*************************
             * Create a point graphic
             *************************/
-            function loadSpecies() {
+            async function loadSpecies() {
 
                 view.graphics.removeAll();
                 //view.center = mapCenter;
@@ -149,8 +170,8 @@
                 //var urlAPI = "https://ebird.org/ws2.0/ref/hotspot/US-AZ?fmt=json&back=1";
 
                 // load the default county bounds
-                allBounds = getAllCountyBounds(selection);
-                data = getData(urlAPI);
+                allBounds = await getAllCountyBounds(selection);
+                data = await fetchData(urlAPI);
 
                 pointGraphicsHotSpotReturn = getHotspotGraphics(data)
                 //pointGraphicsReturn = [];
@@ -295,14 +316,14 @@
             window.addEventListener("change", updateElevationMode);
 
             // Create events' callback functions
-            function updateElevationMode(event) {
+            async function updateElevationMode(event) {
                 selection = document.getElementById("modeSelect").value;
                 daysback = document.getElementById("days").value;
 
                 loadSpecies();
             }
 
-            function getAllCountyBounds(selection) {
+            async function getAllCountyBounds(selection) {
                 var counties = getCounties(selection); // Fetch list of counties
                 var allBounds = [];
 
@@ -314,7 +335,7 @@
                         // IMPORTANT: getCountyBounds MUST be a synchronous function.
                         // If it returns a Promise, this will not work as expected.
                         var countyUrl = 'https://api.ebird.org/v2/ref/region/info/' + county.code;
-                        var bounds = getData(countyUrl)
+                        var bounds = await fetchData(countyUrl)
 
                         allBounds.push({
                             name: county.name,
@@ -399,6 +420,8 @@
                     text: 'Fetching data from eBird API',
                     allowOutsideClick: false,
                     showConfirmButton: false,
+                    showCancelButton: true,
+                    cancelButtonText: 'Cancel',
                     willOpen: () => {
                         Swal.showLoading();
                     }
@@ -445,7 +468,7 @@
                     console.log(h.locId, h.lat, h.lng, dist);
                 });
 
-                console.log("Closest hotspot:", closestSourceHotspot.locId, shortestSourceDist);
+                console.log("Closest hotspot:", closestSourceHotspot ? closestSourceHotspot.locId : 'null', shortestSourceDist);
 
                 let shortestTargetDist = Infinity;
                 let closestTargetHotspot = null;
@@ -461,11 +484,12 @@
                     console.log(h.locId, h.lat, h.lng, dist);
                 });
 
-                console.log("Closest hotspot:", closestTargetHotspot.locId, shortestTargetDist);
+                console.log("Closest hotspot:", closestTargetHotspot ? closestTargetHotspot.locId : 'null', shortestTargetDist);
+
 
                 // extract the code from hotspot
-                var hotspotSourceCode1 = closestSourceHotspot.locId;
-                var hotspotTargetCode2 = closestTargetHotspot.locId;
+                var hotspotSourceCode1 = closestSourceHotspot ? closestSourceHotspot.locId : '';
+                var hotspotTargetCode2 = closestTargetHotspot ? closestTargetHotspot.locId : '';
 
                 // Birdlist api
                 if (color1isBlack) {                    
