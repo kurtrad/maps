@@ -42,14 +42,14 @@
 
 
     <script>
-        
+
         var selection;
         var daysback = 30;
         var selection = "US-CA";
         var mapCenter = [-112, 33]
         var birdsArray = [];
-        var colorPoint1 =''
-        var colorPoint2 =''
+        var colorPoint1 = ''
+        var colorPoint2 = ''
 
         require([
             "esri/Map",
@@ -98,63 +98,63 @@
             // Add widget to the top right corner of the view
             view.ui.add(basemapToggle, "bottom-right");
 
-             window.onload = async function (e) {
-                    // Load the Selection DropDown
-                    // var urlAPI = "https://ebird.org/ws2.0/ref/region/list/subnational2/US-CA.json";
-                    var urlForDropDown = "https://ebird.org/ws2.0/ref/region/list/subnational1/US.json";
+            window.onload = async function (e) {
+                // Load the Selection DropDown
+                // var urlAPI = "https://ebird.org/ws2.0/ref/region/list/subnational2/US-CA.json";
+                var urlForDropDown = "https://ebird.org/ws2.0/ref/region/list/subnational1/US.json";
 
-                    hotspots = getData(urlForDropDown);
+                hotspots = getData(urlForDropDown);
 
-                    loadCombo(hotspots);
+                loadCombo(hotspots);
 
-                    function loadCombo(hotspotData) {
-                        var sel = document.getElementById('modeSelect') // find the drop down
-                        for (var i in hotspotData) { // loop through all elements
-                            var opt = document.createElement("option"); // Create the new element
-                            opt.value = hotspotData[i].code; // set the value
-                            opt.text = hotspotData[i].name; // set the text
+                function loadCombo(hotspotData) {
+                    var sel = document.getElementById('modeSelect') // find the drop down
+                    for (var i in hotspotData) { // loop through all elements
+                        var opt = document.createElement("option"); // Create the new element
+                        opt.value = hotspotData[i].code; // set the value
+                        opt.text = hotspotData[i].name; // set the text
 
-                            sel.appendChild(opt); // add it to the select
-                        }
-
-                        // Add Baja Mexico Sur
-                        let opt1 = document.createElement("option");
-                        opt1.text = "Baja Mexico Sur";
-                        opt1.value = "MX-BCS";
-                        sel.insertBefore(opt1, sel.firstChild);
-
-                        // Add Baja Mexico
-                        let opt2 = document.createElement("option");
-                        opt2.text = "Baja Mexico";
-                        opt2.value = "MX-BCN";
-                        sel.insertBefore(opt2, sel.firstChild);
-
-// Set default to California
-sel.value = "US-CA"; // Ensure the value exactly matches the option's value
-
+                        sel.appendChild(opt); // add it to the select
                     }
 
-                    //load bird species list
-                    birdsArray = await fetchData("https://ebird.org/ws2.0/ref/taxonomy/ebird?fmt=json");
+                    // Add Baja Mexico Sur
+                    let opt1 = document.createElement("option");
+                    opt1.text = "Baja Mexico Sur";
+                    opt1.value = "MX-BCS";
+                    sel.insertBefore(opt1, sel.firstChild);
 
-                    // Show loading
-                    Swal.fire({
-                        title: 'Loading...',
-                        text: 'Loading eBird API data points',
-                        allowOutsideClick: false,
-                        showConfirmButton: false,
-                        showCancelButton: true,
-                        cancelButtonText: 'Cancel',
-                        willOpen: () => {
-                            Swal.showLoading();
-                        }
-                    });
+                    // Add Baja Mexico
+                    let opt2 = document.createElement("option");
+                    opt2.text = "Baja Mexico";
+                    opt2.value = "MX-BCN";
+                    sel.insertBefore(opt2, sel.firstChild);
 
-                    await loadSpecies();
+                    // Set default to California
+                    sel.value = "US-CA"; // Ensure the value exactly matches the option's value
 
-                    // Close loading
-                    Swal.close();
                 }
+
+                //load bird species list
+                birdsArray = await fetchData("https://ebird.org/ws2.0/ref/taxonomy/ebird?fmt=json");
+
+                // Show loading
+                Swal.fire({
+                    title: 'Loading...',
+                    text: 'Loading eBird API data points',
+                    allowOutsideClick: false,
+                    showConfirmButton: false,
+                    showCancelButton: true,
+                    cancelButtonText: 'Cancel',
+                    willOpen: () => {
+                        Swal.showLoading();
+                    }
+                });
+
+                await loadSpecies();
+
+                // Close loading
+                Swal.close();
+            }
 
             /*************************
             * Create a point graphic
@@ -177,9 +177,9 @@ sel.value = "US-CA"; // Ensure the value exactly matches the option's value
 
                 pointGraphicsHotSpotReturn = getHotspotGraphics(data)
                 //pointGraphicsReturn = [];
-                
+
                 pointGraphicsCountyReturn = getCountyGraphics(allBounds);
-               
+
                 //pointGraphicsCountyReturn = [];
                 // add the graphics to the map
                 // Merge both into a single array and add once
@@ -370,7 +370,7 @@ sel.value = "US-CA"; // Ensure the value exactly matches the option's value
                         const locId = response.results[0].graphic.attributes.locId;
                         const name = response.results[0].graphic.attributes.Name;
                         console.log("Clicked point color:", color, "locId:", locId, "name:", name);
-                    
+
                         const point = event.mapPoint;
                         if (!firstPoint) {
                             firstPoint = point;
@@ -430,24 +430,20 @@ sel.value = "US-CA"; // Ensure the value exactly matches the option's value
                 });
 
                 const rgbColorBlack = arrayToRgbObj([0, 0, 0]); // RGB for black
-                
+
                 const rgbColor1 = color1 || [255, 0, 0]; // Default to red if no color provided
                 const rgbColor2 = color2 || [0, 0, 255]; // Default to blue if no color provided
 
                 kms = getDistance(a.latitude, a.longitude, b.latitude, b.longitude);
                 console.log("Distance (km):", kms);
 
-                if (rgbColor1.r === rgbColorBlack.r && rgbColor1.g === rgbColorBlack.g && rgbColor1.b === rgbColorBlack.b)
-                 { color1isBlack = true; }
-                else 
-                { color1isBlack = false; }
+                if (rgbColor1.r === rgbColorBlack.r && rgbColor1.g === rgbColorBlack.g && rgbColor1.b === rgbColorBlack.b) { color1isBlack = true; }
+                else { color1isBlack = false; }
 
-                if (rgbColor2.r === rgbColorBlack.r && rgbColor2.g === rgbColorBlack.g && rgbColor2.b === rgbColorBlack.b)
-                 { color2isBlack = true; }
-                else 
-                { color2isBlack = false; }
+                if (rgbColor2.r === rgbColorBlack.r && rgbColor2.g === rgbColorBlack.g && rgbColor2.b === rgbColorBlack.b) { color2isBlack = true; }
+                else { color2isBlack = false; }
 
-                
+
                 var h1 = "https://api.ebird.org/v2/ref/hotspot/geo?fmt=json&dist=20&lat=" + a.latitude.toFixed(8) + "&lng=" + a.longitude.toFixed(6);
                 var h2 = "https://api.ebird.org/v2/ref/hotspot/geo?fmt=json&dist=20&lat=" + b.latitude.toFixed(8) + "&lng=" + b.longitude.toFixed(6);
 
@@ -494,19 +490,19 @@ sel.value = "US-CA"; // Ensure the value exactly matches the option's value
                 var hotspotTargetCode2 = closestTargetHotspot ? closestTargetHotspot.locId : '';
 
                 // Birdlist api
-                if (color1isBlack) {                    
-                var speciesListSourceUrl = "https://api.ebird.org/v2/product/spplist/" + locId1;
+                if (color1isBlack) {
+                    var speciesListSourceUrl = "https://api.ebird.org/v2/product/spplist/" + locId1;
                 } else {
-                var speciesListSourceUrl = "https://api.ebird.org/v2/product/spplist/" + hotspotSourceCode1;
+                    var speciesListSourceUrl = "https://api.ebird.org/v2/product/spplist/" + hotspotSourceCode1;
                 }
                 //source bird list
                 var hotspotSourceList = getData(speciesListSourceUrl);
 
-                if (color2isBlack) {        
-                var speciesLisTargetUrl = "https://api.ebird.org/v2/product/spplist/" + locId2;
-                 } else {
-                var speciesLisTargetUrl = "https://api.ebird.org/v2/product/spplist/" + hotspotTargetCode2;
-                 }  
+                if (color2isBlack) {
+                    var speciesLisTargetUrl = "https://api.ebird.org/v2/product/spplist/" + locId2;
+                } else {
+                    var speciesLisTargetUrl = "https://api.ebird.org/v2/product/spplist/" + hotspotTargetCode2;
+                }
 
                 //target bird list
                 var hotspotTargetList = getData(speciesLisTargetUrl);
@@ -550,7 +546,7 @@ sel.value = "US-CA"; // Ensure the value exactly matches the option's value
                 });
 
                 return data;
-                
+
             }
 
             async function fetchData(url) {
@@ -571,9 +567,6 @@ sel.value = "US-CA"; // Ensure the value exactly matches the option's value
                     console.error("Request failed:", error);
                 }
             }
-
-           
-
 
             // calculate distance between two lat/lon points in km
             function getDistance(lat1, lon1, lat2, lon2) {
@@ -600,8 +593,6 @@ sel.value = "US-CA"; // Ensure the value exactly matches the option's value
                 const bird = birdsArray.find(b => b.speciesCode === code);
                 return bird ? bird.comName : "Species not found";
             }
-
-            // const STATE_CODE = 'US-CA'; // Format: [ISO Country]-[State] (e.g., US-NY for New York)
 
             function getCounties(selection) {
                 var countyUrl = 'https://api.ebird.org/v2/ref/region/list/subnational2/' + selection;
