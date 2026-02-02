@@ -185,13 +185,42 @@
                 // Merge both into a single array and add once
                 // Add hotspot background first
                 view.graphics.addMany(pointGraphicsCountyReturn);
-                // Add countyforeground second
+                // Add county foreground second
                 view.graphics.addMany(pointGraphicsHotSpotReturn);
+
+                // Set up labels for counties (add to view.graphics.labelsVisible)
+                view.graphics.addMany(createCountyLabels(allBounds));
 
                 // center on the hotspots
                 // TODO: improve centering logic
                 mapCenter = [data[0].lng, data[0].lat];
                 view.center = mapCenter;
+
+                function createCountyLabels(counties) {
+                    let labelGraphics = [];
+                    for (let i = 0; i < counties.length; i++) {
+                        let textSymbol = {
+                            type: "text",
+                            color: [0, 0, 0],
+                            haloColor: [255, 255, 255],
+                            haloSize: 2.5,
+                            text: counties[i].name,
+                            xoffset: 0,
+                            yoffset: -20,
+                            font: {
+                                size: 12,
+                                weight: "normal",
+                                family: "sans-serif"
+                            }
+                        };
+                        let labelGraphic = new Graphic({
+                            geometry: new Point({x: counties[i].lng, y: counties[i].lat}),
+                            symbol: textSymbol
+                        });
+                        labelGraphics.push(labelGraphic);
+                    }
+                    return labelGraphics;
+                }
 
                 function getHotspotGraphics(getHotspotGraphics) {
                     points = [];
