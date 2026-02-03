@@ -95,7 +95,7 @@
                 breakpoint: false,
                 position: "top-right"
             };
-
+            
             var basemapToggle = new BasemapToggle({
                 view: view,  // The view that provides access to the map's "streets" basemap
                 nextBasemap: "hybrid"  // Allows for toggling to the "hybrid" basemap
@@ -254,7 +254,8 @@
                             var pointAtt = {
                                 Name: data[i].locName,
                                 locId: data[i].locId,
-                                Checklist: "https://ebird.org/hotspot/" + data[i].locId
+                                SpeciesAllTime: data[i].numSpeciesAllTime,
+                                ChecklistsAllTime: data[i].numChecklistsAllTime
                             };
 
                             /*******************************************
@@ -276,11 +277,14 @@
                                         fieldInfos: [{
                                             fieldName: "Name"
                                         }, {
-                                            fieldName: "locId"
+                                            fieldName: "eBird Location ID",
                                         }, {
-                                            fieldName: "Checklist"
+                                            fieldName: "SpeciesAllTime"
+                                        }, {
+                                            fieldName: "ChecklistsAllTime"
                                         }]
-                                    }]
+                                    }],
+                                    actions: []
                                 }
                             });
 
@@ -310,9 +314,9 @@
 
                         // Create an object for storing attributes related to the line
                         var pointAtt = {
-                            Name: Hotspots[i].name,
-                            locId: Hotspots[i].code,
-                            Checklist: "https://ebird.org/hotspot/" + Hotspots[i].code
+                            CountyName: Hotspots[i].name,
+                            eBirdLocation: Hotspots[i].code
+                            //Checklist: "https://ebird.org/hotspot/" + Hotspots[i].code
                         };
 
                         /*******************************************
@@ -332,13 +336,12 @@
                                 content: [{
                                     type: "fields",
                                     fieldInfos: [{
-                                        fieldName: "Name"
+                                        fieldName: "CountyName"
                                     }, {
-                                        fieldName: "locId"
-                                    }, {
-                                        fieldName: "Checklist"
+                                        fieldName: "eBirdLocation"
                                     }]
-                                }]
+                                }],
+                                actions: []
                             }
                         });
 
