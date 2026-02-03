@@ -326,8 +326,8 @@
 
                         // Create an object for storing attributes related to the line
                         var pointAtt = {
-                            CountyName: Hotspots[i].name,
-                            eBirdLocation: Hotspots[i].code
+                            Name: Hotspots[i].name,
+                            locId: Hotspots[i].code
                             //Checklist: "https://ebird.org/hotspot/" + Hotspots[i].code
                         };
 
@@ -344,12 +344,12 @@
                             symbol: markerSymbol,
                             attributes: pointAtt,
                             popupTemplate: {  // autocasts as new PopupTemplate()
-                                title: "{CountyName}",
+                                title: "{Name}",
                                 actions: [], // removes Zoom to
                                 content: [{
                                     type: "fields",
                                     fieldInfos: [{
-                                        fieldName: "eBirdLocation"
+                                        fieldName: "locId"
                                     }]
                                 }],
                             }
