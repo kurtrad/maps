@@ -272,11 +272,10 @@
                                 attributes: pointAtt,
                                 popupTemplate: {  // autocasts as new PopupTemplate()
                                     title: "{Name}",
+                                    actions: [], // removes Zoom to
                                     content: [{
                                         type: "fields",
                                         fieldInfos: [{
-                                            fieldName: "Name"
-                                        }, {
                                             fieldName: "eBird Location ID",
                                         }, {
                                             fieldName: "SpeciesAllTime"
@@ -284,7 +283,6 @@
                                             fieldName: "ChecklistsAllTime"
                                         }]
                                     }],
-                                    actions: []
                                 }
                             });
 
@@ -332,16 +330,14 @@
                             symbol: markerSymbol,
                             attributes: pointAtt,
                             popupTemplate: {  // autocasts as new PopupTemplate()
-                                title: "{Name}",
+                                title: "{CountyName}",
+                                actions: [], // removes Zoom to
                                 content: [{
                                     type: "fields",
                                     fieldInfos: [{
-                                        fieldName: "CountyName"
-                                    }, {
                                         fieldName: "eBirdLocation"
                                     }]
                                 }],
-                                actions: []
                             }
                         });
 
