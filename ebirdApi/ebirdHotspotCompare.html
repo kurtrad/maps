@@ -463,7 +463,8 @@
                         }
                     }
                 });
-
+                
+                var addedColor = graphic.symbol.color;   
                 view.graphics.add(graphic);
             }
 
@@ -581,26 +582,43 @@
                     didClose: true
                 });
 
-                // Clear the selection graphics and reload the map points
-                view.graphics.removeAll();
+                // Remove selection points after reload
+                view.graphics.items.forEach(graphic => {
+                    // if (!graphic.symbol || !graphic.symbol.color) {
+                    //     return;
+                    // }
 
-                // Show loading alert while reloading
-                Swal.fire({
-                    title: 'Loading...',
-                    text: 'Reloading map data',
-                    allowOutsideClick: false,
-                    showConfirmButton: false,
-                    showCancelButton: true,
-                    cancelButtonText: 'Cancel',
-                    willOpen: () => {
-                        Swal.showLoading();
+                    const color = graphic.symbol.color;
+                    const r = Array.isArray(color) ? color[0] : color.r;
+                    const g = Array.isArray(color) ? color[1] : color.g;
+                    const b = Array.isArray(color) ? color[2] : color.b;
+
+                    if ((r === 255 && g === 0 && b === 0) ||  // red
+                        (r === 0 && g === 0 && b === 255)) {   // blue
+                        view.graphics.remove(graphic);
                     }
                 });
 
-                await loadSpecies();
+                // // Clear the selection graphics and reload the map points
+                // view.graphics.removeAll();
 
-                // Close loading indicator
-                Swal.close();
+                // // Show loading alert while reloading
+                // Swal.fire({
+                //     title: 'Loading...',
+                //     text: 'Reloading map data',
+                //     allowOutsideClick: false,
+                //     showConfirmButton: false,
+                //     showCancelButton: true,
+                //     cancelButtonText: 'Cancel',
+                //     willOpen: () => {
+                //         Swal.showLoading();
+                //     }
+                // });
+
+                // await loadSpecies();
+
+                // // Close loading indicator
+                // Swal.close();
 
             }
 
