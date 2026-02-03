@@ -47,6 +47,13 @@
         .esri-popup__header-button--close {
             display: none !important;
         }
+
+        /* Enable text wrapping in SweetAlert2 dialogs */
+        .swal2-html-container {
+            white-space: normal !important;
+            word-wrap: break-word !important;
+            overflow-wrap: break-word !important;
+        }
     </style>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -381,7 +388,7 @@
                 // Show loading when changing location
                 Swal.fire({
                     title: 'Loading...',
-                    text: 'Changing location, loading new eBird API data points',
+                    text: 'Changing location, loading new eBird API data points, states with many counties may take longer',
                     allowOutsideClick: false,
                     showConfirmButton: false,
                     showCancelButton: true,
@@ -724,6 +731,8 @@
         <a>First point is the source data, second point is the target</a>
         <br />
         <a>Black points are counties green points are hotspot.</a>
+        <br />
+         <a>Hover over points to see location details</a>
         <br />
         <a><i>Copyright - Kurt Radamaker</i></a>
     </div>
