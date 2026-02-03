@@ -450,6 +450,20 @@
                 });
             });
 
+            // Display name on hover
+            view.on("pointer-move", function (event) {
+                view.hitTest(event).then(function (response) {
+                    if (response.results.length > 0) {
+                        view.popup.open({
+                            features: [response.results[0].graphic],
+                            location: event.mapPoint
+                        });
+                    } else {
+                        view.popup.close();
+                    }
+                });
+            });
+
             function addPointGraphic(point, color) {
                 const graphic = new Graphic({
                     geometry: point,
