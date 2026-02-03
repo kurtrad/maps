@@ -583,10 +583,11 @@
                 });
 
                 // Remove selection points after reload
+                const graphicsToRemove = [];
                 view.graphics.items.forEach(graphic => {
-                    // if (!graphic.symbol || !graphic.symbol.color) {
-                    //     return;
-                    // }
+                    if (!graphic.symbol || !graphic.symbol.color) {
+                        return;
+                    }
 
                     const color = graphic.symbol.color;
                     const r = Array.isArray(color) ? color[0] : color.r;
@@ -595,30 +596,12 @@
 
                     if ((r === 255 && g === 0 && b === 0) ||  // red
                         (r === 0 && g === 0 && b === 255)) {   // blue
-                        view.graphics.remove(graphic);
+                        graphicsToRemove.push(graphic);
                     }
                 });
-
-                // // Clear the selection graphics and reload the map points
-                // view.graphics.removeAll();
-
-                // // Show loading alert while reloading
-                // Swal.fire({
-                //     title: 'Loading...',
-                //     text: 'Reloading map data',
-                //     allowOutsideClick: false,
-                //     showConfirmButton: false,
-                //     showCancelButton: true,
-                //     cancelButtonText: 'Cancel',
-                //     willOpen: () => {
-                //         Swal.showLoading();
-                //     }
-                // });
-
-                // await loadSpecies();
-
-                // // Close loading indicator
-                // Swal.close();
+                
+                // Remove all collected graphics
+                graphicsToRemove.forEach(graphic => view.graphics.remove(graphic));
 
             }
 
