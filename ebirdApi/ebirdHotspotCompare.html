@@ -34,6 +34,19 @@
         select option {
             width: 180px;
         }
+
+        /* Hide the zoom to button in popup */
+        .esri-popup__action[data-action-id="zoom-to-feature"],
+        .esri-popup__button[title="Zoom to"],
+        .esri-popup__actions {
+            display: none !important;
+        }
+
+        /* Hide the close button in popup */
+        .esri-popup__button[title="Close"],
+        .esri-popup__header-button--close {
+            display: none !important;
+        }
     </style>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -85,16 +98,17 @@
                 center: mapCenter,
                 container: "viewDiv",
                 map: map,
-                zoom: 7
+                zoom: 7,
+                popup: {
+                    dockEnabled: true,
+                    dockOptions: {
+                        buttonEnabled: false,
+                        breakpoint: false,
+                        position: "top-right"
+                    },
+                    actions: []
+                }
             });
-
-            // Configure popup to be docked by default
-            view.popup.dockEnabled = true;
-            view.popup.dockOptions = {
-                buttonEnabled: false,
-                breakpoint: false,
-                position: "top-right"
-            };
             
             var basemapToggle = new BasemapToggle({
                 view: view,  // The view that provides access to the map's "streets" basemap
