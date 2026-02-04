@@ -202,25 +202,48 @@
                 //var urlAPI = "https://ebird.org/ws2.0/ref/hotspot/US-AZ?fmt=json&back=" + daysback ;
                 //var urlAPI = "https://ebird.org/ws2.0/ref/hotspot/US-AZ?fmt=json&back=1";
 
-                // load the default county bounds
-                allBounds = await getAllCountyBounds(selection);
-                data = await fetchData(urlAPI);
+                //selection = 'US-AZ'; // For testing only, remove later
 
-                pointGraphicsHotSpotReturn = getHotspotGraphics(data)
-                //pointGraphicsReturn = [];
+                if (selection === "US") {
+                    allStateBounds = await getAllStateBounds('US');
+                    pointGraphicsStateReturn = getStateGraphics(allStateBounds);
 
-                pointGraphicsCountyReturn = getCountyGraphics(allBounds);
+                    // Add county foreground second
+                    view.graphics.addMany(pointGraphicsStateReturn);
+                }
+                else {
+                    // load the default county bounds
+                    allBounds = await getAllCountyBounds(selection);
+                    data = await fetchData(urlAPI);
 
-                //pointGraphicsCountyReturn = [];
-                // add the graphics to the map
-                // Merge both into a single array and add once
-                // Add hotspot background first
-                view.graphics.addMany(pointGraphicsCountyReturn);
-                // Add county foreground second
-                view.graphics.addMany(pointGraphicsHotSpotReturn);
+                    pointGraphicsHotSpotReturn = getHotspotGraphics(data)
+                    //pointGraphicsReturn = [];
+                    pointGraphicsCountyReturn = getCountyGraphics(allBounds);
 
-                // Set up labels for counties (add to view.graphics.labelsVisible)
-                view.graphics.addMany(createCountyLabels(allBounds));
+                    //pointGraphicsCountyReturn = [];
+                    // add the graphics to the map
+                    // Merge both into a single array and add once
+                    // Add hotspot background first
+                    view.graphics.addMany(pointGraphicsCountyReturn);
+                    // Add county foreground second
+                    view.graphics.addMany(pointGraphicsHotSpotReturn);
+
+                    // Set up labels for counties (add to view.graphics.labelsVisible)
+                    countyLabels = createCountyLabels(allBounds);
+                    view.graphics.addMany(countyLabels);
+                    
+                    // Add zoom change listener to show/hide labels based on zoom level
+                    view.watch("zoom", function(newZoom) {
+                        countyLabels.forEach(label => {
+                            label.visible = newZoom >= 8; // Show labels at zoom level 8 and above
+                        });
+                    });
+                    
+                    // Set initial visibility based on current zoom
+                    countyLabels.forEach(label => {
+                        label.visible = view.zoom >= 8;
+                    });
+                }
 
                 // center on the hotspots
                 // TODO: improve centering logic
@@ -333,7 +356,6 @@
                             }
                         };
 
-
                         // Create an object for storing attributes related to the line
                         var pointAtt = {
                             Name: Hotspots[i].name,
@@ -370,6 +392,63 @@
 
                     }
                     return pointGraphicsCountyReturn
+                }
+
+                function getStateGraphics(states) {
+                    points = [];
+                    pointGraphicsStateReturn = [];
+                    for (i = 0; i < states.length; ++i) {
+                        var point = new Point(states[i].lng, states[i].lat);
+                        points.push(point.latitude, point.longitude);
+
+                        // Create a symbol for drawing the point
+                        var markerSymbol = {
+                            type: "simple-marker", // autocasts as new SimpleMarkerSymbol()
+                            color: [0, 0, 0], //black
+                            outline: { // autocasts as new SimpleLineSymbol()
+                                color: [0, 0, 0],
+                                width: 2
+                            }
+                        };
+
+                        // Create an object for storing attributes related to the line
+                        var pointAtt = {
+                            Name: states[i].name,
+                            locId: states[i].code
+                        };
+
+                        var stateName = states[i].name;
+                        var stateCode = states[i].code;
+
+                        /*******************************************
+                         * Create a new graphic and add the geometry,
+                         * symbol, and attributes to it. You may also
+                         * add a simple PopupTemplate to the graphic.
+                         * This allows users to view the graphic's
+                         * attributes when it is clicked.
+                         ******************************************/
+
+                        var pointGraphic = new Graphic({
+                            geometry: point,
+                            symbol: markerSymbol,
+                            attributes: pointAtt,
+                            popupTemplate: {  // autocasts as new PopupTemplate()
+                                title: "{Name}",
+                                actions: [], // removes Zoom to
+                                content: [{
+                                    type: "fields",
+                                    fieldInfos: [{
+                                        fieldName: "locId",
+                                        label: "State"
+                                    }]
+                                }],
+                            }
+                        });
+
+                        pointGraphicsStateReturn.push(pointGraphic);
+
+                    }
+                    return pointGraphicsStateReturn
                 }
 
             }
@@ -428,6 +507,33 @@
                     }
                 }
                 return allBounds;
+            }
+
+            async function getAllStateBounds(selection) {
+                var states = getStates(selection); // Fetch list of states
+                var allStateBounds = [];
+
+                // Synchronous version: executes in sequence and blocks the thread
+                for (const state of states) {
+                    try {
+                        console.log(`Fetching bounds for: ${state.name}`);
+
+                        // IMPORTANT: getStateBounds MUST be a synchronous function.
+                        // If it returns a Promise, this will not work as expected.
+                        var stateUrl = 'https://api.ebird.org/v2/ref/region/info/' + state.code;
+                        var bounds = await fetchData(stateUrl)
+
+                        allStateBounds.push({
+                            name: state.name,
+                            code: state.code,
+                            lat: bounds.latitude,
+                            lng: bounds.longitude
+                        });
+                    } catch (error) {
+                        console.error(`Failed to fetch bounds for ${state.name}:`, error);
+                    }
+                }
+                return allStateBounds;
             }
 
             let firstPoint = null;
@@ -582,6 +688,8 @@
                 var hotspotSourceCode1 = closestSourceHotspot ? closestSourceHotspot.locId : '';
                 var hotspotTargetCode2 = closestTargetHotspot ? closestTargetHotspot.locId : '';
 
+                //locId1 ="US-WA";
+                //locId2 ="US-CA";
                 // Birdlist api
                 if (color1isBlack) {
                     name1 = name1 + " County";
@@ -715,6 +823,14 @@
                 var counties = getData(countyUrl);
                 return counties; // Array of { code: "US-NY-001", name: "Albany" }
             }
+
+            function getStates(selection) {
+                var stateUrl = 'https://api.ebird.org/v2/ref/region/list/subnational1/' + selection;
+
+                var states = getData(stateUrl);
+                return states; // Array of { code: "US-NY", name: "Albany" }
+            }
+
 
         });
 
