@@ -151,7 +151,7 @@
                     }
                 });
 
-                await loadSpecies();
+                await loadPoints();
 
                 // Close loading
                 Swal.close();
@@ -199,7 +199,7 @@
             /*************************
             * Create a point graphic
             *************************/
-            async function loadSpecies() {
+            async function loadPoints() {
 
                 // Close any open popups
                 view.popup.close();
@@ -499,7 +499,7 @@
                     }
                 });
 
-                await loadSpecies();
+                await loadPoints();
                 // Close loading indicator
                 Swal.close();
             }
@@ -726,6 +726,8 @@
                 }
                 //source bird list
                 var hotspotSourceList = getData(speciesListSourceUrl);
+                // Remove species codes that begin with 'x'
+                hotspotSourceList = hotspotSourceList.filter(code => !code.startsWith('x0'));
 
                 if (color2isBlack) {
                     if (selection.length !== 2) {
@@ -741,6 +743,8 @@
 
                 //target bird list
                 var hotspotTargetList = getData(speciesLisTargetUrl);
+                // Remove species codes that begin with 'x'
+                hotspotTargetList = hotspotTargetList.filter(code => !code.startsWith('x0'));
 
                 //To find elements in listA source that are not in listB target:
                 let diff = hotspotSourceList.filter(item => !hotspotTargetList.includes(item));
