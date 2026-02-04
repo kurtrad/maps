@@ -116,7 +116,7 @@
                     actions: []
                 }
             });
-            
+
             var basemapToggle = new BasemapToggle({
                 view: view,  // The view that provides access to the map's "streets" basemap
                 nextBasemap: "hybrid"  // Allows for toggling to the "hybrid" basemap
@@ -158,31 +158,43 @@
             }
 
             function loadCombo(hotspotData) {
-                    var sel = document.getElementById('modeSelect') // find the drop down
-                    for (var i in hotspotData) { // loop through all elements
-                        var opt = document.createElement("option"); // Create the new element
-                        opt.value = hotspotData[i].code; // set the value
-                        opt.text = hotspotData[i].name; // set the text
+                var sel = document.getElementById('modeSelect') // find the drop down
+                for (var i in hotspotData) { // loop through all elements
+                    var opt = document.createElement("option"); // Create the new element
+                    opt.value = hotspotData[i].code; // set the value
+                    opt.text = hotspotData[i].name; // set the text
 
-                        sel.appendChild(opt); // add it to the select
-                    }
-
-                    // Add Baja Mexico Sur
-                    let opt1 = document.createElement("option");
-                    opt1.text = "Baja Mexico Sur";
-                    opt1.value = "MX-BCS";
-                    sel.insertBefore(opt1, sel.firstChild);
-
-                    // Add Baja Mexico
-                    let opt2 = document.createElement("option");
-                    opt2.text = "Baja Mexico";
-                    opt2.value = "MX-BCN";
-                    sel.insertBefore(opt2, sel.firstChild);
-
-                    // Set default to California
-                    sel.value = "US-AZ"; // Ensure the value exactly matches the option's value
-
+                    sel.appendChild(opt); // add it to the select
                 }
+
+                // Add Baja Mexico Sur
+                let opt1 = document.createElement("option");
+                opt1.text = "Baja Mexico Sur";
+                opt1.value = "MX-BCS";
+                sel.insertBefore(opt1, sel.firstChild);
+
+                // Add Baja Mexico
+                let opt2 = document.createElement("option");
+                opt2.text = "Baja Mexico";
+                opt2.value = "MX-BCN";
+                sel.insertBefore(opt2, sel.firstChild);
+
+                // Add United States
+                let opt3 = document.createElement("option");
+                opt3.text = "Mexico";
+                opt3.value = "MX";
+                sel.insertBefore(opt3, sel.firstChild);
+
+                // Add United States
+                let opt4 = document.createElement("option");
+                opt4.text = "United States";
+                opt4.value = "US";
+                sel.insertBefore(opt4, sel.firstChild);
+
+                // Set default to California
+                sel.value = "US-AZ"; // Ensure the value exactly matches the option's value
+
+            }
 
             /*************************
             * Create a point graphic
@@ -204,12 +216,16 @@
 
                 //selection = 'US-AZ'; // For testing only, remove later
 
-                if (selection === "US") {
-                    allStateBounds = await getAllStateBounds('US');
+                if (selection.length === 2) {
+                    allStateBounds = await getAllStateBounds(selection);
                     pointGraphicsStateReturn = getStateGraphics(allStateBounds);
 
                     // Add county foreground second
                     view.graphics.addMany(pointGraphicsStateReturn);
+
+                    // Set up labels for counties (add to view.graphics.labelsVisible)
+                    //stateLabels = createCountyLabels(allStateBounds);
+                    //view.graphics.addMany(stateLabels);
                 }
                 else {
                     // load the default county bounds
@@ -227,27 +243,33 @@
                     view.graphics.addMany(pointGraphicsCountyReturn);
                     // Add county foreground second
                     view.graphics.addMany(pointGraphicsHotSpotReturn);
-
-                    // Set up labels for counties (add to view.graphics.labelsVisible)
-                    countyLabels = createCountyLabels(allBounds);
-                    view.graphics.addMany(countyLabels);
-                    
-                    // Add zoom change listener to show/hide labels based on zoom level
-                    view.watch("zoom", function(newZoom) {
-                        countyLabels.forEach(label => {
-                            label.visible = newZoom >= 8; // Show labels at zoom level 8 and above
-                        });
-                    });
-                    
-                    // Set initial visibility based on current zoom
-                    countyLabels.forEach(label => {
-                        label.visible = view.zoom >= 8;
-                    });
                 }
+                // Set up labels for counties (add to view.graphics.labelsVisible)
+                countyLabels = createCountyLabels(allBounds);
+                view.graphics.addMany(countyLabels);
+
+                // Add zoom change listener to show/hide labels based on zoom level
+                view.watch("zoom", function (newZoom) {
+                    countyLabels.forEach(label => {
+                        label.visible = newZoom >= 8; // Show labels at zoom level 8 and above
+                    });
+                });
+
+                // Set initial visibility based on current zoom
+                countyLabels.forEach(label => {
+                    label.visible = view.zoom >= 8;
+                });
+
 
                 // center on the hotspots
                 // TODO: improve centering logic
-                mapCenter = [data[0].lng, data[0].lat];
+                if (selection.length !== 2) {
+                    mapCenter = [data[0].lng, data[0].lat];
+                    view.zoom = 7;
+                } else {
+                    mapCenter = [-98.5795, 39.8283]; // Center of the US
+                    view.zoom = 4; // Zoom out to see entire US
+                }
                 view.center = mapCenter;
 
                 function createCountyLabels(counties) {
@@ -320,9 +342,9 @@
                                     content: [{
                                         type: "fields",
                                         fieldInfos: [{
-                                        //     fieldName: "locId",
-                                        //     label: "eBird Location ID"
-                                        // }, {
+                                            //     fieldName: "locId",
+                                            //     label: "eBird Location ID"
+                                            // }, {
                                             fieldName: "SpeciesAllTime",
                                             label: "Species (All Time)"
                                         }, {
@@ -476,7 +498,7 @@
                         Swal.showLoading();
                     }
                 });
-                
+
                 await loadSpecies();
                 // Close loading indicator
                 Swal.close();
@@ -607,8 +629,8 @@
                         }
                     }
                 });
-                
-                var addedColor = graphic.symbol.color;   
+
+                var addedColor = graphic.symbol.color;
                 view.graphics.add(graphic);
             }
 
@@ -692,7 +714,12 @@
                 //locId2 ="US-CA";
                 // Birdlist api
                 if (color1isBlack) {
-                    name1 = name1 + " County";
+                    if (selection.length !== 2) {
+                        name1 = name1 + " County";
+                    }
+                    else {
+                        name1 = name1;
+                    }
                     var speciesListSourceUrl = "https://api.ebird.org/v2/product/spplist/" + locId1;
                 } else {
                     var speciesListSourceUrl = "https://api.ebird.org/v2/product/spplist/" + hotspotSourceCode1;
@@ -701,7 +728,12 @@
                 var hotspotSourceList = getData(speciesListSourceUrl);
 
                 if (color2isBlack) {
-                    name2 = name2 + " County";
+                    if (selection.length !== 2) {
+                        name2 = name2 + " County";
+                    }
+                    else {
+                        name2 = name2;
+                    }
                     var speciesLisTargetUrl = "https://api.ebird.org/v2/product/spplist/" + locId2;
                 } else {
                     var speciesLisTargetUrl = "https://api.ebird.org/v2/product/spplist/" + hotspotTargetCode2;
@@ -745,7 +777,7 @@
                         graphicsToRemove.push(graphic);
                     }
                 });
-                
+
                 // Remove all collected graphics
                 graphicsToRemove.forEach(graphic => view.graphics.remove(graphic));
 
@@ -848,7 +880,7 @@
         <br />
         <a>Black points are counties green points are hotspot.</a>
         <br />
-         <a>Hover over points to see location details</a>
+        <a>Hover over points to see location details</a>
         <br />
         <a><i>Copyright - Kurt Radamaker</i></a>
     </div>
