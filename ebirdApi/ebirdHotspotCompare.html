@@ -138,10 +138,12 @@
                 view: view
             });
 
-            var bgExpand = new Expand({
+           var bgExpand = new Expand({
                 view: view,
                 content: basemapGallery,
-                expandIconClass: "esri-icon-basemap"
+                expandIconClass: "esri-icon-basemap",
+                expandTooltip: "Show Basemaps",  // Hover text when collapsed
+                collapseTooltip: "Hide Basemaps"  // Hover text when expanded
             });
 
             // Create home button
