@@ -170,7 +170,7 @@
 
                 loadCombo(hotspots);
                 //load bird species list
-                birdsArray = await fetchData("https://ebird.org/ws2.0/ref/taxonomy/ebird?fmt=json");
+                birdsArray = await fetchData("https://ebird.org/ws2.0/ref/taxonomy/ebird?fmt=json&category=species");
 
                 // Show loading on windows load 
                 Swal.fire({
@@ -781,14 +781,21 @@
                 hotspotTargetList = hotspotTargetList.filter(code => !code.startsWith('x0') && code.length !== 7);
 
                 //To find elements in listA source that are not in listB target:
-                let diff = hotspotSourceList.filter(item => !hotspotTargetList.includes(item));
+                let diffBetweenSourceAndTarget = hotspotSourceList.filter(item => !hotspotTargetList.includes(item));
 
-                let formattedList = diff.map(code => getComName(code)).join(", ");
+                let diffBetweenTargetAndSource = hotspotTargetList.filter(item => !hotspotSourceList.includes(item));
+
+                let formattedListSource = diffBetweenSourceAndTarget.map(code => getComName(code)).join(", ");
+                let formattedListTarget = diffBetweenTargetAndSource.map(code => getComName(code)).join(", ");
+
 
                 // Close loading indicator
                 Swal.close();
 
-                formattedHtml = "<div style='text-align: left;'><b>Species in " + name1 + " NOT in " + name2 + ":</b></br></br><b>" + formattedList + "</b></div>";
+                formattedHtml = "<div style='text-align: left;'>" +
+                    "<b>Species in " + name1 + " NOT in " + name2 + ":</b></br></br>" + formattedListSource + "</br></br></br>" +
+                    "<b>Species in " + name2 + " NOT in " + name1 + ":</b></br></br>" + formattedListTarget +
+                    "</div>";
 
                 // Show species compare result and wait for user to close
                 const compareResult = await Swal.fire({
