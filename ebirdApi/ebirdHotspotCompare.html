@@ -754,9 +754,9 @@
                     else {
                         name1 = name1;
                     }
-                    var speciesListSourceUrl = "https://api.ebird.org/v2/product/spplist/" + locId1;
+                    var speciesListSourceUrl = "https://api.ebird.org/v2/product/spplist/" + locId1 + "/?category=species";
                 } else {
-                    var speciesListSourceUrl = "https://api.ebird.org/v2/product/spplist/" + hotspotSourceCode1;
+                    var speciesListSourceUrl = "https://api.ebird.org/v2/product/spplist/" + hotspotSourceCode1 + "/?category=species";
                 }
                 //source bird list
                 var hotspotSourceList = getData(speciesListSourceUrl);
