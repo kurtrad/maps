@@ -75,7 +75,8 @@
             "esri/Map",
             "esri/geometry/Point",
             "esri/views/MapView",
-            "esri/widgets/BasemapToggle",
+            "esri/widgets/BasemapGallery",
+            "esri/widgets/Expand",
             "esri/widgets/Legend",
             "esri/symbols/SimpleMarkerSymbol",
             "esri/Graphic",
@@ -88,7 +89,8 @@
             Map,
             Point,
             MapView,
-            BasemapToggle,
+            BasemapGallery,
+            Expand,
             Legend,
             SimpleMarkerSymbol,
             Graphic,
@@ -98,7 +100,7 @@
             on
         ) {
             var map = new Map({
-                basemap: "streets"
+                basemap: "streets-vector"
             });
 
             var view = new MapView({
@@ -117,15 +119,20 @@
                 }
             });
 
-            var basemapToggle = new BasemapToggle({
-                view: view,  // The view that provides access to the map's "streets" basemap
-                nextBasemap: "hybrid"  // Allows for toggling to the "hybrid" basemap
+            var basemapGallery = new BasemapGallery({
+                view: view
+            });
+
+            var bgExpand = new Expand({
+                view: view,
+                content: basemapGallery,
+                expandIconClass: "esri-icon-basemap"
             });
 
             view.ui.add("elevationDiv", "top-left");
             view.ui.add("ebird", "bottom-left");
             // Add widget to the top right corner of the view
-            view.ui.add(basemapToggle, "bottom-right");
+            view.ui.add(bgExpand, "bottom-right");
 
             window.onload = async function (e) {
                 // Load the Selection DropDown
