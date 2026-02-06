@@ -3,7 +3,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, minimum-scale=1, user-scalable=yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Species Compare</title>
     <script src="Scripts/jquery-3.3.1.js"></script>
     <style>
@@ -14,6 +17,17 @@
             margin: 0;
             height: 100%;
             width: 100%;
+            /* Prevent text selection on map */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            /* Prevent callout on long press */
+            -webkit-touch-callout: none;
+            /* Prevent tap highlight */
+            -webkit-tap-highlight-color: transparent;
+            /* Smooth scrolling for iOS */
+            -webkit-overflow-scrolling: touch;
         }
 
         #elevationDiv {
@@ -69,6 +83,74 @@
         #homeButton:hover {
             background-color: #f3f3f3;
         }
+
+        /* Touch feedback */
+        #homeButton:active,
+        .esri-widget--button:active {
+            background-color: #e0e0e0;
+            transform: scale(0.95);
+        }
+
+        /* Prevent iOS zoom on double-tap */
+        * {
+            touch-action: manipulation;
+        }
+
+        /* Allow map to use pan-zoom gestures */
+        #viewDiv {
+            touch-action: pan-x pan-y pinch-zoom;
+        }
+
+        /* Mobile-responsive styles */
+        @media (max-width: 768px) {
+            /* Make buttons and interactive elements touch-friendly (44x44px minimum) */
+            #homeButton,
+            .esri-widget--button,
+            .esri-expand__icon {
+                min-width: 44px;
+                min-height: 44px;
+                padding: 12px;
+            }
+
+            /* Adjust info panel for mobile */
+            #elevationDiv {
+                font-size: 14px;
+                padding: 8px;
+                max-width: 90vw;
+            }
+
+            #ebird {
+                font-size: 12px;
+                padding: 8px;
+                max-width: 90vw;
+            }
+
+            /* Make dropdowns more touch-friendly */
+            select {
+                font-size: 16px;
+                padding: 8px;
+                min-height: 44px;
+            }
+
+            /* Optimize popup for mobile */
+            .esri-popup__main-container {
+                max-width: 90vw !important;
+            }
+
+            /* Make SweetAlert2 dialogs mobile-friendly */
+            .swal2-popup {
+                width: 90% !important;
+                font-size: 14px !important;
+            }
+
+            .swal2-title {
+                font-size: 1.5em !important;
+            }
+
+            .swal2-html-container {
+                font-size: 1em !important;
+            }
+        }
     </style>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -79,10 +161,11 @@
     <script>
 
         var selection;
-        var daysback = 10;
+        var daysback = 3
         var selection = "US-AZ";
         var mapCenter = [-112, 33]
         var birdsArray = [];
+        var excludeList = [];
         var colorPoint1 = ''
         var colorPoint2 = ''
 
@@ -123,14 +206,31 @@
                 container: "viewDiv",
                 map: map,
                 zoom: 7,
+                // Mobile-optimized constraints
+                constraints: {
+                    rotationEnabled: false,  // Disable rotation on mobile to prevent accidental tilts
+                    minZoom: 3,
+                    maxZoom: 18
+                },
+                // Mobile-friendly navigation
+                navigation: {
+                    mouseWheelZoomEnabled: true,
+                    browserTouchPanEnabled: true,
+                    momentumEnabled: true  // Smooth momentum scrolling
+                },
                 popup: {
                     dockEnabled: true,
                     dockOptions: {
                         buttonEnabled: false,
-                        breakpoint: false,
-                        position: "top-right"
+                        breakpoint: {
+                            width: 768  // Auto-dock on screens narrower than 768px
+                        },
+                        position: window.innerWidth < 768 ? "bottom-center" : "top-right"
                     },
-                    actions: []
+                    actions: [],
+                    // Mobile-optimized popup behavior
+                    collapseEnabled: true,
+                    autoCloseEnabled: false  // Prevent accidental closing
                 }
             });
 
@@ -155,11 +255,29 @@
                 window.location.href = "https://birdingthecloud.com/Maps.aspx";
             };
 
-            view.ui.add("elevationDiv", "top-left");
-            view.ui.add("ebird", "bottom-left");
-            view.ui.add(homeButton, "bottom-right");
-            // Add widget to the bottom right corner of the view
-            view.ui.add(bgExpand, "bottom-right");
+            // Responsive UI positioning based on screen width
+            if (window.innerWidth < 768) {
+                // Mobile: stack widgets vertically on right side
+                view.ui.add("elevationDiv", "top-right");
+                view.ui.add("ebird", "manual");  // Hide on mobile (can be toggled)
+                view.ui.add(homeButton, "bottom-right");
+                view.ui.add(bgExpand, "bottom-right");
+            } else {
+                // Desktop: original layout
+                view.ui.add("elevationDiv", "top-left");
+                view.ui.add("ebird", "bottom-left");
+                view.ui.add(homeButton, "bottom-right");
+                view.ui.add(bgExpand, "bottom-right");
+            }
+
+            // Handle window resize to adjust UI positioning
+            window.addEventListener('resize', function() {
+                if (window.innerWidth < 768) {
+                    view.popup.dockOptions.position = "bottom-center";
+                } else {
+                    view.popup.dockOptions.position = "top-right";
+                }
+            });
 
             window.onload = async function (e) {
                 // Load the Selection DropDown
@@ -171,6 +289,23 @@
                 loadCombo(hotspots);
                 //load bird species list
                 birdsArray = await fetchData("https://ebird.org/ws2.0/ref/taxonomy/ebird?fmt=json&category=species");
+                
+                // Load species exclusion list from CSV
+                try {
+                    const csvText = await fetch("csv/species_with_codes.csv")
+                        .then(response => response.text());
+                    // Parse CSV: skip header, extract speciesCode column (index 1)
+                    const lines = csvText.split(/[\n\r]+/).filter(line => line.trim().length > 0);
+                    excludeList = lines.slice(1).map(line => {
+                        const cols = line.split(',');
+                        return cols[1] ? cols[1].trim() : '';
+                    }).filter(code => code.length > 0);
+                    console.log("Loaded exclude list (" + excludeList.length + " species):", excludeList);
+                } catch (error) {
+                    console.error("Error loading CSV:", error);
+                    console.log("Continuing without exclusion list - make sure to run through web server (http://localhost:4704)");
+                    excludeList = [];
+                }
 
                 // Show loading on windows load 
                 Swal.fire({
@@ -336,7 +471,7 @@
                     points = [];
                     pointGraphicsHotSpotReturn = [];
                     for (i = 0; i < getHotspotGraphics.length; ++i) {
-                        if (getHotspotGraphics[i].numSpeciesAllTime >= 100) {
+                        if (getHotspotGraphics[i].numSpeciesAllTime >= 0) {
                             var point = new Point(getHotspotGraphics[i].lng, getHotspotGraphics[i].lat);
                             points.push(point.latitude, point.longitude);
 
@@ -344,9 +479,10 @@
                             var markerSymbol = {
                                 type: "simple-marker", // autocasts as new SimpleMarkerSymbol()
                                 color: [0, 128, 0], //green
+                                size: 12,
                                 outline: { // autocasts as new SimpleLineSymbol()
                                     color: [0, 100, 0],
-                                    width: 2
+                                    width: 3
                                 }
                             };
 
@@ -406,9 +542,10 @@
                         var markerSymbol = {
                             type: "simple-marker", // autocasts as new SimpleMarkerSymbol()
                             color: [0, 0, 0], //black
+                            size: 12,
                             outline: { // autocasts as new SimpleLineSymbol()
                                 color: [0, 0, 0],
-                                width: 2
+                                width: 3
                             }
                         };
 
@@ -461,9 +598,10 @@
                         var markerSymbol = {
                             type: "simple-marker", // autocasts as new SimpleMarkerSymbol()
                             color: [0, 0, 0], //black
+                            size: 12,
                             outline: { // autocasts as new SimpleLineSymbol()
                                 color: [0, 0, 0],
-                                width: 2
+                                width: 3
                             }
                         };
 
@@ -656,10 +794,10 @@
                     symbol: {
                         type: "simple-marker",
                         color: color,
-                        size: 10,
+                        size: 16,
                         outline: {
                             color: "white",
-                            width: 1
+                            width: 2
                         }
                     }
                 });
@@ -760,8 +898,10 @@
                 }
                 //source bird list
                 var hotspotSourceList = getData(speciesListSourceUrl);
-                // Remove species codes that begin with 'x0' or are exactly 7 characters
-                hotspotSourceList = hotspotSourceList.filter(code => !code.startsWith('x0') && code.length !== 7);
+                // Remove species codes that begin with 'x0', are exactly 7 characters, or are in exclude list
+                hotspotSourceList = hotspotSourceList.filter(code => !code.startsWith('x0') && !excludeList.includes(code));
+                //hotspotSourceList = hotspotSourceList.filter(code => !code.startsWith('x0'));
+
 
                 if (color2isBlack) {
                     if (selection.length !== 2) {
@@ -777,8 +917,10 @@
 
                 //target bird list
                 var hotspotTargetList = getData(speciesLisTargetUrl);
-                // Remove species codes that begin with 'x0' or are exactly 7 characters
-                hotspotTargetList = hotspotTargetList.filter(code => !code.startsWith('x0') && code.length !== 7);
+                // Remove species codes that begin with 'x0', are exactly 7 characters, or are in exclude list
+                hotspotTargetList = hotspotTargetList.filter(code => !code.startsWith('x0') && !excludeList.includes(code));
+                //hotspotTargetList = hotspotTargetList.filter(code => !code.startsWith('x0'));
+
 
                 //To find elements in listA source that are not in listB target:
                 let diffBetweenSourceAndTarget = hotspotSourceList.filter(item => !hotspotTargetList.includes(item));
@@ -894,6 +1036,27 @@
                 return bird ? `<a href="https://ebird.org/species/${code}/${loc}" target="_blank">${bird.comName}</a>` : "Species not found";
             }
 
+            /**
+             * Export all species to CSV format
+             * Call this in browser console: exportSpeciesToCSV()
+             */
+            function exportSpeciesToCSV() {
+                let csv = "comName,speciesCode,exotic\n";
+                birdsArray.forEach(bird => {
+                    csv += `${bird.comName},${bird.speciesCode},\n`;
+                });
+                console.log(csv);
+                
+                // Download the CSV
+                const blob = new Blob([csv], { type: 'text/csv' });
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'all-species.csv';
+                a.click();
+                window.URL.revokeObjectURL(url);
+            }
+
             function getCounties(selection) {
                 var countyUrl = 'https://api.ebird.org/v2/ref/region/list/subnational2/' + selection;
 
@@ -917,7 +1080,7 @@
 <body>
     <div id="viewDiv"></div>
     <div id="ebird">
-        <a>eBird Hotspot and county species compare</a>
+        <!-- <a>eBird Hotspot and county species compare</a>
         <br />
         <a>Only Hotspots with at least 100 species all time are shown</a>
         <br />
@@ -929,7 +1092,7 @@
         <br />
         <a>Hover over points to see location details</a>
         <br />
-        <a><i>Copyright - Kurt Radamaker</i></a>
+        <a><i>Copyright - Kurt Radamaker</i></a> -->
     </div>
     <div id="elevationDiv">
         <table>
