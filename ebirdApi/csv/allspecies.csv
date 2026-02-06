@@ -1,0 +1,793 @@
+SCIENTIFIC_NAME,COMMON_NAME,SPECIES_CODE,CATEGORY,TAXON_ORDER,COM_NAME_CODES,SCI_NAME_CODES,BANDING_CODES,ORDER,FAMILY_COM_NAME,FAMILY_SCI_NAME,REPORT_AS,EXTINCT,EXTINCT_YEAR,FAMILY_CODE
+Apteryx australis x mantelli,Southern Brown x North Island Brown Kiwi (hybrid),x01217,hybrid,26.0,NIBK SBKI,APMA APAU,,Apterygiformes,Kiwis,Apterygidae,,,,aptery1
+Apteryx rowi x owenii,Okarito Brown x Little Spotted Kiwi (hybrid),x01059,hybrid,28.0,OBKI LSKI OKKI,APOW APRO,,Apterygiformes,Kiwis,Apterygidae,,,,aptery1
+Dendrocygna guttata x viduata,Spotted x White-faced Whistling-Duck (hybrid),x00721,hybrid,241.0,SPWD WFWD SWDU,DEGU DEVI,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Dendrocygna eytoni x viduata,Plumed x White-faced Whistling-Duck (hybrid),x01218,hybrid,242.0,PLWD WFWD PWDU,DEEY DEVI,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Dendrocygna viduata x autumnalis,White-faced x Black-bellied Whistling-Duck (hybrid),x01141,hybrid,246.0,WFWD BBWD,DEAU DEVI,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Dendrocygna autumnalis x arborea,Black-bellied x West Indian Whistling-Duck (hybrid),x00775,hybrid,248.0,BBWD WIWD,DEAR DEAU,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Dendrocygna viduata x bicolor,White-faced x Fulvous Whistling-Duck (hybrid),x00938,hybrid,250.0,WFWD FUWD FWDU,DEVI DEBI,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Dendrocygna autumnalis x bicolor,Black-bellied x Fulvous Whistling-Duck (hybrid),x00875,hybrid,251.0,FUWD BBWD FWDU,DEAU DEBI,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Dendrocygna eytoni x arcuata,Plumed x Wandering Whistling-Duck (hybrid),x00990,hybrid,256.0,WWDU PLWD PWDU WAWD,DEAR DEEY,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Dendrocygna arcuata x javanica,Wandering x Lesser Whistling-Duck (hybrid),x00360,hybrid,260.0,WWDU LEWD LWDU WAWD,DEAR DEJA,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anser indicus x caerulescens,Bar-headed x Snow Goose (hybrid),x00991,hybrid,270.0,BHGO SNGO,ANIN ANCA,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anser canagicus x caerulescens,Emperor x Snow Goose (hybrid),x01176,hybrid,271.0,EMGO SNGO,ANCA,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anser caerulescens x rossii,Snow x Ross's Goose (hybrid),sxrgoo1,hybrid,273.0,SNGO ROGO,ANRO ANCA,SRGH,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anser indicus x anser,Bar-headed x Graylag Goose (hybrid),x00992,hybrid,279.0,BHGO GRGO,ANAN ANIN,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anser canagicus x anser,Emperor x Graylag Goose (hybrid),x01119,hybrid,280.0,EMGO GRGO,ANAN ANCA,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anser indicus x cygnoides,Bar-headed x Swan Goose (hybrid),x01143,hybrid,283.0,BHGO SWGO,ANIN ANCY,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anser caerulescens x cygnoides,Snow x Swan Goose (hybrid),x01144,hybrid,284.0,SNGO SWGO,ANCA ANCY,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anser indicus x caerulescens x cygnoides,Bar-headed x Snow x Swan Goose (hybrid),x01142,hybrid,285.0,SNGO BHGO SWGO,ANIN ANCA ANCY,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anser anser x cygnoides,Graylag x Swan Goose (hybrid),x00776,hybrid,286.0,GRGO SWGO,ANAN ANCY,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anser indicus x albifrons,Bar-headed x Greater White-fronted Goose (hybrid),x00755,hybrid,294.0,GWFG BHGO,ANIN ANAL,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anser canagicus x albifrons,Emperor x Greater White-fronted Goose (hybrid),x00361,hybrid,295.0,GWFG EMGO,ANCA ANAL,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anser caerulescens x albifrons,Snow x Greater White-fronted Goose (hybrid),x00627,hybrid,296.0,GWFG SNGO,ANCA ANAL,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anser rossii x albifrons,Ross's x Greater White-fronted Goose (hybrid),x00362,hybrid,297.0,GWFG ROGO,ANRO ANAL,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anser anser x albifrons,Graylag x Greater White-fronted Goose (hybrid),x01145,hybrid,298.0,GWFG GRGO,ANAN ANAL,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anser albifrons x serrirostris,Greater White-fronted Goose x Tundra Bean-Goose (hybrid),x01089,hybrid,309.0,GWFG TUBG TBGO BEGO,ANSE ANAL,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anser caerulescens x Branta bernicla,Snow Goose x Brant (hybrid),x00685,hybrid,321.0,SNGO BRAN BRGO,BRBE ANCA,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anser indicus x Branta leucopsis,Bar-headed x Barnacle Goose (hybrid),x00363,hybrid,323.0,BHGO BAGO BARG,ANIN BRLE,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anser canagicus x Branta leucopsis,Emperor x Barnacle Goose (hybrid),x00993,hybrid,324.0,EMGO BAGO BARG,ANCA BRLE,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anser caerulescens x Branta leucopsis,Snow x Barnacle Goose (hybrid),x00994,hybrid,325.0,BAGO SNGO BARG,ANCA BRLE,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anser rossii x Branta leucopsis,Ross's x Barnacle Goose (hybrid),x00995,hybrid,326.0,BAGO BARG ROGO,ANRO BRLE,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anser anser x Branta leucopsis,Graylag x Barnacle Goose (hybrid),x00649,hybrid,327.0,BAGO BARG GRGO,ANAN BRLE,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anser albifrons x Branta leucopsis,Greater White-fronted x Barnacle Goose (hybrid),x00757,hybrid,328.0,GWFG BAGO BARG,BRLE ANAL,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anser erythropus x Branta leucopsis,Lesser White-fronted x Barnacle Goose (hybrid),x00364,hybrid,329.0,BAGO BARG LWFG,ANER BRLE,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anser brachyrhynchus x Branta leucopsis,Pink-footed x Barnacle Goose (hybrid),x00756,hybrid,330.0,BAGO BARG PFGO,BRLE ANBR,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anser canagicus x Branta hutchinsii,Emperor x Cackling Goose (hybrid),x00831,hybrid,336.0,EMGO CACG CAGO,ANCA BRHU,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anser caerulescens x Branta hutchinsii,Snow x Cackling Goose (hybrid),x00692,hybrid,337.0,CACG SNGO CAGO,ANCA BRHU,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anser rossii x Branta hutchinsii,Ross's x Cackling Goose (hybrid),x00694,hybrid,338.0,CAGO CACG ROGO,ANRO BRHU,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Branta bernicla x hutchinsii,Brant x Cackling Goose (hybrid),x00722,hybrid,339.0,CAGO BRAN CACG BRGO,BRBE BRHU,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anser albifrons x Branta hutchinsii,Greater White-fronted x Cackling Goose (hybrid),x00414,hybrid,340.0,GWFG CACG CAGO,BRHU ANAL,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Branta leucopsis x hutchinsii,Barnacle x Cackling Goose (hybrid),x00416,hybrid,341.0,BAGO CAGO BARG CACG,BRHU BRLE,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anser indicus x Branta canadensis,Bar-headed x Canada Goose (hybrid),x00908,hybrid,353.0,CANG BHGO CAGO,ANIN BRCA,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anser cygnoides x Branta canadensis,Swan x Canada Goose (hybrid),swagoo3,hybrid,354.0,CANG CAGO SWGO,ANCY BRCA,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anser brachyrhynchus x Branta canadensis,Pink-footed x Canada Goose (hybrid),x00650,hybrid,355.0,CANG CAGO PFGO,BRCA ANBR,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anser albifrons x Branta canadensis,Greater White-fronted x Canada Goose (hybrid),x00415,hybrid,356.0,CANG GWFG CAGO,BRCA ANAL,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anser albifrons x Branta hutchinsii/canadensis,Greater White-fronted x Cackling/Canada Goose (hybrid),x01088,hybrid,357.0,CANG GWFG CAGO CACG CCGO,BRCA ANAL BRHU,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anser anser x Branta canadensis,Graylag x Canada Goose (hybrid),x00758,hybrid,358.0,CANG CAGO GRGO,ANAN BRCA,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anser sp. (Domestic type) x Branta canadensis,Domestic goose sp. x Canada Goose (hybrid),x00759,hybrid,359.0,CANG CAGO DGSP,BRCA,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anser caerulescens x Branta canadensis,Snow x Canada Goose (hybrid),x00197,hybrid,360.0,CANG SNGO CAGO,BRCA ANCA,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anser rossii x Branta canadensis,Ross's x Canada Goose (hybrid),x00693,hybrid,361.0,CANG CAGO ROGO,ANRO BRCA,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Branta leucopsis x canadensis,Barnacle x Canada Goose (hybrid),x00417,hybrid,362.0,CANG CAGO BAGO BARG,BRCA BRLE,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anser caerulescens/rossii x Branta hutchinsii/canadensis,Snow/Ross's x Cackling/Canada Goose (hybrid),y00765,hybrid,364.0,SRGO ROGO SNGO CCGO CANG CAGO CACG,BRCA BRHU ANRO ANCA,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Branta leucopsis x sandvicensis,Barnacle x Hawaiian Goose (hybrid),x01139,hybrid,366.0,HAGO BAGO NENE BARG,BRSA BRLE,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anser albifrons x Branta ruficollis,Greater White-fronted x Red-breasted Goose (hybrid),x00939,hybrid,368.0,GWFG RBGO,BRRU ANAL,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Branta bernicla x ruficollis,Brant x Red-breasted Goose (hybrid),x00996,hybrid,369.0,BRAN RBGO BRGO,BRRU BRBE,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Branta leucopsis x ruficollis,Barnacle x Red-breasted Goose (hybrid),x00365,hybrid,370.0,BAGO BARG RBGO,BRRU BRLE,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anser anser x Cygnus olor,Graylag Goose x Mute Swan (hybrid),x00366,hybrid,378.0,MUSW GRGO,CYOL ANAN,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Cygnus olor x atratus,Mute x Black Swan (hybrid),x01037,hybrid,380.0,MUSW BLSW,CYOL CYAT,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Cygnus olor x buccinator,Mute x Trumpeter Swan (hybrid),x00832,hybrid,383.0,MUSW TRSW TRUS,CYOL CYBU,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Cygnus buccinator x columbianus,Trumpeter x Tundra Swan (hybrid),x00418,hybrid,388.0,BESW TUSW TRUS TRSW,CYCO CYBU,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Cygnus olor x cygnus,Mute x Whooper Swan (hybrid),x00997,hybrid,391.0,MUSW WHOS WHSW,CYOL CYCY,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Cygnus buccinator x cygnus,Trumpeter x Whooper Swan (hybrid),x00419,hybrid,392.0,TRUS WHOS TRSW WHSW,CYBU CYCY,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Chloephaga poliocephala x rubidiceps,Ashy-headed x Ruddy-headed Goose (hybrid),x01120,hybrid,411.0,RHGO AHGO,CHRU CHPO,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Sarkidiornis melanotos x Alopochen aegyptiaca,Knob-billed Duck x Egyptian Goose (hybrid),x01177,hybrid,418.0,EGGO KBDU,SAME ALAE,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Alopochen aegyptiaca x Tadorna ferruginea,Egyptian Goose x Ruddy Shelduck (hybrid),x00367,hybrid,422.0,EGGO RUSH,ALAE TAFE,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Tadorna ferruginea x tadorna,Ruddy x Common Shelduck (hybrid),x00876,hybrid,427.0,COMS RUSH COSH,TATA TAFE,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Alopochen aegyptiaca x Cairina moschata,Egyptian Goose x Muscovy Duck (hybrid),x01045,hybrid,447.0,MUDU EGGO,ALAE CAMO,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Tadorna tadorna x Aix sponsa,Common Shelduck x Wood Duck (hybrid),x00940,hybrid,456.0,AWDU WODU CWDU COMS COSH,TATA AISP,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Aix sponsa x galericulata,Wood x Mandarin Duck (hybrid),x00833,hybrid,458.0,AWDU WODU CWDU MADU,AIGA AISP,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Aix sponsa x Amazonetta brasiliensis,Wood Duck x Brazilian Teal (hybrid),x01178,hybrid,464.0,WODU AWDU CWDU BRTE,AMBR AISP,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Sibirionetta formosa x Spatula discors,Baikal x Blue-winged Teal (hybrid),x01179,hybrid,486.0,BWTE BATE,SPDI SIFO,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Spatula discors x cyanoptera,Blue-winged x Cinnamon Teal (hybrid),bwxtea1,hybrid,494.0,CITE BWTE,SPDI SPCY,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Spatula querquedula x clypeata,Garganey x Northern Shoveler (hybrid),x00836,hybrid,502.0,NSHO NOSH GARG,SPCL SPQU,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Spatula discors x clypeata,Blue-winged Teal x Northern Shoveler (hybrid),x00629,hybrid,503.0,NSHO BWTE NOSH,SPDI SPCL,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Spatula cyanoptera x clypeata,Cinnamon Teal x Northern Shoveler (hybrid),x00630,hybrid,504.0,CITE NSHO NOSH,SPCL SPCY,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Spatula clypeata x Mareca strepera,Northern Shoveler x Gadwall (hybrid),x00457,hybrid,508.0,NSHO GADW NOSH,SPCL MAST,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Sibirionetta formosa x Mareca falcata,Baikal Teal x Falcated Duck (hybrid),x00368,hybrid,510.0,FADU BATE,MAFA SIFO,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Mareca strepera x falcata,Gadwall x Falcated Duck (hybrid),x00369,hybrid,511.0,GADW FADU,MAFA MAST,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Sibirionetta formosa x Mareca penelope,Baikal Teal x Eurasian Wigeon (hybrid),x01219,hybrid,513.0,EUWI BATE,SIFO MAPE,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Spatula clypeata x Mareca penelope,Northern Shoveler x Eurasian Wigeon (hybrid),x01140,hybrid,514.0,NSHO NOSH EUWI,SPCL MAPE,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Mareca strepera x penelope,Gadwall x Eurasian Wigeon (hybrid),x00723,hybrid,515.0,GADW EUWI,MAST MAPE,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Mareca falcata x penelope,Falcated Duck x Eurasian Wigeon (hybrid),x01220,hybrid,516.0,FADU EUWI,MAFA MAPE,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Aix sponsa x Mareca americana,Wood Duck x American Wigeon (hybrid),x00877,hybrid,518.0,AMWI WODU AWDU CWDU,AISP MAAM,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Spatula discors x Mareca americana,Blue-winged Teal x American Wigeon (hybrid),x00370,hybrid,519.0,AMWI BWTE,SPDI MAAM,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Spatula clypeata x Mareca americana,Northern Shoveler x American Wigeon (hybrid),x00777,hybrid,520.0,NSHO AMWI NOSH,SPCL MAAM,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Mareca strepera x americana,Gadwall x American Wigeon (hybrid),x00724,hybrid,521.0,GADW AMWI,MAST MAAM,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Mareca penelope x americana,Eurasian x American Wigeon (hybrid),x00421,hybrid,522.0,AMWI EUWI,MAPE MAAM,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Mareca penelope x sibilatrix,Eurasian x Chiloe Wigeon (hybrid),x00998,hybrid,525.0,CHWI EUWI,MASI MAPE,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Alopochen aegyptiaca x Anas platyrhynchos,Egyptian Goose x Mallard (hybrid),x01147,hybrid,549.0,EGGO MALL,ALAE ANPL,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Tadorna ferruginea x Anas platyrhynchos,Ruddy Shelduck x Mallard (hybrid),x01148,hybrid,550.0,RUSH MALL,TAFE ANPL,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Cairina moschata x Anas platyrhynchos,Muscovy Duck x Mallard (hybrid),mdxmal1,hybrid,551.0,MUDU MALL,ANPL CAMO,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Aix sponsa x Anas platyrhynchos,Wood Duck x Mallard (hybrid),x00205,hybrid,552.0,WODU AWDU CWDU MALL,ANPL AISP,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Spatula clypeata x Anas platyrhynchos,Northern Shoveler x Mallard (hybrid),x00612,hybrid,553.0,NSHO NOSH MALL,SPCL ANPL,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Mareca strepera x Anas platyrhynchos,Gadwall x Mallard (hybrid),x00420,hybrid,554.0,GADW MALL,MAST ANPL,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Mareca falcata x Anas platyrhynchos,Falcated Duck x Mallard (hybrid),x01221,hybrid,555.0,FADU MALL,MAFA ANPL,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Mareca penelope x Anas platyrhynchos,Eurasian Wigeon x Mallard (hybrid),x00647,hybrid,556.0,EUWI MALL,MAPE ANPL,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Mareca americana x Anas platyrhynchos,American Wigeon x Mallard (hybrid),x00611,hybrid,557.0,AMWI MALL,ANPL MAAM,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anas sparsa x platyrhynchos,African Black Duck x Mallard (hybrid),x01149,hybrid,558.0,ABDU MALL,ANSP ANPL,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anas undulata x platyrhynchos,Yellow-billed Duck x Mallard (hybrid),x00760,hybrid,559.0,MALL YBDU,ANUN ANPL,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anas superciliosa x platyrhynchos,Pacific Black Duck x Mallard (hybrid),x00458,hybrid,560.0,GRDU PBDU MALL,ANSU ANPL,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anas wyvilliana x platyrhynchos,Hawaiian Duck x Mallard (hybrid),x00423,hybrid,561.0,HADU MALL HAWD,ANWY ANPL,MHDH,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anas poecilorhyncha x platyrhynchos,Indian Spot-billed Duck x Mallard (hybrid),x00834,hybrid,562.0,ISBD MALL,ANPO ANPL,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anas zonorhyncha x platyrhynchos,Eastern Spot-billed Duck x Mallard (hybrid),x00835,hybrid,563.0,ESBD CSBD MALL,ANZO ANPL,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anas platyrhynchos x diazi,Mallard x Mexican Duck (hybrid),mallar4,hybrid,569.0,MEDU MALL MODU,ANDI ANPL,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Mareca americana x Anas rubripes,American Wigeon x American Black Duck (hybrid),x00941,hybrid,572.0,ABDU AMWI,ANRU MAAM,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anas platyrhynchos x rubripes,Mallard x American Black Duck (hybrid),x00004,hybrid,573.0,ABDU MALL,ANRU ANPL,MBDH,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anas platyrhynchos x fulvigula,Mallard x Mottled Duck (hybrid),x00422,hybrid,578.0,MODU MALL,ANFU ANPL,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anas platyrhynchos x diazi/fulvigula,Mallard x Mexican/Mottled Duck (hybrid),y01098,hybrid,579.0,MEDU MODU MALL,ANDI ANFU ANPL,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anas diazi x fulvigula,Mexican x Mottled Duck (hybrid),x00922,hybrid,580.0,MEDU MODU,ANDI ANFU,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anas platyrhynchos x bahamensis,Mallard x White-cheeked Pintail (hybrid),x00778,hybrid,590.0,WCHP WCPI MALL,ANBA ANPL,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anas undulata x erythrorhyncha,Yellow-billed x Red-billed Duck (hybrid),x01222,hybrid,592.0,RBTE RBDU YBDU,ANER ANUN,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anas capensis x erythrorhyncha,Cape Teal x Red-billed Duck (hybrid),x01223,hybrid,593.0,CATE RBTE RBDU,ANER ANCA,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Sibirionetta formosa x Anas acuta,Baikal Teal x Northern Pintail (hybrid),x00837,hybrid,595.0,BATE NOPI,ANAC SIFO,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Spatula clypeata x Anas acuta,Northern Shoveler x Northern Pintail (hybrid),x01180,hybrid,596.0,NSHO NOPI NOSH,SPCL ANAC,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Mareca strepera x Anas acuta,Gadwall x Northern Pintail (hybrid),x00610,hybrid,597.0,GADW NOPI,ANAC MAST,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Mareca penelope x Anas acuta,Eurasian Wigeon x Northern Pintail (hybrid),x00761,hybrid,598.0,NOPI EUWI,ANAC MAPE,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Mareca americana x Anas acuta,American Wigeon x Northern Pintail (hybrid),x00196,hybrid,599.0,AMWI NOPI,ANAC MAAM,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anas superciliosa x acuta,Pacific Black Duck x Northern Pintail (hybrid),x01087,hybrid,600.0,GRDU PBDU NOPI,ANSU ANAC,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anas platyrhynchos x acuta,Mallard x Northern Pintail (hybrid),x00628,hybrid,601.0,NOPI MALL,ANAC ANPL,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anas rubripes x acuta,American Black Duck x Northern Pintail (hybrid),x00674,hybrid,602.0,ABDU NOPI,ANAC ANRU,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anas bahamensis x georgica,White-cheeked x Yellow-billed Pintail (hybrid),x01150,hybrid,611.0,WCHP WCPI YBPI,ANGE ANBA,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Sibirionetta formosa x Anas crecca,Baikal x Green-winged Teal (hybrid),x00999,hybrid,616.0,GWTE EUTE CWTE EWTE BATE,SIFO ANCR,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Spatula querquedula x Anas crecca,Garganey x Green-winged Teal (hybrid),x00371,hybrid,617.0,GWTE EUTE CWTE EWTE GARG,ANCR SPQU,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Spatula discors x Anas crecca,Blue-winged x Green-winged Teal (hybrid),x00673,hybrid,618.0,GWTE BWTE EUTE CWTE EWTE,SPDI ANCR,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Spatula cyanoptera x Anas crecca,Cinnamon x Green-winged Teal (hybrid),x00763,hybrid,619.0,CITE GWTE EUTE CWTE EWTE,SPCY ANCR,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Mareca strepera x Anas crecca,Gadwall x Green-winged Teal (hybrid),x00762,hybrid,620.0,GWTE EUTE CWTE EWTE GADW,MAST ANCR,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Mareca penelope x Anas crecca,Eurasian Wigeon x Green-winged Teal (hybrid),x00372,hybrid,621.0,GWTE EUTE CWTE EUWI EWTE,ANCR MAPE,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Mareca americana x Anas crecca,American Wigeon x Green-winged Teal (hybrid),x00646,hybrid,622.0,GWTE AMWI EUTE CWTE EWTE,ANCR MAAM,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anas platyrhynchos x crecca,Mallard x Green-winged Teal (hybrid),x00670,hybrid,623.0,GWTE EUTE CWTE EWTE MALL,ANCR ANPL,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anas acuta x crecca,Northern Pintail x Green-winged Teal (hybrid),x00725,hybrid,624.0,GWTE EUTE CWTE EWTE NOPI,ANAC ANCR,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anas superciliosa x gracilis,Pacific Black Duck x Gray Teal (hybrid),x00926,hybrid,640.0,GRDU GRTE PBDU,ANSU ANGR,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anas superciliosa x castanea,Pacific Black Duck x Chestnut Teal (hybrid),x00925,hybrid,645.0,CHTE GRDU PBDU,ANSU ANCA,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anas gracilis x castanea,Gray x Chestnut Teal (hybrid),x00913,hybrid,646.0,CHTE GRTE,ANCA ANGR,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anas platyrhynchos x chlorotis,Mallard x Brown Teal (hybrid),x00878,hybrid,652.0,BRTE MALL,ANCH ANPL,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anas platyrhynchos x Netta rufina,Mallard x Red-crested Pochard (hybrid),x00648,hybrid,661.0,RCPO MALL,NERU ANPL,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anas platyrhynchos x Aythya americana,Mallard x Redhead (hybrid),x00879,hybrid,668.0,REDH MALL,AYAM ANPL,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Aythya valisineria x americana,Canvasback x Redhead (hybrid),x00684,hybrid,669.0,REDH CANV,AYVA AYAM,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anas platyrhynchos x Aythya ferina,Mallard x Common Pochard (hybrid),x01000,hybrid,671.0,COPO COMP MALL,AYFE ANPL,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Netta rufina x Aythya ferina,Red-crested x Common Pochard (hybrid),x00373,hybrid,672.0,COMP COPO RCPO,AYFE NERU,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anas platyrhynchos x Aythya collaris,Mallard x Ring-necked Duck (hybrid),x01001,hybrid,674.0,MALL RNDU,AYCO ANPL,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Aythya valisineria x collaris,Canvasback x Ring-necked Duck (hybrid),x00880,hybrid,675.0,CANV RNDU,AYVA AYCO,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Aythya americana x collaris,Redhead x Ring-necked Duck (hybrid),x00679,hybrid,676.0,REDH RNDU,AYAM AYCO,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Netta rufina x Aythya nyroca,Red-crested Pochard x Ferruginous Duck (hybrid),x00374,hybrid,678.0,FEDU RCPO,AYNY NERU,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Aythya ferina x nyroca,Common Pochard x Ferruginous Duck (hybrid),x00764,hybrid,679.0,FEDU COPO COMP,AYNY AYFE,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Aythya ferina x baeri,Common x Baer's Pochard (hybrid),x01093,hybrid,682.0,COPO COMP BAPO,AYFE AYBA,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Aythya nyroca x baeri,Ferruginous Duck x Baer's Pochard (hybrid),x00838,hybrid,683.0,FEDU BAPO,AYBA AYNY,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anas gracilis x Aythya australis,Gray Teal x Hardhead (hybrid),x00912,hybrid,686.0,GRTE HARD AWED,AYAU ANGR,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anas platyrhynchos x Aythya fuligula,Mallard x Tufted Duck (hybrid),x00375,hybrid,688.0,TUDU MALL,AYFU ANPL,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Netta rufina x Aythya fuligula,Red-crested Pochard x Tufted Duck (hybrid),x00376,hybrid,689.0,TUDU RCPO,AYFU NERU,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Aythya ferina x fuligula,Common Pochard x Tufted Duck (hybrid),x00683,hybrid,690.0,COPO COMP TUDU,AYFE AYFU,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Aythya collaris x fuligula,Ring-necked x Tufted Duck (hybrid),x00652,hybrid,691.0,TUDU RNDU,AYFU AYCO,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Aythya nyroca x fuligula,Ferruginous x Tufted Duck (hybrid),x00839,hybrid,692.0,FEDU TUDU,AYNY AYFU,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Aythya americana x marila,Redhead x Greater Scaup (hybrid),x00680,hybrid,697.0,REDH GRSC,AYMA AYAM,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Aythya collaris x marila,Ring-necked Duck x Greater Scaup (hybrid),x00779,hybrid,698.0,GRSC RNDU,AYMA AYCO,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Aythya fuligula x marila,Tufted Duck x Greater Scaup (hybrid),x00654,hybrid,699.0,TUDU GRSC,AYFU AYMA,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Aythya americana x affinis,Redhead x Lesser Scaup (hybrid),x00678,hybrid,701.0,REDH LESC,AYAM AYAF,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Aythya collaris x affinis,Ring-necked Duck x Lesser Scaup (hybrid),x00613,hybrid,702.0,LESC RNDU,AYCO AYAF,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Aythya fuligula x affinis,Tufted Duck x Lesser Scaup (hybrid),x00653,hybrid,703.0,TUDU LESC,AYFU AYAF,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Aythya valisineria x marila/affinis,Canvasback x scaup sp. (hybrid),x00377,hybrid,704.0,CANV GRSC LESC,AYVA AYMA AYAF,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Aythya americana x marila/affinis,Redhead x scaup sp. (hybrid),x00681,hybrid,705.0,REDH GRSC LESC,AYAM AYMA AYAF,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Aythya collaris x marila/affinis,Ring-necked Duck x scaup sp. (hybrid),x00682,hybrid,706.0,GRSC LESC RNDU,AYCO AYMA AYAF,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Aythya fuligula x marila/affinis,Tufted Duck x scaup sp. (hybrid),tdxsca1,hybrid,707.0,TUDU LESC GRSC,AYFU AYMA AYAF,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Somateria fischeri x spectabilis,Spectacled x King Eider (hybrid),x00942,hybrid,714.0,KIEI SPEI,SOFI SOSP,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Tadorna tadorna x Somateria mollissima,Common Shelduck x Common Eider (hybrid),x01151,hybrid,722.0,COMS COSH COEI,SOMO TATA,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Anas platyrhynchos x Somateria mollissima,Mallard x Common Eider (hybrid),x00881,hybrid,723.0,COEI MALL,SOMO ANPL,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Somateria spectabilis x mollissima,King x Common Eider (hybrid),x00665,hybrid,724.0,KIEI COEI,SOMO SOSP,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Melanitta perspicillata x deglandi,Surf x White-winged Scoter (hybrid),x00882,hybrid,732.0,WWSC SUSC,MEDE MEPE,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Melanitta deglandi x stejnegeri,White-winged x Stejneger's Scoter (hybrid),x01170,hybrid,733.0,WWSC SISC STSC,MEDE MEST,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Bucephala albeola x clangula,Bufflehead x Common Goldeneye (hybrid),x00655,hybrid,746.0,BUFF COGO,BUAL BUCL,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Bucephala albeola x clangula/islandica,Bufflehead x goldeneye sp. (hybrid),x00909,hybrid,747.0,BUFF BAGO COGO,BUAL BUIS BUCL,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Bucephala albeola x islandica,Bufflehead x Barrow's Goldeneye (hybrid),x01152,hybrid,749.0,BUFF BAGO,BUAL BUIS,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Bucephala clangula x islandica,Common x Barrow's Goldeneye (hybrid),cxbgol1,hybrid,750.0,BAGO COGO,BUIS BUCL,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Bucephala clangula x Mergellus albellus,Common Goldeneye x Smew (hybrid),x00378,hybrid,753.0,SMEW COGO,BUCL MEAL,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Aix sponsa x Lophodytes cucullatus,Wood Duck x Hooded Merganser (hybrid),x00202,hybrid,755.0,AWDU WODU CWDU HOME,LOCU AISP,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Bucephala albeola x Lophodytes cucullatus,Bufflehead x Hooded Merganser (hybrid),x00424,hybrid,756.0,BUFF HOME,BUAL LOCU,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Bucephala clangula x Lophodytes cucullatus,Common Goldeneye x Hooded Merganser (hybrid),x00425,hybrid,757.0,HOME COGO,LOCU BUCL,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Bucephala islandica x Lophodytes cucullatus,Barrow's Goldeneye x Hooded Merganser (hybrid),x00426,hybrid,758.0,BAGO HOME,BUIS LOCU,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Bucephala clangula/islandica x Lophodytes cucullatus,goldeneye sp. x Hooded Merganser (hybrid),x00631,hybrid,759.0,BAGO HOME COGO,LOCU BUIS BUCL,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Mergellus albellus x Lophodytes cucullatus,Smew x Hooded Merganser (hybrid),x00379,hybrid,760.0,SMEW HOME,LOCU MEAL,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Somateria mollissima x Mergus merganser,Common Eider x Common Merganser (hybrid),x00840,hybrid,767.0,GOOS COEI COME,SOMO MEME,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Lophodytes cucullatus x Mergus merganser,Hooded x Common Merganser (hybrid),x00726,hybrid,768.0,GOOS HOME COME,MEME LOCU,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Aythya collaris x Mergus serrator,Ring-necked Duck x Red-breasted Merganser (hybrid),x00614,hybrid,771.0,RBME RNDU,AYCO MESE,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Mergus merganser x serrator,Common x Red-breasted Merganser (hybrid),x00780,hybrid,772.0,GOOS RBME COME,MEME MESE,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Oxyura jamaicensis x leucocephala,Ruddy x White-headed Duck (hybrid),x00705,hybrid,784.0,WHDU RUDU,OXJA OXLE,,Anseriformes,"Ducks, Geese, and Waterfowl",Anatidae,,,,anatid1
+Pipile grayi x cujubi,White-throated x Red-throated Piping-Guan (hybrid),x01078,hybrid,871.0,WTPG RTPG,PIGR PICU,,Galliformes,"Guans, Chachalacas, and Curassows",Cracidae,,,,cracid2
+Ortalis poliocephala x wagleri,West Mexican x Rufous-bellied Chachalaca (hybrid),x01121,hybrid,953.0,RBEC RBCH WMCH,ORWA ORPO,,Galliformes,"Guans, Chachalacas, and Curassows",Cracidae,,,,cracid2
+Colinus virginianus x Callipepla squamata,Northern Bobwhite x Scaled Quail (hybrid),x00688,hybrid,1087.0,SCQU NOBO,COVI CASQ,,Galliformes,New World Quail,Odontophoridae,,,,odonto1
+Colinus virginianus x Callipepla californica,Northern Bobwhite x California Quail (hybrid),x01011,hybrid,1103.0,CAQU NOBO,COVI CACA,,Galliformes,New World Quail,Odontophoridae,,,,odonto1
+Callipepla squamata x californica,Scaled x California Quail (hybrid),x00687,hybrid,1104.0,CAQU SCQU,CACA CASQ,,Galliformes,New World Quail,Odontophoridae,,,,odonto1
+Callipepla squamata x gambelii,Scaled x Gambel's Quail (hybrid),x00689,hybrid,1111.0,SCQU GAQU,CASQ CAGA,,Galliformes,New World Quail,Odontophoridae,,,,odonto1
+Callipepla californica x gambelii,California x Gambel's Quail (hybrid),y00315,hybrid,1112.0,CAQU GAQU,CAGA CACA,,Galliformes,New World Quail,Odontophoridae,,,,odonto1
+Dendragapus obscurus x fuliginosus,Dusky x Sooty Grouse (hybrid),x01224,hybrid,1325.0,DUGR SOGR,DEOB DEFU,,Galliformes,"Pheasants, Grouse, and Allies",Phasianidae,,,,phasia1
+Centrocercus urophasianus x Tympanuchus phasianellus,Greater Sage-Grouse x Sharp-tailed Grouse (hybrid),x00727,hybrid,1335.0,STGR GRSG GSGR SAGR,CEUR TYPH,,Galliformes,"Pheasants, Grouse, and Allies",Phasianidae,,,,phasia1
+Dendragapus obscurus x Tympanuchus phasianellus,Dusky x Sharp-tailed Grouse (hybrid),x00781,hybrid,1336.0,DUGR STGR,TYPH DEOB,,Galliformes,"Pheasants, Grouse, and Allies",Phasianidae,,,,phasia1
+Tympanuchus phasianellus x cupido,Sharp-tailed Grouse x Greater Prairie-Chicken (hybrid),x00728,hybrid,1341.0,STGR GPCH GRPC,TYCU TYPH,,Galliformes,"Pheasants, Grouse, and Allies",Phasianidae,,,,phasia1
+Tympanuchus cupido x pallidicinctus,Greater x Lesser Prairie-Chicken (hybrid),x00668,hybrid,1343.0,LPCH GPCH GRPC LEPC,TYCU TYPA,,Galliformes,"Pheasants, Grouse, and Allies",Phasianidae,,,,phasia1
+Tetrao urogallus x urogalloides,Western x Black-billed Capercaillie (hybrid),x01169,hybrid,1431.0,WECA BBCA,TEUR,,Galliformes,"Pheasants, Grouse, and Allies",Phasianidae,,,,phasia1
+Tetrao urogallus x Lyrurus tetrix,Western Capercaillie x Black Grouse (hybrid),x00841,hybrid,1441.0,WECA BLGR,TEUR LYTE,,Galliformes,"Pheasants, Grouse, and Allies",Phasianidae,,,,phasia1
+Chrysolophus pictus x amherstiae,Golden x Lady Amherst's Pheasant (hybrid),x01017,hybrid,1476.0,GOPH LAPH,CHPI CHAM,,Galliformes,"Pheasants, Grouse, and Allies",Phasianidae,,,,phasia1
+Phasianus colchicus x versicolor,Ring-necked x Green Pheasant (hybrid),x01018,hybrid,1513.0,RNEP RNPH GRPH COPH,PHCO PHVE,,Galliformes,"Pheasants, Grouse, and Allies",Phasianidae,,,,phasia1
+Crossoptilon harmani x crossoptilon,Tibetan x White Eared-Pheasant (hybrid),x00943,hybrid,1522.0,WHEP TEPH WEPH TIEP,CRCR CRHA,,Galliformes,"Pheasants, Grouse, and Allies",Phasianidae,,,,phasia1
+Lophura edwardsi x nycthemera,Edwards's x Silver Pheasant (hybrid),impphe1,hybrid,1555.0,SIPH VIPH EDPH,LOED LONY,,Galliformes,"Pheasants, Grouse, and Allies",Phasianidae,,,,phasia1
+Lophura leucomelanos x nycthemera,Kalij x Silver Pheasant (hybrid),x01181,hybrid,1556.0,SIPH KAPH,LONY LOLE,,Galliformes,"Pheasants, Grouse, and Allies",Phasianidae,,,,phasia1
+Pavo cristatus x muticus,Indian x Green Peafowl (hybrid),x00380,hybrid,1579.0,INPE GRPE,PAMU PACR,,Galliformes,"Pheasants, Grouse, and Allies",Phasianidae,,,,phasia1
+Alectoris rufa x graeca,Red-legged x Rock Partridge (hybrid),x00640,hybrid,1786.0,ROPA RLPA,ALRU ALGR,,Galliformes,"Pheasants, Grouse, and Allies",Phasianidae,,,,phasia1
+Alectoris chukar x graeca,Chukar x Rock Partridge (hybrid),x00381,hybrid,1787.0,ROPA CHUK CHPA,ALGR ALCH,,Galliformes,"Pheasants, Grouse, and Allies",Phasianidae,,,,phasia1
+Streptopelia turtur x decaocto,European Turtle-Dove x Eurasian Collared-Dove (hybrid),x00382,hybrid,2032.0,CODO EUTD EUCD ECDO ETDO,STDE STTU,,Columbiformes,Pigeons and Doves,Columbidae,,,,columb2
+Streptopelia orientalis x decaocto,Oriental Turtle-Dove x Eurasian Collared-Dove (hybrid),x01084,hybrid,2033.0,CODO ECDO EUCD RTDO OTDO ORTD,STDE STOR,,Columbiformes,Pigeons and Doves,Columbidae,,,,columb2
+Streptopelia decaocto x roseogrisea,Eurasian x African Collared-Dove (hybrid),x00799,hybrid,2040.0,AFCD CODO ECDO EUCD ACDO BADO,STDE STRO,,Columbiformes,Pigeons and Doves,Columbidae,,,,columb2
+Chalcophaps indica x longirostris,Asian x Pacific Emerald Dove (hybrid),x00849,hybrid,2173.0,AEDO CEDO GCED PEDO BCED,CHIN CHLO,,Columbiformes,Pigeons and Doves,Columbidae,,,,columb2
+Columbina inca x passerina,Inca x Common Ground Dove (hybrid),x01225,hybrid,2262.0,CGDO INDO,COPA COIN,,Columbiformes,Pigeons and Doves,Columbidae,,,,columb2
+Columbina passerina x talpacoti,Common x Ruddy Ground Dove (hybrid),x01164,hybrid,2273.0,CGDO RGDO,COPA COTA,,Columbiformes,Pigeons and Doves,Columbidae,,,,columb2
+Columbina talpacoti x squammata,Ruddy Ground x Scaled Dove (hybrid),x01153,hybrid,2281.0,SCDO RGDO,COSQ COTA,,Columbiformes,Pigeons and Doves,Columbidae,,,,columb2
+Streptopelia decaocto x Zenaida macroura,Eurasian Collared-Dove x Mourning Dove (hybrid),x00767,hybrid,2418.0,CODO ECDO MODO EUCD,STDE ZEMA,,Columbiformes,Pigeons and Doves,Columbidae,,,,columb2
+Zenaida asiatica x macroura,White-winged x Mourning Dove (hybrid),x01086,hybrid,2419.0,MODO WWDO,ZEAS ZEMA,,Columbiformes,Pigeons and Doves,Columbidae,,,,columb2
+Menelikornis leucotis x ruspolii,White-cheeked x Prince Ruspoli's Turaco (hybrid),x00800,hybrid,2992.0,WCTU RUTU PRTU,MELE MERU,,Musophagiformes,Turacos,Musophagidae,,,,musoph1
+Centropus superciliosus x burchellii,White-browed x Burchell's Coucal (hybrid),x01122,hybrid,3117.0,BUCO WBCO,CEBU CESU,,Cuculiformes,Cuckoos,Cuculidae,,,,cuculi1
+Piaya mexicana x cayana,Mexican x Common Squirrel-Cuckoo (hybrid),x01173,hybrid,3233.0,COSC MSCU MESC CSCU SQCU,PIME PICA,,Cuculiformes,Cuckoos,Cuculidae,,,,cuculi1
+Apus affinis x caffer,Little x White-rumped Swift (hybrid),x01060,hybrid,4154.0,LISW WRSW,APAF APCA,,Apodiformes,Swifts,Apodidae,,,,apodid1
+Heliangelus amethysticollis x viola,Amethyst-throated x Purple-throated Sunangel (hybrid),x01046,hybrid,4423.0,PTSU ATSU,HEAM HEVI,,Apodiformes,Hummingbirds,Trochilidae,,,,trochi1
+Aglaiocercus kingii x Metallura tyrianthina,Long-tailed Sylph x Tyrian Metaltail (hybrid),x00944,hybrid,4551.0,LTSY TYME,METY AGKI,,Apodiformes,Hummingbirds,Trochilidae,,,,trochi1
+Aglaeactis cupripennis x castelnaudii,Shining x White-tufted Sunbeam (hybrid),x00672,hybrid,4610.0,SHSU WTSU,AGCU AGCA,,Apodiformes,Hummingbirds,Trochilidae,,,,trochi1
+Coeligena bonapartei x helianthea,Golden-bellied x Blue-throated Starfrontlet (hybrid),x01047,hybrid,4657.0,BTST GBST,COBO COHE,,Apodiformes,Hummingbirds,Trochilidae,,,,trochi1
+Boissonneaua flavescens x jardini,Buff-tailed x Velvet-purple Coronet (hybrid),x00383,hybrid,4677.0,BTCO VPCO,BOFL BOJA,,Apodiformes,Hummingbirds,Trochilidae,,,,trochi1
+Boissonneaua flavescens x Heliodoxa imperatrix,Buff-tailed Coronet x Empress Brilliant (hybrid),x01032,hybrid,4711.0,EMBR BTCO,BOFL HEIM,,Apodiformes,Hummingbirds,Trochilidae,,,,trochi1
+Lampornis calolaemus x castaneoventris,Purple-throated x White-throated Mountain-gem (hybrid),x00945,hybrid,4765.0,PTMG PTMO WTTM WTMG WTMO,LACA,,Apodiformes,Hummingbirds,Trochilidae,,,,trochi1
+Thaumastura cora x Eulidia yarrellii,Peruvian Sheartail x Chilean Woodstar (hybrid),x00736,hybrid,4780.0,CHWO PESH,EUYA THCO,,Apodiformes,Hummingbirds,Trochilidae,,,,trochi1
+Eugenes fulgens x Archilochus alexandri,Rivoli's x Black-chinned Hummingbird (hybrid),x01226,hybrid,4804.0,BCHU RIHU MAHU,ARAL EUFU,,Apodiformes,Hummingbirds,Trochilidae,,,,trochi1
+Calothorax lucifer x Archilochus alexandri,Lucifer x Black-chinned Hummingbird (hybrid),x00946,hybrid,4805.0,LUHU BCHU LUSH,CALU ARAL,,Apodiformes,Hummingbirds,Trochilidae,,,,trochi1
+Archilochus colubris x alexandri,Ruby-throated x Black-chinned Hummingbird (hybrid),x00850,hybrid,4806.0,BCHU RTHU,ARAL ARCO,,Apodiformes,Hummingbirds,Trochilidae,,,,trochi1
+Eugenes fulgens x Calypte anna,Rivoli's x Anna's Hummingbird (hybrid),x01227,hybrid,4815.0,ANHU RIHU MAHU,CAAN EUFU,,Apodiformes,Hummingbirds,Trochilidae,,,,trochi1
+Calothorax lucifer x Calypte anna,Lucifer x Anna's Hummingbird (hybrid),x00690,hybrid,4816.0,ANHU LUHU LUSH,CAAN CALU,,Apodiformes,Hummingbirds,Trochilidae,,,,trochi1
+Archilochus alexandri x Calypte anna,Black-chinned x Anna's Hummingbird (hybrid),x00651,hybrid,4817.0,ANHU BCHU,CAAN ARAL,,Apodiformes,Hummingbirds,Trochilidae,,,,trochi1
+Calothorax lucifer x Calypte costae,Lucifer x Costa's Hummingbird (hybrid),x00737,hybrid,4819.0,LUSH LUHU COHU,CALU CACO,,Apodiformes,Hummingbirds,Trochilidae,,,,trochi1
+Archilochus alexandri x Calypte costae,Black-chinned x Costa's Hummingbird (hybrid),x00384,hybrid,4820.0,BCHU COHU,CACO ARAL,,Apodiformes,Hummingbirds,Trochilidae,,,,trochi1
+Calypte anna x costae,Anna's x Costa's Hummingbird (hybrid),x00618,hybrid,4821.0,ANHU COHU,CAAN CACO,ACHH,Apodiformes,Hummingbirds,Trochilidae,,,,trochi1
+Archilochus alexandri x Selasphorus calliope,Black-chinned x Calliope Hummingbird (hybrid),x00768,hybrid,4824.0,CAHU BCHU,ARAL SECA,,Apodiformes,Hummingbirds,Trochilidae,,,,trochi1
+Calypte anna x Selasphorus calliope,Anna's x Calliope Hummingbird (hybrid),x00619,hybrid,4825.0,CAHU ANHU,CAAN SECA,,Apodiformes,Hummingbirds,Trochilidae,,,,trochi1
+Archilochus colubris x Selasphorus rufus,Ruby-throated x Rufous Hummingbird (hybrid),x01048,hybrid,4827.0,RTHU RUHU,SERU ARCO,,Apodiformes,Hummingbirds,Trochilidae,,,,trochi1
+Archilochus alexandri x Selasphorus rufus,Black-chinned x Rufous Hummingbird (hybrid),x00738,hybrid,4828.0,BCHU RUHU,ARAL SERU,,Apodiformes,Hummingbirds,Trochilidae,,,,trochi1
+Calypte anna x Selasphorus rufus,Anna's x Rufous Hummingbird (hybrid),x00626,hybrid,4829.0,ANHU RUHU,CAAN SERU,,Apodiformes,Hummingbirds,Trochilidae,,,,trochi1
+Selasphorus calliope x rufus,Calliope x Rufous Hummingbird (hybrid),x00852,hybrid,4830.0,CAHU RUHU,SECA SERU,,Apodiformes,Hummingbirds,Trochilidae,,,,trochi1
+Archilochus alexandri x Selasphorus sasin,Black-chinned x Allen's Hummingbird (hybrid),x01154,hybrid,4834.0,BCHU ALHU,ARAL SESA,,Apodiformes,Hummingbirds,Trochilidae,,,,trochi1
+Calypte anna x Selasphorus sasin,Anna's x Allen's Hummingbird (hybrid),x00691,hybrid,4835.0,ANHU ALHU,CAAN SESA,,Apodiformes,Hummingbirds,Trochilidae,,,,trochi1
+Calypte costae x Selasphorus sasin,Costa's x Allen's Hummingbird (hybrid),x01155,hybrid,4836.0,COHU ALHU,CACO SESA,,Apodiformes,Hummingbirds,Trochilidae,,,,trochi1
+Selasphorus rufus x sasin,Rufous x Allen's Hummingbird (hybrid),x00385,hybrid,4837.0,RUHU ALHU,SESA SERU,RAHH,Apodiformes,Hummingbirds,Trochilidae,,,,trochi1
+Calothorax lucifer x Selasphorus platycercus,Lucifer x Broad-tailed Hummingbird (hybrid),x01095,hybrid,4840.0,BTHU LUHU LUSH,SEPL CALU,,Apodiformes,Hummingbirds,Trochilidae,,,,trochi1
+Archilochus colubris x Selasphorus platycercus,Ruby-throated x Broad-tailed Hummingbird (hybrid),x01049,hybrid,4841.0,BTHU RTHU,SEPL ARCO,,Apodiformes,Hummingbirds,Trochilidae,,,,trochi1
+Archilochus alexandri x Selasphorus platycercus,Black-chinned x Broad-tailed Hummingbird (hybrid),x01091,hybrid,4842.0,BTHU BCHU,SEPL ARAL,,Apodiformes,Hummingbirds,Trochilidae,,,,trochi1
+Calypte anna x Selasphorus platycercus,Anna's x Broad-tailed Hummingbird (hybrid),x01096,hybrid,4843.0,BTHU ANHU,SEPL CAAN,,Apodiformes,Hummingbirds,Trochilidae,,,,trochi1
+Selasphorus calliope x platycercus,Calliope x Broad-tailed Hummingbird (hybrid),x00851,hybrid,4844.0,BTHU CAHU,SEPL SECA,,Apodiformes,Hummingbirds,Trochilidae,,,,trochi1
+Selasphorus rufus x platycercus,Rufous x Broad-tailed Hummingbird (hybrid),x00386,hybrid,4845.0,BTHU RUHU,SEPL SERU,,Apodiformes,Hummingbirds,Trochilidae,,,,trochi1
+Calypte anna x Selasphorus sp.,Anna's Hummingbird x Selasphorus sp. (hybrid),x00739,hybrid,4858.0,USHU ANHU,CAAN,,Apodiformes,Hummingbirds,Trochilidae,,,,trochi1
+Archilochus alexandri x Cynanthus latirostris,Black-chinned x Broad-billed Hummingbird (hybrid),x00676,hybrid,4871.0,BBIH BCHU BBHU,CYLA ARAL,,Apodiformes,Hummingbirds,Trochilidae,,,,trochi1
+Calypte anna x Cynanthus latirostris,Anna's x Broad-billed Hummingbird (hybrid),x00387,hybrid,4872.0,BBIH ANHU BBHU,CAAN CYLA,,Apodiformes,Hummingbirds,Trochilidae,,,,trochi1
+Calypte costae x Cynanthus latirostris,Costa's x Broad-billed Hummingbird (hybrid),x01097,hybrid,4873.0,BBIH BBHU COHU,CYLA CACO,,Apodiformes,Hummingbirds,Trochilidae,,,,trochi1
+Cynanthus latirostris x doubledayi,Broad-billed x Turquoise-crowned Hummingbird (hybrid),x00388,hybrid,4878.0,BBIH BBHU TCHU,CYLA CYDO,,Apodiformes,Hummingbirds,Trochilidae,,,,trochi1
+Eugenes fulgens x Basilinna leucotis,Rivoli's x White-eared Hummingbird (hybrid),x01101,hybrid,4922.0,RIHU MAHU WEHU,BALE EUFU,,Apodiformes,Hummingbirds,Trochilidae,,,,trochi1
+Selasphorus platycercus x Basilinna leucotis,Broad-tailed x White-eared Hummingbird (hybrid),x01228,hybrid,4923.0,BTHU WEHU,SEPL BALE,,Apodiformes,Hummingbirds,Trochilidae,,,,trochi1
+Cynanthus latirostris x Basilinna leucotis,Broad-billed x White-eared Hummingbird (hybrid),x01129,hybrid,4924.0,BBIH BBHU WEHU,CYLA BALE,,Apodiformes,Hummingbirds,Trochilidae,,,,trochi1
+Trochilus polytmus x scitulus,Red-billed x Black-billed Streamertail (hybrid),stream4,hybrid,5042.0,BBST RBST,TRSC TRPO,,Apodiformes,Hummingbirds,Trochilidae,,,,trochi1
+Cynanthus latirostris x Ramosomyia violiceps,Broad-billed x Violet-crowned Hummingbird (hybrid),x00633,hybrid,5047.0,BBIH VCHU BBHU,CYLA RAVI,,Apodiformes,Hummingbirds,Trochilidae,,,,trochi1
+Cynanthus latirostris x Saucerottia beryllina,Broad-billed x Berylline Hummingbird (hybrid),x01172,hybrid,5065.0,BBIH BBHU BEHU,CYLA SABE,,Apodiformes,Hummingbirds,Trochilidae,,,,trochi1
+Eugenes fulgens x Saucerottia beryllina,Rivoli's x Berylline Hummingbird (hybrid),mxbhum1,hybrid,5066.0,MAHU RIHU BEHU,EUFU SABE,,Apodiformes,Hummingbirds,Trochilidae,,,,trochi1
+Amazilia rutila x tzacatl,Cinnamon x Rufous-tailed Hummingbird (hybrid),x00947,hybrid,5118.0,CIHU RTHU RTAH,AMTZ AMRU,,Apodiformes,Hummingbirds,Trochilidae,,,,trochi1
+Saucerottia cyanocephala x Amazilia luciae,Azure-crowned Hummingbird x Honduran Emerald (hybrid),x00916,hybrid,5121.0,AZCH ACHU HOEM,SACY AMLU,,Apodiformes,Hummingbirds,Trochilidae,,,,trochi1
+Amazilia tzacatl x luciae,Rufous-tailed Hummingbird x Honduran Emerald (hybrid),x01033,hybrid,5122.0,RTHU HOEM RTAH,AMTZ AMLU,,Apodiformes,Hummingbirds,Trochilidae,,,,trochi1
+Aglaiocercus kingii x Trochilidae sp. (Bogota Sunangel),Bogota Sunangel (hybrid),bogsun2,hybrid,5213.0,UNHU LTSY,AGKI,,Apodiformes,Hummingbirds,Trochilidae,,,,trochi1
+Rallus elegans x crepitans,King x Clapper Rail (hybrid),x00948,hybrid,5292.0,KIRA CLRA,RAEL RACR,,Gruiformes,"Rails, Gallinules, and Coots",Rallidae,,,,rallid1
+Gallinula chloropus x Fulica atra,Eurasian Moorhen x Eurasian Coot (hybrid),x00389,hybrid,5492.0,EUCO COMO EUMO,GACH FUAT,,Gruiformes,"Rails, Gallinules, and Coots",Rallidae,,,,rallid1
+Fulica atra x cristata,Eurasian x Red-knobbed Coot (hybrid),x00911,hybrid,5495.0,EUCO RKCO,FUCR FUAT,,Gruiformes,"Rails, Gallinules, and Coots",Rallidae,,,,rallid1
+Gallinula galeata x Fulica americana,Common Gallinule x American Coot (hybrid),x00390,hybrid,5505.0,AMMO COGA AMCO,GAGA FUAM,,Gruiformes,"Rails, Gallinules, and Coots",Rallidae,,,,rallid1
+Fulica armillata x ardesiaca,Red-gartered x Slate-colored Coot (hybrid),x00845,hybrid,5511.0,SCCO RGCO ANCO,FUAR,,Gruiformes,"Rails, Gallinules, and Coots",Rallidae,,,,rallid1
+Porphyrio indicus x poliocephalus,Black-backed x Gray-headed Swamphen (hybrid),x00844,hybrid,5538.0,PUSW GHSW BBSW,POIN POPO,,Gruiformes,"Rails, Gallinules, and Coots",Rallidae,,,,rallid1
+Porphyrio madagascariensis x poliocephalus,African x Gray-headed Swamphen (hybrid),x01061,hybrid,5539.0,AFRI PUSW GHSW AFSW,POMA POPO,,Gruiformes,"Rails, Gallinules, and Coots",Rallidae,,,,rallid1
+Antigone rubicunda x antigone,Brolga x Sarus Crane (hybrid),x00949,hybrid,5711.0,BROL SACR,ANAN ANRU,,Gruiformes,Cranes,Gruidae,,,,gruida1
+Antigone canadensis x Grus americana,Sandhill x Whooping Crane (hybrid),x00790,hybrid,5717.0,WHCR SACR,ANCA GRAM,,Gruiformes,Cranes,Gruidae,,,,gruida1
+Antigone canadensis x Grus grus,Sandhill x Common Crane (hybrid),x00657,hybrid,5719.0,CCRA COCR SACR,ANCA GRGR,,Gruiformes,Cranes,Gruidae,,,,gruida1
+Grus grus x monacha,Common x Hooded Crane (hybrid),x00884,hybrid,5722.0,CCRA COCR HOCR,GRMO GRGR,,Gruiformes,Cranes,Gruidae,,,,gruida1
+Himantopus himantopus x leucocephalus,Black-winged x Pied Stilt (hybrid),x00830,hybrid,5765.0,EBWS BWST PIST,HILE HIHI,,Charadriiformes,Stilts and Avocets,Recurvirostridae,,,,recurv1
+Himantopus leucocephalus x novaezelandiae,Pied x Black Stilt (hybrid),x00459,hybrid,5768.0,BLST BWST PIST,HILE HINO,,Charadriiformes,Stilts and Avocets,Recurvirostridae,,,,recurv1
+Himantopus himantopus x mexicanus,Black-winged x Black-necked Stilt (hybrid),x00846,hybrid,5775.0,EBWS BWST BNBS BNST,HIME HIHI,,Charadriiformes,Stilts and Avocets,Recurvirostridae,,,,recurv1
+Himantopus mexicanus x Recurvirostra americana,Black-necked Stilt x American Avocet (hybrid),x00732,hybrid,5781.0,BWST BNST BNBS AMAV,HIME REAM,,Charadriiformes,Stilts and Avocets,Recurvirostridae,,,,recurv1
+Haematopus finschi x unicolor,South Island x Variable Oystercatcher (hybrid),x00928,hybrid,5795.0,VAOY SIOY SIPO,HAFI HAUN,,Charadriiformes,Oystercatchers,Haematopodidae,,,,haemat1
+Haematopus palliatus x bachmani,American x Black Oystercatcher (hybrid),x00006,hybrid,5807.0,AMOY BLOY,HABA HAPA,,Charadriiformes,Oystercatchers,Haematopodidae,,,,haemat1
+Vanellus armatus x albiceps,Blacksmith x White-crowned Lapwing (hybrid),x00885,hybrid,5868.0,BLLA WCLA BLPL,VAAR VAAL,,Charadriiformes,Plovers and Lapwings,Charadriidae,,,,charad1
+Jacana spinosa x jacana,Northern x Wattled Jacana (hybrid),x00791,hybrid,5997.0,NOJA WAJA,JAJA JASP,,Charadriiformes,Jacanas,Jacanidae,,,,jacani1
+Limosa lapponica x haemastica,Bar-tailed x Hudsonian Godwit (hybrid),x01025,hybrid,6049.0,BTGO HUGO,LILA LIHA,,Charadriiformes,Sandpipers and Allies,Scolopacidae,,,,scolop2
+Limosa limosa x haemastica,Black-tailed x Hudsonian Godwit (hybrid),x01026,hybrid,6050.0,BTGO BLTG HUGO,LIHA LILI,,Charadriiformes,Sandpipers and Allies,Scolopacidae,,,,scolop2
+Gallinago media x gallinago,Great x Common Snipe (hybrid),x00792,hybrid,6102.0,COSN GRSN,GAGA GAME,,Charadriiformes,Sandpipers and Allies,Scolopacidae,,,,scolop2
+Calidris tenuirostris x virgata,Great Knot x Surfbird (hybrid),x00733,hybrid,6175.0,SURF GRKN,CATE CAVI,,Charadriiformes,Sandpipers and Allies,Scolopacidae,,,,scolop2
+Calidris canutus x virgata,Red Knot x Surfbird (hybrid),x00675,hybrid,6176.0,REKN SURF,CAVI CACA,,Charadriiformes,Sandpipers and Allies,Scolopacidae,,,,scolop2
+Calidris alpina x maritima,Dunlin x Purple Sandpiper (hybrid),x00433,hybrid,6208.0,PUSA DUNL,CAMA CAAL,,Charadriiformes,Sandpipers and Allies,Scolopacidae,,,,scolop2
+Calidris alpina x ptilocnemis,Dunlin x Rock Sandpiper (hybrid),x01213,hybrid,6215.0,ROSA DUNL,CAPT CAAL,,Charadriiformes,Sandpipers and Allies,Scolopacidae,,,,scolop2
+Calidris subruficollis x bairdii,Buff-breasted x Baird's Sandpiper (hybrid),x01123,hybrid,6218.0,BBSA BASA,CABA CASU,,Charadriiformes,Sandpipers and Allies,Scolopacidae,,,,scolop2
+Arenaria interpres x Calidris fuscicollis,Ruddy Turnstone x White-rumped Sandpiper (hybrid),x01062,hybrid,6222.0,WRSA RUTU,ARIN CAFU,,Charadriiformes,Sandpipers and Allies,Scolopacidae,,,,scolop2
+Calidris canutus x fuscicollis,Red Knot x White-rumped Sandpiper (hybrid),x01229,hybrid,6223.0,REKN WRSA,CAFU CACA,,Charadriiformes,Sandpipers and Allies,Scolopacidae,,,,scolop2
+Calidris subruficollis x fuscicollis,Buff-breasted x White-rumped Sandpiper (hybrid),x00431,hybrid,6224.0,WRSA BBSA,CAFU CASU,,Charadriiformes,Sandpipers and Allies,Scolopacidae,,,,scolop2
+Calidris alpina x fuscicollis,Dunlin x White-rumped Sandpiper (hybrid),x00430,hybrid,6225.0,WRSA DUNL,CAAL CAFU,,Charadriiformes,Sandpipers and Allies,Scolopacidae,,,,scolop2
+Calidris ferruginea x melanotos,Curlew x Pectoral Sandpiper (hybrid),x00432,hybrid,6228.0,PESA CUSA,CAME CAFE,,Charadriiformes,Sandpipers and Allies,Scolopacidae,,,,scolop2
+Calidris fuscicollis x melanotos,White-rumped x Pectoral Sandpiper (hybrid),x01094,hybrid,6229.0,WRSA PESA,CAME CAFU,,Charadriiformes,Sandpipers and Allies,Scolopacidae,,,,scolop2
+Calidris fuscicollis x pusilla,White-rumped x Semipalmated Sandpiper (hybrid),x01042,hybrid,6233.0,WRSA SESA,CAPU CAFU,,Charadriiformes,Sandpipers and Allies,Scolopacidae,,,,scolop2
+Uria lomvia x aalge,Thick-billed x Common Murre (hybrid),x00793,hybrid,6430.0,TBMU BRGU COMU COGU,URAA URLO,,Charadriiformes,"Auks, Murres, and Puffins",Alcidae,,,,alcida1
+Chroicocephalus genei x ridibundus,Slender-billed x Black-headed Gull (hybrid),x00391,hybrid,6475.0,BHGU SBGU,CHGE CHRI,,Charadriiformes,"Gulls, Terns, and Skimmers",Laridae,,,,larida1
+Chroicocephalus genei x brunnicephalus,Slender-billed x Brown-headed Gull (hybrid),x00734,hybrid,6478.0,SBGU BHGU,CHGE CHBR,,Charadriiformes,"Gulls, Terns, and Skimmers",Laridae,,,,larida1
+Chroicocephalus cirrocephalus x hartlaubii,Gray-hooded x Hartlaub's Gull (hybrid),x00886,hybrid,6485.0,HAGU GHGU,CHCI CHHA,,Charadriiformes,"Gulls, Terns, and Skimmers",Laridae,,,,larida1
+Chroicocephalus cirrocephalus x Leucophaeus atricilla,Gray-hooded x Laughing Gull (hybrid),x00392,hybrid,6493.0,LAGU GHGU,CHCI LEAT,,Charadriiformes,"Gulls, Terns, and Skimmers",Laridae,,,,larida1
+Chroicocephalus philadelphia x Leucophaeus pipixcan,Bonaparte's x Franklin's Gull (hybrid),x00794,hybrid,6495.0,BOGU FRGU,LEPI CHPH,,Charadriiformes,"Gulls, Terns, and Skimmers",Laridae,,,,larida1
+Chroicocephalus ridibundus x Ichthyaetus melanocephalus,Black-headed x Mediterranean Gull (hybrid),x00695,hybrid,6502.0,MEGU BHGU,ICME CHRI,,Charadriiformes,"Gulls, Terns, and Skimmers",Laridae,,,,larida1
+Chroicocephalus ridibundus x Larus canus,Black-headed x Common Gull (hybrid),x00393,hybrid,6517.0,COGU MEGU BHGU,LACA CHRI,,Charadriiformes,"Gulls, Terns, and Skimmers",Laridae,,,,larida1
+Ichthyaetus melanocephalus x Larus canus,Mediterranean x Common Gull (hybrid),x00847,hybrid,6518.0,COGU MEGU,ICME LACA,,Charadriiformes,"Gulls, Terns, and Skimmers",Laridae,,,,larida1
+Chroicocephalus ridibundus x Larus delawarensis,Black-headed x Ring-billed Gull (hybrid),x00641,hybrid,6522.0,RBGU BHGU,LADE CHRI,,Charadriiformes,"Gulls, Terns, and Skimmers",Laridae,,,,larida1
+Leucophaeus atricilla x Larus delawarensis,Laughing x Ring-billed Gull (hybrid),x00616,hybrid,6523.0,LAGU RBGU,LADE LEAT,,Charadriiformes,"Gulls, Terns, and Skimmers",Laridae,,,,larida1
+Leucophaeus pipixcan x Larus delawarensis,Franklin's x Ring-billed Gull (hybrid),x00795,hybrid,6524.0,RBGU FRGU,LEPI LADE,,Charadriiformes,"Gulls, Terns, and Skimmers",Laridae,,,,larida1
+Larus canus x delawarensis,Common x Ring-billed Gull (hybrid),x00394,hybrid,6525.0,RBGU COGU MEGU,LACA LADE,,Charadriiformes,"Gulls, Terns, and Skimmers",Laridae,,,,larida1
+Larus brachyrhynchus x delawarensis,Short-billed x Ring-billed Gull (hybrid),x01230,hybrid,6526.0,RBGU MEGU SBIG SBGU,LADE LABR,,Charadriiformes,"Gulls, Terns, and Skimmers",Laridae,,,,larida1
+Larus delawarensis x smithsonianus,Ring-billed x American Herring Gull (hybrid),x00796,hybrid,6540.0,RBGU AHGU,LASM LADE,,Charadriiformes,"Gulls, Terns, and Skimmers",Laridae,,,,larida1
+Larus cachinnans x argentatus,Caspian x European Herring Gull (hybrid),x00915,hybrid,6548.0,EHGU CAGU,LACA LAAR,,Charadriiformes,"Gulls, Terns, and Skimmers",Laridae,,,,larida1
+Larus dominicanus x smithsonianus,Kelp x American Herring Gull (hybrid),kxhgul1,hybrid,6549.0,SBBG AHGU KEGU,LASM LADO,,Charadriiformes,"Gulls, Terns, and Skimmers",Laridae,,,,larida1
+Larus cachinnans x michahellis,Caspian x Yellow-legged Gull (hybrid),x00395,hybrid,6555.0,YLGU CAGU,LACA LAMI,,Charadriiformes,"Gulls, Terns, and Skimmers",Laridae,,,,larida1
+Larus argentatus x michahellis,European Herring x Yellow-legged Gull (hybrid),x01182,hybrid,6556.0,YLGU EHGU,LAAR LAMI,,Charadriiformes,"Gulls, Terns, and Skimmers",Laridae,,,,larida1
+Larus smithsonianus x marinus,American Herring x Great Black-backed Gull (hybrid),x00047,hybrid,6563.0,GBBG AHGU,LASM LAMA,,Charadriiformes,"Gulls, Terns, and Skimmers",Laridae,,,,larida1
+Larus argentatus x marinus,European Herring x Great Black-backed Gull (hybrid),x01130,hybrid,6564.0,GBBG EHGU,LAAR LAMA,,Charadriiformes,"Gulls, Terns, and Skimmers",Laridae,,,,larida1
+Larus michahellis x marinus,Yellow-legged x Great Black-backed Gull (hybrid),x00397,hybrid,6565.0,YLGU GBBG,LAMA LAMI,,Charadriiformes,"Gulls, Terns, and Skimmers",Laridae,,,,larida1
+Larus smithsonianus x hyperboreus,American Herring x Glaucous Gull (hybrid),x01131,hybrid,6571.0,GLGU AHGU,LASM LAHY,,Charadriiformes,"Gulls, Terns, and Skimmers",Laridae,,,,larida1
+Larus vegae x hyperboreus,Vega x Glaucous Gull (hybrid),x01132,hybrid,6572.0,VEGU GLGU AHGU,LAHY LAVE,,Charadriiformes,"Gulls, Terns, and Skimmers",Laridae,,,,larida1
+Larus argentatus x hyperboreus,European Herring x Glaucous Gull (hybrid),x01133,hybrid,6573.0,EHGU GLGU,LAHY LAAR,,Charadriiformes,"Gulls, Terns, and Skimmers",Laridae,,,,larida1
+Larus smithsonianus/vegae/argentatus x hyperboreus,American Herring/Vega/European Herring x Glaucous Gull (hybrid),nelgul,hybrid,6574.0,EHGU GLGU AHGU VEGU,LASM LAHY LAAR LAVE,,Charadriiformes,"Gulls, Terns, and Skimmers",Laridae,,,,larida1
+Larus marinus x hyperboreus,Great Black-backed x Glaucous Gull (hybrid),x00632,hybrid,6575.0,GBBG GLGU,LAHY LAMA,,Charadriiformes,"Gulls, Terns, and Skimmers",Laridae,,,,larida1
+Larus canus x fuscus,Common x Lesser Black-backed Gull (hybrid),x01231,hybrid,6584.0,LBBG COGU MEGU,LACA LAFU,,Charadriiformes,"Gulls, Terns, and Skimmers",Laridae,,,,larida1
+Larus delawarensis x fuscus,Ring-billed x Lesser Black-backed Gull (hybrid),x01008,hybrid,6585.0,LBBG RBGU,LADE LAFU,,Charadriiformes,"Gulls, Terns, and Skimmers",Laridae,,,,larida1
+Larus smithsonianus x fuscus,American Herring x Lesser Black-backed Gull (hybrid),x01134,hybrid,6586.0,LBBG AHGU,LASM LAFU,,Charadriiformes,"Gulls, Terns, and Skimmers",Laridae,,,,larida1
+Larus argentatus x fuscus,European Herring x Lesser Black-backed Gull (hybrid),x00057,hybrid,6587.0,LBBG EHGU,LAAR LAFU,,Charadriiformes,"Gulls, Terns, and Skimmers",Laridae,,,,larida1
+Larus michahellis x fuscus,Yellow-legged x Lesser Black-backed Gull (hybrid),x00396,hybrid,6588.0,YLGU LBBG,LAMI LAFU,,Charadriiformes,"Gulls, Terns, and Skimmers",Laridae,,,,larida1
+Larus delawarensis x californicus,Ring-billed x California Gull (hybrid),x01183,hybrid,6594.0,RBGU CAGU,LACA LADE,,Charadriiformes,"Gulls, Terns, and Skimmers",Laridae,,,,larida1
+Larus smithsonianus x californicus,American Herring x California Gull (hybrid),x00797,hybrid,6595.0,CAGU AHGU,LACA LASM,,Charadriiformes,"Gulls, Terns, and Skimmers",Laridae,,,,larida1
+Larus occidentalis x glaucescens,Western x Glaucous-winged Gull (hybrid),x00051,hybrid,6597.0,WEGU GWGU,LAGL LAOC,WGWH,Charadriiformes,"Gulls, Terns, and Skimmers",Laridae,,,,larida1
+Larus smithsonianus x glaucescens,American Herring x Glaucous-winged Gull (hybrid),x00050,hybrid,6598.0,AHGU GWGU,LASM LAGL,,Charadriiformes,"Gulls, Terns, and Skimmers",Laridae,,,,larida1
+Larus hyperboreus x glaucescens,Glaucous x Glaucous-winged Gull (hybrid),x00048,hybrid,6599.0,GLGU GWGU,LAGL LAHY,,Charadriiformes,"Gulls, Terns, and Skimmers",Laridae,,,,larida1
+Larus vegae x schistisagus,Vega x Slaty-backed Gull (hybrid),x00434,hybrid,6603.0,SBGU SBAG AHGU VEGU,LASC LAVE,,Charadriiformes,"Gulls, Terns, and Skimmers",Laridae,,,,larida1
+Larus glaucescens x schistisagus,Glaucous-winged x Slaty-backed Gull (hybrid),x00436,hybrid,6604.0,SBAG SBGU GWGU,LAGL LASC,,Charadriiformes,"Gulls, Terns, and Skimmers",Laridae,,,,larida1
+Larus hyperboreus x schistisagus,Glaucous x Slaty-backed Gull (hybrid),x00437,hybrid,6605.0,GLGU SBGU SBAG,LAHY LASC,,Charadriiformes,"Gulls, Terns, and Skimmers",Laridae,,,,larida1
+Larus smithsonianus x glaucoides,American Herring x Iceland Gull (hybrid),x00617,hybrid,6613.0,ICGU AHGU,LASM LAGL,,Charadriiformes,"Gulls, Terns, and Skimmers",Laridae,,,,larida1
+Larus fuscus x glaucoides,Lesser Black-backed x Iceland Gull (hybrid),x01232,hybrid,6614.0,LBBG ICGU,LAGL LAFU,,Charadriiformes,"Gulls, Terns, and Skimmers",Laridae,,,,larida1
+Gygis candida x microrhyncha,Blue-billed x Little White-Tern (hybrid),x01184,hybrid,6631.0,LIWT WHTE CWTE BBWT LWTE,GYCA GYMI,,Charadriiformes,"Gulls, Terns, and Skimmers",Laridae,,,,larida1
+Sternula albifrons x nereis,Little x Australian Fairy Tern (hybrid),x00798,hybrid,6697.0,AFTE FATE LITE,STNE STAL,,Charadriiformes,"Gulls, Terns, and Skimmers",Laridae,,,,larida1
+Sterna forsteri x paradisaea,Forster's x Arctic Tern (hybrid),x01165,hybrid,6734.0,ARTE FOTE,STFO STPA,,Charadriiformes,"Gulls, Terns, and Skimmers",Laridae,,,,larida1
+Sterna hirundo x paradisaea,Common x Arctic Tern (hybrid),x00910,hybrid,6754.0,ARTE COTE,STHI STPA,,Charadriiformes,"Gulls, Terns, and Skimmers",Laridae,,,,larida1
+Sterna hirundo x dougallii,Common x Roseate Tern (hybrid),x00735,hybrid,6767.0,ROTE ROST COTE,STHI STDO,,Charadriiformes,"Gulls, Terns, and Skimmers",Laridae,,,,larida1
+Thalasseus sandvicensis x elegans,Sandwich x Elegant Tern (hybrid),x00438,hybrid,6781.0,ELTE SATE,THEL THSA,,Charadriiformes,"Gulls, Terns, and Skimmers",Laridae,,,,larida1
+Thalasseus sandvicensis x bengalensis,Sandwich x Lesser Crested Tern (hybrid),x01233,hybrid,6787.0,SATE LCTE,THBE THSA,,Charadriiformes,"Gulls, Terns, and Skimmers",Laridae,,,,larida1
+Thalasseus bengalensis x bergii,Lesser x Great Crested Tern (hybrid),x01040,hybrid,6797.0,SWTE LCTE GCTE SWIF CRTE,THBE,,Charadriiformes,"Gulls, Terns, and Skimmers",Laridae,,,,larida1
+Thalasseus bergii x bernsteini,Great x Chinese Crested Tern (hybrid),x00848,hybrid,6800.0,SWTE GCTE CCTE SWIF CRTE,THBE,,Charadriiformes,"Gulls, Terns, and Skimmers",Laridae,,,,larida1
+Phoenicopterus chilensis x ruber,Chilean x American Flamingo (hybrid),x01038,hybrid,6810.0,CHFL AMFL,PHCH PHRU,,Phoenicopteriformes,Flamingos,Phoenicopteridae,,,,phoeni1
+Phoenicopterus chilensis x roseus,Chilean x Greater Flamingo (hybrid),x01039,hybrid,6812.0,CHFL GRFL,PHCH PHRO,,Phoenicopteriformes,Flamingos,Phoenicopteridae,,,,phoeni1
+Phoenicopterus ruber x roseus,American x Greater Flamingo (hybrid),x01185,hybrid,6813.0,AMFL GRFL,PHRO PHRU,,Phoenicopteriformes,Flamingos,Phoenicopteridae,,,,phoeni1
+Aechmophorus occidentalis x clarkii,Western x Clark's Grebe (hybrid),x00427,hybrid,6894.0,WEGR CLGR,AEOC AECL,,Podicipediformes,Grebes,Podicipedidae,,,,podici1
+Gavia immer x adamsii,Common x Yellow-billed Loon (hybrid),x01146,hybrid,6935.0,COLO WBDI YBLO GNDI,GAAD GAIM,,Gaviiformes,Loons,Gaviidae,,,,gaviid1
+Spheniscus humboldti x magellanicus,Humboldt x Magellanic Penguin (hybrid),x01082,hybrid,6960.0,HUPE MAPE,SPHU SPMA,,Sphenisciformes,Penguins,Spheniscidae,,,,spheni1
+Eudyptes chrysolophus x chrysocome,Macaroni x Western Rockhopper Penguin (hybrid),x00921,hybrid,6967.0,WRPE SRPE MAPE,EUCH,,Sphenisciformes,Penguins,Spheniscidae,,,,spheni1
+Phoebastria immutabilis x nigripes,Laysan x Black-footed Albatross (hybrid),x00017,hybrid,6989.0,BFAL LAAL,PHIM PHNI,LBFH,Procellariiformes,Albatrosses,Diomedeidae,,,,diomed1
+Thalassarche chrysostoma x melanophris,Gray-headed x Black-browed Albatross (hybrid),x01063,hybrid,7009.0,GHMO BBAL BBMO GHAL,THCH THME,,Procellariiformes,Albatrosses,Diomedeidae,,,,diomed1
+Ciconia nigra x ciconia,Black x White Stork (hybrid),x01098,hybrid,7294.0,BLST WHST,CINI CICI,,Ciconiiformes,Storks,Ciconiidae,,,,ciconi2
+Mycteria cinerea x leucocephala,Milky x Painted Stork (hybrid),x00729,hybrid,7310.0,MIST PAST,MYLE MYCI,,Ciconiiformes,Storks,Ciconiidae,,,,ciconi2
+Morus capensis x serrator,Cape x Australasian Gannet (hybrid),x01234,hybrid,7336.0,AUGA CAGA,MOCA MOSE,,Suliformes,Boobies and Gannets,Sulidae,,,,sulida1
+Sula leucogaster x dactylatra,Brown x Masked Booby (hybrid),x00782,hybrid,7354.0,MABO BRBO,SUDA SULE,,Suliformes,Boobies and Gannets,Sulidae,,,,sulida1
+Sula dactylatra x granti,Masked x Nazca Booby (hybrid),x01064,hybrid,7356.0,NABO MABO,SUDA SUGR,,Suliformes,Boobies and Gannets,Sulidae,,,,sulida1
+Sula brewsteri x nebouxii,Cocos x Blue-footed Booby (hybrid),x00950,hybrid,7361.0,BFBO COBO BRBO,SUBR SUNE,,Suliformes,Boobies and Gannets,Sulidae,,,,sulida1
+Sula nebouxii x variegata,Blue-footed x Peruvian Booby (hybrid),x01065,hybrid,7363.0,BFBO PEBO,SUNE SUVA,,Suliformes,Boobies and Gannets,Sulidae,,,,sulida1
+Nannopterum auritum x brasilianum,Double-crested x Neotropic Cormorant (hybrid),x00783,hybrid,7434.0,DCCO NECO,NABR NAAU,,Suliformes,Cormorants and Shags,Phalacrocoracidae,,,,phalac1
+Leucocarbo bougainvilliorum x atriceps,Guanay x Imperial Cormorant (hybrid),x01186,hybrid,7458.0,IMCO IMSH GUCO ICSP,LEBO LEAT,,Suliformes,Cormorants and Shags,Phalacrocoracidae,,,,phalac1
+Eudocimus albus x ruber,White x Scarlet Ibis (hybrid),x00428,hybrid,7466.0,AWIB WHIB SCIB,EURU EUAL,,Pelecaniformes,Ibises and Spoonbills,Threskiornithidae,,,,thresk1
+Plegadis falcinellus x chihi,Glossy x White-faced Ibis (hybrid),gxwibi1,hybrid,7469.0,WFIB GLIB,PLCH PLFA,,Pelecaniformes,Ibises and Spoonbills,Threskiornithidae,,,,thresk1
+Threskiornis molucca x spinicollis,Australian x Straw-necked Ibis (hybrid),x01157,hybrid,7502.0,AWIB SNIB WHIB AUIB,THMO THSP,,Pelecaniformes,Ibises and Spoonbills,Threskiornithidae,,,,thresk1
+Platalea leucorodia x minor,Eurasian x Black-faced Spoonbill (hybrid),x00883,hybrid,7531.0,ESPO EUSP BFSP,PLLE PLMI,,Pelecaniformes,Ibises and Spoonbills,Threskiornithidae,,,,thresk1
+Nyctanassa violacea x Nycticorax nycticorax,Yellow-crowned x Black-crowned Night Heron (hybrid),x00704,hybrid,7605.0,BCNH YCNH,NYNY NYVI,,Pelecaniformes,"Herons, Egrets, and Bitterns",Ardeidae,,,,ardeid1
+Nycticorax nycticorax x caledonicus,Black-crowned x Nankeen Night Heron (hybrid),x01041,hybrid,7617.0,BCNH NNHE,NYCA NYNY,,Pelecaniformes,"Herons, Egrets, and Bitterns",Ardeidae,,,,ardeid1
+Egretta caerulea x tricolor,Little Blue x Tricolored Heron (hybrid),x00696,hybrid,7633.0,LBHE TRHE,EGCA EGTR,,Pelecaniformes,"Herons, Egrets, and Bitterns",Ardeidae,,,,ardeid1
+Egretta tricolor x rufescens,Tricolored Heron x Reddish Egret (hybrid),x00785,hybrid,7637.0,TRHE REEG,EGTR EGRU,,Pelecaniformes,"Herons, Egrets, and Bitterns",Ardeidae,,,,ardeid1
+Egretta caerulea x thula,Little Blue Heron x Snowy Egret (hybrid),x00615,hybrid,7648.0,LBHE SNEG,EGCA EGTH,,Pelecaniformes,"Herons, Egrets, and Bitterns",Ardeidae,,,,ardeid1
+Egretta tricolor x thula,Tricolored Heron x Snowy Egret (hybrid),x00730,hybrid,7649.0,TRHE SNEG,EGTR EGTH,,Pelecaniformes,"Herons, Egrets, and Bitterns",Ardeidae,,,,ardeid1
+Egretta thula x garzetta,Snowy x Little Egret (hybrid),x00697,hybrid,7654.0,LIEG SNEG LEWR,EGGA EGTH,,Pelecaniformes,"Herons, Egrets, and Bitterns",Ardeidae,,,,ardeid1
+Egretta garzetta x gularis,Little Egret x Western Reef-Heron (hybrid),x00656,hybrid,7658.0,WRHE WERH LIEG WREG LEWR,EGGU EGGA,,Pelecaniformes,"Herons, Egrets, and Bitterns",Ardeidae,,,,ardeid1
+Butorides striata x sundevalli,Striated x Lava Heron (hybrid),x01187,hybrid,7671.0,STHE STRH LAHE GBHE SASH,BUSU BUST,,Pelecaniformes,"Herons, Egrets, and Bitterns",Ardeidae,,,,ardeid1
+Butorides striata x virescens,Striated x Green Heron (hybrid),x00765,hybrid,7710.0,STHE NAGH STRH GBHE GRHE SASH,BUVI BUST,,Pelecaniformes,"Herons, Egrets, and Bitterns",Ardeidae,,,,ardeid1
+Ardeola grayii x bacchus,Indian x Chinese Pond-Heron (hybrid),x01124,hybrid,7718.0,CHPH CPHE IPHE INPH,ARBA ARGR,,Pelecaniformes,"Herons, Egrets, and Bitterns",Ardeidae,,,,ardeid1
+Ardeola bacchus x speciosa,Chinese x Javan Pond-Heron (hybrid),x01125,hybrid,7722.0,JPHE CHPH JAPH CPHE,ARSP ARBA,,Pelecaniformes,"Herons, Egrets, and Bitterns",Ardeidae,,,,ardeid1
+Egretta garzetta x Ardea ibis,Little Egret x Western Cattle-Egret (hybrid),x01188,hybrid,7725.0,WECE LIEG WCEG LEWR CAEG,ARIB EGGA,,Pelecaniformes,"Herons, Egrets, and Bitterns",Ardeidae,,,,ardeid1
+Egretta garzetta x Ardea cinerea,Little Egret x Gray Heron (hybrid),x01189,hybrid,7751.0,GRHE GRAH LIEG LEWR,EGGA ARCI,,Pelecaniformes,"Herons, Egrets, and Bitterns",Ardeidae,,,,ardeid1
+Ardea alba x cinerea,Great Egret x Gray Heron (hybrid),x00398,hybrid,7752.0,GRHE GRAH GWEG GREG WHHE,ARCI ARAL,,Pelecaniformes,"Herons, Egrets, and Bitterns",Ardeidae,,,,ardeid1
+Ardea alba x herodias,Great Egret x Great Blue Heron (hybrid),x00677,hybrid,7761.0,GBHE GWEG GREG GBWH WHHE,ARHE ARAL,,Pelecaniformes,"Herons, Egrets, and Bitterns",Ardeidae,,,,ardeid1
+Ardea alba x cocoi,Great Egret x Cocoi Heron (hybrid),x01051,hybrid,7763.0,GWEG GREG WHHE COHE,ARAL ARCO,,Pelecaniformes,"Herons, Egrets, and Bitterns",Ardeidae,,,,ardeid1
+Ardea herodias x cocoi,Great Blue x Cocoi Heron (hybrid),x00784,hybrid,7764.0,GBHE GBWH COHE,ARHE ARCO,,Pelecaniformes,"Herons, Egrets, and Bitterns",Ardeidae,,,,ardeid1
+Ardea cinerea x purpurea,Gray x Purple Heron (hybrid),x01050,hybrid,7772.0,GRHE GRAH PUHE,ARPU ARCI,,Pelecaniformes,"Herons, Egrets, and Bitterns",Ardeidae,,,,ardeid1
+Pelecanus onocrotalus x crispus,Great White x Dalmatian Pelican (hybrid),x00842,hybrid,7805.0,GWPE DAPE,PEON PECR,,Pelecaniformes,Pelicans,Pelecanidae,,,,peleca1
+Pernis apivorus x ptilorhynchus,European x Oriental Honey-buzzard (hybrid),x00786,hybrid,7915.0,ORHB OHBU EUHB CRHB EHBU CHBU,PEPT PEAP,,Accipitriformes,"Hawks, Eagles, and Kites",Accipitridae,,,,accipi1
+Clanga pomarina x clanga,Lesser x Greater Spotted Eagle (hybrid),x00843,hybrid,8041.0,LSEA GSEA,CLCL CLPO,,Accipitriformes,"Hawks, Eagles, and Kites",Accipitridae,,,,accipi1
+Astur cooperii x atricapillus,Cooper's Hawk x American Goshawk (hybrid),x00988,hybrid,8296.0,COHA AMGO AGOS NOGO,ASCO ASAT,,Accipitriformes,"Hawks, Eagles, and Kites",Accipitridae,,,,accipi1
+Circus cyaneus x macrourus,Hen x Pallid Harrier (hybrid),x00399,hybrid,8327.0,PAHA HEHA,CIMA CICY,,Accipitriformes,"Hawks, Eagles, and Kites",Accipitridae,,,,accipi1
+Circus macrourus x pygargus,Pallid x Montagu's Harrier (hybrid),x01099,hybrid,8330.0,MOHA PAHA,CIPY CIMA,,Accipitriformes,"Hawks, Eagles, and Kites",Accipitridae,,,,accipi1
+Haliaeetus leucocephalus x pelagicus,Bald Eagle x Steller's Sea-Eagle (hybrid),x00989,hybrid,8372.0,STSE BAEA SSEA,HAPE HALE,,Accipitriformes,"Hawks, Eagles, and Kites",Accipitridae,,,,accipi1
+Buteogallus anthracinus x Buteo lineatus,Common Black x Red-shouldered Hawk (hybrid),x00787,hybrid,8494.0,RSHA COBH CBHA,BUAN BULI,,Accipitriformes,"Hawks, Eagles, and Kites",Accipitridae,,,,accipi1
+Buteo platypterus x lineatus,Broad-winged x Red-shouldered Hawk (hybrid),x00400,hybrid,8496.0,RSHA BWHA,BUPL BULI,,Accipitriformes,"Hawks, Eagles, and Kites",Accipitridae,,,,accipi1
+Buteo lineatus x jamaicensis,Red-shouldered x Red-tailed Hawk (hybrid),x00686,hybrid,8526.0,RSHA RTHA,BUJA BULI,,Accipitriformes,"Hawks, Eagles, and Kites",Accipitridae,,,,accipi1
+Buteo swainsoni x lagopus,Swainson's x Rough-legged Hawk (hybrid),x00788,hybrid,8533.0,RLHA SWHA RLBU,BUSW BULA,,Accipitriformes,"Hawks, Eagles, and Kites",Accipitridae,,,,accipi1
+Buteo jamaicensis x lagopus,Red-tailed x Rough-legged Hawk (hybrid),x00731,hybrid,8534.0,RLHA RTHA RLBU,BUJA BULA,,Accipitriformes,"Hawks, Eagles, and Kites",Accipitridae,,,,accipi1
+Buteo jamaicensis x regalis,Red-tailed x Ferruginous Hawk (hybrid),x00930,hybrid,8536.0,FEHA RTHA,BUJA BURE,,Accipitriformes,"Hawks, Eagles, and Kites",Accipitridae,,,,accipi1
+Buteo buteo x rufinus,Common x Long-legged Buzzard (hybrid),x00766,hybrid,8559.0,LLBU COBU EUBU,BURU BUBU,,Accipitriformes,"Hawks, Eagles, and Kites",Accipitridae,,,,accipi1
+Buteo rufinus x hemilasius,Long-legged x Upland Buzzard (hybrid),x00789,hybrid,8562.0,LLBU UPBU,BURU BUHE,,Accipitriformes,"Hawks, Eagles, and Kites",Accipitridae,,,,accipi1
+Megascops kennicottii x asio,Western x Eastern Screech-Owl (hybrid),x00933,hybrid,8874.0,EASO WESO WSOW ESOW,MEKE MEAS,,Strigiformes,Owls,Strigidae,,,,strigi1
+Ketupa ketupu x zeylonensis,Buffy x Brown Fish-Owl (hybrid),x00401,hybrid,8982.0,BRFO BUFO BFOW,KEZE KEKE,,Strigiformes,Owls,Strigidae,,,,strigi1
+Strix occidentalis x varia,Spotted x Barred Owl (hybrid),x00439,hybrid,9223.0,BAOW SPOW,STVA STOC,SBOH,Strigiformes,Owls,Strigidae,,,,strigi1
+Pharomachrus auriceps x antisianus,Golden-headed x Crested Quetzal (hybrid),x01126,hybrid,9515.0,GHQU CRQU,PHAN PHAU,,Trogoniformes,Trogons,Trogonidae,,,,trogon1
+Trogon curucui x surrucura,Blue-crowned x Surucua Trogon (hybrid),x01156,hybrid,9559.0,BCTR SSTR SUTR,TRSU TRCU,,Trogoniformes,Trogons,Trogonidae,,,,trogon1
+Tockus rufirostris x damarensis,Southern x Damara Red-billed Hornbill (hybrid),x00667,hybrid,9680.0,DRBH RBHO SRBH,TORU TODA,,Bucerotiformes,Hornbills,Bucerotidae,,,,bucero1
+Momotus coeruliceps x lessonii,Blue-capped x Lesson's Motmot (hybrid),x00887,hybrid,9861.0,LEMO BCMO BDMO,MOCO MOLE,,Coraciiformes,Motmots,Momotidae,,,,momoti1
+Momotus lessonii x Baryphthengus martii,Lesson's x Rufous Motmot (hybrid),x01211,hybrid,9886.0,LEMO RUMO BDMO RMOT,BAMA MOLE,,Coraciiformes,Motmots,Momotidae,,,,momoti1
+Momotus momota x Baryphthengus martii,Amazonian x Rufous Motmot (hybrid),x00402,hybrid,9887.0,AMMO RMOT RUMO,MOMO BAMA,,Coraciiformes,Motmots,Momotidae,,,,momoti1
+Momotus momota x Baryphthengus ruficapillus,Amazonian x Rufous-capped Motmot (hybrid),x00769,hybrid,9889.0,AMMO RCMO,MOMO BARU,,Coraciiformes,Motmots,Momotidae,,,,momoti1
+Coracias benghalensis x affinis,Indian x Indochinese Roller (hybrid),indrol4,hybrid,10344.0,INRO,COBE COAF,,Coraciiformes,Rollers,Coraciidae,,,,coraci1
+Hypnelus ruficollis x bicinctus,Russet-throated x Two-banded Puffbird (hybrid),x01190,hybrid,10414.0,TBPU RTPU,HYRU HYBI,,Piciformes,Puffbirds,Bucconidae,,,,buccon2
+Tricholaema frontata x leucomelas,Miombo x Pied Barbet (hybrid),x01009,hybrid,10636.0,APBA PIBA MPBA MIBA,TRLE TRFR,,Piciformes,African Barbets,Lybiidae,,,,lybiid1
+Psilopogon cyanotis x duvaucelii,Blue-eared x Black-eared Barbet (hybrid),x01066,hybrid,10714.0,BEBA,PSCY PSDU,,Piciformes,Asian Barbets,Megalaimidae,,,,megala2
+Pteroglossus torquatus x erythropygius,Collared x Pale-mandibled Aracari (hybrid),x01191,hybrid,10892.0,PMBA COAR PMAR,PTER PTTO,,Piciformes,Toucans,Ramphastidae,,,,rampha1
+Picumnus minutissimus x cirratus,Arrowhead x White-barred Piculet (hybrid),x01192,hybrid,11054.0,ARPI WBPI,PIMI PICI,,Piciformes,Woodpeckers,Picidae,,,,picida1
+Picumnus cirratus x temminckii,White-barred x Ochre-collared Piculet (hybrid),x00951,hybrid,11072.0,WBPI OCPI,PICI PITE,,Piciformes,Woodpeckers,Picidae,,,,picida1
+Picumnus cirratus x albosquamatus,White-barred x White-wedged Piculet (hybrid),x00952,hybrid,11077.0,WBPI WWPI,PIAL PICI,,Piciformes,Woodpeckers,Picidae,,,,picida1
+Sphyrapicus varius x nuchalis,Yellow-bellied x Red-naped Sapsucker (hybrid),x00634,hybrid,11128.0,RNSA YBSA,SPNU SPVA,,Piciformes,Woodpeckers,Picidae,,,,picida1
+Sphyrapicus varius x ruber,Yellow-bellied x Red-breasted Sapsucker (hybrid),x00712,hybrid,11133.0,RBSA YBSA,SPRU SPVA,,Piciformes,Woodpeckers,Picidae,,,,picida1
+Sphyrapicus nuchalis x ruber,Red-naped x Red-breasted Sapsucker (hybrid),rnxsap1,hybrid,11134.0,RNSA RBSA,SPNU SPRU,,Piciformes,Woodpeckers,Picidae,,,,picida1
+Sphyrapicus varius/nuchalis x ruber,Yellow-bellied/Red-naped x Red-breasted Sapsucker (hybrid),x01052,hybrid,11135.0,RNSA RBSA YBSA,SPVA SPNU SPRU,,Piciformes,Woodpeckers,Picidae,,,,picida1
+Melanerpes pucherani x hoffmannii,Black-cheeked x Hoffmann's Woodpecker (hybrid),x01212,hybrid,11181.0,BCWO HOWO,MEPU MEHO,,Piciformes,Woodpeckers,Picidae,,,,picida1
+Melanerpes rubricapillus x hoffmannii,Red-crowned x Hoffmann's Woodpecker (hybrid),x00440,hybrid,11182.0,RCRW HOWO RCWO,MEHO MERU,,Piciformes,Woodpeckers,Picidae,,,,picida1
+Melanerpes hoffmannii x aurifrons,Hoffmann's x Golden-fronted Woodpecker (hybrid),x00853,hybrid,11197.0,GFWO HOWO,MEAU MEHO,,Piciformes,Woodpeckers,Picidae,,,,picida1
+Melanerpes aurifrons x carolinus,Golden-fronted x Red-bellied Woodpecker (hybrid),x00460,hybrid,11200.0,RBWO GFWO,MEAU MECA,,Piciformes,Woodpeckers,Picidae,,,,picida1
+Dendrocopos major x syriacus,Great Spotted x Syrian Woodpecker (hybrid),x00914,hybrid,11373.0,SYWO GSWO,DESY DEMA,,Piciformes,Woodpeckers,Picidae,,,,picida1
+Dryobates pubescens x nuttallii,Downy x Nuttall's Woodpecker (hybrid),x00662,hybrid,11411.0,NUWO DOWO,DRNU DRPU,,Piciformes,Woodpeckers,Picidae,,,,picida1
+Dryobates pubescens x scalaris,Downy x Ladder-backed Woodpecker (hybrid),x00801,hybrid,11422.0,LBWO DOWO,DRSC DRPU,,Piciformes,Woodpeckers,Picidae,,,,picida1
+Dryobates nuttallii x scalaris,Nuttall's x Ladder-backed Woodpecker (hybrid),x00620,hybrid,11423.0,LBWO NUWO,DRNU DRSC,,Piciformes,Woodpeckers,Picidae,,,,picida1
+Dryobates pubescens x Leuconotopicus villosus,Downy x Hairy Woodpecker (hybrid),x00803,hybrid,11447.0,HAWO DOWO,DRPU LEVI,,Piciformes,Woodpeckers,Picidae,,,,picida1
+Dryobates nuttallii x Leuconotopicus villosus,Nuttall's x Hairy Woodpecker (hybrid),x00663,hybrid,11448.0,HAWO NUWO,DRNU LEVI,,Piciformes,Woodpeckers,Picidae,,,,picida1
+Dryobates scalaris x Leuconotopicus villosus,Ladder-backed x Hairy Woodpecker (hybrid),x00802,hybrid,11449.0,HAWO LBWO,DRSC LEVI,,Piciformes,Woodpeckers,Picidae,,,,picida1
+Leuconotopicus villosus x albolarvatus,Hairy x White-headed Woodpecker (hybrid),x01053,hybrid,11454.0,HAWO WHWO,LEVI LEAL,,Piciformes,Woodpeckers,Picidae,,,,picida1
+Veniliornis sanguineus x passerinus,Blood-colored x Little Woodpecker (hybrid),x01020,hybrid,11494.0,BCWO LIWO,VEPA VESA,,Piciformes,Woodpeckers,Picidae,,,,picida1
+Campephilus melanoleucos x leucopogon,Crimson-crested x Cream-backed Woodpecker (hybrid),x00854,hybrid,11568.0,CBWO CCRW CCWO,CALE CAME,,Piciformes,Woodpeckers,Picidae,,,,picida1
+Gecinulus grantia x viridis,Pale-headed x Bamboo Woodpecker (hybrid),x00805,hybrid,11600.0,BAWO PHWO,GEVI GEGR,,Piciformes,Woodpeckers,Picidae,,,,picida1
+Dinopium benghalense x psarodes,Black-rumped x Red-backed Flameback (hybrid),bkrfla3,hybrid,11625.0,RBFL BRFL LSLF,DIPS DIBE,,Piciformes,Woodpeckers,Picidae,,,,picida1
+Picus canus x viridis,Gray-headed x Eurasian Green Woodpecker (hybrid),x00855,hybrid,11678.0,GHWO GFNW EGWO,PIVI PICA,,Piciformes,Woodpeckers,Picidae,,,,picida1
+Picus viridis x sharpei,Eurasian x Iberian Green Woodpecker (hybrid),eugwoo1,hybrid,11681.0,IGWO EGWO,PIVI PISH,,Piciformes,Woodpeckers,Picidae,,,,picida1
+Dryocopus lineatus x schulzii,Lineated x Black-bodied Woodpecker (hybrid),x00804,hybrid,11766.0,LWWO LIWO BBWO,DRSC DRLI,,Piciformes,Woodpeckers,Picidae,,,,picida1
+Colaptes auratus x chrysoides,Northern x Gilded Flicker (hybrid),x00924,hybrid,11919.0,YSSF GIFL NOFL,COCH COAU,,Piciformes,Woodpeckers,Picidae,,,,picida1
+Falco peregrinus x mexicanus,Peregrine x Prairie Falcon (hybrid),x00698,hybrid,12137.0,PRFA PEFA,FAPE FAME,,Falconiformes,Falcons and Caracaras,Falconidae,,,,falcon1
+Eolophus roseicapilla x Cacatua sanguinea,Galah x Little Corella (hybrid),x00953,hybrid,12195.0,LICO GALA,CASA EORO,,Psittaciformes,Cockatoos,Cacatuidae,,,,cacatu2
+Cacatua sanguinea x tenuirostris,Little x Long-billed Corella (hybrid),x00806,hybrid,12197.0,LBCO LICO,CATE CASA,,Psittaciformes,Cockatoos,Cacatuidae,,,,cacatu2
+Cacatua alba x moluccensis,White x Salmon-crested Cockatoo (hybrid),x00404,hybrid,12202.0,WHCO SCCO,CAAL CAMO,,Psittaciformes,Cockatoos,Cacatuidae,,,,cacatu2
+Cacatua goffiniana x sulphurea,Tanimbar Corella x Yellow-crested Cockatoo (hybrid),x00403,hybrid,12210.0,TACO YCCO,CAGO CASU,,Psittaciformes,Cockatoos,Cacatuidae,,,,cacatu2
+Cacatua sanguinea x galerita,Little Corella x Sulphur-crested Cockatoo (hybrid),x00920,hybrid,12217.0,LICO SCCO,CAGA CASA,,Psittaciformes,Cockatoos,Cacatuidae,,,,cacatu2
+Cacatua tenuirostris x galerita,Long-billed Corella x Sulphur-crested Cockatoo (hybrid),x01193,hybrid,12218.0,LBCO SCCO,CATE CAGA,,Psittaciformes,Cockatoos,Cacatuidae,,,,cacatu2
+Alisterus scapularis x Aprosmictus erythropterus,Australian King-Parrot x Red-winged Parrot (hybrid),x00954,hybrid,12285.0,RWPA AKPA AUKP,ALSC APER,,Psittaciformes,Old World Parrots,Psittaculidae,,,,psitta4
+Psittacula krameri x cyanocephala,Rose-ringed x Plum-headed Parakeet (hybrid),x01023,hybrid,12362.0,PHPA RRPA RNPA,PSCY PSKR,,Psittaciformes,Old World Parrots,Psittaculidae,,,,psitta4
+Psittacula himalayana x cyanocephala,Slaty-headed x Plum-headed Parakeet (hybrid),x00955,hybrid,12363.0,PHPA SHPA,PSCY PSHI,,Psittaciformes,Old World Parrots,Psittaculidae,,,,psitta4
+Cyanoramphus novaezelandiae x auriceps,Red-crowned x Yellow-crowned Parakeet (hybrid),x01054,hybrid,12467.0,YCPA RFPA RCPA YFPA,CYNO CYAU,,Psittaciformes,Old World Parrots,Psittaculidae,,,,psitta4
+Cyanoramphus novaezelandiae x forbesi,Red-crowned x Chatham Islands Parakeet (hybrid),x01100,hybrid,12469.0,CIPA FOPA RFPA RCPA,CYNO CYFO,,Psittaciformes,Old World Parrots,Psittaculidae,,,,psitta4
+Platycercus caledonicus x eximius,Green x Eastern Rosella (hybrid),x00807,hybrid,12497.0,GRRO EARO,PLEX PLCA,,Psittaciformes,Old World Parrots,Psittaculidae,,,,psitta4
+Platycercus elegans x eximius,Crimson x Eastern Rosella (hybrid),x00808,hybrid,12498.0,EARO CRRO,PLEX PLEL,,Psittaciformes,Old World Parrots,Psittaculidae,,,,psitta4
+Platycercus eximius x adscitus,Eastern x Pale-headed Rosella (hybrid),x00707,hybrid,12502.0,PHRO EARO,PLEX PLAD,,Psittaciformes,Old World Parrots,Psittaculidae,,,,psitta4
+Platycercus elegans x adscitus,Crimson x Pale-headed Rosella (hybrid),x00956,hybrid,12503.0,PHRO CRRO,PLEL PLAD,,Psittaciformes,Old World Parrots,Psittaculidae,,,,psitta4
+Trichoglossus concinnus x moluccanus,Musk x Rainbow Lorikeet (hybrid),x00809,hybrid,12683.0,RALO MULO,TRCO TRMO,,Psittaciformes,Old World Parrots,Psittaculidae,,,,psitta4
+Trichoglossus chlorolepidotus x moluccanus,Scaly-breasted x Rainbow Lorikeet (hybrid),x00810,hybrid,12684.0,RALO SBLO,TRCH TRMO,,Psittaciformes,Old World Parrots,Psittaculidae,,,,psitta4
+Trichoglossus sp. (Musk/Rainbow/Scaly-breasted Lorikeet hybrid),lorikeet sp. (Musk/Rainbow/Scaly-breasted Lorikeet hybrid),x00856,hybrid,12686.0,SBLO RALO MULO,TRCH TRCO TRMO,,Psittaciformes,Old World Parrots,Psittaculidae,,,,psitta4
+Trichoglossus moluccanus x rubritorquis,Rainbow x Red-collared Lorikeet (hybrid),x00957,hybrid,12688.0,RALO RCLO,TRRU TRMO,,Psittaciformes,Old World Parrots,Psittaculidae,,,,psitta4
+Agapornis fischeri x personatus,Fischer's x Yellow-collared Lovebird (hybrid),x00671,hybrid,12752.0,YCLO FILO,AGPE AGFI,,Psittaciformes,Old World Parrots,Psittaculidae,,,,psitta4
+Poicephalus meyeri x cryptoxanthus,Meyer's x Brown-headed Parrot (hybrid),x01135,hybrid,12784.0,BHPA MEPA BRPA,POME POCR,,Psittaciformes,New World and African Parrots,Psittacidae,,,,psitta3
+Brotogeris versicolurus x chiriri,White-winged x Yellow-chevroned Parakeet (hybrid),wwxpar1,hybrid,12833.0,WWPA YCPA,BRVE BRCH,,Psittaciformes,New World and African Parrots,Psittacidae,,,,psitta3
+Amazona viridigenalis x finschi,Red-crowned x Lilac-crowned Amazon (hybrid),x00958,hybrid,12907.0,LCAM RCAM,AMVI AMFI,,Psittaciformes,New World and African Parrots,Psittacidae,,,,psitta3
+Amazona viridigenalis x autumnalis,Red-crowned x Red-lored Amazon (hybrid),x00857,hybrid,12912.0,RLAM RCAM,AMVI AMAU,,Psittaciformes,New World and African Parrots,Psittacidae,,,,psitta3
+Amazona auropalliata x oratrix,Yellow-naped x Yellow-headed Amazon (hybrid),x01021,hybrid,12931.0,YNAM YHAM,AMOR AMAU,,Psittaciformes,New World and African Parrots,Psittacidae,,,,psitta3
+Amazona viridigenalis x amazonica,Red-crowned x Orange-winged Amazon (hybrid),x01168,hybrid,12973.0,OWAM RCAM,AMVI AMAM,,Psittaciformes,New World and African Parrots,Psittacidae,,,,psitta3
+Ara ararauna x macao,Blue-and-yellow x Scarlet Macaw (hybrid),x00888,hybrid,13155.0,BAYM SCMA,ARAR ARMA,,Psittaciformes,New World and African Parrots,Psittacidae,,,,psitta3
+Ara ambiguus x macao,Great Green x Scarlet Macaw (hybrid),x00405,hybrid,13156.0,GGMA SCMA,ARMA ARAM,,Psittaciformes,New World and African Parrots,Psittacidae,,,,psitta3
+Ara ararauna x chloropterus,Blue-and-yellow x Red-and-green Macaw (hybrid),x00406,hybrid,13158.0,BAYM RAGM,ARCH ARAR,,Psittaciformes,New World and African Parrots,Psittacidae,,,,psitta3
+Psittacara holochlorus x strenuus,Green x Pacific Parakeet (hybrid),x01022,hybrid,13185.0,PACP GRPA GTPA GREP PAPA,PSST PSHO,,Psittaciformes,New World and African Parrots,Psittacidae,,,,psitta3
+Psittacara holochlorus x finschi,Green x Crimson-fronted Parakeet (hybrid),x00959,hybrid,13188.0,CFPA FIPA GRPA GREP GTPA,PSHO PSFI,,Psittaciformes,New World and African Parrots,Psittacidae,,,,psitta3
+Hypocnemis ochrogyna x striata,Rondonia x Spix's Warbling-Antbird (hybrid),x00407,hybrid,13893.0,SPWA ROWA SPAN RWAN ROAN SWAN,HYST HYOC,,Passeriformes,Typical Antbirds,Thamnophilidae,,,,thamno3
+Rhegmatorhina gymnops x hoffmannsi,Bare-eyed x White-breasted Antbird (hybrid),x01102,hybrid,14096.0,WBAN BEAN,RHGY RHHO,,Passeriformes,Typical Antbirds,Thamnophilidae,,,,thamno3
+Rhegmatorhina berlepschi x hoffmannsi,Harlequin x White-breasted Antbird (hybrid),x01103,hybrid,14097.0,WBAN HAAN,RHBE RHHO,,Passeriformes,Typical Antbirds,Thamnophilidae,,,,thamno3
+Willisornis poecilinotus x vidua,Common x Xingu Scale-backed Antbird (hybrid),x01058,hybrid,14124.0,CSBA XSBA,WIPO WIVI,,Passeriformes,Typical Antbirds,Thamnophilidae,,,,thamno3
+Cranioleuca pyrrhophia x obsoleta,Stripe-crowned x Olive Spinetail (hybrid),x00740,hybrid,15506.0,OLSP SCSP,CROB CRPY,,Passeriformes,Ovenbirds and Woodcreepers,Furnariidae,,,,furnar2
+Chiroxiphia galeata x pareola,Helmeted x Blue-backed Manakin (hybrid),x01090,hybrid,15707.0,HEMA BBMA,CHGA CHPA,,Passeriformes,Manakins,Pipridae,,,,piprid1
+Chiroxiphia galeata x caudata,Helmeted x Swallow-tailed Manakin (hybrid),x00960,hybrid,15710.0,HEMA BLMA STMA,CHCA CHGA,,Passeriformes,Manakins,Pipridae,,,,piprid1
+Manacus candei x vitellinus,White-collared x Golden-collared Manakin (hybrid),x00811,hybrid,15771.0,WCMA GCMA WCOM,MAVI MACA,,Passeriformes,Manakins,Pipridae,,,,piprid1
+Manacus vitellinus x manacus,Golden-collared x White-bearded Manakin (hybrid),x01166,hybrid,15788.0,GCMA WBMA,MAVI MAMA,,Passeriformes,Manakins,Pipridae,,,,piprid1
+Contopus sordidulus x virens,Western x Eastern Wood-Pewee (hybrid),x00858,hybrid,16925.0,WWPE EAWP EWPE WEWP,COVI COSO,,Passeriformes,Tyrant Flycatchers,Tyrannidae,,,,tyrann2
+Sayornis nigricans x phoebe,Black x Eastern Phoebe (hybrid),x00621,hybrid,17008.0,EAPH BLPH,SAPH SANI,,Passeriformes,Tyrant Flycatchers,Tyrannidae,,,,tyrann2
+Sayornis nigricans x saya,Black x Say's Phoebe (hybrid),x00635,hybrid,17013.0,SAPH BLPH,SASA SANI,,Passeriformes,Tyrant Flycatchers,Tyrannidae,,,,tyrann2
+Tyrannus melancholicus x verticalis,Tropical x Western Kingbird (hybrid),x01235,hybrid,17468.0,WEKI TRKI,TYME TYVE,,Passeriformes,Tyrant Flycatchers,Tyrannidae,,,,tyrann2
+Tyrannus couchii x verticalis,Couch's x Western Kingbird (hybrid),x01035,hybrid,17469.0,WEKI COKI,TYCO TYVE,,Passeriformes,Tyrant Flycatchers,Tyrannidae,,,,tyrann2
+Tyrannus verticalis x tyrannus,Western x Eastern Kingbird (hybrid),x00718,hybrid,17473.0,WEKI EAKI,TYTY TYVE,,Passeriformes,Tyrant Flycatchers,Tyrannidae,,,,tyrann2
+Tyrannus melancholicus x dominicensis,Tropical x Gray Kingbird (hybrid),x00859,hybrid,17477.0,GRKI GRAK TRKI,TYME TYDO,,Passeriformes,Tyrant Flycatchers,Tyrannidae,,,,tyrann2
+Tyrannus verticalis x dominicensis,Western x Gray Kingbird (hybrid),x01236,hybrid,17478.0,WEKI GRKI GRAK,TYDO TYVE,,Passeriformes,Tyrant Flycatchers,Tyrannidae,,,,tyrann2
+Tyrannus melancholicus x forficatus,Tropical Kingbird x Scissor-tailed Flycatcher (hybrid),x01036,hybrid,17490.0,STFL TRKI,TYFO TYME,,Passeriformes,Tyrant Flycatchers,Tyrannidae,,,,tyrann2
+Tyrannus couchii x forficatus,Couch's Kingbird x Scissor-tailed Flycatcher (hybrid),x00441,hybrid,17491.0,STFL COKI,TYFO TYCO,,Passeriformes,Tyrant Flycatchers,Tyrannidae,,,,tyrann2
+Tyrannus verticalis x forficatus,Western Kingbird x Scissor-tailed Flycatcher (hybrid),x00442,hybrid,17492.0,WEKI STFL,TYFO TYVE,,Passeriformes,Tyrant Flycatchers,Tyrannidae,,,,tyrann2
+Tyrannus tyrannus x forficatus,Eastern Kingbird x Scissor-tailed Flycatcher (hybrid),x01237,hybrid,17493.0,STFL EAKI,TYTY TYFO,,Passeriformes,Tyrant Flycatchers,Tyrannidae,,,,tyrann2
+Tyrannus melancholicus x savana,Tropical Kingbird x Fork-tailed Flycatcher (hybrid),x00408,hybrid,17499.0,FTFL TRKI,TYSA TYME,,Passeriformes,Tyrant Flycatchers,Tyrannidae,,,,tyrann2
+Sericulus chrysocephalus x Ptilonorhynchus violaceus,Regent x Satin Bowerbird (hybrid),x00961,hybrid,17557.0,SABO REBO,SECH PTVI,,Passeriformes,Bowerbirds,Ptilonorhynchidae,,,,ptilon1
+Malurus cyaneus x leucopterus,Superb x White-winged Fairywren (hybrid),x00409,hybrid,17682.0,SUFA WWFA,MACY MALE,,Passeriformes,Fairywrens,Maluridae,,,,maluri1
+Malurus cyaneus x melanocephalus,Superb x Red-backed Fairywren (hybrid),x00410,hybrid,17686.0,RBFA SUFA,MACY MAME,,Passeriformes,Fairywrens,Maluridae,,,,maluri1
+Manorina flavigula x melanotis,Yellow-throated x Black-eared Miner (hybrid),x00741,hybrid,17821.0,BEMI YTMI,MAFL MAME,,Passeriformes,Honeyeaters,Meliphagidae,,,,meliph3
+Melidectes belfordi x rufocrissalis,Belford's x Yellow-browed Melidectes (hybrid),x00742,hybrid,17853.0,YBME BEME,MERU MEBE,,Passeriformes,Honeyeaters,Meliphagidae,,,,meliph3
+Phylidonyris novaehollandiae x niger,New Holland x White-cheeked Honeyeater (hybrid),x00923,hybrid,18111.0,NHHO WCHO,PHNO PHNI,,Passeriformes,Honeyeaters,Meliphagidae,,,,meliph3
+Pericrocotus cantonensis x roseus,Brown-rumped x Rosy Minivet (hybrid),rosmin3,hybrid,18643.0,BRMI SWMI ROMI,PECA PERO,,Passeriformes,Cuckooshrikes,Campephagidae,,,,campep2
+Vireo atricapilla x griseus,Black-capped x White-eyed Vireo (hybrid),x01067,hybrid,19173.0,WEVI BCVI,VIAT VIGR,,Passeriformes,"Vireos, Shrike-Babblers, and Erpornis",Vireonidae,,,,vireon1
+Vireo flavifrons x solitarius,Yellow-throated x Blue-headed Vireo (hybrid),x00411,hybrid,19229.0,BHVI YTVI,VIFL VISO,,Passeriformes,"Vireos, Shrike-Babblers, and Erpornis",Vireonidae,,,,vireon1
+Vireo flavifrons x plumbeus,Yellow-throated x Plumbeous Vireo (hybrid),x01238,hybrid,19238.0,PLVI YTVI,VIFL VIPL,,Passeriformes,"Vireos, Shrike-Babblers, and Erpornis",Vireonidae,,,,vireon1
+Vireo solitarius x plumbeus,Blue-headed x Plumbeous Vireo (hybrid),x00412,hybrid,19239.0,PLVI BHVI,VISO VIPL,,Passeriformes,"Vireos, Shrike-Babblers, and Erpornis",Vireonidae,,,,vireon1
+Vireo philadelphicus x olivaceus,Philadelphia x Red-eyed Vireo (hybrid),x00889,hybrid,19268.0,REVI PHVI,VIOL VIPH,,Passeriformes,"Vireos, Shrike-Babblers, and Erpornis",Vireonidae,,,,vireon1
+Vireo gilvus x olivaceus,Eastern Warbling x Red-eyed Vireo (hybrid),x01239,hybrid,19269.0,REVI EAWV EWVI WAVI,VIOL VIGI,,Passeriformes,"Vireos, Shrike-Babblers, and Erpornis",Vireonidae,,,,vireon1
+Vireo swainsoni x olivaceus,Western Warbling x Red-eyed Vireo (hybrid),x01240,hybrid,19270.0,REVI WWVI WAVI WEWV,VIOL VISW,,Passeriformes,"Vireos, Shrike-Babblers, and Erpornis",Vireonidae,,,,vireon1
+Vireo gilvus/swainsoni x olivaceus,Eastern/Western Warbling x Red-eyed Vireo (hybrid),x00890,hybrid,19271.0,REVI UWVI WAVI WEWV EWVI WWVI EAWV,VIOL VIGI VISW,,Passeriformes,"Vireos, Shrike-Babblers, and Erpornis",Vireonidae,,,,vireon1
+Pachycephala orioloides x melanura,Oriole x Black-tailed Whistler (hybrid),x01158,hybrid,19493.0,BTWH ORWH MGWH,PAME PAOR,,Passeriformes,Whistlers and Allies,Pachycephalidae,,,,pachyc2
+Artamus personatus x superciliosus,Masked x White-browed Woodswallow (hybrid),x00962,hybrid,19751.0,WBWO MAWO,ARPE ARSU,,Passeriformes,"Woodswallows, Bellmagpies, and Allies",Artamidae,,,,artami1
+Rhipidura albicollis x albogularis,White-throated x Spot-breasted Fantail (hybrid),x00812,hybrid,20291.0,WTFA SBFA WSFA,RHAL,,Passeriformes,Fantails,Rhipiduridae,,,,rhipid1
+Parotia sefilata x Lophorina superba,Western Parotia x Vogelkop Lophorina (hybrid),x01194,hybrid,20601.0,VOLO WSBO WEPA,LOSU PASE,,Passeriformes,Birds-of-Paradise,Paradisaeidae,,,,paradi7
+Parotia carolae x Lophorina latipennis,Carola's Parotia x Greater Lophorina (hybrid),x01195,hybrid,20606.0,CAPA CSBO QCPA GRLO,PACA LOLA,,Passeriformes,Birds-of-Paradise,Paradisaeidae,,,,paradi7
+Astrapia stephaniae x mayeri,Stephanie's x Ribbon-tailed Astrapia (hybrid),x00413,hybrid,20634.0,PSAS STAS RTAS,ASMA ASST,,Passeriformes,Birds-of-Paradise,Paradisaeidae,,,,paradi7
+Paradisaea minor x raggiana,Lesser x Raggiana Bird-of-Paradise (hybrid),x00814,hybrid,20659.0,LBOP RBOP,PAMI PARA,,Passeriformes,Birds-of-Paradise,Paradisaeidae,,,,paradi7
+Paradisaea raggiana x apoda,Raggiana x Greater Bird-of-Paradise (hybrid),x00929,hybrid,20664.0,GBOP RBOP,PAAP PARA,,Passeriformes,Birds-of-Paradise,Paradisaeidae,,,,paradi7
+Hypothymis azurea x Terpsiphone affinis,Black-naped Monarch x Blyth's Paradise-Flycatcher (hybrid),x00463,hybrid,20740.0,BNMO OPFL BPFL ORPF BLPF,HYAZ TEAF,,Passeriformes,Monarch Flycatchers,Monarchidae,,,,monarc2
+Terpsiphone rufiventer x viridis,Black-headed x African Paradise-Flycatcher (hybrid),x00862,hybrid,20792.0,RBPF APFL BHPF AFPF,TERU TEVI,,Passeriformes,Monarch Flycatchers,Monarchidae,,,,monarc2
+Terpsiphone rufocinerea x viridis,Rufous-vented x African Paradise-Flycatcher (hybrid),x01159,hybrid,20793.0,RVPF AFPF APFL,TEVI TERU,,Passeriformes,Monarch Flycatchers,Monarchidae,,,,monarc2
+Monarcha melanopsis x frater,Black-faced x Black-winged Monarch (hybrid),x00963,hybrid,20886.0,BWMO BFMO,MOME MOFR,,Passeriformes,Monarch Flycatchers,Monarchidae,,,,monarc2
+Arses telescopthalmus x insularis,Frilled x Ochre-collared Monarch (hybrid),x00813,hybrid,20943.0,OCMO FRMO,ARTE ARIN,,Passeriformes,Monarch Flycatchers,Monarchidae,,,,monarc2
+Lanius collurio x phoenicuroides,Red-backed x Red-tailed Shrike (hybrid),x00860,hybrid,21047.0,TUSH RTSH RBSH,LACO LAPH,,Passeriformes,Shrikes,Laniidae,,,,laniid1
+Lanius tigrinus x cristatus,Tiger x Brown Shrike (hybrid),x00464,hybrid,21060.0,TISH BRSH BROS,LATI LACR,,Passeriformes,Shrikes,Laniidae,,,,laniid1
+Lanius collurio x senator,Red-backed x Woodchat Shrike (hybrid),x00861,hybrid,21165.0,WOSH RBSH,LASE LACO,,Passeriformes,Shrikes,Laniidae,,,,laniid1
+Cyanocorax colliei x formosus,Black-throated x White-throated Magpie-Jay (hybrid),x00443,hybrid,21220.0,BTMJ WTMJ,CYFO CYCO,,Passeriformes,"Crows, Jays, and Magpies",Corvidae,,,,corvid1
+Cyanocorax yncas x Cyanocitta cristata,Green x Blue Jay (hybrid),bxgjay1,hybrid,21299.0,BLJA GRJA,CYYN CYCR,,Passeriformes,"Crows, Jays, and Magpies",Corvidae,,,,corvid1
+Cyanocitta stelleri x cristata,Steller's x Blue Jay (hybrid),x00622,hybrid,21300.0,BLJA STJA,CYST CYCR,,Passeriformes,"Crows, Jays, and Magpies",Corvidae,,,,corvid1
+Cyanocitta stelleri x Aphelocoma californica,Steller's Jay x California Scrub-Jay (hybrid),x00964,hybrid,21308.0,CSJA CASJ WSJA STJA,CYST APCA,,Passeriformes,"Crows, Jays, and Magpies",Corvidae,,,,corvid1
+Cyanocitta stelleri x Aphelocoma woodhouseii,Steller's Jay x Woodhouse's Scrub-Jay (hybrid),x00891,hybrid,21319.0,STJA WSJA WOSJ,CYST APWO,,Passeriformes,"Crows, Jays, and Magpies",Corvidae,,,,corvid1
+Corvus splendens x ossifragus,House x Fish Crow (hybrid),x00465,hybrid,21571.0,FICR HOCR,COSP COOS,,Passeriformes,"Crows, Jays, and Magpies",Corvidae,,,,corvid1
+Corvus corone x cornix,Carrion x Hooded Crow (hybrid),x00636,hybrid,21585.0,HCRW CACR HOCR,COCO,,Passeriformes,"Crows, Jays, and Magpies",Corvidae,,,,corvid1
+Corvus albus x edithae,Pied x Somali Crow (hybrid),x00466,hybrid,21619.0,PICR SOCR DWRA,COED COAL,,Passeriformes,"Crows, Jays, and Magpies",Corvidae,,,,corvid1
+Poecile carolinensis x atricapillus,Carolina x Black-capped Chickadee (hybrid),x00195,hybrid,22075.0,CACH BCCH,POCA POAT,,Passeriformes,"Tits, Chickadees, and Titmice",Paridae,,,,parida1
+Poecile atricapillus x gambeli,Black-capped x Mountain Chickadee (hybrid),x00623,hybrid,22086.0,BCCH MOCH,POGA POAT,,Passeriformes,"Tits, Chickadees, and Titmice",Paridae,,,,parida1
+Poecile gambeli x sclateri,Mountain x Mexican Chickadee (hybrid),x01055,hybrid,22093.0,MECH MOCH,POGA POSC,,Passeriformes,"Tits, Chickadees, and Titmice",Paridae,,,,parida1
+Poecile gambeli x rufescens,Mountain x Chestnut-backed Chickadee (hybrid),x01012,hybrid,22098.0,CBCH MOCH,POGA PORU,,Passeriformes,"Tits, Chickadees, and Titmice",Paridae,,,,parida1
+Poecile atricapillus x hudsonicus,Black-capped x Boreal Chickadee (hybrid),x00708,hybrid,22105.0,BOCH BCCH,POHU POAT,,Passeriformes,"Tits, Chickadees, and Titmice",Paridae,,,,parida1
+Poecile gambeli x hudsonicus,Mountain x Boreal Chickadee (hybrid),x00637,hybrid,22106.0,BOCH MOCH,POGA POHU,,Passeriformes,"Tits, Chickadees, and Titmice",Paridae,,,,parida1
+Poecile montanus x cinctus,Willow Tit x Gray-headed Chickadee (hybrid),x00743,hybrid,22112.0,SITI GHCH WITI,POMO POCI,,Passeriformes,"Tits, Chickadees, and Titmice",Paridae,,,,parida1
+Cyanistes caeruleus x cyanus,Eurasian Blue x Azure Tit (hybrid),x00965,hybrid,22143.0,AZTI EBTI,CYCY CYCA,,Passeriformes,"Tits, Chickadees, and Titmice",Paridae,,,,parida1
+Poecile carolinensis x Baeolophus bicolor,Carolina Chickadee x Tufted Titmouse (hybrid),x00709,hybrid,22161.0,CACH TUTI,BABI POCA,,Passeriformes,"Tits, Chickadees, and Titmice",Paridae,,,,parida1
+Poecile atricapillus x Baeolophus bicolor,Black-capped Chickadee x Tufted Titmouse (hybrid),x00642,hybrid,22162.0,BCCH TUTI,BABI POAT,,Passeriformes,"Tits, Chickadees, and Titmice",Paridae,,,,parida1
+Baeolophus bicolor x atricristatus,Tufted x Black-crested Titmouse (hybrid),bcxtit1,hybrid,22167.0,TUTI BCTI,BABI BAAT,,Passeriformes,"Tits, Chickadees, and Titmice",Paridae,,,,parida1
+Remiz pendulinus x macronyx,Eurasian x Black-headed Penduline-Tit (hybrid),x01080,hybrid,22286.0,EUPT EPTI BHPT,REMA REPE,,Passeriformes,Penduline-Tits,Remizidae,,,,remizi1
+Calendulauda albescens x erythrochlamys,Karoo x Dune Lark (hybrid),x00863,hybrid,22472.0,KALA DULA,CAER CAAL,,Passeriformes,Larks,Alaudidae,,,,alaudi1
+Calamonastes undosus x stierlingi,Miombo x Stierling's Wren-Warbler (hybrid),x00966,hybrid,23009.0,MWWA MIWW SWWA PWWA STWW,CAUN CAST,,Passeriformes,Cisticolas and Allies,Cisticolidae,,,,cistic2
+Prinia flavicans x maculosa,Black-chested x Karoo Prinia (hybrid),x01241,hybrid,23315.0,BCPR KAPR,PRFL PRMA,,Passeriformes,Cisticolas and Allies,Cisticolidae,,,,cistic2
+Tachycineta bicolor x thalassina,Tree x Violet-green Swallow (hybrid),x00716,hybrid,24077.0,TRSW VGSW TRES,TATH TABI,,Passeriformes,Swallows,Hirundinidae,,,,hirund2
+Progne cryptoleuca x dominicensis,Cuban x Caribbean Martin (hybrid),y01264,hybrid,24089.0,CAMA CUMA,PRDO PRCR,,Passeriformes,Swallows,Hirundinidae,,,,hirund2
+Tachycineta thalassina x Stelgidopteryx serripennis,Violet-green x Northern Rough-winged Swallow (hybrid),x00715,hybrid,24115.0,NRWS VGSW,STSE TATH,,Passeriformes,Swallows,Hirundinidae,,,,hirund2
+Tachycineta bicolor x Hirundo rustica,Tree x Barn Swallow (hybrid),x00666,hybrid,24196.0,TRES TRSW BASW BARS,HIRU TABI,,Passeriformes,Swallows,Hirundinidae,,,,hirund2
+Riparia riparia x Hirundo rustica,Bank x Barn Swallow (hybrid),x00710,hybrid,24197.0,BANS CSMA SAMA BASW BARS,RIRI HIRU,,Passeriformes,Swallows,Hirundinidae,,,,hirund2
+Hirundo rustica x Delichon urbicum,Barn Swallow x Western House-Martin (hybrid),x00659,hybrid,24217.0,NHMA WEHM WHMA BASW BARS,DEUR HIRU,,Passeriformes,Swallows,Hirundinidae,,,,hirund2
+Hirundo rustica x Cecropis rufula,Barn x European Red-rumped Swallow (hybrid),x00658,hybrid,24231.0,RRSW BASW BARS ERRS,HIRU CERU,,Passeriformes,Swallows,Hirundinidae,,,,hirund2
+Hirundo rustica x Petrochelidon pyrrhonota,Barn x Cliff Swallow (hybrid),x00717,hybrid,24287.0,ACSW CLSW BASW BARS,HIRU PEPY,,Passeriformes,Swallows,Hirundinidae,,,,hirund2
+Tachycineta thalassina x Petrochelidon pyrrhonota,Violet-green x Cliff Swallow (hybrid),x00661,hybrid,24288.0,ACSW VGSW CLSW,TATH PEPY,,Passeriformes,Swallows,Hirundinidae,,,,hirund2
+Hirundo rustica x Petrochelidon fulva,Barn x Cave Swallow (hybrid),x00660,hybrid,24297.0,BASW CASW BARS,PEFU HIRU,,Passeriformes,Swallows,Hirundinidae,,,,hirund2
+Petrochelidon pyrrhonota x fulva,Cliff x Cave Swallow (hybrid),x00892,hybrid,24298.0,ACSW CASW CLSW,PEFU PEPY,,Passeriformes,Swallows,Hirundinidae,,,,hirund2
+Pycnonotus sinensis x taivanus,Light-vented x Styan's Bulbul (hybrid),x00744,hybrid,24718.0,LVBU STBU CHBU,PYSI PYTA,,Passeriformes,Bulbuls,Pycnonotidae,,,,pycnon4
+Pycnonotus jocosus x goiavier,Red-whiskered x Yellow-vented Bulbul (hybrid),x01196,hybrid,24753.0,YVBU RWBU,PYGO PYJO,,Passeriformes,Bulbuls,Pycnonotidae,,,,pycnon4
+Pycnonotus jocosus x cafer,Red-whiskered x Red-vented Bulbul (hybrid),x01024,hybrid,24763.0,RVBU RWBU,PYCA PYJO,,Passeriformes,Bulbuls,Pycnonotidae,,,,pycnon4
+Pycnonotus cafer x aurigaster,Red-vented x Sooty-headed Bulbul (hybrid),x00967,hybrid,24775.0,RVBU SHBU,PYAU PYCA,,Passeriformes,Bulbuls,Pycnonotidae,,,,pycnon4
+Pycnonotus cafer x leucotis,Red-vented x White-eared Bulbul (hybrid),x01044,hybrid,24779.0,WEBU RVBU,PYCA PYLE,,Passeriformes,Bulbuls,Pycnonotidae,,,,pycnon4
+Pycnonotus barbatus x nigricans,Common x Black-fronted Bulbul (hybrid),x01242,hybrid,24785.0,AREB BFBU COBU CBSP DCBU DCBS,PYBA PYNI,,Passeriformes,Bulbuls,Pycnonotidae,,,,pycnon4
+Pycnonotus nigricans x capensis,Black-fronted x Cape Bulbul (hybrid),x01243,hybrid,24787.0,AREB BFBU CABU,PYNI PYCA,,Passeriformes,Bulbuls,Pycnonotidae,,,,pycnon4
+Phylloscopus sibilatrix x bonelli,Wood x Western Bonelli's Warbler (hybrid),x01019,hybrid,24794.0,WBWA WOWA,PHBO PHSI,,Passeriformes,Leaf Warblers,Phylloscopidae,,,,phyllo4
+Phylloscopus trochilus x collybita,Willow Warbler x Common Chiffchaff (hybrid),x01077,hybrid,24861.0,WIWA WILW CCHI COCH,PHCO PHTR,,Passeriformes,Leaf Warblers,Phylloscopidae,,,,phyllo4
+Aegithalos caudatus x glaucogularis,Long-tailed x Silver-throated Tit (hybrid),x01197,hybrid,25232.0,STTI STBU LTTI,AECA AEGL,,Passeriformes,Long-tailed Tits,Aegithalidae,,,,aegith2
+Paradoxornis gularis x margaritae,Gray-headed x Black-headed Parrotbill (hybrid),x00815,hybrid,25455.0,BHPA GHPA,PAMA PAGU,,Passeriformes,Parrotbills,Paradoxornithidae,,,,parado1
+Suthora webbiana x alphonsiana,Vinous-throated x Ashy-throated Parrotbill (hybrid),x00467,hybrid,25514.0,ATPA VTPA,SUAL SUWE,,Passeriformes,Parrotbills,Paradoxornithidae,,,,parado1
+Zosterops pallidus x virens,Orange River x Cape White-eye (hybrid),x00968,hybrid,25706.0,ORWE CWEY CAWE,ZOPA ZOVI,,Passeriformes,"White-eyes, Yuhinas, and Allies",Zosteropidae,,,,zoster2
+Zosterops citrinella x lateralis,Ashy-bellied White-eye x Silvereye (hybrid),x01127,hybrid,25789.0,ABWE SILV,ZOLA ZOCI,,Passeriformes,"White-eyes, Yuhinas, and Allies",Zosteropidae,,,,zoster2
+Actinodura nipalensis x waldeni,Hoary-throated x Streak-throated Barwing (hybrid),x01198,hybrid,26533.0,HTBA STBA,ACWA ACNI,,Passeriformes,Laughingthrushes and Allies,Leiothrichidae,,,,leioth1
+Garrulax canorus x taewanus,Chinese x Taiwan Hwamei (hybrid),x00816,hybrid,26718.0,HWAM CHHW TAHW,GACA GATA,,Passeriformes,Laughingthrushes and Allies,Leiothrichidae,,,,leioth1
+Polioptila melanura x nigriceps,Black-tailed x Black-capped Gnatcatcher (hybrid),x00643,hybrid,27144.0,BTGN BCGN,POME PONI,,Passeriformes,Gnatcatchers,Polioptilidae,,,,poliop1
+Troglodytes aedon x Thryothorus ludovicianus,Northern House x Carolina Wren (hybrid),x01068,hybrid,27361.0,NHWR HOWR CARW CBWR CAWR,TRAE THLU,,Passeriformes,Wrens,Troglodytidae,,,,troglo1
+Campylorhynchus albobrunneus x zonatus,White-headed x Band-backed Wren (hybrid),x00969,hybrid,27394.0,BBWR WHWR BABW,CAZO CAAL,,Passeriformes,Wrens,Troglodytidae,,,,troglo1
+Pheugopedius genibarbis x coraya,Moustached x Coraya Wren (hybrid),x00970,hybrid,27481.0,COWR MOWR,PHCO PHGE,,Passeriformes,Wrens,Troglodytidae,,,,troglo1
+Buphagus erythroryncha x africanus,Red-billed x Yellow-billed Oxpecker (hybrid),x01244,hybrid,27684.0,RBOX YBOX,BUER BUAF,,Passeriformes,Oxpeckers,Buphagidae,,,,buphag1
+Gracupica contra x Sturnia malabarica,Indian Pied x Chestnut-tailed Starling (hybrid),x01027,hybrid,27850.0,IPMY CTST IPST,GRCO STMA,,Passeriformes,Starlings,Sturnidae,,,,sturni1
+Acridotheres burmannicus x fuscus,Burmese x Jungle Myna (hybrid),x01056,hybrid,27876.0,BUMY JUMY BUST,ACFU ACBU,,Passeriformes,Starlings,Sturnidae,,,,sturni1
+Acridotheres fuscus x javanicus,Jungle x Javan Myna (hybrid),x01028,hybrid,27879.0,JUMY JAMY,ACJA ACFU,,Passeriformes,Starlings,Sturnidae,,,,sturni1
+Gracupica nigricollis x Acridotheres grandis,Black-collared Starling x Great Myna (hybrid),x00468,hybrid,27883.0,BCST GRMY,GRNI ACGR,,Passeriformes,Starlings,Sturnidae,,,,sturni1
+Gracupica floweri x Acridotheres grandis,Siamese Pied Starling x Great Myna (hybrid),x01136,hybrid,27884.0,SPST TPST GRMY SPMY,GRFL ACGR,,Passeriformes,Starlings,Sturnidae,,,,sturni1
+Acridotheres tristis x grandis,Common x Great Myna (hybrid),x00469,hybrid,27885.0,GRMY COMY,ACTR ACGR,,Passeriformes,Starlings,Sturnidae,,,,sturni1
+Acridotheres leucocephalus x grandis,Vinous-breasted x Great Myna (hybrid),x01160,hybrid,27886.0,VBMY VBST GRMY,ACLE ACGR,,Passeriformes,Starlings,Sturnidae,,,,sturni1
+Acridotheres fuscus x grandis,Jungle x Great Myna (hybrid),x01029,hybrid,27887.0,JUMY GRMY,ACGR ACFU,,Passeriformes,Starlings,Sturnidae,,,,sturni1
+Acridotheres javanicus x grandis,Javan x Great Myna (hybrid),x00893,hybrid,27888.0,JAMY GRMY,ACGR ACJA,,Passeriformes,Starlings,Sturnidae,,,,sturni1
+Spodiopsar cineraceus x Acridotheres cristatellus,White-cheeked Starling x Crested Myna (hybrid),x01083,hybrid,27893.0,CRMY WCST,SPCI ACCR,,Passeriformes,Starlings,Sturnidae,,,,sturni1
+Acridotheres tristis x cristatellus,Common x Crested Myna (hybrid),x01030,hybrid,27894.0,CRMY COMY,ACTR ACCR,,Passeriformes,Starlings,Sturnidae,,,,sturni1
+Acridotheres albocinctus x cristatellus,Collared x Crested Myna (hybrid),x01031,hybrid,27895.0,CRMY COMY,ACCR ACAL,,Passeriformes,Starlings,Sturnidae,,,,sturni1
+Toxostoma curvirostre x longirostre,Curve-billed x Long-billed Thrasher (hybrid),x00971,hybrid,28043.0,CBTH LBTH,TOLO TOCU,,Passeriformes,Mockingbirds and Thrashers,Mimidae,,,,mimida2
+Toxostoma redivivum x crissale,California x Crissal Thrasher (hybrid),x00470,hybrid,28067.0,CRTH CATH,TORE TOCR,,Passeriformes,Mockingbirds and Thrashers,Mimidae,,,,mimida2
+Mimus thenca x saturninus,Chilean x Chalk-browed Mockingbird (hybrid),x01245,hybrid,28077.0,CHMO CBMO,MITH MISA,,Passeriformes,Mockingbirds and Thrashers,Mimidae,,,,mimida2
+Mimus gundlachii x polyglottos,Bahama x Northern Mockingbird (hybrid),x00907,hybrid,28118.0,BAMO NOMO,MIGU MIPO,,Passeriformes,Mockingbirds and Thrashers,Mimidae,,,,mimida2
+Mimus gilvus x polyglottos,Tropical x Northern Mockingbird (hybrid),x00703,hybrid,28119.0,TRMO NOMO,MIGI MIPO,,Passeriformes,Mockingbirds and Thrashers,Mimidae,,,,mimida2
+Sialia sialis x mexicana,Eastern x Western Bluebird (hybrid),x00972,hybrid,28143.0,WEBL EABL,SIME SISI,,Passeriformes,Thrushes and Allies,Turdidae,,,,turdid1
+Sialia sialis x currucoides,Eastern x Mountain Bluebird (hybrid),x00864,hybrid,28145.0,MOBL EABL,SICU SISI,,Passeriformes,Thrushes and Allies,Turdidae,,,,turdid1
+Sialia mexicana x currucoides,Western x Mountain Bluebird (hybrid),x00204,hybrid,28146.0,WEBL MOBL,SIME SICU,,Passeriformes,Thrushes and Allies,Turdidae,,,,turdid1
+Catharus fuscescens x bicknelli,Veery x Bicknell's Thrush (hybrid),x00865,hybrid,28322.0,BITH VEER,CAFU CABI,,Passeriformes,Thrushes and Allies,Turdidae,,,,turdid1
+Turdus olivaceus x smithi,Olive x Karoo Thrush (hybrid),x01034,hybrid,28495.0,OLTH KATH SAOT,TUSM TUOL,,Passeriformes,Thrushes and Allies,Turdidae,,,,turdid1
+Turdus dissimilis x cardis,Black-breasted x Japanese Thrush (hybrid),x01043,hybrid,28512.0,JATH BBTH,TUCA TUDI,,Passeriformes,Thrushes and Allies,Turdidae,,,,turdid1
+Turdus atrogularis x ruficollis,Black-throated x Red-throated Thrush (hybrid),x00644,hybrid,28604.0,RTTH BTTH,TUAT TURU,,Passeriformes,Thrushes and Allies,Turdidae,,,,turdid1
+Turdus atrogularis x naumanni,Black-throated x Naumann's Thrush (hybrid),x01137,hybrid,28608.0,BTTH NATH,TUAT TUNA,,Passeriformes,Thrushes and Allies,Turdidae,,,,turdid1
+Turdus ruficollis x naumanni,Red-throated x Naumann's Thrush (hybrid),x01199,hybrid,28609.0,RTTH NATH,TUNA TURU,,Passeriformes,Thrushes and Allies,Turdidae,,,,turdid1
+Turdus eunomus x naumanni,Dusky x Naumann's Thrush (hybrid),x00973,hybrid,28610.0,DUTH NATH,TUEU TUNA,,Passeriformes,Thrushes and Allies,Turdidae,,,,turdid1
+Cyornis poliogenys x tickelliae,Pale-chinned x Tickell's Blue Flycatcher (hybrid),x00927,hybrid,29155.0,PCFL TBFL,CYTI CYPO,,Passeriformes,Old World Flycatchers,Muscicapidae,,,,muscic3
+Cossypha natalensis x dichroa,Red-capped x Chorister Robin-Chat (hybrid),x01214,hybrid,29236.0,RCRC CHRC CRCH,CONA CODI,,Passeriformes,Old World Flycatchers,Muscicapidae,,,,muscic3
+Luscinia luscinia x megarhynchos,Thrush x Common Nightingale (hybrid),x01010,hybrid,29398.0,CONI THNI,LULU LUME,,Passeriformes,Old World Flycatchers,Muscicapidae,,,,muscic3
+Ficedula semitorquata x hypoleuca,Semicollared x European Pied Flycatcher (hybrid),x00471,hybrid,29562.0,SCFL EPFL PIFL SEFL,FIHY FISE,,Passeriformes,Old World Flycatchers,Muscicapidae,,,,muscic3
+Ficedula semitorquata x albicollis,Semicollared x Collared Flycatcher (hybrid),x00472,hybrid,29566.0,SCFL COFL SEFL,FISE FIAL,,Passeriformes,Old World Flycatchers,Muscicapidae,,,,muscic3
+Ficedula hypoleuca x albicollis,European Pied x Collared Flycatcher (hybrid),x00817,hybrid,29567.0,EPFL COFL PIFL,FIHY FIAL,,Passeriformes,Old World Flycatchers,Muscicapidae,,,,muscic3
+Phoenicurus phoenicurus x ochruros,Common x Black Redstart (hybrid),x00745,hybrid,29628.0,CORE CRET BLRE,PHOC PHPH,,Passeriformes,Old World Flycatchers,Muscicapidae,,,,muscic3
+Phoenicurus phoenicurus x Saxicola rubetra,Common Redstart x Whinchat (hybrid),x00818,hybrid,29667.0,CORE CRET WHIN,PHPH SARU,,Passeriformes,Old World Flycatchers,Muscicapidae,,,,muscic3
+Saxicola rubetra x maurus,Whinchat x Siberian Stonechat (hybrid),x01161,hybrid,29684.0,SIST COST ASST WHIN,SAMA SARU,,Passeriformes,Old World Flycatchers,Muscicapidae,,,,muscic3
+Oenanthe melanoleuca x pleschanka,Eastern Black-eared x Pied Wheatear (hybrid),x00771,hybrid,29810.0,PIWH EBEW BEWH,OEPL OEME,,Passeriformes,Old World Flycatchers,Muscicapidae,,,,muscic3
+Bombycilla garrulus x cedrorum,Bohemian x Cedar Waxwing (hybrid),x01246,hybrid,29889.0,BOWA CEDW CEWA,BOGA BOCE,,Passeriformes,Waxwings,Bombycillidae,,,,bombyc1
+Cinnyris pulchellus x melanogastrus,Beautiful x Gorgeous Sunbird (hybrid),x01200,hybrid,30392.0,BESU GOSU,CIPU CIME,,Passeriformes,Sunbirds and Spiderhunters,Nectariniidae,,,,nectar1
+Ploceus brachypterus x nigricollis,Olive-naped x Black-necked Weaver (hybrid),bknwea3,hybrid,30784.0,ONWE BNWE,PLBR PLNI,,Passeriformes,Weavers and Allies,Ploceidae,,,,plocei1
+Stizoptera bichenovii x Taeniopygia guttata,Double-barred x Zebra Finch (hybrid),x00906,hybrid,31039.0,SZFI DBFI TZFI ZEFI,TAGU STBI,,Passeriformes,Waxbills and Allies,Estrildidae,,,,estril1
+Mayrimunia tristissima x leucosticta,Streak-headed x White-spotted Munia (hybrid),x00473,hybrid,31074.0,WSMA SHMU WSMU SHMA,MATR MALE,,Passeriformes,Waxbills and Allies,Estrildidae,,,,estril1
+Lonchura punctulata x striata,Scaly-breasted x White-rumped Munia (hybrid),x01069,hybrid,31104.0,SBMU WRMU,LOPU LOST,,Passeriformes,Waxbills and Allies,Estrildidae,,,,estril1
+Lonchura punctulata x atricapilla,Scaly-breasted x Chestnut Munia (hybrid),x01174,hybrid,31129.0,SBMU CHMU,LOAT LOPU,,Passeriformes,Waxbills and Allies,Estrildidae,,,,estril1
+Lonchura malacca x atricapilla,Tricolored x Chestnut Munia (hybrid),x00932,hybrid,31130.0,TRMU CHMU,LOMA LOAT,,Passeriformes,Waxbills and Allies,Estrildidae,,,,estril1
+Lonchura caniceps x castaneothorax,Gray-headed x Chestnut-breasted Munia (hybrid),x01075,hybrid,31168.0,GHMU CBMU CBMA GHMA,LOCA,,Passeriformes,Waxbills and Allies,Estrildidae,,,,estril1
+Lonchura flaviprymna x castaneothorax,Yellow-rumped x Chestnut-breasted Munia (hybrid),x00936,hybrid,31169.0,YRMU CBMU CBMA YRMA,LOCA LOFL,,Passeriformes,Waxbills and Allies,Estrildidae,,,,estril1
+Amadina fasciata x erythrocephala,Cut-throat x Red-headed Finch (hybrid),x01247,hybrid,31347.0,CUTH CTFI CUTT RHFI,AMFA AMER,,Passeriformes,Waxbills and Allies,Estrildidae,,,,estril1
+Passer domesticus x italiae,House x Italian Sparrow (hybrid),x00873,hybrid,31550.0,HOSP ITSP,PADO PAIT,,Passeriformes,Old World Sparrows,Passeridae,,,,passer4
+Passer domesticus x hispaniolensis,House x Spanish Sparrow (hybrid),x00645,hybrid,31555.0,SPSP HOSP,PADO PAHI,,Passeriformes,Old World Sparrows,Passeridae,,,,passer4
+Passer italiae x hispaniolensis,Italian x Spanish Sparrow (hybrid),x00974,hybrid,31556.0,SPSP ITSP,PAIT PAHI,,Passeriformes,Old World Sparrows,Passeridae,,,,passer4
+Passer domesticus x castanopterus,House x Somali Sparrow (hybrid),x00917,hybrid,31563.0,HOSP SOSP,PADO PACA,,Passeriformes,Old World Sparrows,Passeridae,,,,passer4
+Passer domesticus x montanus,House x Eurasian Tree Sparrow (hybrid),x00754,hybrid,31613.0,ETSP HOSP,PADO PAMO,,Passeriformes,Old World Sparrows,Passeridae,,,,passer4
+Passer hispaniolensis x montanus,Spanish x Eurasian Tree Sparrow (hybrid),x00874,hybrid,31614.0,ETSP SPSP,PAMO PAHI,,Passeriformes,Old World Sparrows,Passeridae,,,,passer4
+Motacilla flava x citreola,Western Yellow x Citrine Wagtail (hybrid),x00934,hybrid,31712.0,WYWA CIWA,MOCI MOFL,,Passeriformes,Wagtails and Pipits,Motacillidae,,,,motaci1
+Fringilla coelebs x spodiogenys,Common x African Chaffinch (hybrid),x01070,hybrid,31970.0,AFCH EUCH COCH CCHA,FRSP FRCO,,Passeriformes,"Finches, Euphonias, and Allies",Fringillidae,,,,fringi1
+Fringilla coelebs x montifringilla,Common Chaffinch x Brambling (hybrid),x01071,hybrid,31975.0,BRAM EUCH CCHA COCH,FRCO FRMO,,Passeriformes,"Finches, Euphonias, and Allies",Fringillidae,,,,fringi1
+Himatione sanguinea x Drepanis coccinea,Apapane x Iiwi (hybrid),x00828,hybrid,32119.0,IIWI APAP,HISA DRCO,,Passeriformes,"Finches, Euphonias, and Allies",Fringillidae,,,,fringi1
+Leucosticte tephrocotis x atrata,Gray-crowned x Black Rosy-Finch (hybrid),x01003,hybrid,32307.0,BRFI GCRF BLRF,LETE LEAT,,Passeriformes,"Finches, Euphonias, and Allies",Fringillidae,,,,fringi1
+Haemorhous mexicanus x purpureus,House x Purple Finch (hybrid),x01004,hybrid,32327.0,PUFI HOFI,HAME HAPU,,Passeriformes,"Finches, Euphonias, and Allies",Fringillidae,,,,fringi1
+Carduelis carduelis x caniceps,European x Gray-crowned Goldfinch (hybrid),x01171,hybrid,32568.0,EUGO GCGO WEGO EGOL,CACA,,Passeriformes,"Finches, Euphonias, and Allies",Fringillidae,,,,fringi1
+Carduelis carduelis x Serinus canaria,European Goldfinch x Island Canary (hybrid),x01005,hybrid,32576.0,EUGO ISCA WEGO EGOL ATCA,SECA CACA,,Passeriformes,"Finches, Euphonias, and Allies",Fringillidae,,,,fringi1
+Loxia curvirostra x Spinus pinus,Red Crossbill x Pine Siskin (hybrid),x00904,hybrid,32601.0,COCR RECR PISI,SPPI LOCU,,Passeriformes,"Finches, Euphonias, and Allies",Fringillidae,,,,fringi1
+Spinus pinus x atriceps,Pine x Black-capped Siskin (hybrid),x00829,hybrid,32603.0,BCSI PISI,SPPI SPAT,,Passeriformes,"Finches, Euphonias, and Allies",Fringillidae,,,,fringi1
+Carduelis carduelis x Spinus psaltria,European x Lesser Goldfinch (hybrid),x01006,hybrid,32615.0,EUGO LEGO WEGO EGOL,SPPS CACA,,Passeriformes,"Finches, Euphonias, and Allies",Fringillidae,,,,fringi1
+Acanthis flammea x Spinus tristis,Redpoll x American Goldfinch (hybrid),x01248,hybrid,32622.0,AGOL REDP AMGO,SPTR ACFL,,Passeriformes,"Finches, Euphonias, and Allies",Fringillidae,,,,fringi1
+Carduelis carduelis x Spinus tristis,European x American Goldfinch (hybrid),x01007,hybrid,32623.0,EUGO AMGO AGOL WEGO EGOL,SPTR CACA,,Passeriformes,"Finches, Euphonias, and Allies",Fringillidae,,,,fringi1
+Spinus pinus x tristis,Pine Siskin x American Goldfinch (hybrid),x00905,hybrid,32624.0,AGOL AMGO PISI,SPPI SPTR,,Passeriformes,"Finches, Euphonias, and Allies",Fringillidae,,,,fringi1
+Spinus psaltria x tristis,Lesser x American Goldfinch (hybrid),x00714,hybrid,32625.0,AGOL LEGO AMGO,SPTR SPPS,,Passeriformes,"Finches, Euphonias, and Allies",Fringillidae,,,,fringi1
+Spinus magellanicus x uropygialis,Hooded x Yellow-rumped Siskin (hybrid),x00713,hybrid,32657.0,HOSI YRSI,SPUR SPMA,,Passeriformes,"Finches, Euphonias, and Allies",Fringillidae,,,,fringi1
+Calcarius lapponicus x Plectrophenax nivalis,Lapland Longspur x Snow Bunting (hybrid),x00919,hybrid,32679.0,SNBU LALO LABU,CALA PLNI,,Passeriformes,Longspurs and Snow Buntings,Calcariidae,,,,calcar1
+Plectrophenax nivalis x hyperboreus,Snow x McKay's Bunting (hybrid),x00447,hybrid,32681.0,SNBU MCBU MKBU,PLHY PLNI,,Passeriformes,Longspurs and Snow Buntings,Calcariidae,,,,calcar1
+Emberiza melanocephala x bruniceps,Black-headed x Red-headed Bunting (hybrid),x00871,hybrid,32700.0,BHBU RHBU,EMME EMBR,,Passeriformes,Old World Buntings,Emberizidae,,,,emberi2
+Emberiza citrinella x leucocephalos,Yellowhammer x Pine Bunting (hybrid),x00823,hybrid,32740.0,YELL PIBU,EMLE EMCI,,Passeriformes,Old World Buntings,Emberizidae,,,,emberi2
+Emberiza tahapisi x goslingi,Cinnamon-breasted x Gosling's Bunting (hybrid),x00975,hybrid,32787.0,CBBU GTBU GOBU,EMGO EMTA,,Passeriformes,Old World Buntings,Emberizidae,,,,emberi2
+Spizella passerina x pallida,Chipping x Clay-colored Sparrow (hybrid),x00198,hybrid,32997.0,CHSP CCSP,SPPA,,Passeriformes,New World Sparrows,Passerellidae,,,,passer3
+Spizella passerina x pusilla,Chipping x Field Sparrow (hybrid),x00976,hybrid,33005.0,FISP CHSP,SPPA SPPU,,Passeriformes,New World Sparrows,Passerellidae,,,,passer3
+Spizella pallida x pusilla,Clay-colored x Field Sparrow (hybrid),x00200,hybrid,33006.0,FISP CCSP,SPPU SPPA,,Passeriformes,New World Sparrows,Passerellidae,,,,passer3
+Spizella pallida x breweri,Clay-colored x Brewer's Sparrow (hybrid),x00199,hybrid,33010.0,CCSP BRSP,SPPA SPBR,,Passeriformes,New World Sparrows,Passerellidae,,,,passer3
+Spizella atrogularis x breweri,Black-chinned x Brewer's Sparrow (hybrid),x00201,hybrid,33011.0,BCSP BRSP,SPAT SPBR,,Passeriformes,New World Sparrows,Passerellidae,,,,passer3
+Junco hyemalis x phaeonotus,Dark-eyed x Yellow-eyed Junco (hybrid),x00869,hybrid,33154.0,YEJU DEJU,JUPH JUHY,,Passeriformes,New World Sparrows,Passerellidae,,,,passer3
+Junco hyemalis x Zonotrichia leucophrys,Dark-eyed Junco x White-crowned Sparrow (hybrid),x01016,hybrid,33195.0,WCSP DEJU,ZOLE JUHY,,Passeriformes,New World Sparrows,Passerellidae,,,,passer3
+Zonotrichia leucophrys x atricapilla,White-crowned x Golden-crowned Sparrow (hybrid),x00053,hybrid,33197.0,GCSP WCSP,ZOLE ZOAT,,Passeriformes,New World Sparrows,Passerellidae,,,,passer3
+Spizelloides arborea x Zonotrichia querula,American Tree x Harris's Sparrow (hybrid),x00752,hybrid,33199.0,ATSP HASP,SPAR ZOQU,,Passeriformes,New World Sparrows,Passerellidae,,,,passer3
+Zonotrichia leucophrys x querula,White-crowned x Harris's Sparrow (hybrid),x00900,hybrid,33200.0,WCSP HASP,ZOLE ZOQU,,Passeriformes,New World Sparrows,Passerellidae,,,,passer3
+Zonotrichia leucophrys x albicollis,White-crowned x White-throated Sparrow (hybrid),x00451,hybrid,33202.0,WCSP WTSP,ZOLE ZOAL,,Passeriformes,New World Sparrows,Passerellidae,,,,passer3
+Zonotrichia atricapilla x albicollis,Golden-crowned x White-throated Sparrow (hybrid),x00720,hybrid,33203.0,GCSP WTSP,ZOAL ZOAT,,Passeriformes,New World Sparrows,Passerellidae,,,,passer3
+Junco hyemalis x Zonotrichia albicollis,Dark-eyed Junco x White-throated Sparrow (hybrid),x00039,hybrid,33204.0,WTSP DEJU,JUHY ZOAL,,Passeriformes,New World Sparrows,Passerellidae,,,,passer3
+Ammospiza nelsoni x caudacuta,Nelson's x Saltmarsh Sparrow (hybrid),x00450,hybrid,33241.0,NESP SASP SALS,AMCA AMNE,,Passeriformes,New World Sparrows,Passerellidae,,,,passer3
+Ammodramus savannarum x Passerculus sandwichensis,Grasshopper x Savannah Sparrow (hybrid),x01057,hybrid,33269.0,GRSP SASP SAVS SBBS,AMSA PASA,,Passeriformes,New World Sparrows,Passerellidae,,,,passer3
+Melospiza melodia x lincolnii,Song x Lincoln's Sparrow (hybrid),x00474,hybrid,33314.0,LISP SOSP,MEME MELI,,Passeriformes,New World Sparrows,Passerellidae,,,,passer3
+Melospiza melodia x georgiana,Song x Swamp Sparrow (hybrid),x00702,hybrid,33319.0,SWSP SOSP,MEME MEGE,,Passeriformes,New World Sparrows,Passerellidae,,,,passer3
+Melozone fusca x aberti,Canyon x Abert's Towhee (hybrid),x00870,hybrid,33348.0,CATO ABTO CANT,MEAB MEFU,,Passeriformes,New World Sparrows,Passerellidae,,,,passer3
+Melozone aberti x crissalis,Abert's x California Towhee (hybrid),x01138,hybrid,33356.0,CALT ABTO CATO,MEAB MECR,,Passeriformes,New World Sparrows,Passerellidae,,,,passer3
+Arremon brunneinucha x Pipilo maculatus,Chestnut-capped Brushfinch x Spotted Towhee (hybrid),x00475,hybrid,33411.0,SPTO CCBR,PIMA ARBR,,Passeriformes,New World Sparrows,Passerellidae,,,,passer3
+Melozone fusca x Pipilo maculatus,Canyon x Spotted Towhee (hybrid),x00476,hybrid,33412.0,CATO SPTO CANT,PIMA MEFU,,Passeriformes,New World Sparrows,Passerellidae,,,,passer3
+Melozone crissalis x Pipilo maculatus,California x Spotted Towhee (hybrid),x01249,hybrid,33413.0,CALT SPTO CATO,PIMA MECR,,Passeriformes,New World Sparrows,Passerellidae,,,,passer3
+Pipilo chlorurus x maculatus,Green-tailed x Spotted Towhee (hybrid),x00706,hybrid,33414.0,GTTO SPTO,PIMA PICH,,Passeriformes,New World Sparrows,Passerellidae,,,,passer3
+Pipilo maculatus x erythrophthalmus,Spotted x Eastern Towhee (hybrid),x00446,hybrid,33422.0,SPTO EATO,PIMA PIER,,Passeriformes,New World Sparrows,Passerellidae,,,,passer3
+Pipilo maculatus x ocai,Spotted x Collared Towhee (hybrid),x00445,hybrid,33431.0,COTO SPTO,PIMA PIOC,,Passeriformes,New World Sparrows,Passerellidae,,,,passer3
+Atlapetes albinucha x fuscoolivaceus,White-naped x Dusky-headed Brushfinch (hybrid),x01092,hybrid,33468.0,WNBR DHBR,ATFU ATAL,,Passeriformes,New World Sparrows,Passerellidae,,,,passer3
+Atlapetes albofrenatus x nigrifrons,Moustached x Black-fronted Brushfinch (hybrid),x01201,hybrid,33485.0,YBBR MOBR BFBR,ATNI ATAL,,Passeriformes,New World Sparrows,Passerellidae,,,,passer3
+Atlapetes melanolaemus x rufinucha,Black-faced x Bolivian Brushfinch (hybrid),x00477,hybrid,33516.0,BOBR BFBR GEBR,ATRU ATME,,Passeriformes,New World Sparrows,Passerellidae,,,,passer3
+Phaenicophilus palmarum x poliocephalus,Black-crowned x Gray-crowned Palm-Tanager (hybrid),x00901,hybrid,33533.0,BPLT GCPT BCPT,PHPA PHPO,,Passeriformes,Greater Antillean Tanagers,Phaenicophilidae,,,,phaeni1
+Teretistris fernandinae x fornsi,Yellow-headed x Oriente Warbler (hybrid),x00935,hybrid,33556.0,ORWA YHWA,TEFO TEFE,,Passeriformes,Cuban Warblers,Teretistridae,,,,tereti1
+Sturnella neglecta x magna,Western x Eastern Meadowlark (hybrid),x00827,hybrid,33585.0,EAME WEME,STNE STMA,,Passeriformes,Troupials and Allies,Icteridae,,,,icteri1
+Sturnella neglecta x lilianae,Western x Chihuahuan Meadowlark (hybrid),x01085,hybrid,33590.0,CHME WEME,STLI STNE,,Passeriformes,Troupials and Allies,Icteridae,,,,icteri1
+Icteria virens x Icterus cucullatus,Yellow-breasted Chat x Hooded Oriole (hybrid),x00478,hybrid,33691.0,HOOR YBCH,ICCU ICVI,,Passeriformes,,,,,,
+Icterus spurius x cucullatus,Orchard x Hooded Oriole (hybrid),x01167,hybrid,33692.0,OROR HOOR,ICSP ICCU,,Passeriformes,Troupials and Allies,Icteridae,,,,icteri1
+Icterus wagleri x pustulatus,Black-vented x Streak-backed Oriole (hybrid),x00490,hybrid,33735.0,BVOR SBOR SBAO,ICPU ICWA,,Passeriformes,Troupials and Allies,Icteridae,,,,icteri1
+Icterus cucullatus x bullockii,Hooded x Bullock's Oriole (hybrid),x01215,hybrid,33739.0,BUOR HOOR,ICCU ICBU,,Passeriformes,Troupials and Allies,Icteridae,,,,icteri1
+Icterus gularis x graduacauda,Altamira x Audubon's Oriole (hybrid),x00449,hybrid,33769.0,ALOR AUOR,ICGU ICGR,,Passeriformes,Troupials and Allies,Icteridae,,,,icteri1
+Icterus bullockii x galbula,Bullock's x Baltimore Oriole (hybrid),x00013,hybrid,33771.0,BAOR BUOR,ICGA ICBU,BBOH,Passeriformes,Troupials and Allies,Icteridae,,,,icteri1
+Icterus bullockii x abeillei,Bullock's x Black-backed Oriole (hybrid),x00903,hybrid,33774.0,BBOR BUOR,ICAB ICBU,,Passeriformes,Troupials and Allies,Icteridae,,,,icteri1
+Euphagus cyanocephalus x Quiscalus mexicanus,Brewer's Blackbird x Great-tailed Grackle (hybrid),x00753,hybrid,33875.0,GTGR BRBL,QUME EUCY,,Passeriformes,Troupials and Allies,Icteridae,,,,icteri1
+Quiscalus quiscula x mexicanus,Common x Great-tailed Grackle (hybrid),x00479,hybrid,33876.0,COGR GTGR,QUQU QUME,,Passeriformes,Troupials and Allies,Icteridae,,,,icteri1
+Quiscalus major x mexicanus,Boat-tailed x Great-tailed Grackle (hybrid),x00977,hybrid,33877.0,GTGR BTGR,QUMA QUME,,Passeriformes,Troupials and Allies,Icteridae,,,,icteri1
+Vermivora chrysoptera x cyanoptera,Golden-winged x Blue-winged Warbler (hybrid),x00669,hybrid,33958.0,BWWA GWWA,VECH VECY,GBWH,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Vermivora chrysoptera x cyanoptera (F1 hybrid),Brewster's Warbler (hybrid),brewar,hybrid,33959.0,BWWA GWWA,VECH VECY,BRWA,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Vermivora chrysoptera x cyanoptera (F2 backcross),Lawrence's Warbler (hybrid),lawwar,hybrid,33960.0,BWWA GWWA,VECH VECY,LAWA,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Leiothlypis peregrina x ruficapilla,Tennessee x Nashville Warbler (hybrid),x01013,hybrid,33984.0,TEWA NAWA,LEPE LERU,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Leiothlypis celata x ruficapilla,Orange-crowned x Nashville Warbler (hybrid),x00819,hybrid,33985.0,NAWA OCWA,LECE LERU,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Leiothlypis crissalis x virginiae,Colima x Virginia's Warbler (hybrid),x00638,hybrid,33987.0,COLW COWA VIWA,LEVI LECR,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Oporornis agilis x Geothlypis philadelphia,Connecticut x Mourning Warbler (hybrid),x00746,hybrid,34007.0,MOWA COWA CONW,OPAG GEPH,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Geothlypis tolmiei x philadelphia,MacGillivray's x Mourning Warbler (hybrid),x00699,hybrid,34008.0,MOWA MGWA MAWA,GETO GEPH,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Geothlypis philadelphia x formosa,Mourning x Kentucky Warbler (hybrid),x00747,hybrid,34012.0,MOWA KEWA,GEFO GEPH,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Geothlypis poliocephala x trichas,Gray-crowned x Common Yellowthroat (hybrid),x00748,hybrid,34045.0,GCYE COYE,GEPO GETR,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Geothlypis tolmiei x trichas,MacGillivray's Warbler x Common Yellowthroat (hybrid),x00700,hybrid,34046.0,MGWA MAWA COYE,GETO GETR,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Geothlypis philadelphia x trichas,Mourning Warbler x Common Yellowthroat (hybrid),x00749,hybrid,34047.0,MOWA COYE,GETR GEPH,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Geothlypis formosa x trichas,Kentucky Warbler x Common Yellowthroat (hybrid),x01014,hybrid,34048.0,KEWA COYE,GETR GEFO,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Vermivora cyanoptera x Setophaga cerulea,Blue-winged x Cerulean Warbler (hybrid),x00480,hybrid,34062.0,CERW BWWA CEWA,VECY SECE,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Setophaga ruticilla x americana,American Redstart x Northern Parula (hybrid),x00750,hybrid,34064.0,AMRE NOPA,SEAM SERU,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Setophaga cerulea x americana,Cerulean Warbler x Northern Parula (hybrid),x00711,hybrid,34065.0,CERW NOPA CEWA,SEAM SECE,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Setophaga americana x pitiayumi,Northern x Tropical Parula (hybrid),x00203,hybrid,34077.0,TRPA NOPA,SEAM SEPI,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Leiothlypis ruficapilla x Setophaga magnolia,Nashville x Magnolia Warbler (hybrid),x00820,hybrid,34080.0,MAWA NAWA,SEMA LERU,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Setophaga ruticilla x magnolia,American Redstart x Magnolia Warbler (hybrid),x01072,hybrid,34081.0,AMRE MAWA,SEMA SERU,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Setophaga tigrina x magnolia,Cape May x Magnolia Warbler (hybrid),x01073,hybrid,34082.0,MAWA CMWA,SEMA SETI,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Mniotilta varia x Setophaga fusca,Black-and-white x Blackburnian Warbler (hybrid),x01250,hybrid,34085.0,BLBW BAWW BLWA,MNVA SEFU,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Setophaga castanea x fusca,Bay-breasted x Blackburnian Warbler (hybrid),x00821,hybrid,34086.0,BLBW BBWA BLWA,SECA SEFU,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Geothlypis trichas x Setophaga aestiva,Common Yellowthroat x Northern Yellow Warbler (hybrid),x00701,hybrid,34094.0,NYWA AYWA COYE YEWA,SEAE GETR,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Setophaga citrina x aestiva,Hooded x Northern Yellow Warbler (hybrid),x00822,hybrid,34095.0,HOWA NYWA AYWA YEWA,SEAE SECI,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Setophaga ruticilla x aestiva,American Redstart x Northern Yellow Warbler (hybrid),x00481,hybrid,34096.0,AMRE NYWA AYWA YEWA,SEAE SERU,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Vermivora chrysoptera x cyanoptera (F1 hybrid) x Setophaga pensylvanica,Brewster's x Chestnut-sided Warbler (hybrid),x01162,hybrid,34134.0,BWWA GWWA,VECH VECY,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Mniotilta varia x Setophaga pensylvanica,Black-and-white x Chestnut-sided Warbler (hybrid),x01216,hybrid,34135.0,BAWW CSWA,MNVA SEPE,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Setophaga ruticilla x pensylvanica,American Redstart x Chestnut-sided Warbler (hybrid),x01163,hybrid,34136.0,CSWA AMRE,SEPE SERU,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Setophaga magnolia x pensylvanica,Magnolia x Chestnut-sided Warbler (hybrid),x00772,hybrid,34137.0,MAWA CSWA,SEMA SEPE,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Setophaga castanea x striata,Bay-breasted x Blackpoll Warbler (hybrid),x00894,hybrid,34139.0,BBWA BLPW BLWA,SEST SECA,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Setophaga cerulea x caerulescens,Cerulean x Black-throated Blue Warbler (hybrid),x00482,hybrid,34144.0,CERW BTBW CEWA,SECE SECA,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Setophaga magnolia x caerulescens,Magnolia x Black-throated Blue Warbler (hybrid),x00978,hybrid,34145.0,BTBW MAWA,SEMA SECA,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Setophaga aestiva x caerulescens,Northern Yellow x Black-throated Blue Warbler (hybrid),x01015,hybrid,34146.0,BTBW NYWA AYWA YEWA,SEAE SECA,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Setophaga pensylvanica x caerulescens,Chestnut-sided x Black-throated Blue Warbler (hybrid),x00483,hybrid,34147.0,BTBW CSWA,SEPE SECA,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Setophaga magnolia x palmarum,Magnolia x Palm Warbler (hybrid),x00979,hybrid,34151.0,MAWA PAWA,SEMA SEPA,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Setophaga tigrina x coronata,Cape May x Yellow-rumped Warbler (hybrid),x00980,hybrid,34165.0,YRWA MYWA CMWA,SECO SETI,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Setophaga americana x coronata,Northern Parula x Yellow-rumped Warbler (hybrid),x01251,hybrid,34166.0,MYWA YRWA NOPA,SECO SEAM,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Setophaga magnolia x coronata,Magnolia x Yellow-rumped Warbler (hybrid),x00773,hybrid,34167.0,MAWA YRWA MYWA,SEMA SECO,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Setophaga pensylvanica x coronata,Chestnut-sided x Yellow-rumped Warbler (hybrid),x01252,hybrid,34168.0,CSWA MYWA YRWA,SECO SEPE,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Setophaga caerulescens x coronata,Black-throated Blue x Yellow-rumped Warbler (hybrid),x01202,hybrid,34169.0,BTBW MYWA YRWA,SECO SECA,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Setophaga palmarum x coronata,Palm x Yellow-rumped Warbler (hybrid),x00461,hybrid,34170.0,YRWA PAWA MYWA,SECO SEPA,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Setophaga americana x dominica,Northern Parula x Yellow-throated Warbler (hybrid),sutwar,hybrid,34176.0,YTWA NOPA,SEAM SEDO,SUWA,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Setophaga pinus x dominica,Pine x Yellow-throated Warbler (hybrid),x01128,hybrid,34177.0,YTWA PIWA,SEPI SEDO,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Setophaga coronata x dominica,Yellow-rumped x Yellow-throated Warbler (hybrid),x00937,hybrid,34178.0,YTWA YRWA MYWA,SECO SEDO,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Setophaga cerulea x dominica,Cerulean x Yellow-throated Warbler (hybrid),x01175,hybrid,34179.0,YTWA CERW CEWA,SECE SEDO,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Vermivora cyanoptera x Setophaga discolor,Blue-winged x Prairie Warbler (hybrid),x00719,hybrid,34188.0,BWWA PRWA PRAW,VECY SEDI,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Setophaga aestiva x discolor,Northern Yellow x Prairie Warbler (hybrid),x00866,hybrid,34189.0,NYWA PRWA AYWA PRAW YEWA,SEAE SEDI,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Setophaga ruticilla x discolor,American Redstart x Prairie Warbler (hybrid),x01203,hybrid,34190.0,PRAW AMRE PRWA,SEDI SERU,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Setophaga coronata x graciae,Yellow-rumped x Grace's Warbler (hybrid),x00484,hybrid,34199.0,GRWA YRWA MYWA,SECO SEGR,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Setophaga americana x nigrescens,Northern Parula x Black-throated Gray Warbler (hybrid),x01081,hybrid,34203.0,BTGW NOPA BTYW,SEAM SENI,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Setophaga coronata x nigrescens,Yellow-rumped x Black-throated Gray Warbler (hybrid),x00895,hybrid,34204.0,YRWA MYWA BTGW BTYW,SECO SENI,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Setophaga graciae x nigrescens,Grace's x Black-throated Gray Warbler (hybrid),x00639,hybrid,34205.0,GRWA BTGW BTYW,SENI SEGR,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Setophaga coronata x townsendi,Yellow-rumped x Townsend's Warbler (hybrid),x00624,hybrid,34207.0,YRWA MYWA TOWA,SECO SETO,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Setophaga nigrescens x townsendi,Black-throated Gray x Townsend's Warbler (hybrid),x00867,hybrid,34208.0,BTGW TOWA BTYW,SENI SETO,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Setophaga coronata x occidentalis,Yellow-rumped x Hermit Warbler (hybrid),x01074,hybrid,34211.0,YRWA MYWA HEWA,SEOC SECO,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Setophaga nigrescens x occidentalis,Black-throated Gray x Hermit Warbler (hybrid),x00485,hybrid,34212.0,BTGW HEWA BTYW,SEOC SENI,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Setophaga townsendi x occidentalis,Townsend's x Hermit Warbler (hybrid),x00059,hybrid,34213.0,TOWA HEWA,SEOC SETO,THWH,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Setophaga coronata x virens,Yellow-rumped x Black-throated Green Warbler (hybrid),x00486,hybrid,34221.0,YRWA MYWA BTNW BTGW,SECO SEVI,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Setophaga townsendi x virens,Townsend's x Black-throated Green Warbler (hybrid),x00664,hybrid,34222.0,BTNW BTGW TOWA,SETO SEVI,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Geothlypis trichas x Basileuterus rufifrons,Common Yellowthroat x Rufous-capped Warbler (hybrid),x00751,hybrid,34232.0,RCWA COYE,BARU GETR,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Basileuterus culicivorus x Myiothlypis flaveola,Golden-crowned x Flavescent Warbler (hybrid),x00487,hybrid,34302.0,GCRW FLWA GCWS GCWA,MYFL BACU,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Setophaga caerulescens x Cardellina canadensis,Black-throated Blue x Canada Warbler (hybrid),x01253,hybrid,34345.0,BTBW CAWA,SECA CACA,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Myioborus pictus x miniatus,Painted x Slate-throated Redstart (hybrid),x00896,hybrid,34373.0,PARE STRE STWH PAWH,MYMI MYPI,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Myioborus ornatus x melanocephalus,Golden-fronted x Spectacled Redstart (hybrid),x00868,hybrid,34393.0,SPWH GFWH GFRE SPRE YFFW,MYME MYOR,,Passeriformes,New World Warblers,Parulidae,,,,paruli1
+Piranga rubra x olivacea,Summer x Scarlet Tanager (hybrid),x01079,hybrid,34437.0,SUTA SCTA,PIRU PIOL,,Passeriformes,Cardinals and Allies,Cardinalidae,,,,cardin1
+Piranga rubra x ludoviciana,Summer x Western Tanager (hybrid),x00824,hybrid,34440.0,SUTA WETA,PIRU PILU,,Passeriformes,Cardinals and Allies,Cardinalidae,,,,cardin1
+Piranga olivacea x ludoviciana,Scarlet x Western Tanager (hybrid),x00825,hybrid,34441.0,WETA SCTA,PIOL PILU,,Passeriformes,Cardinals and Allies,Cardinalidae,,,,cardin1
+Piranga flava x bidentata,Hepatic x Flame-colored Tanager (hybrid),x00826,hybrid,34447.0,FCTA HETA RETA HBTA,PIBI PIFL,,Passeriformes,Cardinals and Allies,Cardinalidae,,,,cardin1
+Piranga ludoviciana x bidentata,Western x Flame-colored Tanager (hybrid),x00444,hybrid,34448.0,FCTA WETA,PIBI PILU,,Passeriformes,Cardinals and Allies,Cardinalidae,,,,cardin1
+Cardinalis cardinalis x sinuatus,Northern Cardinal x Pyrrhuloxia (hybrid),x00774,hybrid,34539.0,PYRR NOCA,CASI CACA,,Passeriformes,Cardinals and Allies,Cardinalidae,,,,cardin1
+Piranga olivacea x Pheucticus ludovicianus,Scarlet Tanager x Rose-breasted Grosbeak (hybrid),x01002,hybrid,34558.0,RBGR SCTA,PHLU PIOL,,Passeriformes,Cardinals and Allies,Cardinalidae,,,,cardin1
+Pheucticus ludovicianus x melanocephalus,Rose-breasted x Black-headed Grosbeak (hybrid),x00448,hybrid,34562.0,RBGR BHGR,PHLU PHME,,Passeriformes,Cardinals and Allies,Cardinalidae,,,,cardin1
+Passerina caerulea x cyanea,Blue Grosbeak x Indigo Bunting (hybrid),x00872,hybrid,34608.0,INBU BLGR,PACY PACA,,Passeriformes,Cardinals and Allies,Cardinalidae,,,,cardin1
+Passerina amoena x cyanea,Lazuli x Indigo Bunting (hybrid),ixlbun,hybrid,34609.0,INBU LAZB LABU,PAAM PACY,ILBH,Passeriformes,Cardinals and Allies,Cardinalidae,,,,cardin1
+Passerina cyanea x versicolor,Indigo x Varied Bunting (hybrid),x01076,hybrid,34620.0,INBU VABU,PAVE PACY,,Passeriformes,Cardinals and Allies,Cardinalidae,,,,cardin1
+Passerina cyanea x ciris,Indigo x Painted Bunting (hybrid),x00918,hybrid,34624.0,PABU INBU,PACY PACI,,Passeriformes,Cardinals and Allies,Cardinalidae,,,,cardin1
+Passerina versicolor x ciris,Varied x Painted Bunting (hybrid),x00902,hybrid,34625.0,PABU VABU,PAVE PACI,,Passeriformes,Cardinals and Allies,Cardinalidae,,,,cardin1
+Paroaria coronata x gularis,Red-crested x Red-capped Cardinal (hybrid),x00488,hybrid,34636.0,RCCA,PACO PAGU,,Passeriformes,Tanagers and Allies,Thraupidae,,,,thraup2
+Paroaria gularis x baeri,Red-capped x Crimson-fronted Cardinal (hybrid),x00897,hybrid,34641.0,RCCA CFCA,PABA PAGU,,Passeriformes,Tanagers and Allies,Thraupidae,,,,thraup2
+Loriotus cristatus x luctuosus,Flame-crested x White-shouldered Tanager (hybrid),flctan3,hybrid,34768.0,WSTA FCTA,LOCR LOLU,,Passeriformes,Tanagers and Allies,Thraupidae,,,,thraup2
+Ramphocelus flammigerus x passerinii,Flame-rumped x Scarlet-rumped Tanager (hybrid),x00489,hybrid,34803.0,FRTA SRTA SCRT FRRT,RAPA RAFL,,Passeriformes,Tanagers and Allies,Thraupidae,,,,thraup2
+Ramphocelus passerinii x dimidiatus,Scarlet-rumped x Crimson-backed Tanager (hybrid),x00898,hybrid,34826.0,SCRT SRTA CBTA,RAPA RADI,,Passeriformes,Tanagers and Allies,Thraupidae,,,,thraup2
+Diglossa brunneiventris x carbonaria,Black-throated x Gray-bellied Flowerpiercer (hybrid),x00981,hybrid,35289.0,GBFL BTFL,DIBR DICA,,Passeriformes,Tanagers and Allies,Thraupidae,,,,thraup2
+Nesospiza acunhae x wilkinsi,Inaccessible Island x Wilkins's Finch (hybrid),x01254,hybrid,35405.0,WIFI IIFI,NEAC NEWI,,Passeriformes,Tanagers and Allies,Thraupidae,,,,thraup2
+Diuca diuca x Gubernatrix cristata,Diuca Finch x Yellow Cardinal (hybrid),x00899,hybrid,35643.0,DIFI YECA,GUCR DIDI,,Passeriformes,Tanagers and Allies,Thraupidae,,,,thraup2

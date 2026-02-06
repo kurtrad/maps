@@ -9,10 +9,16 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 # ---------------------------------------------------------
 
 # Your species list (the one you posted originally)
-species_df = pd.read_csv("exotics.csv")
+species_df = pd.read_csv("allspecies.csv")
+
+# Rename columns to lowercase for consistency in species_df
+species_df = species_df.rename(columns={
+    'COMMON_NAME': 'comName',
+    'SPECIES_CODE': 'speciesCode'
+})
 
 # Your trimmed taxonomy file
-taxonomy_df = pd.read_csv("allspecies_trimmed.csv")
+taxonomy_df = pd.read_csv("species_with_codes.csv")
 
 # Rename columns to lowercase for consistency
 taxonomy_df = taxonomy_df.rename(columns={

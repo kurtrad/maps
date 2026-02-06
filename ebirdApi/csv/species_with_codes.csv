@@ -1,5 +1,7 @@
+comName,speciesCode
 comName,speciesCode,exotic
-Common Ostrich,ostric,y
+Common Ostrich,ostric2,y
+Emu,emu1,y
 Southern Cassowary,cassow,y
 Black Swan,blkswa,y
 Ruddy Shelduck,rudshe,y
@@ -245,3 +247,795 @@ Red-whiskered Bulbul,rewbul,y
 Red-vented Bulbul,revbul,y
 Gray-crowned Goldfinch,eurgol2,y
 Gray Nightjar,grynig1,y
+Southern Brown x North Island Brown Kiwi (hybrid),x01217
+Okarito Brown x Little Spotted Kiwi (hybrid),x01059
+Spotted x White-faced Whistling-Duck (hybrid),x00721
+Plumed x White-faced Whistling-Duck (hybrid),x01218
+White-faced x Black-bellied Whistling-Duck (hybrid),x01141
+Black-bellied x West Indian Whistling-Duck (hybrid),x00775
+White-faced x Fulvous Whistling-Duck (hybrid),x00938
+Black-bellied x Fulvous Whistling-Duck (hybrid),x00875
+Plumed x Wandering Whistling-Duck (hybrid),x00990
+Wandering x Lesser Whistling-Duck (hybrid),x00360
+Bar-headed x Snow Goose (hybrid),x00991
+Emperor x Snow Goose (hybrid),x01176
+Snow x Ross's Goose (hybrid),sxrgoo1
+Bar-headed x Graylag Goose (hybrid),x00992
+Emperor x Graylag Goose (hybrid),x01119
+Bar-headed x Swan Goose (hybrid),x01143
+Snow x Swan Goose (hybrid),x01144
+Bar-headed x Snow x Swan Goose (hybrid),x01142
+Graylag x Swan Goose (hybrid),x00776
+Bar-headed x Greater White-fronted Goose (hybrid),x00755
+Emperor x Greater White-fronted Goose (hybrid),x00361
+Snow x Greater White-fronted Goose (hybrid),x00627
+Ross's x Greater White-fronted Goose (hybrid),x00362
+Graylag x Greater White-fronted Goose (hybrid),x01145
+Greater White-fronted Goose x Tundra Bean-Goose (hybrid),x01089
+Snow Goose x Brant (hybrid),x00685
+Bar-headed x Barnacle Goose (hybrid),x00363
+Emperor x Barnacle Goose (hybrid),x00993
+Snow x Barnacle Goose (hybrid),x00994
+Ross's x Barnacle Goose (hybrid),x00995
+Graylag x Barnacle Goose (hybrid),x00649
+Greater White-fronted x Barnacle Goose (hybrid),x00757
+Lesser White-fronted x Barnacle Goose (hybrid),x00364
+Pink-footed x Barnacle Goose (hybrid),x00756
+Emperor x Cackling Goose (hybrid),x00831
+Snow x Cackling Goose (hybrid),x00692
+Ross's x Cackling Goose (hybrid),x00694
+Brant x Cackling Goose (hybrid),x00722
+Greater White-fronted x Cackling Goose (hybrid),x00414
+Barnacle x Cackling Goose (hybrid),x00416
+Bar-headed x Canada Goose (hybrid),x00908
+Swan x Canada Goose (hybrid),swagoo3
+Pink-footed x Canada Goose (hybrid),x00650
+Greater White-fronted x Canada Goose (hybrid),x00415
+Greater White-fronted x Cackling/Canada Goose (hybrid),x01088
+Graylag x Canada Goose (hybrid),x00758
+Domestic goose sp. x Canada Goose (hybrid),x00759
+Snow x Canada Goose (hybrid),x00197
+Ross's x Canada Goose (hybrid),x00693
+Barnacle x Canada Goose (hybrid),x00417
+Snow/Ross's x Cackling/Canada Goose (hybrid),y00765
+Barnacle x Hawaiian Goose (hybrid),x01139
+Greater White-fronted x Red-breasted Goose (hybrid),x00939
+Brant x Red-breasted Goose (hybrid),x00996
+Barnacle x Red-breasted Goose (hybrid),x00365
+Graylag Goose x Mute Swan (hybrid),x00366
+Mute x Black Swan (hybrid),x01037
+Mute x Trumpeter Swan (hybrid),x00832
+Trumpeter x Tundra Swan (hybrid),x00418
+Mute x Whooper Swan (hybrid),x00997
+Trumpeter x Whooper Swan (hybrid),x00419
+Ashy-headed x Ruddy-headed Goose (hybrid),x01120
+Knob-billed Duck x Egyptian Goose (hybrid),x01177
+Egyptian Goose x Ruddy Shelduck (hybrid),x00367
+Ruddy x Common Shelduck (hybrid),x00876
+Egyptian Goose x Muscovy Duck (hybrid),x01045
+Common Shelduck x Wood Duck (hybrid),x00940
+Wood x Mandarin Duck (hybrid),x00833
+Wood Duck x Brazilian Teal (hybrid),x01178
+Baikal x Blue-winged Teal (hybrid),x01179
+Blue-winged x Cinnamon Teal (hybrid),bwxtea1
+Garganey x Northern Shoveler (hybrid),x00836
+Blue-winged Teal x Northern Shoveler (hybrid),x00629
+Cinnamon Teal x Northern Shoveler (hybrid),x00630
+Northern Shoveler x Gadwall (hybrid),x00457
+Baikal Teal x Falcated Duck (hybrid),x00368
+Gadwall x Falcated Duck (hybrid),x00369
+Baikal Teal x Eurasian Wigeon (hybrid),x01219
+Northern Shoveler x Eurasian Wigeon (hybrid),x01140
+Gadwall x Eurasian Wigeon (hybrid),x00723
+Falcated Duck x Eurasian Wigeon (hybrid),x01220
+Wood Duck x American Wigeon (hybrid),x00877
+Blue-winged Teal x American Wigeon (hybrid),x00370
+Northern Shoveler x American Wigeon (hybrid),x00777
+Gadwall x American Wigeon (hybrid),x00724
+Eurasian x American Wigeon (hybrid),x00421
+Eurasian x Chiloe Wigeon (hybrid),x00998
+Egyptian Goose x Mallard (hybrid),x01147
+Ruddy Shelduck x Mallard (hybrid),x01148
+Muscovy Duck x Mallard (hybrid),mdxmal1
+Wood Duck x Mallard (hybrid),x00205
+Northern Shoveler x Mallard (hybrid),x00612
+Gadwall x Mallard (hybrid),x00420
+Falcated Duck x Mallard (hybrid),x01221
+Eurasian Wigeon x Mallard (hybrid),x00647
+American Wigeon x Mallard (hybrid),x00611
+African Black Duck x Mallard (hybrid),x01149
+Yellow-billed Duck x Mallard (hybrid),x00760
+Pacific Black Duck x Mallard (hybrid),x00458
+Hawaiian Duck x Mallard (hybrid),x00423
+Indian Spot-billed Duck x Mallard (hybrid),x00834
+Eastern Spot-billed Duck x Mallard (hybrid),x00835
+Mallard x Mexican Duck (hybrid),mallar4
+American Wigeon x American Black Duck (hybrid),x00941
+Mallard x American Black Duck (hybrid),x00004
+Mallard x Mottled Duck (hybrid),x00422
+Mallard x Mexican/Mottled Duck (hybrid),y01098
+Mexican x Mottled Duck (hybrid),x00922
+Mallard x White-cheeked Pintail (hybrid),x00778
+Yellow-billed x Red-billed Duck (hybrid),x01222
+Cape Teal x Red-billed Duck (hybrid),x01223
+Baikal Teal x Northern Pintail (hybrid),x00837
+Northern Shoveler x Northern Pintail (hybrid),x01180
+Gadwall x Northern Pintail (hybrid),x00610
+Eurasian Wigeon x Northern Pintail (hybrid),x00761
+American Wigeon x Northern Pintail (hybrid),x00196
+Pacific Black Duck x Northern Pintail (hybrid),x01087
+Mallard x Northern Pintail (hybrid),x00628
+American Black Duck x Northern Pintail (hybrid),x00674
+White-cheeked x Yellow-billed Pintail (hybrid),x01150
+Baikal x Green-winged Teal (hybrid),x00999
+Garganey x Green-winged Teal (hybrid),x00371
+Blue-winged x Green-winged Teal (hybrid),x00673
+Cinnamon x Green-winged Teal (hybrid),x00763
+Gadwall x Green-winged Teal (hybrid),x00762
+Eurasian Wigeon x Green-winged Teal (hybrid),x00372
+American Wigeon x Green-winged Teal (hybrid),x00646
+Mallard x Green-winged Teal (hybrid),x00670
+Northern Pintail x Green-winged Teal (hybrid),x00725
+Pacific Black Duck x Gray Teal (hybrid),x00926
+Pacific Black Duck x Chestnut Teal (hybrid),x00925
+Gray x Chestnut Teal (hybrid),x00913
+Mallard x Brown Teal (hybrid),x00878
+Mallard x Red-crested Pochard (hybrid),x00648
+Mallard x Redhead (hybrid),x00879
+Canvasback x Redhead (hybrid),x00684
+Mallard x Common Pochard (hybrid),x01000
+Red-crested x Common Pochard (hybrid),x00373
+Mallard x Ring-necked Duck (hybrid),x01001
+Canvasback x Ring-necked Duck (hybrid),x00880
+Redhead x Ring-necked Duck (hybrid),x00679
+Red-crested Pochard x Ferruginous Duck (hybrid),x00374
+Common Pochard x Ferruginous Duck (hybrid),x00764
+Common x Baer's Pochard (hybrid),x01093
+Ferruginous Duck x Baer's Pochard (hybrid),x00838
+Gray Teal x Hardhead (hybrid),x00912
+Mallard x Tufted Duck (hybrid),x00375
+Red-crested Pochard x Tufted Duck (hybrid),x00376
+Common Pochard x Tufted Duck (hybrid),x00683
+Ring-necked x Tufted Duck (hybrid),x00652
+Ferruginous x Tufted Duck (hybrid),x00839
+Redhead x Greater Scaup (hybrid),x00680
+Ring-necked Duck x Greater Scaup (hybrid),x00779
+Tufted Duck x Greater Scaup (hybrid),x00654
+Redhead x Lesser Scaup (hybrid),x00678
+Ring-necked Duck x Lesser Scaup (hybrid),x00613
+Tufted Duck x Lesser Scaup (hybrid),x00653
+Canvasback x scaup sp. (hybrid),x00377
+Redhead x scaup sp. (hybrid),x00681
+Ring-necked Duck x scaup sp. (hybrid),x00682
+Tufted Duck x scaup sp. (hybrid),tdxsca1
+Spectacled x King Eider (hybrid),x00942
+Common Shelduck x Common Eider (hybrid),x01151
+Mallard x Common Eider (hybrid),x00881
+King x Common Eider (hybrid),x00665
+Surf x White-winged Scoter (hybrid),x00882
+White-winged x Stejneger's Scoter (hybrid),x01170
+Bufflehead x Common Goldeneye (hybrid),x00655
+Bufflehead x goldeneye sp. (hybrid),x00909
+Bufflehead x Barrow's Goldeneye (hybrid),x01152
+Common x Barrow's Goldeneye (hybrid),cxbgol1
+Common Goldeneye x Smew (hybrid),x00378
+Wood Duck x Hooded Merganser (hybrid),x00202
+Bufflehead x Hooded Merganser (hybrid),x00424
+Common Goldeneye x Hooded Merganser (hybrid),x00425
+Barrow's Goldeneye x Hooded Merganser (hybrid),x00426
+goldeneye sp. x Hooded Merganser (hybrid),x00631
+Smew x Hooded Merganser (hybrid),x00379
+Common Eider x Common Merganser (hybrid),x00840
+Hooded x Common Merganser (hybrid),x00726
+Ring-necked Duck x Red-breasted Merganser (hybrid),x00614
+Common x Red-breasted Merganser (hybrid),x00780
+Ruddy x White-headed Duck (hybrid),x00705
+White-throated x Red-throated Piping-Guan (hybrid),x01078
+West Mexican x Rufous-bellied Chachalaca (hybrid),x01121
+Northern Bobwhite x Scaled Quail (hybrid),x00688
+Northern Bobwhite x California Quail (hybrid),x01011
+Scaled x California Quail (hybrid),x00687
+Scaled x Gambel's Quail (hybrid),x00689
+California x Gambel's Quail (hybrid),y00315
+Dusky x Sooty Grouse (hybrid),x01224
+Greater Sage-Grouse x Sharp-tailed Grouse (hybrid),x00727
+Dusky x Sharp-tailed Grouse (hybrid),x00781
+Sharp-tailed Grouse x Greater Prairie-Chicken (hybrid),x00728
+Greater x Lesser Prairie-Chicken (hybrid),x00668
+Western x Black-billed Capercaillie (hybrid),x01169
+Western Capercaillie x Black Grouse (hybrid),x00841
+Golden x Lady Amherst's Pheasant (hybrid),x01017
+Ring-necked x Green Pheasant (hybrid),x01018
+Tibetan x White Eared-Pheasant (hybrid),x00943
+Edwards's x Silver Pheasant (hybrid),impphe1
+Kalij x Silver Pheasant (hybrid),x01181
+Indian x Green Peafowl (hybrid),x00380
+Red-legged x Rock Partridge (hybrid),x00640
+Chukar x Rock Partridge (hybrid),x00381
+European Turtle-Dove x Eurasian Collared-Dove (hybrid),x00382
+Oriental Turtle-Dove x Eurasian Collared-Dove (hybrid),x01084
+Eurasian x African Collared-Dove (hybrid),x00799
+Asian x Pacific Emerald Dove (hybrid),x00849
+Inca x Common Ground Dove (hybrid),x01225
+Common x Ruddy Ground Dove (hybrid),x01164
+Ruddy Ground x Scaled Dove (hybrid),x01153
+Eurasian Collared-Dove x Mourning Dove (hybrid),x00767
+White-winged x Mourning Dove (hybrid),x01086
+White-cheeked x Prince Ruspoli's Turaco (hybrid),x00800
+White-browed x Burchell's Coucal (hybrid),x01122
+Mexican x Common Squirrel-Cuckoo (hybrid),x01173
+Little x White-rumped Swift (hybrid),x01060
+Amethyst-throated x Purple-throated Sunangel (hybrid),x01046
+Long-tailed Sylph x Tyrian Metaltail (hybrid),x00944
+Shining x White-tufted Sunbeam (hybrid),x00672
+Golden-bellied x Blue-throated Starfrontlet (hybrid),x01047
+Buff-tailed x Velvet-purple Coronet (hybrid),x00383
+Buff-tailed Coronet x Empress Brilliant (hybrid),x01032
+Purple-throated x White-throated Mountain-gem (hybrid),x00945
+Peruvian Sheartail x Chilean Woodstar (hybrid),x00736
+Rivoli's x Black-chinned Hummingbird (hybrid),x01226
+Lucifer x Black-chinned Hummingbird (hybrid),x00946
+Ruby-throated x Black-chinned Hummingbird (hybrid),x00850
+Rivoli's x Anna's Hummingbird (hybrid),x01227
+Lucifer x Anna's Hummingbird (hybrid),x00690
+Black-chinned x Anna's Hummingbird (hybrid),x00651
+Lucifer x Costa's Hummingbird (hybrid),x00737
+Black-chinned x Costa's Hummingbird (hybrid),x00384
+Anna's x Costa's Hummingbird (hybrid),x00618
+Black-chinned x Calliope Hummingbird (hybrid),x00768
+Anna's x Calliope Hummingbird (hybrid),x00619
+Ruby-throated x Rufous Hummingbird (hybrid),x01048
+Black-chinned x Rufous Hummingbird (hybrid),x00738
+Anna's x Rufous Hummingbird (hybrid),x00626
+Calliope x Rufous Hummingbird (hybrid),x00852
+Black-chinned x Allen's Hummingbird (hybrid),x01154
+Anna's x Allen's Hummingbird (hybrid),x00691
+Costa's x Allen's Hummingbird (hybrid),x01155
+Rufous x Allen's Hummingbird (hybrid),x00385
+Lucifer x Broad-tailed Hummingbird (hybrid),x01095
+Ruby-throated x Broad-tailed Hummingbird (hybrid),x01049
+Black-chinned x Broad-tailed Hummingbird (hybrid),x01091
+Anna's x Broad-tailed Hummingbird (hybrid),x01096
+Calliope x Broad-tailed Hummingbird (hybrid),x00851
+Rufous x Broad-tailed Hummingbird (hybrid),x00386
+Anna's Hummingbird x Selasphorus sp. (hybrid),x00739
+Black-chinned x Broad-billed Hummingbird (hybrid),x00676
+Anna's x Broad-billed Hummingbird (hybrid),x00387
+Costa's x Broad-billed Hummingbird (hybrid),x01097
+Broad-billed x Turquoise-crowned Hummingbird (hybrid),x00388
+Rivoli's x White-eared Hummingbird (hybrid),x01101
+Broad-tailed x White-eared Hummingbird (hybrid),x01228
+Broad-billed x White-eared Hummingbird (hybrid),x01129
+Red-billed x Black-billed Streamertail (hybrid),stream4
+Broad-billed x Violet-crowned Hummingbird (hybrid),x00633
+Broad-billed x Berylline Hummingbird (hybrid),x01172
+Rivoli's x Berylline Hummingbird (hybrid),mxbhum1
+Cinnamon x Rufous-tailed Hummingbird (hybrid),x00947
+Azure-crowned Hummingbird x Honduran Emerald (hybrid),x00916
+Rufous-tailed Hummingbird x Honduran Emerald (hybrid),x01033
+Bogota Sunangel (hybrid),bogsun2
+King x Clapper Rail (hybrid),x00948
+Eurasian Moorhen x Eurasian Coot (hybrid),x00389
+Eurasian x Red-knobbed Coot (hybrid),x00911
+Common Gallinule x American Coot (hybrid),x00390
+Red-gartered x Slate-colored Coot (hybrid),x00845
+Black-backed x Gray-headed Swamphen (hybrid),x00844
+African x Gray-headed Swamphen (hybrid),x01061
+Brolga x Sarus Crane (hybrid),x00949
+Sandhill x Whooping Crane (hybrid),x00790
+Sandhill x Common Crane (hybrid),x00657
+Common x Hooded Crane (hybrid),x00884
+Black-winged x Pied Stilt (hybrid),x00830
+Pied x Black Stilt (hybrid),x00459
+Black-winged x Black-necked Stilt (hybrid),x00846
+Black-necked Stilt x American Avocet (hybrid),x00732
+South Island x Variable Oystercatcher (hybrid),x00928
+American x Black Oystercatcher (hybrid),x00006
+Blacksmith x White-crowned Lapwing (hybrid),x00885
+Northern x Wattled Jacana (hybrid),x00791
+Bar-tailed x Hudsonian Godwit (hybrid),x01025
+Black-tailed x Hudsonian Godwit (hybrid),x01026
+Great x Common Snipe (hybrid),x00792
+Great Knot x Surfbird (hybrid),x00733
+Red Knot x Surfbird (hybrid),x00675
+Dunlin x Purple Sandpiper (hybrid),x00433
+Dunlin x Rock Sandpiper (hybrid),x01213
+Buff-breasted x Baird's Sandpiper (hybrid),x01123
+Ruddy Turnstone x White-rumped Sandpiper (hybrid),x01062
+Red Knot x White-rumped Sandpiper (hybrid),x01229
+Buff-breasted x White-rumped Sandpiper (hybrid),x00431
+Dunlin x White-rumped Sandpiper (hybrid),x00430
+Curlew x Pectoral Sandpiper (hybrid),x00432
+White-rumped x Pectoral Sandpiper (hybrid),x01094
+White-rumped x Semipalmated Sandpiper (hybrid),x01042
+Thick-billed x Common Murre (hybrid),x00793
+Slender-billed x Black-headed Gull (hybrid),x00391
+Slender-billed x Brown-headed Gull (hybrid),x00734
+Gray-hooded x Hartlaub's Gull (hybrid),x00886
+Gray-hooded x Laughing Gull (hybrid),x00392
+Bonaparte's x Franklin's Gull (hybrid),x00794
+Black-headed x Mediterranean Gull (hybrid),x00695
+Black-headed x Common Gull (hybrid),x00393
+Mediterranean x Common Gull (hybrid),x00847
+Black-headed x Ring-billed Gull (hybrid),x00641
+Laughing x Ring-billed Gull (hybrid),x00616
+Franklin's x Ring-billed Gull (hybrid),x00795
+Common x Ring-billed Gull (hybrid),x00394
+Short-billed x Ring-billed Gull (hybrid),x01230
+Ring-billed x American Herring Gull (hybrid),x00796
+Caspian x European Herring Gull (hybrid),x00915
+Kelp x American Herring Gull (hybrid),kxhgul1
+Caspian x Yellow-legged Gull (hybrid),x00395
+European Herring x Yellow-legged Gull (hybrid),x01182
+American Herring x Great Black-backed Gull (hybrid),x00047
+European Herring x Great Black-backed Gull (hybrid),x01130
+Yellow-legged x Great Black-backed Gull (hybrid),x00397
+American Herring x Glaucous Gull (hybrid),x01131
+Vega x Glaucous Gull (hybrid),x01132
+European Herring x Glaucous Gull (hybrid),x01133
+American Herring/Vega/European Herring x Glaucous Gull (hybrid),nelgul
+Great Black-backed x Glaucous Gull (hybrid),x00632
+Common x Lesser Black-backed Gull (hybrid),x01231
+Ring-billed x Lesser Black-backed Gull (hybrid),x01008
+American Herring x Lesser Black-backed Gull (hybrid),x01134
+European Herring x Lesser Black-backed Gull (hybrid),x00057
+Yellow-legged x Lesser Black-backed Gull (hybrid),x00396
+Ring-billed x California Gull (hybrid),x01183
+American Herring x California Gull (hybrid),x00797
+Western x Glaucous-winged Gull (hybrid),x00051
+American Herring x Glaucous-winged Gull (hybrid),x00050
+Glaucous x Glaucous-winged Gull (hybrid),x00048
+Vega x Slaty-backed Gull (hybrid),x00434
+Glaucous-winged x Slaty-backed Gull (hybrid),x00436
+Glaucous x Slaty-backed Gull (hybrid),x00437
+American Herring x Iceland Gull (hybrid),x00617
+Lesser Black-backed x Iceland Gull (hybrid),x01232
+Blue-billed x Little White-Tern (hybrid),x01184
+Little x Australian Fairy Tern (hybrid),x00798
+Forster's x Arctic Tern (hybrid),x01165
+Common x Arctic Tern (hybrid),x00910
+Common x Roseate Tern (hybrid),x00735
+Sandwich x Elegant Tern (hybrid),x00438
+Sandwich x Lesser Crested Tern (hybrid),x01233
+Lesser x Great Crested Tern (hybrid),x01040
+Great x Chinese Crested Tern (hybrid),x00848
+Chilean x American Flamingo (hybrid),x01038
+Chilean x Greater Flamingo (hybrid),x01039
+American x Greater Flamingo (hybrid),x01185
+Western x Clark's Grebe (hybrid),x00427
+Common x Yellow-billed Loon (hybrid),x01146
+Humboldt x Magellanic Penguin (hybrid),x01082
+Macaroni x Western Rockhopper Penguin (hybrid),x00921
+Laysan x Black-footed Albatross (hybrid),x00017
+Gray-headed x Black-browed Albatross (hybrid),x01063
+Black x White Stork (hybrid),x01098
+Milky x Painted Stork (hybrid),x00729
+Cape x Australasian Gannet (hybrid),x01234
+Brown x Masked Booby (hybrid),x00782
+Masked x Nazca Booby (hybrid),x01064
+Cocos x Blue-footed Booby (hybrid),x00950
+Blue-footed x Peruvian Booby (hybrid),x01065
+Double-crested x Neotropic Cormorant (hybrid),x00783
+Guanay x Imperial Cormorant (hybrid),x01186
+White x Scarlet Ibis (hybrid),x00428
+Glossy x White-faced Ibis (hybrid),gxwibi1
+Australian x Straw-necked Ibis (hybrid),x01157
+Eurasian x Black-faced Spoonbill (hybrid),x00883
+Yellow-crowned x Black-crowned Night Heron (hybrid),x00704
+Black-crowned x Nankeen Night Heron (hybrid),x01041
+Little Blue x Tricolored Heron (hybrid),x00696
+Tricolored Heron x Reddish Egret (hybrid),x00785
+Little Blue Heron x Snowy Egret (hybrid),x00615
+Tricolored Heron x Snowy Egret (hybrid),x00730
+Snowy x Little Egret (hybrid),x00697
+Little Egret x Western Reef-Heron (hybrid),x00656
+Striated x Lava Heron (hybrid),x01187
+Striated x Green Heron (hybrid),x00765
+Indian x Chinese Pond-Heron (hybrid),x01124
+Chinese x Javan Pond-Heron (hybrid),x01125
+Little Egret x Western Cattle-Egret (hybrid),x01188
+Little Egret x Gray Heron (hybrid),x01189
+Great Egret x Gray Heron (hybrid),x00398
+Great Egret x Great Blue Heron (hybrid),x00677
+Great Egret x Cocoi Heron (hybrid),x01051
+Great Blue x Cocoi Heron (hybrid),x00784
+Gray x Purple Heron (hybrid),x01050
+Great White x Dalmatian Pelican (hybrid),x00842
+European x Oriental Honey-buzzard (hybrid),x00786
+Lesser x Greater Spotted Eagle (hybrid),x00843
+Cooper's Hawk x American Goshawk (hybrid),x00988
+Hen x Pallid Harrier (hybrid),x00399
+Pallid x Montagu's Harrier (hybrid),x01099
+Bald Eagle x Steller's Sea-Eagle (hybrid),x00989
+Common Black x Red-shouldered Hawk (hybrid),x00787
+Broad-winged x Red-shouldered Hawk (hybrid),x00400
+Red-shouldered x Red-tailed Hawk (hybrid),x00686
+Swainson's x Rough-legged Hawk (hybrid),x00788
+Red-tailed x Rough-legged Hawk (hybrid),x00731
+Red-tailed x Ferruginous Hawk (hybrid),x00930
+Common x Long-legged Buzzard (hybrid),x00766
+Long-legged x Upland Buzzard (hybrid),x00789
+Western x Eastern Screech-Owl (hybrid),x00933
+Buffy x Brown Fish-Owl (hybrid),x00401
+Spotted x Barred Owl (hybrid),x00439
+Golden-headed x Crested Quetzal (hybrid),x01126
+Blue-crowned x Surucua Trogon (hybrid),x01156
+Southern x Damara Red-billed Hornbill (hybrid),x00667
+Blue-capped x Lesson's Motmot (hybrid),x00887
+Lesson's x Rufous Motmot (hybrid),x01211
+Amazonian x Rufous Motmot (hybrid),x00402
+Amazonian x Rufous-capped Motmot (hybrid),x00769
+Indian x Indochinese Roller (hybrid),indrol4
+Russet-throated x Two-banded Puffbird (hybrid),x01190
+Miombo x Pied Barbet (hybrid),x01009
+Blue-eared x Black-eared Barbet (hybrid),x01066
+Collared x Pale-mandibled Aracari (hybrid),x01191
+Arrowhead x White-barred Piculet (hybrid),x01192
+White-barred x Ochre-collared Piculet (hybrid),x00951
+White-barred x White-wedged Piculet (hybrid),x00952
+Yellow-bellied x Red-naped Sapsucker (hybrid),x00634
+Yellow-bellied x Red-breasted Sapsucker (hybrid),x00712
+Red-naped x Red-breasted Sapsucker (hybrid),rnxsap1
+Yellow-bellied/Red-naped x Red-breasted Sapsucker (hybrid),x01052
+Black-cheeked x Hoffmann's Woodpecker (hybrid),x01212
+Red-crowned x Hoffmann's Woodpecker (hybrid),x00440
+Hoffmann's x Golden-fronted Woodpecker (hybrid),x00853
+Golden-fronted x Red-bellied Woodpecker (hybrid),x00460
+Great Spotted x Syrian Woodpecker (hybrid),x00914
+Downy x Nuttall's Woodpecker (hybrid),x00662
+Downy x Ladder-backed Woodpecker (hybrid),x00801
+Nuttall's x Ladder-backed Woodpecker (hybrid),x00620
+Downy x Hairy Woodpecker (hybrid),x00803
+Nuttall's x Hairy Woodpecker (hybrid),x00663
+Ladder-backed x Hairy Woodpecker (hybrid),x00802
+Hairy x White-headed Woodpecker (hybrid),x01053
+Blood-colored x Little Woodpecker (hybrid),x01020
+Crimson-crested x Cream-backed Woodpecker (hybrid),x00854
+Pale-headed x Bamboo Woodpecker (hybrid),x00805
+Black-rumped x Red-backed Flameback (hybrid),bkrfla3
+Gray-headed x Eurasian Green Woodpecker (hybrid),x00855
+Eurasian x Iberian Green Woodpecker (hybrid),eugwoo1
+Lineated x Black-bodied Woodpecker (hybrid),x00804
+Northern x Gilded Flicker (hybrid),x00924
+Peregrine x Prairie Falcon (hybrid),x00698
+Galah x Little Corella (hybrid),x00953
+Little x Long-billed Corella (hybrid),x00806
+White x Salmon-crested Cockatoo (hybrid),x00404
+Tanimbar Corella x Yellow-crested Cockatoo (hybrid),x00403
+Little Corella x Sulphur-crested Cockatoo (hybrid),x00920
+Long-billed Corella x Sulphur-crested Cockatoo (hybrid),x01193
+Australian King-Parrot x Red-winged Parrot (hybrid),x00954
+Rose-ringed x Plum-headed Parakeet (hybrid),x01023
+Slaty-headed x Plum-headed Parakeet (hybrid),x00955
+Red-crowned x Yellow-crowned Parakeet (hybrid),x01054
+Red-crowned x Chatham Islands Parakeet (hybrid),x01100
+Green x Eastern Rosella (hybrid),x00807
+Crimson x Eastern Rosella (hybrid),x00808
+Eastern x Pale-headed Rosella (hybrid),x00707
+Crimson x Pale-headed Rosella (hybrid),x00956
+Musk x Rainbow Lorikeet (hybrid),x00809
+Scaly-breasted x Rainbow Lorikeet (hybrid),x00810
+lorikeet sp. (Musk/Rainbow/Scaly-breasted Lorikeet hybrid),x00856
+Rainbow x Red-collared Lorikeet (hybrid),x00957
+Fischer's x Yellow-collared Lovebird (hybrid),x00671
+Meyer's x Brown-headed Parrot (hybrid),x01135
+White-winged x Yellow-chevroned Parakeet (hybrid),wwxpar1
+Red-crowned x Lilac-crowned Amazon (hybrid),x00958
+Red-crowned x Red-lored Amazon (hybrid),x00857
+Yellow-naped x Yellow-headed Amazon (hybrid),x01021
+Red-crowned x Orange-winged Amazon (hybrid),x01168
+Blue-and-yellow x Scarlet Macaw (hybrid),x00888
+Great Green x Scarlet Macaw (hybrid),x00405
+Blue-and-yellow x Red-and-green Macaw (hybrid),x00406
+Green x Pacific Parakeet (hybrid),x01022
+Green x Crimson-fronted Parakeet (hybrid),x00959
+Rondonia x Spix's Warbling-Antbird (hybrid),x00407
+Bare-eyed x White-breasted Antbird (hybrid),x01102
+Harlequin x White-breasted Antbird (hybrid),x01103
+Common x Xingu Scale-backed Antbird (hybrid),x01058
+Stripe-crowned x Olive Spinetail (hybrid),x00740
+Helmeted x Blue-backed Manakin (hybrid),x01090
+Helmeted x Swallow-tailed Manakin (hybrid),x00960
+White-collared x Golden-collared Manakin (hybrid),x00811
+Golden-collared x White-bearded Manakin (hybrid),x01166
+Western x Eastern Wood-Pewee (hybrid),x00858
+Black x Eastern Phoebe (hybrid),x00621
+Black x Say's Phoebe (hybrid),x00635
+Tropical x Western Kingbird (hybrid),x01235
+Couch's x Western Kingbird (hybrid),x01035
+Western x Eastern Kingbird (hybrid),x00718
+Tropical x Gray Kingbird (hybrid),x00859
+Western x Gray Kingbird (hybrid),x01236
+Tropical Kingbird x Scissor-tailed Flycatcher (hybrid),x01036
+Couch's Kingbird x Scissor-tailed Flycatcher (hybrid),x00441
+Western Kingbird x Scissor-tailed Flycatcher (hybrid),x00442
+Eastern Kingbird x Scissor-tailed Flycatcher (hybrid),x01237
+Tropical Kingbird x Fork-tailed Flycatcher (hybrid),x00408
+Regent x Satin Bowerbird (hybrid),x00961
+Superb x White-winged Fairywren (hybrid),x00409
+Superb x Red-backed Fairywren (hybrid),x00410
+Yellow-throated x Black-eared Miner (hybrid),x00741
+Belford's x Yellow-browed Melidectes (hybrid),x00742
+New Holland x White-cheeked Honeyeater (hybrid),x00923
+Brown-rumped x Rosy Minivet (hybrid),rosmin3
+Black-capped x White-eyed Vireo (hybrid),x01067
+Yellow-throated x Blue-headed Vireo (hybrid),x00411
+Yellow-throated x Plumbeous Vireo (hybrid),x01238
+Blue-headed x Plumbeous Vireo (hybrid),x00412
+Philadelphia x Red-eyed Vireo (hybrid),x00889
+Eastern Warbling x Red-eyed Vireo (hybrid),x01239
+Western Warbling x Red-eyed Vireo (hybrid),x01240
+Eastern/Western Warbling x Red-eyed Vireo (hybrid),x00890
+Oriole x Black-tailed Whistler (hybrid),x01158
+Masked x White-browed Woodswallow (hybrid),x00962
+White-throated x Spot-breasted Fantail (hybrid),x00812
+Western Parotia x Vogelkop Lophorina (hybrid),x01194
+Carola's Parotia x Greater Lophorina (hybrid),x01195
+Stephanie's x Ribbon-tailed Astrapia (hybrid),x00413
+Lesser x Raggiana Bird-of-Paradise (hybrid),x00814
+Raggiana x Greater Bird-of-Paradise (hybrid),x00929
+Black-naped Monarch x Blyth's Paradise-Flycatcher (hybrid),x00463
+Black-headed x African Paradise-Flycatcher (hybrid),x00862
+Rufous-vented x African Paradise-Flycatcher (hybrid),x01159
+Black-faced x Black-winged Monarch (hybrid),x00963
+Frilled x Ochre-collared Monarch (hybrid),x00813
+Red-backed x Red-tailed Shrike (hybrid),x00860
+Tiger x Brown Shrike (hybrid),x00464
+Red-backed x Woodchat Shrike (hybrid),x00861
+Black-throated x White-throated Magpie-Jay (hybrid),x00443
+Green x Blue Jay (hybrid),bxgjay1
+Steller's x Blue Jay (hybrid),x00622
+Steller's Jay x California Scrub-Jay (hybrid),x00964
+Steller's Jay x Woodhouse's Scrub-Jay (hybrid),x00891
+House x Fish Crow (hybrid),x00465
+Carrion x Hooded Crow (hybrid),x00636
+Pied x Somali Crow (hybrid),x00466
+Carolina x Black-capped Chickadee (hybrid),x00195
+Black-capped x Mountain Chickadee (hybrid),x00623
+Mountain x Mexican Chickadee (hybrid),x01055
+Mountain x Chestnut-backed Chickadee (hybrid),x01012
+Black-capped x Boreal Chickadee (hybrid),x00708
+Mountain x Boreal Chickadee (hybrid),x00637
+Willow Tit x Gray-headed Chickadee (hybrid),x00743
+Eurasian Blue x Azure Tit (hybrid),x00965
+Carolina Chickadee x Tufted Titmouse (hybrid),x00709
+Black-capped Chickadee x Tufted Titmouse (hybrid),x00642
+Tufted x Black-crested Titmouse (hybrid),bcxtit1
+Eurasian x Black-headed Penduline-Tit (hybrid),x01080
+Karoo x Dune Lark (hybrid),x00863
+Miombo x Stierling's Wren-Warbler (hybrid),x00966
+Black-chested x Karoo Prinia (hybrid),x01241
+Tree x Violet-green Swallow (hybrid),x00716
+Cuban x Caribbean Martin (hybrid),y01264
+Violet-green x Northern Rough-winged Swallow (hybrid),x00715
+Tree x Barn Swallow (hybrid),x00666
+Bank x Barn Swallow (hybrid),x00710
+Barn Swallow x Western House-Martin (hybrid),x00659
+Barn x European Red-rumped Swallow (hybrid),x00658
+Barn x Cliff Swallow (hybrid),x00717
+Violet-green x Cliff Swallow (hybrid),x00661
+Barn x Cave Swallow (hybrid),x00660
+Cliff x Cave Swallow (hybrid),x00892
+Light-vented x Styan's Bulbul (hybrid),x00744
+Red-whiskered x Yellow-vented Bulbul (hybrid),x01196
+Red-whiskered x Red-vented Bulbul (hybrid),x01024
+Red-vented x Sooty-headed Bulbul (hybrid),x00967
+Red-vented x White-eared Bulbul (hybrid),x01044
+Common x Black-fronted Bulbul (hybrid),x01242
+Black-fronted x Cape Bulbul (hybrid),x01243
+Wood x Western Bonelli's Warbler (hybrid),x01019
+Willow Warbler x Common Chiffchaff (hybrid),x01077
+Long-tailed x Silver-throated Tit (hybrid),x01197
+Gray-headed x Black-headed Parrotbill (hybrid),x00815
+Vinous-throated x Ashy-throated Parrotbill (hybrid),x00467
+Orange River x Cape White-eye (hybrid),x00968
+Ashy-bellied White-eye x Silvereye (hybrid),x01127
+Hoary-throated x Streak-throated Barwing (hybrid),x01198
+Chinese x Taiwan Hwamei (hybrid),x00816
+Black-tailed x Black-capped Gnatcatcher (hybrid),x00643
+Northern House x Carolina Wren (hybrid),x01068
+White-headed x Band-backed Wren (hybrid),x00969
+Moustached x Coraya Wren (hybrid),x00970
+Red-billed x Yellow-billed Oxpecker (hybrid),x01244
+Indian Pied x Chestnut-tailed Starling (hybrid),x01027
+Burmese x Jungle Myna (hybrid),x01056
+Jungle x Javan Myna (hybrid),x01028
+Black-collared Starling x Great Myna (hybrid),x00468
+Siamese Pied Starling x Great Myna (hybrid),x01136
+Common x Great Myna (hybrid),x00469
+Vinous-breasted x Great Myna (hybrid),x01160
+Jungle x Great Myna (hybrid),x01029
+Javan x Great Myna (hybrid),x00893
+White-cheeked Starling x Crested Myna (hybrid),x01083
+Common x Crested Myna (hybrid),x01030
+Collared x Crested Myna (hybrid),x01031
+Curve-billed x Long-billed Thrasher (hybrid),x00971
+California x Crissal Thrasher (hybrid),x00470
+Chilean x Chalk-browed Mockingbird (hybrid),x01245
+Bahama x Northern Mockingbird (hybrid),x00907
+Tropical x Northern Mockingbird (hybrid),x00703
+Eastern x Western Bluebird (hybrid),x00972
+Eastern x Mountain Bluebird (hybrid),x00864
+Western x Mountain Bluebird (hybrid),x00204
+Veery x Bicknell's Thrush (hybrid),x00865
+Olive x Karoo Thrush (hybrid),x01034
+Black-breasted x Japanese Thrush (hybrid),x01043
+Black-throated x Red-throated Thrush (hybrid),x00644
+Black-throated x Naumann's Thrush (hybrid),x01137
+Red-throated x Naumann's Thrush (hybrid),x01199
+Dusky x Naumann's Thrush (hybrid),x00973
+Pale-chinned x Tickell's Blue Flycatcher (hybrid),x00927
+Red-capped x Chorister Robin-Chat (hybrid),x01214
+Thrush x Common Nightingale (hybrid),x01010
+Semicollared x European Pied Flycatcher (hybrid),x00471
+Semicollared x Collared Flycatcher (hybrid),x00472
+European Pied x Collared Flycatcher (hybrid),x00817
+Common x Black Redstart (hybrid),x00745
+Common Redstart x Whinchat (hybrid),x00818
+Whinchat x Siberian Stonechat (hybrid),x01161
+Eastern Black-eared x Pied Wheatear (hybrid),x00771
+Bohemian x Cedar Waxwing (hybrid),x01246
+Beautiful x Gorgeous Sunbird (hybrid),x01200
+Olive-naped x Black-necked Weaver (hybrid),bknwea3
+Double-barred x Zebra Finch (hybrid),x00906
+Streak-headed x White-spotted Munia (hybrid),x00473
+Scaly-breasted x White-rumped Munia (hybrid),x01069
+Scaly-breasted x Chestnut Munia (hybrid),x01174
+Tricolored x Chestnut Munia (hybrid),x00932
+Gray-headed x Chestnut-breasted Munia (hybrid),x01075
+Yellow-rumped x Chestnut-breasted Munia (hybrid),x00936
+Cut-throat x Red-headed Finch (hybrid),x01247
+House x Italian Sparrow (hybrid),x00873
+House x Spanish Sparrow (hybrid),x00645
+Italian x Spanish Sparrow (hybrid),x00974
+House x Somali Sparrow (hybrid),x00917
+House x Eurasian Tree Sparrow (hybrid),x00754
+Spanish x Eurasian Tree Sparrow (hybrid),x00874
+Western Yellow x Citrine Wagtail (hybrid),x00934
+Common x African Chaffinch (hybrid),x01070
+Common Chaffinch x Brambling (hybrid),x01071
+Apapane x Iiwi (hybrid),x00828
+Gray-crowned x Black Rosy-Finch (hybrid),x01003
+House x Purple Finch (hybrid),x01004
+European x Gray-crowned Goldfinch (hybrid),x01171
+European Goldfinch x Island Canary (hybrid),x01005
+Red Crossbill x Pine Siskin (hybrid),x00904
+Pine x Black-capped Siskin (hybrid),x00829
+European x Lesser Goldfinch (hybrid),x01006
+Redpoll x American Goldfinch (hybrid),x01248
+European x American Goldfinch (hybrid),x01007
+Pine Siskin x American Goldfinch (hybrid),x00905
+Lesser x American Goldfinch (hybrid),x00714
+Hooded x Yellow-rumped Siskin (hybrid),x00713
+Lapland Longspur x Snow Bunting (hybrid),x00919
+Snow x McKay's Bunting (hybrid),x00447
+Black-headed x Red-headed Bunting (hybrid),x00871
+Yellowhammer x Pine Bunting (hybrid),x00823
+Cinnamon-breasted x Gosling's Bunting (hybrid),x00975
+Chipping x Clay-colored Sparrow (hybrid),x00198
+Chipping x Field Sparrow (hybrid),x00976
+Clay-colored x Field Sparrow (hybrid),x00200
+Clay-colored x Brewer's Sparrow (hybrid),x00199
+Black-chinned x Brewer's Sparrow (hybrid),x00201
+Dark-eyed x Yellow-eyed Junco (hybrid),x00869
+Dark-eyed Junco x White-crowned Sparrow (hybrid),x01016
+White-crowned x Golden-crowned Sparrow (hybrid),x00053
+American Tree x Harris's Sparrow (hybrid),x00752
+White-crowned x Harris's Sparrow (hybrid),x00900
+White-crowned x White-throated Sparrow (hybrid),x00451
+Golden-crowned x White-throated Sparrow (hybrid),x00720
+Dark-eyed Junco x White-throated Sparrow (hybrid),x00039
+Nelson's x Saltmarsh Sparrow (hybrid),x00450
+Grasshopper x Savannah Sparrow (hybrid),x01057
+Song x Lincoln's Sparrow (hybrid),x00474
+Song x Swamp Sparrow (hybrid),x00702
+Canyon x Abert's Towhee (hybrid),x00870
+Abert's x California Towhee (hybrid),x01138
+Chestnut-capped Brushfinch x Spotted Towhee (hybrid),x00475
+Canyon x Spotted Towhee (hybrid),x00476
+California x Spotted Towhee (hybrid),x01249
+Green-tailed x Spotted Towhee (hybrid),x00706
+Spotted x Eastern Towhee (hybrid),x00446
+Spotted x Collared Towhee (hybrid),x00445
+White-naped x Dusky-headed Brushfinch (hybrid),x01092
+Moustached x Black-fronted Brushfinch (hybrid),x01201
+Black-faced x Bolivian Brushfinch (hybrid),x00477
+Black-crowned x Gray-crowned Palm-Tanager (hybrid),x00901
+Yellow-headed x Oriente Warbler (hybrid),x00935
+Western x Eastern Meadowlark (hybrid),x00827
+Western x Chihuahuan Meadowlark (hybrid),x01085
+Yellow-breasted Chat x Hooded Oriole (hybrid),x00478
+Orchard x Hooded Oriole (hybrid),x01167
+Black-vented x Streak-backed Oriole (hybrid),x00490
+Hooded x Bullock's Oriole (hybrid),x01215
+Altamira x Audubon's Oriole (hybrid),x00449
+Bullock's x Baltimore Oriole (hybrid),x00013
+Bullock's x Black-backed Oriole (hybrid),x00903
+Brewer's Blackbird x Great-tailed Grackle (hybrid),x00753
+Common x Great-tailed Grackle (hybrid),x00479
+Boat-tailed x Great-tailed Grackle (hybrid),x00977
+Golden-winged x Blue-winged Warbler (hybrid),x00669
+Brewster's Warbler (hybrid),brewar
+Lawrence's Warbler (hybrid),lawwar
+Tennessee x Nashville Warbler (hybrid),x01013
+Orange-crowned x Nashville Warbler (hybrid),x00819
+Colima x Virginia's Warbler (hybrid),x00638
+Connecticut x Mourning Warbler (hybrid),x00746
+MacGillivray's x Mourning Warbler (hybrid),x00699
+Mourning x Kentucky Warbler (hybrid),x00747
+Gray-crowned x Common Yellowthroat (hybrid),x00748
+MacGillivray's Warbler x Common Yellowthroat (hybrid),x00700
+Mourning Warbler x Common Yellowthroat (hybrid),x00749
+Kentucky Warbler x Common Yellowthroat (hybrid),x01014
+Blue-winged x Cerulean Warbler (hybrid),x00480
+American Redstart x Northern Parula (hybrid),x00750
+Cerulean Warbler x Northern Parula (hybrid),x00711
+Northern x Tropical Parula (hybrid),x00203
+Nashville x Magnolia Warbler (hybrid),x00820
+American Redstart x Magnolia Warbler (hybrid),x01072
+Cape May x Magnolia Warbler (hybrid),x01073
+Black-and-white x Blackburnian Warbler (hybrid),x01250
+Bay-breasted x Blackburnian Warbler (hybrid),x00821
+Common Yellowthroat x Northern Yellow Warbler (hybrid),x00701
+Hooded x Northern Yellow Warbler (hybrid),x00822
+American Redstart x Northern Yellow Warbler (hybrid),x00481
+Brewster's x Chestnut-sided Warbler (hybrid),x01162
+Black-and-white x Chestnut-sided Warbler (hybrid),x01216
+American Redstart x Chestnut-sided Warbler (hybrid),x01163
+Magnolia x Chestnut-sided Warbler (hybrid),x00772
+Bay-breasted x Blackpoll Warbler (hybrid),x00894
+Cerulean x Black-throated Blue Warbler (hybrid),x00482
+Magnolia x Black-throated Blue Warbler (hybrid),x00978
+Northern Yellow x Black-throated Blue Warbler (hybrid),x01015
+Chestnut-sided x Black-throated Blue Warbler (hybrid),x00483
+Magnolia x Palm Warbler (hybrid),x00979
+Cape May x Yellow-rumped Warbler (hybrid),x00980
+Northern Parula x Yellow-rumped Warbler (hybrid),x01251
+Magnolia x Yellow-rumped Warbler (hybrid),x00773
+Chestnut-sided x Yellow-rumped Warbler (hybrid),x01252
+Black-throated Blue x Yellow-rumped Warbler (hybrid),x01202
+Palm x Yellow-rumped Warbler (hybrid),x00461
+Northern Parula x Yellow-throated Warbler (hybrid),sutwar
+Pine x Yellow-throated Warbler (hybrid),x01128
+Yellow-rumped x Yellow-throated Warbler (hybrid),x00937
+Cerulean x Yellow-throated Warbler (hybrid),x01175
+Blue-winged x Prairie Warbler (hybrid),x00719
+Northern Yellow x Prairie Warbler (hybrid),x00866
+American Redstart x Prairie Warbler (hybrid),x01203
+Yellow-rumped x Grace's Warbler (hybrid),x00484
+Northern Parula x Black-throated Gray Warbler (hybrid),x01081
+Yellow-rumped x Black-throated Gray Warbler (hybrid),x00895
+Grace's x Black-throated Gray Warbler (hybrid),x00639
+Yellow-rumped x Townsend's Warbler (hybrid),x00624
+Black-throated Gray x Townsend's Warbler (hybrid),x00867
+Yellow-rumped x Hermit Warbler (hybrid),x01074
+Black-throated Gray x Hermit Warbler (hybrid),x00485
+Townsend's x Hermit Warbler (hybrid),x00059
+Yellow-rumped x Black-throated Green Warbler (hybrid),x00486
+Townsend's x Black-throated Green Warbler (hybrid),x00664
+Common Yellowthroat x Rufous-capped Warbler (hybrid),x00751
+Golden-crowned x Flavescent Warbler (hybrid),x00487
+Black-throated Blue x Canada Warbler (hybrid),x01253
+Painted x Slate-throated Redstart (hybrid),x00896
+Golden-fronted x Spectacled Redstart (hybrid),x00868
+Summer x Scarlet Tanager (hybrid),x01079
+Summer x Western Tanager (hybrid),x00824
+Scarlet x Western Tanager (hybrid),x00825
+Hepatic x Flame-colored Tanager (hybrid),x00826
+Western x Flame-colored Tanager (hybrid),x00444
+Northern Cardinal x Pyrrhuloxia (hybrid),x00774
+Scarlet Tanager x Rose-breasted Grosbeak (hybrid),x01002
+Rose-breasted x Black-headed Grosbeak (hybrid),x00448
+Blue Grosbeak x Indigo Bunting (hybrid),x00872
+Lazuli x Indigo Bunting (hybrid),ixlbun
+Indigo x Varied Bunting (hybrid),x01076
+Indigo x Painted Bunting (hybrid),x00918
+Varied x Painted Bunting (hybrid),x00902
+Red-crested x Red-capped Cardinal (hybrid),x00488
+Red-capped x Crimson-fronted Cardinal (hybrid),x00897
+Flame-crested x White-shouldered Tanager (hybrid),flctan3
+Flame-rumped x Scarlet-rumped Tanager (hybrid),x00489
+Scarlet-rumped x Crimson-backed Tanager (hybrid),x00898
+Black-throated x Gray-bellied Flowerpiercer (hybrid),x00981
+Inaccessible Island x Wilkins's Finch (hybrid),x01254
+Diuca Finch x Yellow Cardinal (hybrid),x00899

@@ -336,7 +336,7 @@
                     points = [];
                     pointGraphicsHotSpotReturn = [];
                     for (i = 0; i < getHotspotGraphics.length; ++i) {
-                        if (getHotspotGraphics[i].numSpeciesAllTime >= 200) {
+                        if (getHotspotGraphics[i].numSpeciesAllTime >= 100) {
                             var point = new Point(getHotspotGraphics[i].lng, getHotspotGraphics[i].lat);
                             points.push(point.latitude, point.longitude);
 
@@ -918,6 +918,8 @@
     <div id="viewDiv"></div>
     <div id="ebird">
         <a>eBird Hotspot and county species compare</a>
+        <br />
+        <a>Only Hotspots with at least 100 species all time are shown</a>
         <br />
         <a>Click any two points on the map to compare species in each point.</a>
         <br />
