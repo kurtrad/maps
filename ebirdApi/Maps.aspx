@@ -20,6 +20,8 @@
     <p>
         <a href="ebirdApi/ebirdHotspotCompare.html" target="_blank">Compare eBird Counties and Hotspots</p>
     <p>
+        <a href="ebirdApi/ebirdHotspotCompare_excludeExotics.html" target="_blank">Compare eBird Counties and Hotspots Excluding Exotics</a></p>
+    <p>
         <a href="ebirdApi/ebirdWorld.html" target="_blank">World Notables</a> - Sigtings by Country</p>
     <p>
         <a href="ebirdApi/ebirdSelectABA.html" target="_blank">ABA Notables</a> - ABA Rarities by ABA Code</p>

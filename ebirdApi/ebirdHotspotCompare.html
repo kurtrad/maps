@@ -115,7 +115,7 @@
             on
         ) {
             var map = new Map({
-                basemap: "streets-vector"
+                basemap: "osm"
             });
 
             var view = new MapView({
@@ -785,8 +785,8 @@
 
                 let diffBetweenTargetAndSource = hotspotTargetList.filter(item => !hotspotSourceList.includes(item));
 
-                let formattedListSource = diffBetweenSourceAndTarget.map(code => getComName(code)).join(", ");
-                let formattedListTarget = diffBetweenTargetAndSource.map(code => getComName(code)).join(", ");
+                let formattedListSource = diffBetweenSourceAndTarget.map(code => getComName(code, locId1)).join(", ");
+                let formattedListTarget = diffBetweenTargetAndSource.map(code => getComName(code, locId2)).join(", ");
 
 
                 // Close loading indicator
@@ -889,9 +889,9 @@
              * Searches the global birds array for a common name
              * @param {string} code - The speciesCode to look for
              */
-            function getComName(code) {
+            function getComName(code, loc) {
                 const bird = birdsArray.find(b => b.speciesCode === code);
-                return bird ? bird.comName : "Species not found";
+                return bird ? `<a href="https://ebird.org/species/${code}/${loc}" target="_blank">${bird.comName}</a>` : "Species not found";
             }
 
             function getCounties(selection) {
