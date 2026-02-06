@@ -1,0 +1,1005 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>Species Compare</title>
+    <script src="Scripts/jquery-3.3.1.js"></script>
+    <style>
+        html,
+        body,
+        #viewDiv {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        #elevationDiv {
+            font-family: monospace;
+            padding: 12px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+        }
+
+        .right {
+            text-align: right;
+        }
+
+        select {
+            width: 185px;
+        }
+
+        select option {
+            width: 180px;
+        }
+
+        /* Hide the zoom to button in popup */
+        .esri-popup__action[data-action-id="zoom-to-feature"],
+        .esri-popup__button[title="Zoom to"],
+        .esri-popup__actions {
+            display: none !important;
+        }
+
+        /* Hide the close button in popup */
+        .esri-popup__button[title="Close"],
+        .esri-popup__header-button--close {
+            display: none !important;
+        }
+
+        /* Enable text wrapping in SweetAlert2 dialogs */
+        .swal2-html-container {
+            white-space: normal !important;
+            word-wrap: break-word !important;
+            overflow-wrap: break-word !important;
+        }
+
+        /* Home button styling */
+        #homeButton {
+            background-color: white;
+            color: #323232;
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 2px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        #homeButton:hover {
+            background-color: #f3f3f3;
+        }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://js.arcgis.com/4.24/esri/css/main.css">
+    <script src="https://js.arcgis.com/4.24/"></script>
+
+
+    <script>
+
+        var selection;
+        var daysback = 30;
+        var selection = "US-AZ";
+        var mapCenter = [-112, 33]
+        var birdsArray = [];
+        var excludeList = [];
+        var colorPoint1 = ''
+        var colorPoint2 = ''
+
+        require([
+            "esri/Map",
+            "esri/geometry/Point",
+            "esri/views/MapView",
+            "esri/widgets/BasemapGallery",
+            "esri/widgets/Expand",
+            "esri/widgets/Legend",
+            "esri/symbols/SimpleMarkerSymbol",
+            "esri/Graphic",
+            "esri/layers/GraphicsLayer",
+            "dojo/store/Memory",
+            "dijit/form/ComboBox",
+            "dojo/on",
+            "dojo/domReady!"
+        ], function (
+            Map,
+            Point,
+            MapView,
+            BasemapGallery,
+            Expand,
+            Legend,
+            SimpleMarkerSymbol,
+            Graphic,
+            GraphicsLayer,
+            Memory,
+            ComboBox,
+            on
+        ) {
+            var map = new Map({
+                basemap: "streets-vector"
+            });
+
+            var view = new MapView({
+                center: mapCenter,
+                container: "viewDiv",
+                map: map,
+                zoom: 7,
+                popup: {
+                    dockEnabled: true,
+                    dockOptions: {
+                        buttonEnabled: false,
+                        breakpoint: false,
+                        position: "top-right"
+                    },
+                    actions: []
+                }
+            });
+
+            var basemapGallery = new BasemapGallery({
+                view: view
+            });
+
+           var bgExpand = new Expand({
+                view: view,
+                content: basemapGallery,
+                expandIconClass: "esri-icon-basemap",
+                expandTooltip: "Show Basemaps",  // Hover text when collapsed
+                collapseTooltip: "Hide Basemaps"  // Hover text when expanded
+            });
+
+            // Create home button
+            var homeButton = document.createElement("button");
+            homeButton.id = "homeButton";
+            homeButton.className = "esri-widget--button esri-icon-home";
+            homeButton.title = "Go to Maps Home";
+            homeButton.onclick = function() {
+                window.location.href = "https://birdingthecloud.com/Maps.aspx";
+            };
+
+            view.ui.add("elevationDiv", "top-left");
+            view.ui.add("ebird", "bottom-left");
+            view.ui.add(homeButton, "bottom-right");
+            // Add widget to the bottom right corner of the view
+            view.ui.add(bgExpand, "bottom-right");
+
+            window.onload = async function (e) {
+                // Load the Selection DropDown
+                // var urlAPI = "https://ebird.org/ws2.0/ref/region/list/subnational2/US-CA.json";
+                var urlForDropDown = "https://ebird.org/ws2.0/ref/region/list/subnational1/US.json";
+
+                hotspots = getData(urlForDropDown);
+
+                loadCombo(hotspots);
+                //load bird species list
+                birdsArray = await fetchData("https://ebird.org/ws2.0/ref/taxonomy/ebird?fmt=json&category=species");
+                
+                // Load species exclusion list from CSV
+                try {
+                    const csvText = await fetch("csv/species_with_codes.csv")
+                        .then(response => response.text());
+                    // Parse CSV: skip header, extract speciesCode column (index 1)
+                    const lines = csvText.split(/[\n\r]+/).filter(line => line.trim().length > 0);
+                    excludeList = lines.slice(1).map(line => {
+                        const cols = line.split(',');
+                        return cols[1] ? cols[1].trim() : '';
+                    }).filter(code => code.length > 0);
+                    console.log("Loaded exclude list (" + excludeList.length + " species):", excludeList);
+                } catch (error) {
+                    console.error("Error loading CSV:", error);
+                    console.log("Continuing without exclusion list - make sure to run through web server (http://localhost:4704)");
+                    excludeList = [];
+                }
+
+                // Show loading on windows load 
+                Swal.fire({
+                    title: 'Loading...',
+                    text: 'Loading eBird API data points',
+                    allowOutsideClick: false,
+                    showConfirmButton: false,
+                    showCancelButton: true,
+                    cancelButtonText: 'Cancel',
+                    willOpen: () => {
+                        Swal.showLoading();
+                    }
+                });
+
+                await loadPoints();
+
+                // Close loading
+                Swal.close();
+            }
+
+            function loadCombo(hotspotData) {
+                var sel = document.getElementById('modeSelect') // find the drop down
+                for (var i in hotspotData) { // loop through all elements
+                    var opt = document.createElement("option"); // Create the new element
+                    opt.value = hotspotData[i].code; // set the value
+                    opt.text = hotspotData[i].name; // set the text
+
+                    sel.appendChild(opt); // add it to the select
+                }
+
+                // Add Baja Mexico Sur
+                let opt1 = document.createElement("option");
+                opt1.text = "Baja Mexico Sur";
+                opt1.value = "MX-BCS";
+                sel.insertBefore(opt1, sel.firstChild);
+
+                // Add Baja Mexico
+                let opt2 = document.createElement("option");
+                opt2.text = "Baja Mexico";
+                opt2.value = "MX-BCN";
+                sel.insertBefore(opt2, sel.firstChild);
+
+                // Add United States
+                let opt3 = document.createElement("option");
+                opt3.text = "Mexico";
+                opt3.value = "MX";
+                sel.insertBefore(opt3, sel.firstChild);
+
+                // Add United States
+                let opt4 = document.createElement("option");
+                opt4.text = "United States";
+                opt4.value = "US";
+                sel.insertBefore(opt4, sel.firstChild);
+
+                // Set default to California
+                sel.value = "US-AZ"; // Ensure the value exactly matches the option's value
+
+            }
+
+            /*************************
+            * Create a point graphic
+            *************************/
+            async function loadPoints() {
+
+                // Close any open popups
+                view.popup.close();
+
+                view.graphics.removeAll();
+                //view.center = mapCenter;
+
+                var setDate = new Date();
+                //add a day to the date
+                //setDate.setDate(setDate.getDate() - daysback);
+                var urlAPI = "https://ebird.org/ws2.0/ref/hotspot/" + selection + "?fmt=json&back=" + daysback;
+                //var urlAPI = "https://ebird.org/ws2.0/ref/hotspot/US-AZ?fmt=json&back=" + daysback ;
+                //var urlAPI = "https://ebird.org/ws2.0/ref/hotspot/US-AZ?fmt=json&back=1";
+
+                //selection = 'US-AZ'; // For testing only, remove later
+
+                if (selection.length === 2) {
+                    allStateBounds = await getAllStateBounds(selection);
+                    pointGraphicsStateReturn = getStateGraphics(allStateBounds);
+
+                    // Add county foreground second
+                    view.graphics.addMany(pointGraphicsStateReturn);
+
+                    // Set up labels for counties (add to view.graphics.labelsVisible)
+                    //stateLabels = createCountyLabels(allStateBounds);
+                    //view.graphics.addMany(stateLabels);
+                }
+                else {
+                    // load the default county bounds
+                    allBounds = await getAllCountyBounds(selection);
+                    data = await fetchData(urlAPI);
+
+                    pointGraphicsHotSpotReturn = getHotspotGraphics(data)
+                    //pointGraphicsReturn = [];
+                    pointGraphicsCountyReturn = getCountyGraphics(allBounds);
+
+                    //pointGraphicsCountyReturn = [];
+                    // add the graphics to the map
+                    // Merge both into a single array and add once
+                    // Add hotspot background first
+                    view.graphics.addMany(pointGraphicsCountyReturn);
+                    // Add county foreground second
+                    view.graphics.addMany(pointGraphicsHotSpotReturn);
+                }
+                // Set up labels for counties (add to view.graphics.labelsVisible)
+                countyLabels = createCountyLabels(allBounds);
+                view.graphics.addMany(countyLabels);
+
+                // Add zoom change listener to show/hide labels based on zoom level
+                view.watch("zoom", function (newZoom) {
+                    countyLabels.forEach(label => {
+                        label.visible = newZoom >= 8; // Show labels at zoom level 8 and above
+                    });
+                });
+
+                // Set initial visibility based on current zoom
+                countyLabels.forEach(label => {
+                    label.visible = view.zoom >= 8;
+                });
+
+
+                // center on the hotspots
+                // TODO: improve centering logic
+                if (selection.length !== 2) {
+                    mapCenter = [data[0].lng, data[0].lat];
+                    view.zoom = 7;
+                } else {
+                    mapCenter = [-98.5795, 39.8283]; // Center of the US
+                    view.zoom = 4; // Zoom out to see entire US
+                }
+                view.center = mapCenter;
+
+                function createCountyLabels(counties) {
+                    let labelGraphics = [];
+                    for (let i = 0; i < counties.length; i++) {
+                        let textSymbol = {
+                            type: "text",
+                            color: [0, 0, 0],
+                            haloColor: [255, 255, 255],
+                            haloSize: 2.5,
+                            text: counties[i].name + " County",
+                            xoffset: 0,
+                            yoffset: -20,
+                            font: {
+                                size: 12,
+                                weight: "normal",
+                                family: "sans-serif"
+                            }
+                        };
+                        let labelGraphic = new Graphic({
+                            geometry: new Point({ x: counties[i].lng, y: counties[i].lat }),
+                            symbol: textSymbol
+                        });
+                        labelGraphics.push(labelGraphic);
+                    }
+                    return labelGraphics;
+                }
+
+                function getHotspotGraphics(getHotspotGraphics) {
+                    points = [];
+                    pointGraphicsHotSpotReturn = [];
+                    for (i = 0; i < getHotspotGraphics.length; ++i) {
+                        if (getHotspotGraphics[i].numSpeciesAllTime >= 200) {
+                            var point = new Point(getHotspotGraphics[i].lng, getHotspotGraphics[i].lat);
+                            points.push(point.latitude, point.longitude);
+
+                            // Create a symbol for drawing the point
+                            var markerSymbol = {
+                                type: "simple-marker", // autocasts as new SimpleMarkerSymbol()
+                                color: [0, 128, 0], //green
+                                outline: { // autocasts as new SimpleLineSymbol()
+                                    color: [0, 100, 0],
+                                    width: 2
+                                }
+                            };
+
+                            // Create an object for storing attributes related to the line
+                            var pointAtt = {
+                                Name: data[i].locName,
+                                locId: data[i].locId,
+                                SpeciesAllTime: data[i].numSpeciesAllTime,
+                                ChecklistsAllTime: data[i].numChecklistsAllTime
+                            };
+
+                            /*******************************************
+                             * Create a new graphic and add the geometry,
+                             * symbol, and attributes to it. You may also
+                             * add a simple PopupTemplate to the graphic.
+                             * This allows users to view the graphic's
+                             * attributes when it is clicked.
+                             ******************************************/
+
+                            var pointGraphic = new Graphic({
+                                geometry: point,
+                                symbol: markerSymbol,
+                                attributes: pointAtt,
+                                popupTemplate: {  // autocasts as new PopupTemplate()
+                                    title: "{Name}",
+                                    actions: [], // removes Zoom to
+                                    content: [{
+                                        type: "fields",
+                                        fieldInfos: [{
+                                            //     fieldName: "locId",
+                                            //     label: "eBird Location ID"
+                                            // }, {
+                                            fieldName: "SpeciesAllTime",
+                                            label: "Species (All Time)"
+                                        }, {
+                                            fieldName: "ChecklistsAllTime",
+                                            label: "Checklists (All Time)"
+                                        }]
+                                    }],
+                                }
+                            });
+
+                            pointGraphicsHotSpotReturn.push(pointGraphic);
+                        }
+
+                    }
+                    return pointGraphicsHotSpotReturn
+                }
+                function getCountyGraphics(Hotspots) {
+                    points = [];
+                    pointGraphicsCountyReturn = [];
+                    for (i = 0; i < Hotspots.length; ++i) {
+                        var point = new Point(Hotspots[i].lng, Hotspots[i].lat);
+                        points.push(point.latitude, point.longitude);
+
+                        // Create a symbol for drawing the point
+                        var markerSymbol = {
+                            type: "simple-marker", // autocasts as new SimpleMarkerSymbol()
+                            color: [0, 0, 0], //black
+                            outline: { // autocasts as new SimpleLineSymbol()
+                                color: [0, 0, 0],
+                                width: 2
+                            }
+                        };
+
+                        // Create an object for storing attributes related to the line
+                        var pointAtt = {
+                            Name: Hotspots[i].name,
+                            locId: Hotspots[i].code
+                            //Checklist: "https://ebird.org/hotspot/" + Hotspots[i].code
+                        };
+
+                        /*******************************************
+                         * Create a new graphic and add the geometry,
+                         * symbol, and attributes to it. You may also
+                         * add a simple PopupTemplate to the graphic.
+                         * This allows users to view the graphic's
+                         * attributes when it is clicked.
+                         ******************************************/
+
+                        var pointGraphic = new Graphic({
+                            geometry: point,
+                            symbol: markerSymbol,
+                            attributes: pointAtt,
+                            popupTemplate: {  // autocasts as new PopupTemplate()
+                                title: "{Name} County",
+                                actions: [], // removes Zoom to
+                                content: [{
+                                    type: "fields",
+                                    fieldInfos: [{
+                                        fieldName: "locId",
+                                        label: "County Code"
+                                    }]
+                                }],
+                            }
+                        });
+
+                        pointGraphicsCountyReturn.push(pointGraphic);
+
+                    }
+                    return pointGraphicsCountyReturn
+                }
+
+                function getStateGraphics(states) {
+                    points = [];
+                    pointGraphicsStateReturn = [];
+                    for (i = 0; i < states.length; ++i) {
+                        var point = new Point(states[i].lng, states[i].lat);
+                        points.push(point.latitude, point.longitude);
+
+                        // Create a symbol for drawing the point
+                        var markerSymbol = {
+                            type: "simple-marker", // autocasts as new SimpleMarkerSymbol()
+                            color: [0, 0, 0], //black
+                            outline: { // autocasts as new SimpleLineSymbol()
+                                color: [0, 0, 0],
+                                width: 2
+                            }
+                        };
+
+                        // Create an object for storing attributes related to the line
+                        var pointAtt = {
+                            Name: states[i].name,
+                            locId: states[i].code
+                        };
+
+                        var stateName = states[i].name;
+                        var stateCode = states[i].code;
+
+                        /*******************************************
+                         * Create a new graphic and add the geometry,
+                         * symbol, and attributes to it. You may also
+                         * add a simple PopupTemplate to the graphic.
+                         * This allows users to view the graphic's
+                         * attributes when it is clicked.
+                         ******************************************/
+
+                        var pointGraphic = new Graphic({
+                            geometry: point,
+                            symbol: markerSymbol,
+                            attributes: pointAtt,
+                            popupTemplate: {  // autocasts as new PopupTemplate()
+                                title: "{Name}",
+                                actions: [], // removes Zoom to
+                                content: [{
+                                    type: "fields",
+                                    fieldInfos: [{
+                                        fieldName: "locId",
+                                        label: "State"
+                                    }]
+                                }],
+                            }
+                        });
+
+                        pointGraphicsStateReturn.push(pointGraphic);
+
+                    }
+                    return pointGraphicsStateReturn
+                }
+
+            }
+
+            //view.ui.add("elevationDiv", "top-right");
+
+            // Register events to the controls
+            var modeSelect = document.getElementById("modeSelect");
+            window.addEventListener("change", updateElevationMode);
+
+            // Create events' callback functions
+            async function updateElevationMode(event) {
+                selection = document.getElementById("modeSelect").value;
+                daysback = document.getElementById("days").value;
+
+                // Show loading when changing location
+                Swal.fire({
+                    title: 'Loading...',
+                    text: 'Changing location, loading new eBird API data points, states with many counties may take longer',
+                    allowOutsideClick: false,
+                    showConfirmButton: false,
+                    showCancelButton: true,
+                    cancelButtonText: 'Cancel',
+                    willOpen: () => {
+                        Swal.showLoading();
+                    }
+                });
+
+                await loadPoints();
+                // Close loading indicator
+                Swal.close();
+            }
+
+            async function getAllCountyBounds(selection) {
+                var counties = getCounties(selection); // Fetch list of counties
+                var allBounds = [];
+
+                // Synchronous version: executes in sequence and blocks the thread
+                for (const county of counties) {
+                    try {
+                        console.log(`Fetching bounds for: ${county.name}`);
+
+                        // IMPORTANT: getCountyBounds MUST be a synchronous function.
+                        // If it returns a Promise, this will not work as expected.
+                        var countyUrl = 'https://api.ebird.org/v2/ref/region/info/' + county.code;
+                        var bounds = await fetchData(countyUrl)
+
+                        allBounds.push({
+                            name: county.name,
+                            code: county.code,
+                            lat: bounds.latitude,
+                            lng: bounds.longitude
+                        });
+                    } catch (error) {
+                        console.error(`Failed to fetch bounds for ${county.name}:`, error);
+                    }
+                }
+                return allBounds;
+            }
+
+            async function getAllStateBounds(selection) {
+                var states = getStates(selection); // Fetch list of states
+                var allStateBounds = [];
+
+                // Synchronous version: executes in sequence and blocks the thread
+                for (const state of states) {
+                    try {
+                        console.log(`Fetching bounds for: ${state.name}`);
+
+                        // IMPORTANT: getStateBounds MUST be a synchronous function.
+                        // If it returns a Promise, this will not work as expected.
+                        var stateUrl = 'https://api.ebird.org/v2/ref/region/info/' + state.code;
+                        var bounds = await fetchData(stateUrl)
+
+                        allStateBounds.push({
+                            name: state.name,
+                            code: state.code,
+                            lat: bounds.latitude,
+                            lng: bounds.longitude
+                        });
+                    } catch (error) {
+                        console.error(`Failed to fetch bounds for ${state.name}:`, error);
+                    }
+                }
+                return allStateBounds;
+            }
+
+            let firstPoint = null;
+            let secondPoint = null;
+            let locIdPoint1 = null;
+            let locIdPoint2 = null;
+            let namePoint1 = null;
+            let namePoint2 = null;
+
+            function arrayToRgbObj(arr) {
+                return { r: arr[0], g: arr[1], b: arr[2] };
+            }
+
+            view.on("click", function (event) {
+                view.hitTest(event).then(function (response) {
+                    if (response.results.length > 0) {
+                        const color = response.results[0].graphic.symbol.color;
+                        const locId = response.results[0].graphic.attributes.locId;
+                        const name = response.results[0].graphic.attributes.Name;
+                        console.log("Clicked point color:", color, "locId:", locId, "name:", name);
+
+                        const point = event.mapPoint;
+                        if (!firstPoint) {
+                            firstPoint = point;
+                            colorPoint1 = color;
+                            locIdPoint1 = locId;
+                            namePoint1 = name;
+                            addPointGraphic(point, "red");
+                        } else if (!secondPoint) {
+                            secondPoint = point;
+                            colorPoint2 = color;
+                            locIdPoint2 = locId;
+                            namePoint2 = name;
+                            addPointGraphic(point, "blue");
+                            onTwoPointsSelected(firstPoint, secondPoint, colorPoint1, colorPoint2, locIdPoint1, locIdPoint2, namePoint1, namePoint2);
+                            firstPoint = null;
+                            secondPoint = null;
+                            locIdPoint1 = null;
+                            locIdPoint2 = null;
+                            namePoint1 = null;
+                            namePoint2 = null;
+                        }
+                    }
+                });
+            });
+
+            // Display name on hover
+            view.on("pointer-move", function (event) {
+                view.hitTest(event).then(function (response) {
+                    if (response.results.length > 0) {
+                        view.popup.open({
+                            features: [response.results[0].graphic],
+                            location: event.mapPoint
+                        });
+                    } else {
+                        view.popup.close();
+                    }
+                });
+            });
+
+            function addPointGraphic(point, color) {
+                const graphic = new Graphic({
+                    geometry: point,
+                    symbol: {
+                        type: "simple-marker",
+                        color: color,
+                        size: 10,
+                        outline: {
+                            color: "white",
+                            width: 1
+                        }
+                    }
+                });
+
+                var addedColor = graphic.symbol.color;
+                view.graphics.add(graphic);
+            }
+
+            async function onTwoPointsSelected(a, b, color1, color2, locId1, locId2, name1, name2) {
+                console.log("Two points selected:", a, b, color1, color2, locId1, locId2, name1, name2);
+
+                // Show loading indicator for species comparison
+                Swal.fire({
+                    title: 'Loading...',
+                    text: 'Fetching species data from eBird API',
+                    allowOutsideClick: false,
+                    showConfirmButton: false,
+                    showCancelButton: true,
+                    cancelButtonText: 'Cancel',
+                    willOpen: () => {
+                        Swal.showLoading();
+                    }
+                });
+
+                const rgbColorBlack = arrayToRgbObj([0, 0, 0]); // RGB for black
+
+                const rgbColor1 = color1 || [255, 0, 0]; // Default to red if no color provided
+                const rgbColor2 = color2 || [0, 0, 255]; // Default to blue if no color provided
+
+                kms = getDistance(a.latitude, a.longitude, b.latitude, b.longitude);
+                console.log("Distance (km):", kms);
+
+                if (rgbColor1.r === rgbColorBlack.r && rgbColor1.g === rgbColorBlack.g && rgbColor1.b === rgbColorBlack.b) { color1isBlack = true; }
+                else { color1isBlack = false; }
+
+                if (rgbColor2.r === rgbColorBlack.r && rgbColor2.g === rgbColorBlack.g && rgbColor2.b === rgbColorBlack.b) { color2isBlack = true; }
+                else { color2isBlack = false; }
+
+
+                var h1 = "https://api.ebird.org/v2/ref/hotspot/geo?fmt=json&dist=20&lat=" + a.latitude.toFixed(8) + "&lng=" + a.longitude.toFixed(6);
+                var h2 = "https://api.ebird.org/v2/ref/hotspot/geo?fmt=json&dist=20&lat=" + b.latitude.toFixed(8) + "&lng=" + b.longitude.toFixed(6);
+
+                //get the nearest hotspot source and target
+                var hotspotSource = await fetchData(h1);
+                var hotspotTarget = await fetchData(h2);
+
+                // measure the distance of each hotspot from the point
+                // find the closest one
+                let shortestSourceDist = Infinity;
+                let closestSourceHotspot = null;
+
+                hotspotSource.forEach(h => {
+                    const dist = getDistance(a.latitude, a.longitude, h.lat, h.lng);
+
+                    if (dist < shortestSourceDist) {
+                        shortestSourceDist = dist;
+                        closestSourceHotspot = h;
+                    }
+                    console.log(h.locId, h.lat, h.lng, dist);
+                });
+
+                console.log("Closest hotspot:", closestSourceHotspot ? closestSourceHotspot.locId : 'null', shortestSourceDist);
+
+                let shortestTargetDist = Infinity;
+                let closestTargetHotspot = null;
+
+                hotspotTarget.forEach(h => {
+                    const dist = getDistance(b.latitude, b.longitude, h.lat, h.lng);
+
+                    if (dist < shortestTargetDist) {
+                        shortestTargetDist = dist;
+                        closestTargetHotspot = h;
+                    }
+
+                    console.log(h.locId, h.lat, h.lng, dist);
+                });
+
+                console.log("Closest hotspot:", closestTargetHotspot ? closestTargetHotspot.locId : 'null', shortestTargetDist);
+
+
+                // extract the code from hotspot
+                var hotspotSourceCode1 = closestSourceHotspot ? closestSourceHotspot.locId : '';
+                var hotspotTargetCode2 = closestTargetHotspot ? closestTargetHotspot.locId : '';
+
+                //locId1 ="US-WA";
+                //locId2 ="US-CA";
+                // Birdlist api
+                if (color1isBlack) {
+                    if (selection.length !== 2) {
+                        name1 = name1 + " County";
+                    }
+                    else {
+                        name1 = name1;
+                    }
+                    var speciesListSourceUrl = "https://api.ebird.org/v2/product/spplist/" + locId1 + "/?category=species";
+                } else {
+                    var speciesListSourceUrl = "https://api.ebird.org/v2/product/spplist/" + hotspotSourceCode1 + "/?category=species";
+                }
+                //source bird list
+                var hotspotSourceList = getData(speciesListSourceUrl);
+                // Remove species codes that begin with 'x0', are exactly 7 characters, or are in exclude list
+                hotspotSourceList = hotspotSourceList.filter(code => !code.startsWith('x0') && !excludeList.includes(code));
+                //hotspotSourceList = hotspotSourceList.filter(code => !code.startsWith('x0'));
+
+
+                if (color2isBlack) {
+                    if (selection.length !== 2) {
+                        name2 = name2 + " County";
+                    }
+                    else {
+                        name2 = name2;
+                    }
+                    var speciesLisTargetUrl = "https://api.ebird.org/v2/product/spplist/" + locId2 + "/?category=species";
+                } else {
+                    var speciesLisTargetUrl = "https://api.ebird.org/v2/product/spplist/" + hotspotTargetCode2 + "/?category=species";
+                }
+
+                //target bird list
+                var hotspotTargetList = getData(speciesLisTargetUrl);
+                // Remove species codes that begin with 'x0', are exactly 7 characters, or are in exclude list
+                hotspotTargetList = hotspotTargetList.filter(code => !code.startsWith('x0') && !excludeList.includes(code));
+                //hotspotTargetList = hotspotTargetList.filter(code => !code.startsWith('x0'));
+
+
+                //To find elements in listA source that are not in listB target:
+                let diffBetweenSourceAndTarget = hotspotSourceList.filter(item => !hotspotTargetList.includes(item));
+
+                let diffBetweenTargetAndSource = hotspotTargetList.filter(item => !hotspotSourceList.includes(item));
+
+                let formattedListSource = diffBetweenSourceAndTarget.map(code => getComName(code)).join(", ");
+                let formattedListTarget = diffBetweenTargetAndSource.map(code => getComName(code)).join(", ");
+
+
+                // Close loading indicator
+                Swal.close();
+
+                formattedHtml = "<div style='text-align: left;'>" +
+                    "<b>Species in " + name1 + " NOT in " + name2 + ":</b></br></br>" + formattedListSource + "</br></br></br>" +
+                    "<b>Species in " + name2 + " NOT in " + name1 + ":</b></br></br>" + formattedListTarget +
+                    "</div>";
+
+                // Show species compare result and wait for user to close
+                const compareResult = await Swal.fire({
+                    title: 'Species Compare!',
+                    html: formattedHtml,
+                    draggable: true,
+                    didClose: true
+                });
+
+                // Remove selection points after reload
+                const graphicsToRemove = [];
+                view.graphics.items.forEach(graphic => {
+                    if (!graphic.symbol || !graphic.symbol.color) {
+                        return;
+                    }
+
+                    const color = graphic.symbol.color;
+                    const r = Array.isArray(color) ? color[0] : color.r;
+                    const g = Array.isArray(color) ? color[1] : color.g;
+                    const b = Array.isArray(color) ? color[2] : color.b;
+
+                    if ((r === 255 && g === 0 && b === 0) ||  // red
+                        (r === 0 && g === 0 && b === 255)) {   // blue
+                        graphicsToRemove.push(graphic);
+                    }
+                });
+
+                // Remove all collected graphics
+                graphicsToRemove.forEach(graphic => view.graphics.remove(graphic));
+
+            }
+
+            function getData(url) {
+
+                var apiData = {
+                    "crossDomain": true,
+                    "url": url,
+                    "method": "GET",
+                    "async": false,
+                    "headers": {
+                        "X-eBirdApiToken": "npobnnr5u7fo"
+                    }
+                }
+
+                $.ajax(apiData).done(function (response) {
+                    console.log(response);
+                    data = response;
+                });
+
+                return data;
+
+            }
+
+            async function fetchData(url) {
+                const apiData = {
+                    "url": url,
+                    "method": "GET",
+                    "headers": {
+                        "X-eBirdApiToken": "npobnnr5u7fo"
+                    }
+                    // "async": false removed; it's true by default
+                };
+
+                try {
+                    const response = await $.ajax(apiData);
+                    console.log(response);
+                    return response; // Use the data here or return it
+                } catch (error) {
+                    console.error("Request failed:", error);
+                }
+            }
+
+            // calculate distance between two lat/lon points in km
+            function getDistance(lat1, lon1, lat2, lon2) {
+                const R = 6371; // Radius of the earth in km
+                const dLat = deg2rad(lat2 - lat1);
+                const dLon = deg2rad(lon2 - lon1);
+                const a =
+                    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                    Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
+                    Math.sin(dLon / 2) * Math.sin(dLon / 2);
+                const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+                return R * c; // Distance in km
+            }
+
+            function deg2rad(deg) {
+                return deg * (Math.PI / 180);
+            }
+
+            /**
+             * Searches the global birds array for a common name
+             * @param {string} code - The speciesCode to look for
+             */
+            function getComName(code) {
+                const bird = birdsArray.find(b => b.speciesCode === code);
+                return bird ? bird.comName : "Species not found";
+            }
+
+            /**
+             * Export all species to CSV format
+             * Call this in browser console: exportSpeciesToCSV()
+             */
+            function exportSpeciesToCSV() {
+                let csv = "comName,speciesCode,exotic\n";
+                birdsArray.forEach(bird => {
+                    csv += `${bird.comName},${bird.speciesCode},\n`;
+                });
+                console.log(csv);
+                
+                // Download the CSV
+                const blob = new Blob([csv], { type: 'text/csv' });
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'all-species.csv';
+                a.click();
+                window.URL.revokeObjectURL(url);
+            }
+
+            function getCounties(selection) {
+                var countyUrl = 'https://api.ebird.org/v2/ref/region/list/subnational2/' + selection;
+
+                var counties = getData(countyUrl);
+                return counties; // Array of { code: "US-NY-001", name: "Albany" }
+            }
+
+            function getStates(selection) {
+                var stateUrl = 'https://api.ebird.org/v2/ref/region/list/subnational1/' + selection;
+
+                var states = getData(stateUrl);
+                return states; // Array of { code: "US-NY", name: "Albany" }
+            }
+
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <div id="viewDiv"></div>
+    <div id="ebird">
+        <a>eBird Hotspot and county species compare</a>
+        <br />
+        <a>Click any two points on the map to compare species in each point.</a>
+        <br />
+        <a>First point is the source data, second point is the target</a>
+        <br />
+        <a>Black points are counties green points are hotspot.</a>
+        <br />
+        <a>Hover over points to see location details</a>
+        <br />
+        <a><i>Copyright - Kurt Radamaker</i></a>
+    </div>
+    <div id="elevationDiv">
+        <table>
+            <tr>
+                <td class="right">State</td>
+                <td>
+                    <select id="modeSelect">
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="right">Days back</td>
+                <td>
+                    <select id="days">
+                        <option value="10" selected>10</option>
+                        <option value="30">30</option>
+                        <option value="20">20</option>
+                        <option value="15">15</option>
+                        <option value="7">7</option>
+                        <option value="5">5</option>
+                        <option value="4">4</option>
+                        <option value="3">3</option>
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
