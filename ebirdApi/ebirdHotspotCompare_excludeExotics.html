@@ -69,6 +69,21 @@
         #homeButton:hover {
             background-color: #f3f3f3;
         }
+
+        /* Reset button styling */
+        #resetButton {
+            background-color: white;
+            color: #323232;
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 2px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        #resetButton:hover {
+            background-color: #f3f3f3;
+        }
     </style>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -79,7 +94,7 @@
     <script>
 
         var selection;
-        var daysback = 2;
+        var daysback = 3;
         var selection = "US-AZ";
         var mapCenter = [-112, 33]
         var birdsArray = [];
@@ -156,8 +171,45 @@
                 window.location.href = "https://birdingthecloud.com/Maps.aspx";
             };
 
+            // Create reset button
+            var resetButton = document.createElement("button");
+            resetButton.id = "resetButton";
+            resetButton.className = "esri-widget--button esri-icon-refresh";
+            resetButton.title = "Reset Map - Clear All Points";
+            resetButton.onclick = async function() {
+                // Close popup
+                view.popup.close();
+                
+                // Remove all graphics
+                view.graphics.removeAll();
+                
+                // Reset point selection state
+                firstPoint = null;
+                secondPoint = null;
+                locIdPoint1 = null;
+                locIdPoint2 = null;
+                namePoint1 = null;
+                namePoint2 = null;
+                
+                // Reload points
+                Swal.fire({
+                    title: 'Resetting...',
+                    text: 'Reloading map points',
+                    allowOutsideClick: false,
+                    showConfirmButton: false,
+                    didOpen: () => {
+                        Swal.showLoading();
+                    }
+                });
+                
+                await loadPoints();
+                
+                Swal.close();
+            };
+
             view.ui.add("elevationDiv", "top-left");
             view.ui.add("ebird", "bottom-left");
+            view.ui.add(resetButton, "bottom-right");
             view.ui.add(homeButton, "bottom-right");
             // Add widget to the bottom right corner of the view
             view.ui.add(bgExpand, "bottom-right");
@@ -256,7 +308,7 @@
                 // Close any open popups
                 view.popup.close();
 
-                view.graphics.removeAll();
+                //view.graphics.removeAll();
                 //view.center = mapCenter;
 
                 var setDate = new Date();
@@ -354,9 +406,11 @@
                     points = [];
                     pointGraphicsHotSpotReturn = [];
                     for (i = 0; i < getHotspotGraphics.length; ++i) {
-                        if (getHotspotGraphics[i].numSpeciesAllTime >= 100) {
+                        if (getHotspotGraphics[i].numSpeciesAllTime >= 0) {
                             var point = new Point(getHotspotGraphics[i].lng, getHotspotGraphics[i].lat);
                             points.push(point.latitude, point.longitude);
+
+                            
 
                             // Create a symbol for drawing the point
                             var markerSymbol = {
@@ -962,8 +1016,6 @@
     <div id="ebird">
         <a>eBird Hotspot and county species compare</a>
         <br />
-        <a>Only Hotspots with at least 100 species all time are shown</a>
-        <br />
         <a>Click any two points on the map to compare species in each point.</a>
         <br />
         <a>First point is the source data, second point is the target</a>
@@ -994,8 +1046,7 @@
                         <option value="7">7</option>
                         <option value="5">5</option>
                         <option value="4">4</option>
-                        <option value="3">3</option>
-                        <option value="2" selected>2</option>
+                        <option value="3" selected>3</option>
                     </select>
                 </td>
             </tr>
