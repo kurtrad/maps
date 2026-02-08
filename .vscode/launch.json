@@ -7,8 +7,8 @@
         {
             "type": "chrome",
             "request": "launch",
-            "name": "Open ebirdHotspotCompare.html",
-            "file": "c:\\Users\\Kurt\\source\\repos\\ebirdapi\\ebirdApi\\ebirdHotspotCompare.html"
+            "name": "Open ebirdHotspotCompare_excludeExotics.html",
+            "file": "c:\\Users\\Kurt\\source\\repos\\ebirdapi\\ebirdApi\\ebirdHotspotCompare_excludeExotics.html"
         }
     ]
 }

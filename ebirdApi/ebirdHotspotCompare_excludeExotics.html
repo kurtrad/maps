@@ -101,6 +101,8 @@
         var excludeList = [];
         var colorPoint1 = ''
         var colorPoint2 = ''
+        var minSpeciesFilter = 0; // Minimum species count filter
+        var showCounties = false; // Toggle for showing counties
 
         require([
             "esri/Map",
@@ -202,7 +204,7 @@
                     }
                 });
                 
-                await loadPoints();
+                //await loadPoints();
                 
                 Swal.close();
             };
@@ -308,6 +310,28 @@
                 // Close any open popups
                 view.popup.close();
 
+                // Remove graphics with numSpeciesAllTime less than minSpeciesFilter
+                const graphicsToRemove = [];
+                view.graphics.items.forEach(graphic => {
+                    if (graphic.attributes && graphic.attributes.SpeciesAllTime !== undefined) {
+                        if (graphic.attributes.SpeciesAllTime < minSpeciesFilter) {
+                            graphicsToRemove.push(graphic);
+                        }
+                    }
+                    
+                    // Remove counties if showCounties is false
+                    if (!showCounties && graphic.attributes && graphic.attributes.locId) {
+                        // County codes have format like "US-AZ-001" or state codes like "US-AZ"
+                        const locId = graphic.attributes.locId;
+                        // Check if it's a county (has locId but no SpeciesAllTime attribute)
+                        if (graphic.attributes.SpeciesAllTime === undefined && locId && locId.includes('-')) {
+                            graphicsToRemove.push(graphic);
+                        }
+                    }
+                });
+                
+                graphicsToRemove.forEach(graphic => view.graphics.remove(graphic));
+
                 //view.graphics.removeAll();
                 //view.center = mapCenter;
 
@@ -333,12 +357,20 @@
                 }
                 else {
                     // load the default county bounds
-                    allBounds = await getAllCountyBounds(selection);
+                    if (showCounties) {
+                        allBounds = await getAllCountyBounds(selection);
+                    } else {
+                        allBounds = [];
+                    }
                     data = await fetchData(urlAPI);
 
                     pointGraphicsHotSpotReturn = getHotspotGraphics(data)
                     //pointGraphicsReturn = [];
-                    pointGraphicsCountyReturn = getCountyGraphics(allBounds);
+                    if (showCounties) {
+                        pointGraphicsCountyReturn = getCountyGraphics(allBounds);
+                    } else {
+                        pointGraphicsCountyReturn = [];
+                    }
 
                     //pointGraphicsCountyReturn = [];
                     // add the graphics to the map
@@ -405,8 +437,9 @@
                 function getHotspotGraphics(getHotspotGraphics) {
                     points = [];
                     pointGraphicsHotSpotReturn = [];
+                    view.graphics.remove()
                     for (i = 0; i < getHotspotGraphics.length; ++i) {
-                        if (getHotspotGraphics[i].numSpeciesAllTime >= 0) {
+                        if (getHotspotGraphics[i].numSpeciesAllTime >= minSpeciesFilter) {
                             var point = new Point(getHotspotGraphics[i].lng, getHotspotGraphics[i].lat);
                             points.push(point.latitude, point.longitude);
 
@@ -591,6 +624,8 @@
             async function updateElevationMode(event) {
                 selection = document.getElementById("modeSelect").value;
                 daysback = document.getElementById("days").value;
+                minSpeciesFilter = parseInt(document.getElementById("speciesFilter").value);
+                showCounties = document.getElementById("showCounties").checked;
 
                 // Show loading when changing location
                 Swal.fire({
@@ -1048,6 +1083,28 @@
                         <option value="4">4</option>
                         <option value="3" selected>3</option>
                     </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="right">Min Hotspot Species Count</td>
+                <td>
+                    <select id="speciesFilter">
+                        <option value="0" selected>All (0+)</option>
+                        <option value="50">50+</option>
+                        <option value="100">100+</option>
+                        <option value="150">150+</option>
+                        <option value="200">200+</option>
+                        <option value="250">250+</option>
+                        <option value="300">300+</option>
+                        <option value="400">400+</option>
+                        <option value="500">500+</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="right">Show Counties</td>
+                <td>
+                    <input type="checkbox" id="showCounties" />
                 </td>
             </tr>
         </table>
