@@ -217,50 +217,70 @@
             view.ui.add(bgExpand, "bottom-right");
 
             window.onload = async function (e) {
-                // Load the Selection DropDown
-                // var urlAPI = "https://ebird.org/ws2.0/ref/region/list/subnational2/US-CA.json";
-                var urlForDropDown = "https://ebird.org/ws2.0/ref/region/list/subnational1/US.json";
-
-                hotspots = getData(urlForDropDown);
-
-                loadCombo(hotspots);
-                //load bird species list
-                birdsArray = await fetchData("https://ebird.org/ws2.0/ref/taxonomy/ebird?fmt=json&category=species");
-                
-                // Load species exclusion list from CSV
                 try {
-                    const csvText = await fetch("csv/species_with_codes.csv")
-                        .then(response => response.text());
-                    // Parse CSV: skip header, extract speciesCode column (index 1)
-                    const lines = csvText.split(/[\n\r]+/).filter(line => line.trim().length > 0);
-                    excludeList = lines.slice(1).map(line => {
-                        const cols = line.split(',');
-                        return cols[1] ? cols[1].trim() : '';
-                    }).filter(code => code.length > 0);
-                    console.log("Loaded exclude list (" + excludeList.length + " species):", excludeList);
-                } catch (error) {
-                    console.error("Error loading CSV:", error);
-                    console.log("Continuing without exclusion list - make sure to run through web server (http://localhost:4704)");
-                    excludeList = [];
-                }
+                    // Load the Selection DropDown
+                    // var urlAPI = "https://ebird.org/ws2.0/ref/region/list/subnational2/US-CA.json";
+                    var urlForDropDownUSA = "https://ebird.org/ws2.0/ref/region/list/subnational1/US.json";
 
-                // Show loading on windows load 
-                Swal.fire({
-                    title: 'Loading...',
-                    text: 'Loading eBird API data points',
-                    allowOutsideClick: false,
-                    showConfirmButton: false,
-                    showCancelButton: true,
-                    cancelButtonText: 'Cancel',
-                    willOpen: () => {
-                        Swal.showLoading();
+                    console.log("Loading dropdown data...");
+                    hotspotsUSA = await fetchData(urlForDropDownUSA);
+                    console.log("Hotspots loaded:", hotspotsUSA);
+
+                    loadCombo(hotspotsUSA);
+
+                    var urlForDropDownMX = "https://ebird.org/ws2.0/ref/region/list/subnational1/MX.json";
+
+                    console.log("Loading dropdown data...");
+                    hotspotsMX = await fetchData(urlForDropDownMX);
+                    console.log("Hotspots loaded:", hotspotsMX);
+
+                    loadCombo(hotspotsMX);
+
+                    //load bird species list
+                        birdsArray = await fetchData("https://ebird.org/ws2.0/ref/taxonomy/ebird?fmt=json&category=species");
+                    
+                    // Load species exclusion list from CSV
+                    try {
+                        const csvText = await fetch("csv/species_with_codes.csv")
+                            .then(response => response.text());
+                        // Parse CSV: skip header, extract speciesCode column (index 1)
+                        const lines = csvText.split(/[\n\r]+/).filter(line => line.trim().length > 0);
+                        excludeList = lines.slice(1).map(line => {
+                            const cols = line.split(',');
+                            return cols[1] ? cols[1].trim() : '';
+                        }).filter(code => code.length > 0);
+                        console.log("Loaded exclude list (" + excludeList.length + " species):", excludeList);
+                    } catch (error) {
+                        console.error("Error loading CSV:", error);
+                        console.log("Continuing without exclusion list - make sure to run through web server (http://localhost:4704)");
+                        excludeList = [];
                     }
-                });
 
-                await loadPoints();
+                    // Show loading on windows load 
+                    Swal.fire({
+                        title: 'Loading...',
+                        text: 'Loading eBird API data points',
+                        allowOutsideClick: false,
+                        showConfirmButton: false,
+                        showCancelButton: true,
+                        cancelButtonText: 'Cancel',
+                        willOpen: () => {
+                            Swal.showLoading();
+                        }
+                    });
 
-                // Close loading
-                Swal.close();
+                    await loadPoints();
+
+                    // Close loading
+                    Swal.close();
+                } catch (error) {
+                    console.error("Error during initialization:", error);
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Loading Error',
+                        text: 'Failed to load data: ' + error.message
+                    });
+                }
             }
 
             function loadCombo(hotspotData) {
@@ -646,7 +666,7 @@
             }
 
             async function getAllCountyBounds(selection) {
-                var counties = getCounties(selection); // Fetch list of counties
+                var counties = await getCounties(selection); // Fetch list of counties
                 
                 console.log(`Fetching bounds for ${counties.length} counties in parallel...`);
                 
@@ -675,7 +695,7 @@
             }
 
             async function getAllStateBounds(selection) {
-                var states = getStates(selection); // Fetch list of states
+                var states = await getStates(selection); // Fetch list of states
                 
                 console.log(`Fetching bounds for ${states.length} states in parallel...`);
                 
@@ -944,7 +964,6 @@
             }
 
             function getData(url) {
-
                 var apiData = {
                     "crossDomain": true,
                     "url": url,
@@ -971,15 +990,15 @@
                     "headers": {
                         "X-eBirdApiToken": "npobnnr5u7fo"
                     }
-                    // "async": false removed; it's true by default
                 };
 
                 try {
                     const response = await $.ajax(apiData);
                     console.log(response);
-                    return response; // Use the data here or return it
+                    return response;
                 } catch (error) {
                     console.error("Request failed:", error);
+                    throw error;
                 }
             }
 
@@ -1030,17 +1049,17 @@
                 window.URL.revokeObjectURL(url);
             }
 
-            function getCounties(selection) {
+            async function getCounties(selection) {
                 var countyUrl = 'https://api.ebird.org/v2/ref/region/list/subnational2/' + selection;
 
-                var counties = getData(countyUrl);
+                var counties = await fetchData(countyUrl);
                 return counties; // Array of { code: "US-NY-001", name: "Albany" }
             }
 
-            function getStates(selection) {
+            async function getStates(selection) {
                 var stateUrl = 'https://api.ebird.org/v2/ref/region/list/subnational1/' + selection;
 
-                var states = getData(stateUrl);
+                var states = await fetchData(stateUrl);
                 return states; // Array of { code: "US-NY", name: "Albany" }
             }
 
