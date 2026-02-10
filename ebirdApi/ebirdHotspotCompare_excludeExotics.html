@@ -490,6 +490,31 @@
                     return labelGraphics;
                 }
 
+                function getColorForSpeciesCount(count) {
+                    // eBird-style gradient with specific thresholds (darker colors)
+                    if (count >= 500) {
+                        return [205, 50, 50]; // Darker Bright Red
+                    } else if (count >= 400) {
+                        return [205, 95, 70]; // Darker Red-Orange
+                    } else if (count >= 300) {
+                        return [205, 140, 75]; // Darker Orange
+                    } else if (count >= 250) {
+                        return [205, 180, 75]; // Darker Golden Yellow
+                    } else if (count >= 200) {
+                        return [205, 205, 75]; // Darker Bright Yellow
+                    } else if (count >= 150) {
+                        return [205, 205, 120]; // Darker Pale Yellow
+                    } else if (count >= 100) {
+                        return [190, 205, 135]; // Darker Light Lime/Yellow
+                    } else if (count >= 50) {
+                        return [180, 195, 150]; // Darker Pale Greenish-Yellow
+                    } else if (count >= 15) {
+                        return [175, 190, 190]; // Darker Light Pale Blue
+                    } else {
+                        return [185, 195, 195]; // Darker Very Light Gray-Blue
+                    }
+                }
+
                 function getHotspotGraphics(getHotspotGraphics) {
                     points = [];
                     pointGraphicsHotSpotReturn = [];
@@ -499,15 +524,17 @@
                             var point = new Point(getHotspotGraphics[i].lng, getHotspotGraphics[i].lat);
                             points.push(point.latitude, point.longitude);
 
-                            
+                            // Get color based on species count
+                            var speciesColor = getColorForSpeciesCount(getHotspotGraphics[i].numSpeciesAllTime);
 
                             // Create a symbol for drawing the point
                             var markerSymbol = {
                                 type: "simple-marker", // autocasts as new SimpleMarkerSymbol()
-                                color: [0, 128, 0], //green
+                                color: speciesColor,
+                                size: 10,
                                 outline: { // autocasts as new SimpleLineSymbol()
-                                    color: [0, 100, 0],
-                                    width: 2
+                                    color: [100, 100, 100],
+                                    width: 1
                                 }
                             };
 
@@ -1196,11 +1223,12 @@
 <body>
     <div id="viewDiv"></div>
     <div id="ebird">
-        <a>eBird Hotspot and county species compare</a>
-        <br />
+        
         <a>Click any two points on the map to compare species in each point.</a>
         <br />
         <a>First point is the source data, second point is the target</a>
+        <br />
+         <a>Right click on a point to see a popup</a>
         <br />
         <a>Black points are counties green points are hotspot.</a>
         <br />
