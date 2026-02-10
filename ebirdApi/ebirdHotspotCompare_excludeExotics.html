@@ -477,10 +477,10 @@
 
                             // Create an object for storing attributes related to the line
                             var pointAtt = {
-                                Name: data[i].locName,
-                                locId: data[i].locId,
-                                SpeciesAllTime: data[i].numSpeciesAllTime,
-                                ChecklistsAllTime: data[i].numChecklistsAllTime
+                                Name: getHotspotGraphics[i].locName,
+                                locId: getHotspotGraphics[i].locId,
+                                SpeciesAllTime: getHotspotGraphics[i].numSpeciesAllTime,
+                                ChecklistsAllTime: getHotspotGraphics[i].numChecklistsAllTime
                             };
 
                             /*******************************************
@@ -829,51 +829,75 @@
                 if (rgbColor2.r === rgbColorBlack.r && rgbColor2.g === rgbColorBlack.g && rgbColor2.b === rgbColorBlack.b) { color2isBlack = true; }
                 else { color2isBlack = false; }
 
+                var hotspotSourceCode1 = '';
+                var hotspotTargetCode2 = '';
 
-                var h1 = "https://api.ebird.org/v2/ref/hotspot/geo?fmt=json&dist=20&lat=" + a.latitude.toFixed(8) + "&lng=" + a.longitude.toFixed(6);
-                var h2 = "https://api.ebird.org/v2/ref/hotspot/geo?fmt=json&dist=20&lat=" + b.latitude.toFixed(8) + "&lng=" + b.longitude.toFixed(6);
+                // If green hotspot clicked, use its locId directly; if black county/state, find nearest hotspot
+                if (!color1isBlack && locId1) {
+                    // Green hotspot - use directly
+                    hotspotSourceCode1 = locId1;
+                    console.log("Point 1 is green hotspot, using locId directly:", hotspotSourceCode1);
+                } else {
+                    // Black county/state - search for nearest hotspot
+                    var h1 = "https://api.ebird.org/v2/ref/hotspot/geo?fmt=json&dist=20&lat=" + a.latitude.toFixed(8) + "&lng=" + a.longitude.toFixed(8);
+                    var hotspotSource = await fetchData(h1);
 
-                //get the nearest hotspot source and target
-                var hotspotSource = await fetchData(h1);
-                var hotspotTarget = await fetchData(h2);
+                    // measure the distance of each hotspot from the point and sort by distance
+                    let hotspotsWithDistSource = hotspotSource.map(h => ({
+                        hotspot: h,
+                        dist: getDistance(a.latitude, a.longitude, h.lat, h.lng)
+                    }));
+                    
+                    // Sort by distance, then by locId for consistent tie-breaking
+                    hotspotsWithDistSource.sort((a, b) => {
+                        if (Math.abs(a.dist - b.dist) < 0.0001) { // Treat as equal within 0.1 meters
+                            return a.hotspot.locId.localeCompare(b.hotspot.locId);
+                        }
+                        return a.dist - b.dist;
+                    });
+                    
+                    let closestSourceHotspot = hotspotsWithDistSource[0] ? hotspotsWithDistSource[0].hotspot : null;
+                    let shortestSourceDist = hotspotsWithDistSource[0] ? hotspotsWithDistSource[0].dist : Infinity;
+                    
+                    console.log("All source hotspots sorted by distance:");
+                    hotspotsWithDistSource.slice(0, 5).forEach(h => console.log(h.hotspot.locId, h.dist));
+                    console.log("Closest hotspot:", closestSourceHotspot ? closestSourceHotspot.locId : 'null', shortestSourceDist);
+                    
+                    hotspotSourceCode1 = closestSourceHotspot ? closestSourceHotspot.locId : '';
+                }
 
-                // measure the distance of each hotspot from the point
-                // find the closest one
-                let shortestSourceDist = Infinity;
-                let closestSourceHotspot = null;
+                if (!color2isBlack && locId2) {
+                    // Green hotspot - use directly
+                    hotspotTargetCode2 = locId2;
+                    console.log("Point 2 is green hotspot, using locId directly:", hotspotTargetCode2);
+                } else {
+                    // Black county/state - search for nearest hotspot
+                    var h2 = "https://api.ebird.org/v2/ref/hotspot/geo?fmt=json&dist=20&lat=" + b.latitude.toFixed(8) + "&lng=" + b.longitude.toFixed(8);
+                    var hotspotTarget = await fetchData(h2);
 
-                hotspotSource.forEach(h => {
-                    const dist = getDistance(a.latitude, a.longitude, h.lat, h.lng);
-
-                    if (dist < shortestSourceDist) {
-                        shortestSourceDist = dist;
-                        closestSourceHotspot = h;
-                    }
-                    console.log(h.locId, h.lat, h.lng, dist);
-                });
-
-                console.log("Closest hotspot:", closestSourceHotspot ? closestSourceHotspot.locId : 'null', shortestSourceDist);
-
-                let shortestTargetDist = Infinity;
-                let closestTargetHotspot = null;
-
-                hotspotTarget.forEach(h => {
-                    const dist = getDistance(b.latitude, b.longitude, h.lat, h.lng);
-
-                    if (dist < shortestTargetDist) {
-                        shortestTargetDist = dist;
-                        closestTargetHotspot = h;
-                    }
-
-                    console.log(h.locId, h.lat, h.lng, dist);
-                });
-
-                console.log("Closest hotspot:", closestTargetHotspot ? closestTargetHotspot.locId : 'null', shortestTargetDist);
-
-
-                // extract the code from hotspot
-                var hotspotSourceCode1 = closestSourceHotspot ? closestSourceHotspot.locId : '';
-                var hotspotTargetCode2 = closestTargetHotspot ? closestTargetHotspot.locId : '';
+                    // measure the distance of each hotspot from the point and sort by distance
+                    let hotspotsWithDistTarget = hotspotTarget.map(h => ({
+                        hotspot: h,
+                        dist: getDistance(b.latitude, b.longitude, h.lat, h.lng)
+                    }));
+                    
+                    // Sort by distance, then by locId for consistent tie-breaking
+                    hotspotsWithDistTarget.sort((a, b) => {
+                        if (Math.abs(a.dist - b.dist) < 0.0001) { // Treat as equal within 0.1 meters
+                            return a.hotspot.locId.localeCompare(b.hotspot.locId);
+                        }
+                        return a.dist - b.dist;
+                    });
+                    
+                    let closestTargetHotspot = hotspotsWithDistTarget[0] ? hotspotsWithDistTarget[0].hotspot : null;
+                    let shortestTargetDist = hotspotsWithDistTarget[0] ? hotspotsWithDistTarget[0].dist : Infinity;
+                    
+                    console.log("All target hotspots sorted by distance:");
+                    hotspotsWithDistTarget.slice(0, 5).forEach(h => console.log(h.hotspot.locId, h.dist));
+                    console.log("Closest hotspot:", closestTargetHotspot ? closestTargetHotspot.locId : 'null', shortestTargetDist);
+                    
+                    hotspotTargetCode2 = closestTargetHotspot ? closestTargetHotspot.locId : '';
+                }
 
                 //locId1 ="US-WA";
                 //locId2 ="US-CA";
@@ -890,9 +914,11 @@
                     var speciesListSourceUrl = "https://api.ebird.org/v2/product/spplist/" + hotspotSourceCode1 + "/?category=species";
                 }
                 //source bird list
-                var hotspotSourceList = getData(speciesListSourceUrl);
+                var hotspotSourceList = await fetchData(speciesListSourceUrl);
+                console.log("Source list before filter (", hotspotSourceList.length, "species):", hotspotSourceList);
                 // Remove species codes that begin with 'x0', are exactly 7 characters, or are in exclude list
                 hotspotSourceList = hotspotSourceList.filter(code => !code.startsWith('x0') && !excludeList.includes(code));
+                console.log("Source list after filter (", hotspotSourceList.length, "species):", hotspotSourceList);
                 //hotspotSourceList = hotspotSourceList.filter(code => !code.startsWith('x0'));
 
 
@@ -909,16 +935,18 @@
                 }
 
                 //target bird list
-                var hotspotTargetList = getData(speciesLisTargetUrl);
+                var hotspotTargetList = await fetchData(speciesLisTargetUrl);
+                console.log("Target list before filter (", hotspotTargetList.length, "species):", hotspotTargetList);
                 // Remove species codes that begin with 'x0', are exactly 7 characters, or are in exclude list
                 hotspotTargetList = hotspotTargetList.filter(code => !code.startsWith('x0') && !excludeList.includes(code));
+                console.log("Target list after filter (", hotspotTargetList.length, "species):", hotspotTargetList);
                 //hotspotTargetList = hotspotTargetList.filter(code => !code.startsWith('x0'));
 
 
                 //To find elements in listA source that are not in listB target:
-                let diffBetweenSourceAndTarget = hotspotSourceList.filter(item => !hotspotTargetList.includes(item));
+                let diffBetweenSourceAndTarget = await hotspotSourceList.filter(item => !hotspotTargetList.includes(item));
 
-                let diffBetweenTargetAndSource = hotspotTargetList.filter(item => !hotspotSourceList.includes(item));
+                let diffBetweenTargetAndSource = await hotspotTargetList.filter(item => !hotspotSourceList.includes(item));
 
                 let formattedListSource = diffBetweenSourceAndTarget.map(code => getComName(code, locId1)).join(", ");
                 let formattedListTarget = diffBetweenTargetAndSource.map(code => getComName(code, locId2)).join(", ");
@@ -964,6 +992,7 @@
             }
 
             function getData(url) {
+                var result = null;
                 var apiData = {
                     "crossDomain": true,
                     "url": url,
@@ -975,29 +1004,40 @@
                 }
 
                 $.ajax(apiData).done(function (response) {
-                    console.log(response);
-                    data = response;
+                    console.log("getData response for", url, ":", response);
+                    result = response;
                 });
 
-                return data;
+                return result;
 
             }
 
             async function fetchData(url) {
-                const apiData = {
+                // Force fresh variables for each call
+                let apiData = null;
+                let response = null;
+                
+                apiData = {
                     "url": url,
                     "method": "GET",
+                    "cache": false,
                     "headers": {
                         "X-eBirdApiToken": "npobnnr5u7fo"
                     }
                 };
 
                 try {
-                    const response = await $.ajax(apiData);
-                    console.log(response);
-                    return response;
+                    response = await $.ajax(apiData);
+                    console.log("fetchData response for", url, "- length:", response.length, "data:", response);
+                    const result = response;
+                    // Clear references
+                    apiData = null;
+                    response = null;
+                    return result;
                 } catch (error) {
                     console.error("Request failed:", error);
+                    apiData = null;
+                    response = null;
                     throw error;
                 }
             }
