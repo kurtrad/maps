@@ -399,6 +399,13 @@
                     view.graphics.addMany(pointGraphicsCountyReturn);
                     // Add county foreground second
                     view.graphics.addMany(pointGraphicsHotSpotReturn);
+                    
+                    // Create hotspot labels (hidden by default, shown on hover)
+                    hotspotLabels = createHotspotLabels(data);
+                    hotspotLabels.forEach(label => {
+                        label.visible = false; // Hidden by default
+                    });
+                    view.graphics.addMany(hotspotLabels);
                 }
                 // Set up labels for counties (add to view.graphics.labelsVisible)
                 countyLabels = createCountyLabels(allBounds);
@@ -454,6 +461,35 @@
                     return labelGraphics;
                 }
 
+                function createHotspotLabels(hotspots) {
+                    let labelGraphics = [];
+                    for (let i = 0; i < hotspots.length; i++) {
+                        if (hotspots[i].numSpeciesAllTime >= minSpeciesFilter) {
+                            let textSymbol = {
+                                type: "text",
+                                color: [0, 100, 0],
+                                haloColor: [255, 255, 255],
+                                haloSize: 2.5,
+                                text: hotspots[i].locName,
+                                xoffset: 0,
+                                yoffset: -20,
+                                font: {
+                                    size: 11,
+                                    weight: "bold",
+                                    family: "sans-serif"
+                                }
+                            };
+                            let labelGraphic = new Graphic({
+                                geometry: new Point({ x: hotspots[i].lng, y: hotspots[i].lat }),
+                                symbol: textSymbol,
+                                attributes: { locId: hotspots[i].locId, type: 'hotspotLabel' }
+                            });
+                            labelGraphics.push(labelGraphic);
+                        }
+                    }
+                    return labelGraphics;
+                }
+
                 function getHotspotGraphics(getHotspotGraphics) {
                     points = [];
                     pointGraphicsHotSpotReturn = [];
@@ -480,7 +516,8 @@
                                 Name: getHotspotGraphics[i].locName,
                                 locId: getHotspotGraphics[i].locId,
                                 SpeciesAllTime: getHotspotGraphics[i].numSpeciesAllTime,
-                                ChecklistsAllTime: getHotspotGraphics[i].numChecklistsAllTime
+                                ChecklistsAllTime: getHotspotGraphics[i].numChecklistsAllTime,
+                                Checklist: "https://ebird.org/hotspot/" + getHotspotGraphics[i].locId
                             };
 
                             /*******************************************
@@ -510,6 +547,9 @@
                                             fieldName: "ChecklistsAllTime",
                                             label: "Checklists (All Time)"
                                         }]
+                                    }, {
+                                        type: "text",
+                                        text: '<a href="{Checklist}" target="_blank">View eBird Hotspot</a>'
                                     }],
                                 }
                             });
@@ -540,8 +580,8 @@
                         // Create an object for storing attributes related to the line
                         var pointAtt = {
                             Name: CountyBounds[i].name,
-                            locId: CountyBounds[i].code
-                            //Checklist: "https://ebird.org/hotspot/" + Hotspots[i].code
+                            locId: CountyBounds[i].code,
+                            Checklist: "https://ebird.org/region/" + CountyBounds[i].code
                         };
 
                         /*******************************************
@@ -565,6 +605,9 @@
                                         fieldName: "locId",
                                         label: "County Code"
                                     }]
+                                }, {
+                                    type: "text",
+                                    text: '<a href="{Checklist}" target="_blank">View eBird Checklist</a>'
                                 }],
                             }
                         });
@@ -767,18 +810,59 @@
                 });
             });
 
-            // Display name on hover
+            // Display labels on hover
             view.on("pointer-move", function (event) {
                 view.hitTest(event).then(function (response) {
+                    // Hide all hotspot labels first
+                    view.graphics.items.forEach(graphic => {
+                        if (graphic.attributes && graphic.attributes.type === 'hotspotLabel') {
+                            graphic.visible = false;
+                        }
+                    });
+                    
                     if (response.results.length > 0) {
-                        view.popup.open({
-                            features: [response.results[0].graphic],
-                            location: event.mapPoint
-                        });
-                    } else {
-                        view.popup.close();
+                        const hitGraphic = response.results[0].graphic;
+                        const locId = hitGraphic.attributes ? hitGraphic.attributes.locId : null;
+                        
+                        // Show label for the hovered hotspot
+                        if (locId) {
+                            view.graphics.items.forEach(graphic => {
+                                if (graphic.attributes && 
+                                    graphic.attributes.type === 'hotspotLabel' && 
+                                    graphic.attributes.locId === locId) {
+                                    graphic.visible = true;
+                                }
+                            });
+                        }
                     }
                 });
+            });
+
+            // Show popup on right-click
+            view.on("click", function (event) {
+                // Check if it's a right-click (button 2)
+                if (event.button === 2) {
+                    event.stopPropagation();
+                    view.hitTest(event).then(function (response) {
+                        if (response.results.length > 0) {
+                            const hitGraphic = response.results[0].graphic;
+                            // Skip label graphics
+                            if (hitGraphic.attributes && hitGraphic.attributes.type === 'hotspotLabel') {
+                                return;
+                            }
+                            // Show popup for actual points
+                            view.popup.open({
+                                features: [hitGraphic],
+                                location: event.mapPoint
+                            });
+                        }
+                    });
+                }
+            });
+
+            // Prevent browser context menu on map
+            document.getElementById("viewDiv").addEventListener("contextmenu", function (event) {
+                event.preventDefault();
             });
 
             function addPointGraphic(point, color) {
