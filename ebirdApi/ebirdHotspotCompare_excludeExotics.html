@@ -368,12 +368,12 @@
                     allStateBounds = await getAllStateBounds(selection);
                     pointGraphicsStateReturn = getStateGraphics(allStateBounds);
 
-                    // Add county foreground second
+                    // Add state points
                     view.graphics.addMany(pointGraphicsStateReturn);
 
-                    // Set up labels for counties (add to view.graphics.labelsVisible)
-                    //stateLabels = createCountyLabels(allStateBounds);
-                    //view.graphics.addMany(stateLabels);
+                    // Add state labels (hidden by default, shown on hover)
+                    stateLabels = createStateLabels(allStateBounds);
+                    view.graphics.addMany(stateLabels);
                 }
                 else {
                     // load the default county bounds
@@ -407,21 +407,12 @@
                     });
                     view.graphics.addMany(hotspotLabels);
                 }
-                // Set up labels for counties (add to view.graphics.labelsVisible)
+                // Set up labels for counties (hidden by default, shown on hover)
                 countyLabels = createCountyLabels(allBounds);
-                view.graphics.addMany(countyLabels);
-
-                // Add zoom change listener to show/hide labels based on zoom level
-                view.watch("zoom", function (newZoom) {
-                    countyLabels.forEach(label => {
-                        label.visible = newZoom >= 8; // Show labels at zoom level 8 and above
-                    });
-                });
-
-                // Set initial visibility based on current zoom
                 countyLabels.forEach(label => {
-                    label.visible = view.zoom >= 8;
+                    label.visible = false;
                 });
+                view.graphics.addMany(countyLabels);
 
 
                 // center on the hotspots
@@ -454,7 +445,8 @@
                         };
                         let labelGraphic = new Graphic({
                             geometry: new Point({ x: counties[i].lng, y: counties[i].lat }),
-                            symbol: textSymbol
+                            symbol: textSymbol,
+                            attributes: { locId: counties[i].code, type: 'countyLabel' }
                         });
                         labelGraphics.push(labelGraphic);
                     }
@@ -486,6 +478,33 @@
                             });
                             labelGraphics.push(labelGraphic);
                         }
+                    }
+                    return labelGraphics;
+                }
+
+                function createStateLabels(states) {
+                    let labelGraphics = [];
+                    for (let i = 0; i < states.length; i++) {
+                        let textSymbol = {
+                            type: "text",
+                            color: [0, 0, 0],
+                            haloColor: [255, 255, 255],
+                            haloSize: 2.5,
+                            text: states[i].name,
+                            xoffset: 0,
+                            yoffset: -20,
+                            font: {
+                                size: 11,
+                                weight: "bold",
+                                family: "sans-serif"
+                            }
+                        };
+                        let labelGraphic = new Graphic({
+                            geometry: new Point({ x: states[i].lng, y: states[i].lat }),
+                            symbol: textSymbol,
+                            attributes: { locId: states[i].code, type: 'stateLabel' }
+                        });
+                        labelGraphics.push(labelGraphic);
                     }
                     return labelGraphics;
                 }
@@ -840,9 +859,9 @@
             // Display labels on hover
             view.on("pointer-move", function (event) {
                 view.hitTest(event).then(function (response) {
-                    // Hide all hotspot labels first
+                    // Hide all hotspot, state, and county labels first
                     view.graphics.items.forEach(graphic => {
-                        if (graphic.attributes && graphic.attributes.type === 'hotspotLabel') {
+                        if (graphic.attributes && (graphic.attributes.type === 'hotspotLabel' || graphic.attributes.type === 'stateLabel' || graphic.attributes.type === 'countyLabel')) {
                             graphic.visible = false;
                         }
                     });
@@ -851,11 +870,11 @@
                         const hitGraphic = response.results[0].graphic;
                         const locId = hitGraphic.attributes ? hitGraphic.attributes.locId : null;
                         
-                        // Show label for the hovered hotspot
+                        // Show label for the hovered hotspot, state, or county
                         if (locId) {
                             view.graphics.items.forEach(graphic => {
                                 if (graphic.attributes && 
-                                    graphic.attributes.type === 'hotspotLabel' && 
+                                    (graphic.attributes.type === 'hotspotLabel' || graphic.attributes.type === 'stateLabel' || graphic.attributes.type === 'countyLabel') && 
                                     graphic.attributes.locId === locId) {
                                     graphic.visible = true;
                                 }
